@@ -1,0 +1,793 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content='chr�Ĳ���' />
+    <title>
+        
+1.14阅读文摘
+
+        
+    </title>
+    <link rel="stylesheet" href='/css/markdown.css'>
+    <script src='/js/fuse.js' defer></script>
+    <script src='/js/search.js' defer></script>
+
+    <script>
+        function addLoadEvent(callback) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    callback();
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript" async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                    processEscapes: true,
+                    processEnvironments: true,
+                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    TeX: {
+                        equationNumbers: { autoNumber: "AMS" },
+                        extensions: ["AMSmath.js", "AMSsymbols.js"]
+                    }
+                }
+            });
+        </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3J4FRK59"></script>
+    
+    <style>
+        :root {
+            --black: #121314;
+            --primary: #1a73e8;
+            --red: #ea4335;
+            --light-gray: #eeeeee;
+            --dark-gray: #828282;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+        }
+
+         
+        ::-webkit-scrollbar-track {
+            background-color: var(--light-gray);
+        }
+
+         
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+        }
+
+         
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        body {
+            max-width: 800px;
+            margin: calc(5vw + 40px) auto;
+            padding: 0 20px;
+            color: var(--black);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+            position: relative;
+            width: calc(100% - 100px);
+        }
+
+        .left:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .left nav ol {
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .left nav ol li {
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .left nav ol li .dropdown-container {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 2;
+            font-size: 90%;
+            display: none;
+            min-width: 100%;
+            background-color: white;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .left nav ol li:hover .dropdown-container {
+                display: block;
+            }
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner {
+            border: 1px solid var(--black);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: -3px;
+            width: 0px;
+            height: 0px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--black);
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 9px;
+            top: -0.5px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner .dropdown a {
+            display: block;
+        }
+
+        .left nav ol li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 60%;
+            transform: translateY(-50%) rotate(20deg);
+            width: 2px;
+            height: 80%;
+            background-color: var(--light-gray);
+        }
+
+        .left nav ol li a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1px 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .left nav ol li:not(:last-child) a {
+                display: block;
+                width: 36px;
+                text-overflow: clip;
+            }
+        }
+
+        .left nav ol li a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            width: 100px;
+            justify-content: flex-end;
+        }
+
+        .right #searchIcon,
+        .right #github img {
+            margin: 0 8px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        #searchBox {
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            top: calc(5vw + 40px);
+            transform: translateX(-50%);
+            display: inline-block;
+            width: 600px;
+            background-color: white;
+            border: 2px solid var(--black);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        @media (max-width: 600px) {
+            #searchBox {
+                width: calc(100vw - 50px);
+            }
+        }
+
+        #searchBox input {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        #searchBox ul {
+            visibility: hidden;
+        }
+
+        #searchBox ul[style*="visibility: visible;"] {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        #searchBox ul li {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        #searchBox ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            display: block;
+            font-size: 15px;
+        }
+
+        #searchBox ul li a .title {
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        #searchBox ul li a:hover,
+        #searchBox ul li a:focus {
+            outline: 0;
+            background-color: var(--light-gray);
+        }
+
+        #searchBox ul li a .highlight-container {
+            color: var(--dark-gray);
+            font-size: 75%;
+            line-height: 1.5;
+        }
+
+        #searchBox ul li a .highlight-container .highlight {
+            color: var(--red);
+        }
+    </style>
+
+    
+<style>
+     h1 {
+          margin-bottom: 10px;
+     }
+
+     section {
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
+     }
+
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
+     }
+
+     section a {
+          color: var(--primary);
+          text-decoration: none;
+          margin-left: 10px;
+     }
+
+     main {
+          position: relative;
+     }
+
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
+          font-weight: normal;
+          font-size: 90%;
+     }
+</style>
+
+
+    
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
+
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <nav>
+  <ol>
+    
+
+
+
+
+
+<li>
+  <a href="/">
+    <span>
+      
+主页
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/about-me/">
+          <span>
+about me
+</span>
+        </a>
+        
+        <a href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+          <span>
+正则表达式
+</span>
+        </a>
+        
+        <a href="/%E6%B8%85%E5%8D%95/">
+          <span>
+清单
+</span>
+        </a>
+        
+        <a href="/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">
+          <span>
+小狼毫输入法
+</span>
+        </a>
+        
+        <a href="/termux/">
+          <span>
+termux
+</span>
+        </a>
+        
+        <a href="/post/">
+          <span>
+Post
+</span>
+        </a>
+        
+        <a href="/%E6%91%98%E5%BD%95/">
+          <span>
+摘录
+</span>
+        </a>
+        
+        <a href="/hexo/">
+          <span>
+hexo
+</span>
+        </a>
+        
+        <a href="/hugo/">
+          <span>
+hugo
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/%E6%91%98%E5%BD%95/">
+    <span>
+      
+摘录
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/%E6%91%98%E5%BD%95/20210119a%E6%91%98%E5%BD%95via/">
+          <span>
+摘录
+</span>
+        </a>
+        
+        <a href="/%E6%91%98%E5%BD%95/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/">
+          <span>
+文摘
+</span>
+        </a>
+        
+        <a href="/%E6%91%98%E5%BD%95/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/">
+          <span>
+2019年互联网信息大灭绝事件
+</span>
+        </a>
+        
+        <a href="/%E6%91%98%E5%BD%95/20210124b%E6%96%87%E6%91%98/">
+          <span>
+1.14阅读文摘
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/%E6%91%98%E5%BD%95/20210124b%E6%96%87%E6%91%98/">
+    <span>
+      
+1.14阅读文摘
+
+    </span>
+  </a>
+  
+</li>
+
+  </ol>
+</nav>
+
+        </div>
+
+        
+        <div class="right">
+            <img id="searchIcon" src='/image/search.png' alt="search">
+            <a id="github" href="https://github.com/ch38r18/blog" target="_blank">
+                <img src='/image/github.png' alt="github">
+            </a>
+            
+        </div>
+    </header>
+
+    
+<h1>
+     
+1.14阅读文摘
+
+</h1>
+
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.24 08:18
+     </div>
+     
+     <a href='https://github.com/ch38r18/blog/blob/main/20210124b%e6%96%87%e6%91%98.md' target="_blank">Github</a>
+     
+</section>
+
+<main>
+     <article class="markdown">
+          
+<h3 id="2020网络信息灭绝评论"><a href="#2020%e7%bd%91%e7%bb%9c%e4%bf%a1%e6%81%af%e7%81%ad%e7%bb%9d%e8%af%84%e8%ae%ba">2020网络信息灭绝评论</a></h3><ul>
+<li>每时每刻吧，像 WX，WB 这种封闭生态，没被删留下来的都是被“喜欢”的。如果哪天不喜欢哪个，服务器一敲键盘，内容就在整个生态里从此消失，就像从来没发生过一样。谁掌握了过去，谁就掌握了未来；谁掌握了现在，谁就掌握了过去。</li>
+<li>2021 年，脸书推特 instagram 等社交平台全面封杀川普及其支持者，亚马逊强行停服 parler 。世界终于趋于大同。</li>
+<li>你这些都不是事，p 站还我收藏的视频！</li>
+<li>TypeError：2020初墙内微博微信大肆封删 COVID19 相关的信息，有兴趣可以去了解下 GitHub 很多人做过的备份  在线服务都不可靠，就像做分布式的默认单个节点机器不可靠一样，所以本地+多处备份最好。</li>
+<li>看来去中心化的平台，很有必要了</li>
+<li>中文互联网社区的内容基本上都报销了</li>
+<li>2021 年，虾米音乐通知关闭</li>
+<li>再过两年中文内容可能就全在一个个 APP 里了，浏览器 Web 可以消亡了。</li>
+<li>p**nhub 删除非认证视频是大事件</li>
+<li>AppStore 下架所有没有版号的游戏，蝈区彻底成了鬼区</li>
+<li>多说”前几年也没了，那会应该是用的最多的评论框。</li>
+<li>估计这个世界还剩北欧一个政治净土</li>
+<li>xiunobbs 关站。酷 Q 等多家 QQ 机器人软件 大部分停止运营</li>
+</ul>
+
+<h3 id="js功能评论区"><a href="#js%e5%8a%9f%e8%83%bd%e8%af%84%e8%ae%ba%e5%8c%ba">js功能评论区</a></h3><ul>
+<li>主要是原生 js （严格来说是浏览器 DOM 的 api 标准）把 jquery 的优点都抄过去了，可以理解为现在 js 本身已经自带了一个简单版的 jquery 。</li>
+<li>我有个需求：某网站(我管不着的)是用 react 写的，ajax 或 fetch 过来数据之后渲染的页面，现在我针对这个网站写个浏览器扩展，添加一些元素，监听一些事件，ajax 获取一些数据, 我觉得我用 jQuery 挺合适的。有大佬有办法用 react vue 之类的实现我这个需求吗？</li>
+<li>对后端来说，最不能接受的是：javascript 是一种需要编译的语言</li>
+<li>JQ 时代结束了。但是目前依然有无数依赖 JQ 开发的网站</li>
+<li>初次看到 Livewire 的时候，亮瞎了我一眼，果然是给全干工程师的好东西。</li>
+<li>jq 已经完成了历史使命 它的很多部分已经成了 es 的标准</li>
+<li>百度首页不也在用 jq，据说版本还很老</li>
+<li>因为 js 现在已经吸收了很多 jq 的长处了吧，ES6 开始原生已经很强了， 但是不得不说很多人在当年没有学过 js 的情况下都是直接上手 jq 就能学着用的（比如我），很多老的网站还是 jq 维护着，只是新的项目选型基本不太会选他了</li>
+<li>已经不用了。ARV 三大框架，数据驱动，组件化开发，再也不用在业务逻辑里面写一堆选择器了，节省代码量，开发更轻松。jquery 的一部分 api 都可以用原生的 javascript 来代替了。兼容性也有 babel 来解决了。你要是觉得你的代码上能跑通 chrome87，下能兼容 ie7，无所谓了，随你开心。webpack 编译、打包、压缩、上传 cdn，一个命令，一条龙服务。</li>
+<li>var 都亡了, 现在都是 const 和 let 了</li>
+</ul>
+
+<h3 id="其他"><a href="#%e5%85%b6%e4%bb%96">其他</a></h3><p><strong>如何提高 NOTION 在国内的访问速度</strong></p>
+<ul>
+<li>最好是通过 CLASH 来分流规则实现加速！</li>
+<li>Chrome 控制台看一下请求了哪些域名，加到 Clash 规则里。</li>
+</ul>
+<p><strong>免费就是最贵的</strong></p>
+<ul>
+<li>只能通过广告等手段才能让输入法盈利，</li>
+<li>从另一方面来说，免费的就是最贵的。</li>
+</ul>
+<p><strong>其他</strong></p>
+<ul>
+<li>FPGA  纳米材料 工艺发展</li>
+<li>事实以规定为准，天子和周礼的权威高于牛顿定律和弹道曲线。</li>
+</ul>
+
+     </article>
+
+     <aside>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#2020网络信息灭绝评论">2020网络信息灭绝评论</a></li>
+        <li><a href="#js功能评论区">js功能评论区</a></li>
+        <li><a href="#其他">其他</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+     </aside>
+</main>
+
+
+
+
+    <div id="searchBox">
+        <input id="searchInput" tabindex="0" autocomplete="off">
+        <ul id="searchResults">
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1012 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content='chr�Ĳ���' />
+    <title>
+        
+读懂 Hexo 源码设计模式
+
+        
+    </title>
+    <link rel="stylesheet" href='/css/markdown.css'>
+    <script src='/js/fuse.js' defer></script>
+    <script src='/js/search.js' defer></script>
+
+    <script>
+        function addLoadEvent(callback) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    callback();
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript" async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                    processEscapes: true,
+                    processEnvironments: true,
+                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    TeX: {
+                        equationNumbers: { autoNumber: "AMS" },
+                        extensions: ["AMSmath.js", "AMSsymbols.js"]
+                    }
+                }
+            });
+        </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3J4FRK59"></script>
+    
+    <style>
+        :root {
+            --black: #121314;
+            --primary: #1a73e8;
+            --red: #ea4335;
+            --light-gray: #eeeeee;
+            --dark-gray: #828282;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+        }
+
+         
+        ::-webkit-scrollbar-track {
+            background-color: var(--light-gray);
+        }
+
+         
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+        }
+
+         
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        body {
+            max-width: 800px;
+            margin: calc(5vw + 40px) auto;
+            padding: 0 20px;
+            color: var(--black);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+            position: relative;
+            width: calc(100% - 100px);
+        }
+
+        .left:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .left nav ol {
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .left nav ol li {
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .left nav ol li .dropdown-container {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 2;
+            font-size: 90%;
+            display: none;
+            min-width: 100%;
+            background-color: white;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .left nav ol li:hover .dropdown-container {
+                display: block;
+            }
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner {
+            border: 1px solid var(--black);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: -3px;
+            width: 0px;
+            height: 0px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--black);
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 9px;
+            top: -0.5px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner .dropdown a {
+            display: block;
+        }
+
+        .left nav ol li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 60%;
+            transform: translateY(-50%) rotate(20deg);
+            width: 2px;
+            height: 80%;
+            background-color: var(--light-gray);
+        }
+
+        .left nav ol li a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1px 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .left nav ol li:not(:last-child) a {
+                display: block;
+                width: 36px;
+                text-overflow: clip;
+            }
+        }
+
+        .left nav ol li a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            width: 100px;
+            justify-content: flex-end;
+        }
+
+        .right #searchIcon,
+        .right #github img {
+            margin: 0 8px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        #searchBox {
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            top: calc(5vw + 40px);
+            transform: translateX(-50%);
+            display: inline-block;
+            width: 600px;
+            background-color: white;
+            border: 2px solid var(--black);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        @media (max-width: 600px) {
+            #searchBox {
+                width: calc(100vw - 50px);
+            }
+        }
+
+        #searchBox input {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        #searchBox ul {
+            visibility: hidden;
+        }
+
+        #searchBox ul[style*="visibility: visible;"] {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        #searchBox ul li {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        #searchBox ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            display: block;
+            font-size: 15px;
+        }
+
+        #searchBox ul li a .title {
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        #searchBox ul li a:hover,
+        #searchBox ul li a:focus {
+            outline: 0;
+            background-color: var(--light-gray);
+        }
+
+        #searchBox ul li a .highlight-container {
+            color: var(--dark-gray);
+            font-size: 75%;
+            line-height: 1.5;
+        }
+
+        #searchBox ul li a .highlight-container .highlight {
+            color: var(--red);
+        }
+    </style>
+
+    
+<style>
+     h1 {
+          margin-bottom: 10px;
+     }
+
+     section {
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
+     }
+
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
+     }
+
+     section a {
+          color: var(--primary);
+          text-decoration: none;
+          margin-left: 10px;
+     }
+
+     main {
+          position: relative;
+     }
+
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
+          font-weight: normal;
+          font-size: 90%;
+     }
+</style>
+
+
+    
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
+
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <nav>
+  <ol>
+    
+
+
+
+
+
+<li>
+  <a href="/">
+    <span>
+      
+主页
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/about-me/">
+          <span>
+about me
+</span>
+        </a>
+        
+        <a href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+          <span>
+正则表达式
+</span>
+        </a>
+        
+        <a href="/%E6%B8%85%E5%8D%95/">
+          <span>
+清单
+</span>
+        </a>
+        
+        <a href="/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">
+          <span>
+小狼毫输入法
+</span>
+        </a>
+        
+        <a href="/termux/">
+          <span>
+termux
+</span>
+        </a>
+        
+        <a href="/post/">
+          <span>
+Post
+</span>
+        </a>
+        
+        <a href="/%E6%91%98%E5%BD%95/">
+          <span>
+摘录
+</span>
+        </a>
+        
+        <a href="/hexo/">
+          <span>
+hexo
+</span>
+        </a>
+        
+        <a href="/hugo/">
+          <span>
+hugo
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/hexo/">
+    <span>
+      
+hexo
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/">
+          <span>
+20210114a用termux实现hexo
+</span>
+        </a>
+        
+        <a href="/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/">
+          <span>
+博客收藏
+</span>
+        </a>
+        
+        <a href="/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/">
+          <span>
+hexo更换主题失败总结
+</span>
+        </a>
+        
+        <a href="/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/">
+          <span>
+hexo主题收藏
+</span>
+        </a>
+        
+        <a href="/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/">
+          <span>
+从零开始hexo
+</span>
+        </a>
+        
+        <a href="/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+          <span>
+配置文件注释
+</span>
+        </a>
+        
+        <a href="/hexo/20210121b_front-matter/">
+          <span>
+front-matter
+</span>
+        </a>
+        
+        <a href="/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/">
+          <span>
+读懂 Hexo 源码设计模式
+</span>
+        </a>
+        
+        <a href="/hexo/20210125b/">
+          <span>
+hexo相关数据
+</span>
+        </a>
+        
+        <a href="/hexo/20210125c/">
+          <span>
+c默认主题优化
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/">
+    <span>
+      
+读懂 Hexo 源码设计模式
+
+    </span>
+  </a>
+  
+</li>
+
+  </ol>
+</nav>
+
+        </div>
+
+        
+        <div class="right">
+            <img id="searchIcon" src='/image/search.png' alt="search">
+            <a id="github" href="https://github.com/ch38r18/blog" target="_blank">
+                <img src='/image/github.png' alt="github">
+            </a>
+            
+        </div>
+    </header>
+
+    
+<h1>
+     
+读懂 Hexo 源码设计模式
+
+</h1>
+
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.25 10:21
+     </div>
+     
+     <a href='https://github.com/ch38r18/blog/blob/main/20210125a%e8%af%bb%e6%87%82hexo%e6%ba%90%e7%a0%81.md' target="_blank">Github</a>
+     
+</section>
+
+<main>
+     <article class="markdown">
+          
+<h3 id="hexo定义"><a href="#hexo%e5%ae%9a%e4%b9%89">hexo定义</a></h3><ul>
+<li>是一个JS语言编写的静态网站生成器，</li>
+<li>主要作用是解析Markdown语法，并配合模板引擎，快速生成静态网站。</li>
+<li>同时，还可以自定义主题，引用第三方插件，</li>
+<li>除了搭建个人博客之外，Hexo还被许许多多的项目拿来生成API文档</li>
+</ul>
+
+<h3 id="框架特色"><a href="#%e6%a1%86%e6%9e%b6%e7%89%b9%e8%89%b2">框架特色</a></h3><ul>
+<li>Node.js运行环境，速度极快，扩展能力强，强大的插件系统，可配置性高，一键编译部署，</li>
+<li>适用于博客，静态个人网站，开源项目文档，</li>
+<li>最受欢迎的JS静态网站生成器。</li>
+</ul>
+
+<h3 id="hexo命令行设计"><a href="#hexo%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%ae%be%e8%ae%a1">Hexo命令行设计</a></h3><ul>
+<li>在命令行模块，Hexo选择使用minimist来解析命令行参数得到一个js对象，</li>
+<li>并建立一个Hexo实例并初始化，</li>
+<li>最后通过实例对象call方法传递命令行指令。</li>
+</ul>
+<pre><code>var args = minimist(process.argv.slice(2))
+var cmd = args._.shift()
+var hexo = new Hexo()
+hexo.init()
+hexo.call(cmd, args)
+</code></pre>
+<h3 id="hexo入口模块设计"><a href="#hexo%e5%85%a5%e5%8f%a3%e6%a8%a1%e5%9d%97%e8%ae%be%e8%ae%a1">Hexo入口模块设计</a></h3><ul>
+<li>同大多数框架相同，Hexo采用构造-原型组合模式定义类，采用组合继承的方式继承Node中EventEmitter模块，更容易得通过on与emit发布与订阅事件。</li>
+<li>在实例化阶段，保存所编译文件存放的路径、输出路径及其它脚本、插件、主题等所处的路径，保存环境变量，即命令行参数、版本号等基本信息。</li>
+<li>创建扩展对象，按不同的功能进行分类，作用是创建store，用于注册句柄，获取句柄，以便后续编译过程调用，</li>
+<li>在Hexo中，扩展类型包括</li>
+<li>控制台(Console)、</li>
+<li>部署器(Deployer)、</li>
+<li>过滤器(Filter)、</li>
+<li>生成器(Generator)、</li>
+<li>辅助函数(Helper)、</li>
+<li>处理器(Processor）、</li>
+<li>渲染引擎(Renderer)等等。</li>
+</ul>
+<pre><code>function Hexo(base, args) {
+  EventEmitter.call(this)
+  this.public_dir = path.join(base, 'public');
+  this.source_dir = path.join(base, 'source');
+  ...
+  this.extend = {
+    console: new extend.Console(),
+    generator: new extend.Generator(),
+    processor: new extend.Processor(),
+    renderer: new extend.Renderer(),
+    ...
+  }
+  ...
+}
+// 等同于Object.setPrototypeOf(Hexo.prototype, EventEmitter.prototype)
+require('util').inherits(Hexo, EventEmitter)
+</code></pre><ul>
+<li>换句话说，扩展对象是一个容器，一个事件注册机，</li>
+<li>接下来要做的是在Hexo初始化阶段，加载Hexo内置插件，不断扩充容器的功能，</li>
+<li>以渲染引擎为例，向extend.renderer注册渲染过程处理函数，在其它模块中就可以很方便得从hexo的上下文中去调用渲染引擎。</li>
+</ul>
+<pre><code>Hexo.prototype.init = function() {
+  
+  require('plugins/console')(this);
+  require('plugins/generator')(this);
+  require('plugins/processor')(this);
+  require('plugins/renderer')(this);
+  ...
+};
+</code></pre><pre><code>module.exports = function(hexo) {
+  var renderer = hexo.extend.renderer;
+  renderer.register('swig', 'html', require('./swig'));
+  renderer.register('ejs', 'html', require('./ejs'));
+  renderer.register('yml', 'json', require('./yaml'));
+};
+</code></pre><pre><code>module.exports = function(hexo) {
+  var renderer = hexo.extend.renderer;
+  return renderer.get('ejs');
+};
+</code></pre><ul>
+<li>除了加载内部插件外，Hexo还允许加载第三方插件，用npm的方式安装依赖包或者存放在目录scripts文件夹中，</li>
+<li>巧妙的是，插件内部无需引用hexo对象，可直接使用hexo变量来访问执行上下文，</li>
+<li>正是由于框架采用的是Node中vm(Virtual Machine)模块来加载js文件，相当于模板引擎实现原理中的new Function或eval来解析并执行字符串代码。</li>
+</ul>
+<pre><code>Hexo.prototype.loadPlugin = function(path) {
+  fs.readFile(path).then(function(script) {
+    script = '(function(hexo){' +
+      script + '});';
+
+    return vm.runInThisContext(script, path)(this);
+  });
+};
+</code></pre>
+<h3 id="hexo编译模块设计"><a href="#hexo%e7%bc%96%e8%af%91%e6%a8%a1%e5%9d%97%e8%ae%be%e8%ae%a1">Hexo编译模块设计</a></h3><ul>
+<li>预期用户命令行接口</li>
+</ul>
+<p><code>$ hexo generate复制代码</code></p>
+<ul>
+<li>首先往Hexo扩展对象Console中注册generate函数</li>
+</ul>
+<pre><code>console.register('generate', 'Generate static files.', {
+  options: [
+    {name: '-d, --deploy', desc: 'Deploy after generated'},
+    {name: '-f, --force', desc: 'Force regenerate'},
+    {name: '-w, --watch', desc: 'Watch file changes'}
+  ]
+}, require('./generate'));
+</code></pre><ul>
+<li>generate函数用于生成目标文件夹，</li>
+<li>从Hexo的路由模块中取得所有需要生成目标文件的路径，调用fs输出文件，</li>
+<li>在此之前，首先得对源文件进行预处理，把路径写入路由。</li>
+<li>由于Hexo本身设计的特点，源文件又分为内容和主题两部分，</li>
+<li>分别存放在source和theme文件夹中，所以得调用process函数分别对它们进行预处理。</li>
+</ul>
+<pre><code>function generate(hexo) {
+  hexo.source.process();
+  hexo.theme.process();
+  routerList.forEach(path =&gt; writeFile(path))
+}
+</code></pre><ul>
+<li>Hexo抽象出一层公用模块用来管理所有处理器，命名为Box，相当于一个容器，统一管理处理器的添加删除执行监控，并分别为source和theme创建实例，Box原型如下</li>
+</ul>
+<pre><code>function Box(base) {
+  this.base = base;
+  this.processors = [];
+}
+
+Box.prototype.addProcessor = function(pattern, fn) {
+  this.processors.push({
+    pattern: pattern,
+    process: fn
+  });
+};
+
+Box.prototype.process = function(callback) {
+  this.processors.forEach(processor =&gt; processor.process())
+};
+</code></pre><ul>
+<li>有了Box容器，接下来要做的就是往容器中添加处理器，同样，用插件的形式往扩展对象extend中注册句柄，再注入到Box容器中。</li>
+</ul>
+<pre><code>module.exports = function(hexo) {
+  var processor = hexo.extend.processor;
+  var obj = require('./asset')(hexo);
+  processor.register(obj.pattern, obj.process); 
+  ...
+};
+</code></pre><ul>
+<li>以markdwon文件的处理为例，成功匹配到文件扩展名后，调用hexo-front-matter利用正则表达式匹配来解析文件，分离顶部元数据与主题内容，类似于gray-matter，把元数据与内容以key/value的形式转换为一个js对象。</li>
+</ul>
+<pre><code>module.exports = function(hexo) {
+  return {
+    pattern: /\.md/,
+    process: function(path) {
+      readFile(path, function(err, content) {
+        var data = require('hexo-front-matter')(content)
+        data.source = path;
+        data.raw = content;
+        return data
+      }
+    }  
+  }
+}
+</code></pre><pre><code>// markdown文件
+---
+title: hello
+layout: home
+---
+
+A fast, simple &amp; powerful blog framework
+</code></pre><p>解析成 =&gt;</p>
+<pre><code>{
+  title: 'hello',
+  layout: 'home',
+  _content: '# Hexo\nA fast, simple &amp; powerful blog framework',
+  source: 'README.md',
+  raw: '---\ntitle: hello\n---\n# Hexo\nA fast, simple &amp; powerful blog framework' 
+}
+</code></pre><ul>
+<li>下一步，Hexo定义了过滤器(Filter)的概念，借鉴于Wordpress，用于在模板渲染前后修改具体的数据，也可把它看成一个钩子，例如使用marked编译markdown文件内容。</li>
+</ul>
+<pre><code>hexo.execFilter('before_generate', function(data) {
+    hexo.render.render({
+      text: data._content,
+      path: data.source,
+      engine: data.engine
+    });
+};
+</code></pre><ul>
+<li>转换后增加一条content属性，带有标签与类名的markdown html片段。</li>
+</ul>
+<pre><code>{
+  title: 'hello',
+  layout: 'home',
+  _content: '# Hexo\nA fast, simple &amp; powerful blog framework',
+  content: '&lt;h1 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot;     title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h1&gt;&lt;p&gt;A fast, simple &amp; powerful blog   framework&lt;/p&gt;\n',
+  source: 'README.md',
+  raw: '---\ntitle: hello\n---\n# Hexo\nA fast, simple &amp; powerful blog framework' 
+}
+</code></pre><ul>
+<li>得到页面数据后，进入模板引擎渲染阶段，Hexo本身并不带模板引擎的实现，需要借助第三方库，如ejs，并通过一个适配器，把原接口转换为需求接口，向扩展对象extend.render中注册模板解析函数。</li>
+</ul>
+<pre><code>hexo.extend.renderer.register('ejs', 'html', function(data, locals) {
+  require('ejs').render(data, locals))
+});
+</code></pre><ul>
+<li>模板引擎解析后的函数存储在hexo.theme对象中，以文件名作为key，后续渲染时只需匹配layout就能找到指定的渲染函数，注入locals变量(上面markdwon解析后的js对象+扩展对象extend.helper定义的变量、函数)，生成最终文本字符串。</li>
+</ul>
+<pre><code>var view = hexo.theme.getView(data.layout);
+view.render(locals)
+</code></pre><ul>
+<li>
+<p>最后通过Nodefs模块把最终文本字符串输出到public目标文件夹中，大功告成。</p>
+</li>
+<li>
+<p>回顾整个工作流程，可以看作
+cli =&gt; hexo init =&gt; plugin load =&gt; process =&gt; filter =&gt; render =&gt; generate</p>
+</li>
+</ul>
+
+<h3 id="扩展阅读"><a href="#%e6%89%a9%e5%b1%95%e9%98%85%e8%af%bb">扩展阅读</a></h3><p>此外，Hexo还有许多优秀的设计模式</p>
+<p><strong>数据库系统</strong></p>
+<p>Hexo引入了json数据库warehouse，也是作者自己开发的一个数据库驱动，API用法与Mongoose相差无几，在架构中的角色是充当一个中介者，存储临时数据，或者持久化数据存储，如博客的发表时间等，还可以作为缓存层，比对文件的修改时间，跳过无修改文件的编译过程，减少二次编译的时间。</p>
+<p><strong>异步方案</strong></p>
+<p>大量的异步回调文件操作会让代码丧失可读性，Hexo引入Promise库bluebird，内置丰富的API，很方便的处理异步的流程控制，如使用Promise.promisify(require(&lsquo;fs&rsquo;).readFile)可以把原生fs异步函数包装成一个Promise对象，另外，随着Node7.6的正式版发布，直接支持async/await语法，可以更优雅得处理异步问题。</p>
+<p><strong>通用日志模块</strong></p>
+<p>把Log划分为六个级别，&lsquo;TRACE&rsquo;, &lsquo;DEBUG&rsquo;, &lsquo;INFO &lsquo;, &lsquo;WARN &lsquo;,&lsquo;ERROR&rsquo;,&lsquo;FATAL&rsquo;，不同级别输出不同的格式与颜色(chalk)，并提供命令行接口，如果带有&ndash;debug字段，则Log自动降级为&rsquo;TRACE&rsquo;级别。</p>
+<p><strong>End.</strong></p>
+
+     </article>
+
+     <aside>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#hexo定义">hexo定义</a></li>
+        <li><a href="#框架特色">框架特色</a></li>
+        <li><a href="#hexo命令行设计">Hexo命令行设计</a></li>
+        <li><a href="#hexo入口模块设计">Hexo入口模块设计</a></li>
+        <li><a href="#hexo编译模块设计">Hexo编译模块设计</a></li>
+        <li><a href="#扩展阅读">扩展阅读</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+     </aside>
+</main>
+
+
+
+
+    <div id="searchBox">
+        <input id="searchInput" tabindex="0" autocomplete="off">
+        <ul id="searchResults">
+        </ul>
+    </div>
+
+</body>
+
+</html>

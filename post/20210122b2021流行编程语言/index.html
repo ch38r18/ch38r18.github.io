@@ -1,0 +1,969 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content='chr�Ĳ���' />
+    <title>
+        
+2021流行编程语言
+
+        
+    </title>
+    <link rel="stylesheet" href='/css/markdown.css'>
+    <script src='/js/fuse.js' defer></script>
+    <script src='/js/search.js' defer></script>
+
+    <script>
+        function addLoadEvent(callback) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    callback();
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript" async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                    processEscapes: true,
+                    processEnvironments: true,
+                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    TeX: {
+                        equationNumbers: { autoNumber: "AMS" },
+                        extensions: ["AMSmath.js", "AMSsymbols.js"]
+                    }
+                }
+            });
+        </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3J4FRK59"></script>
+    
+    <style>
+        :root {
+            --black: #121314;
+            --primary: #1a73e8;
+            --red: #ea4335;
+            --light-gray: #eeeeee;
+            --dark-gray: #828282;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+        }
+
+         
+        ::-webkit-scrollbar-track {
+            background-color: var(--light-gray);
+        }
+
+         
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+        }
+
+         
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        body {
+            max-width: 800px;
+            margin: calc(5vw + 40px) auto;
+            padding: 0 20px;
+            color: var(--black);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+            position: relative;
+            width: calc(100% - 100px);
+        }
+
+        .left:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .left nav ol {
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .left nav ol li {
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .left nav ol li .dropdown-container {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 2;
+            font-size: 90%;
+            display: none;
+            min-width: 100%;
+            background-color: white;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .left nav ol li:hover .dropdown-container {
+                display: block;
+            }
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner {
+            border: 1px solid var(--black);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: -3px;
+            width: 0px;
+            height: 0px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--black);
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 9px;
+            top: -0.5px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner .dropdown a {
+            display: block;
+        }
+
+        .left nav ol li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 60%;
+            transform: translateY(-50%) rotate(20deg);
+            width: 2px;
+            height: 80%;
+            background-color: var(--light-gray);
+        }
+
+        .left nav ol li a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1px 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .left nav ol li:not(:last-child) a {
+                display: block;
+                width: 36px;
+                text-overflow: clip;
+            }
+        }
+
+        .left nav ol li a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            width: 100px;
+            justify-content: flex-end;
+        }
+
+        .right #searchIcon,
+        .right #github img {
+            margin: 0 8px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        #searchBox {
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            top: calc(5vw + 40px);
+            transform: translateX(-50%);
+            display: inline-block;
+            width: 600px;
+            background-color: white;
+            border: 2px solid var(--black);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        @media (max-width: 600px) {
+            #searchBox {
+                width: calc(100vw - 50px);
+            }
+        }
+
+        #searchBox input {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        #searchBox ul {
+            visibility: hidden;
+        }
+
+        #searchBox ul[style*="visibility: visible;"] {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        #searchBox ul li {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        #searchBox ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            display: block;
+            font-size: 15px;
+        }
+
+        #searchBox ul li a .title {
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        #searchBox ul li a:hover,
+        #searchBox ul li a:focus {
+            outline: 0;
+            background-color: var(--light-gray);
+        }
+
+        #searchBox ul li a .highlight-container {
+            color: var(--dark-gray);
+            font-size: 75%;
+            line-height: 1.5;
+        }
+
+        #searchBox ul li a .highlight-container .highlight {
+            color: var(--red);
+        }
+    </style>
+
+    
+<style>
+     h1 {
+          margin-bottom: 10px;
+     }
+
+     section {
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
+     }
+
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
+     }
+
+     section a {
+          color: var(--primary);
+          text-decoration: none;
+          margin-left: 10px;
+     }
+
+     main {
+          position: relative;
+     }
+
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
+          font-weight: normal;
+          font-size: 90%;
+     }
+</style>
+
+
+    
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
+
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <nav>
+  <ol>
+    
+
+
+
+
+
+<li>
+  <a href="/">
+    <span>
+      
+主页
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/about-me/">
+          <span>
+about me
+</span>
+        </a>
+        
+        <a href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+          <span>
+正则表达式
+</span>
+        </a>
+        
+        <a href="/%E6%B8%85%E5%8D%95/">
+          <span>
+清单
+</span>
+        </a>
+        
+        <a href="/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">
+          <span>
+小狼毫输入法
+</span>
+        </a>
+        
+        <a href="/termux/">
+          <span>
+termux
+</span>
+        </a>
+        
+        <a href="/post/">
+          <span>
+Post
+</span>
+        </a>
+        
+        <a href="/%E6%91%98%E5%BD%95/">
+          <span>
+摘录
+</span>
+        </a>
+        
+        <a href="/hexo/">
+          <span>
+hexo
+</span>
+        </a>
+        
+        <a href="/hugo/">
+          <span>
+hugo
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/post/">
+    <span>
+      
+Post
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/post/20200609%E7%9F%A5%E9%81%93github%E4%BA%86/">
+          <span>
+20200609知道github了
+</span>
+        </a>
+        
+        <a href="/post/20200611githubpages%E5%BC%80%E5%A7%8B/">
+          <span>
+github pages 开始
+</span>
+        </a>
+        
+        <a href="/post/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/">
+          <span>
+安卓修复锂电池
+</span>
+        </a>
+        
+        <a href="/post/20210122a%E5%85%B3%E4%BA%8Eobsidian/">
+          <span>
+关于Obsidian知识循环利器
+</span>
+        </a>
+        
+        <a href="/post/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+          <span>
+2021流行编程语言
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/post/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+    <span>
+      
+2021流行编程语言
+
+    </span>
+  </a>
+  
+</li>
+
+  </ol>
+</nav>
+
+        </div>
+
+        
+        <div class="right">
+            <img id="searchIcon" src='/image/search.png' alt="search">
+            <a id="github" href="https://github.com/ch38r18/blog" target="_blank">
+                <img src='/image/github.png' alt="github">
+            </a>
+            
+        </div>
+    </header>
+
+    
+<h1>
+     
+2021流行编程语言
+
+</h1>
+
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.22 09:01
+     </div>
+     
+     <a href='https://github.com/ch38r18/blog/blob/main/20210122b2021%e6%b5%81%e8%a1%8c%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80.md' target="_blank">Github</a>
+     
+</section>
+
+<main>
+     <article class="markdown">
+          
+<h3 id="2021-年这-8-种编程语言最流行go-入榜原来是这个原因"><a href="#2021-%e5%b9%b4%e8%bf%99-8-%e7%a7%8d%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%e6%9c%80%e6%b5%81%e8%a1%8cgo-%e5%85%a5%e6%a6%9c%e5%8e%9f%e6%9d%a5%e6%98%af%e8%bf%99%e4%b8%aa%e5%8e%9f%e5%9b%a0">2021 年这 8 种编程语言最流行：Go 入榜原来是这个原因</a></h3><p>怎样判断哪种编程语言最流行？正如要挑选最受欢迎的冰激凌一样，每个人都有自己的最爱。实际上，由于各种原因，不同的开发人员喜欢不同的编程语言，当你认为一种编程语言可能占主导地位时，一种新的编程语言出现了，或者一种老的语言与新的应用联系起来了。</p>
+<p>2021 年最流行的编程语言将基于相关开发人员想要完成的任务以及他们已经学习或完成的工作。对希望获得加薪[1]的有经验的程序员来说，最流行的编程语言将不同于那些刚开始工作的程序员，这些人在参加了编程训练营后想要从事初级编程工作[2]。</p>
+<p>有这么多不断变化的语言，很难知道该从何处入手，尤其是开源语言一直在变化，新的包和框架不断涌现。无论你的兴趣或需求是什么，如果你想了解 2021 年最流行的编程语言，你可以从本文这个列表中找到它们。</p>
+
+<h3 id="01-最流行的初学者编程语言python"><a href="#01-%e6%9c%80%e6%b5%81%e8%a1%8c%e7%9a%84%e5%88%9d%e5%ad%a6%e8%80%85%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80python">01 最流行的初学者编程语言：Python</a></h3><p>无论你查看什么榜单，Python 几乎都被列为最受初学者欢迎的编程语言：在 Qvault 关于初学者最佳编程语言[3]的帖子，GitHub 的排名[4]，Stack Overflow 的开发者调查[5]，甚至是大学教授计算机科学专业的最热门语言[6]，都是如此。</p>
+<p>来源：https://pypl.github.io/PYPL.html</p>
+<p>它不像 Rust 那样快速发展，也不像 JavaScript 那样老掉牙。但它是一种不可阻挡的编程语言。它已经有 30 年的历史了，它在使用和流行方面都经历了稳步的增长，足以使它成为几乎所有排行榜的榜首。
+为什么如此流行？</p>
+<p>Python 的伟大之处在于它是根据开发者的经验编写的。从实践来看，这意味着它读起来就像英语一样：特别是对于没有编程背景的人来说，学习起来更容易。</p>
+<p>同时，它也能非常快速地构建任何东西的基本原型，这使得初学者能够在短短几分钟内编写出具有良好教程的函数代码，从而极大地增强了他们的能力，也使他们得到了回报。</p>
+<p>最后，它具有广泛的通用性。无论你的需求是数据科学，机器学习还是 Web 开发，你都可以通过 Python 来完成。</p>
+<p>总之，Python 的语法，易用性和通用性使其成为最受初学者欢迎的编程语言。
+初学者学习 Python 的最佳方法</p>
+<p>Python 是最受初学者欢迎的编程语言，因为它为全新的开发者提供了强大的支持网络。你可以使用 Python.org[7] 上面向初学者的免费教程开始编程。</p>
+<p>你还应该利用 Python 用户和爱好者组成的丰富而富有支持性的在线社区。大部分 Python 支持者会记得自己学习 Python 的时光，并乐意向初学者伸出援手。浏览 Reddit 论坛上的 Python 版块[8]，在 Stack Overflow 上阅读和发布 Python 问题[9]，看看是否能在 Discord 小组或 Slack 频道上找到编程伙伴。</p>
+
+<h3 id="02-对不想从事编程工作的人来说最流行的编程语言是-r"><a href="#02-%e5%af%b9%e4%b8%8d%e6%83%b3%e4%bb%8e%e4%ba%8b%e7%bc%96%e7%a8%8b%e5%b7%a5%e4%bd%9c%e7%9a%84%e4%ba%ba%e6%9d%a5%e8%af%b4%e6%9c%80%e6%b5%81%e8%a1%8c%e7%9a%84%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%e6%98%af-r">02 对不想从事编程工作的人来说，最流行的编程语言是 R</a></h3><p>当我担任客户成功经理时，我的工作完全不涉及编程。但是，我仍然发现能够在 R 中进行分析，查看保留率、流失率、交流量等等，这是非常有用的。R 是另一种开源编程语言，尽管没有 Python 那么流行，但在数据科学界仍然非常活跃，深受人们欢迎。</p>
+<p>若要找一份非编程的工作，R 是最流行的编程语言。它正在取代 SQL 和 SAS 这些闭源的付费语言。由于企业既想降低成本，又想雇佣无论日常工作中是否编程，都能进行分析的人，他们都在转向 R。</p>
+<p><strong>为什么这么流行？</strong></p>
+<p>Datacamp[11] 在其 R 与 Python 教程中，如此写道，R 被“没有计算机编程技能的统计学家、工程师和科学家所使用。它在学术界、金融、制药、媒体和市场营销中都很流行”。</p>
+<p>对于那些出于某些非常正当理由而不在工作中进行编程的人来说，R 是最流行的编程语言。首先，它是开源的。和 Python 一样，无需支付任何费用。</p>
+<p>R 还提供了集成的开发编辑器 RStudio[12]，使其更容易使用。R 有一个强大的开源软件包生态系统，使任何人都可以非常简单地用几行代码运行统计分析，并以几行代码创建出一个可供发布的图形。
+非程序员学习 R 的最佳方法</p>
+<p>尤其是对于那些没有或不想从事编程工作的人来说，我认为最好是找一个你真正关心的项[13]目，然后设定一个明确的目标。你没有工作的必要——至少现在你可以不知道如何编程。</p>
+<p>你之前没有任何编程经验，所以学习曲线会非常陡峭。你需要一些你深深热爱的东西。只有这样才能让你克服令人沮丧的障碍、知识空白和用户错误，这也是每个编程初学者都需要经历的一次旅程。</p>
+
+<h3 id="03-最流行的涨薪编程语言perl"><a href="#03-%e6%9c%80%e6%b5%81%e8%a1%8c%e7%9a%84%e6%b6%a8%e8%96%aa%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80perl">03 最流行的涨薪编程语言：Perl</a></h3><p>根据 Stack Overflows 的调查[14]，Perl 是榜单上最矛盾的语言之一，因为它是全球薪资最高的语言（年薪中位数为 7.5 万美元），但也是最令人恐惧的语言（71.4%）。但是如果你想要在编程工作中获得更高的收入，没有比这更流行的编程语言了。它是更流行的 PHP 的前身，同时也是一门有点火爆的垃圾堆语言，因此而闻名。</p>
+<p>博客 Some Dude Says[15] 在其博文《2020 年的 Perl，它还值得学习吗？》（Perl in 2020: Is It Still Worth Learning?）说，“Perl 试图为太多的人提供太多的东西。糟糕的代码片段飘来飘去，而且在很多项目中，未经深思熟虑就被拉进来。一个又一个的脚本小子拼凑出他们可憎的东西，并让它们在世界范围内散播。他们把源码扔到网上，让全世界也能免费看到。书里满是垃圾，而且即使是早已过时的书也要重印。”</p>
+<p>尽管很多开发者不喜欢它，但很多雇主发现它是一种非常有用的编程语言，可以用于新的项目，也可以用于维护现有的基础结构和项目。正因为如此，它仍然是最流行的涨薪编程语言。
+为什么如此流行？</p>
+<p>Opensource.com 将亚马逊、波音、BBC 和 Northrop Grumman 列为寻找 Perl 开发人员的大公司的一员。它是一种很受雇主欢迎的编程语言。与 R 和 Python 一样，它也是开源的，这意味着低成本和低风险的使用。许多用户（例如，在 Reddit 论坛的 Perl 子版块[16]上）都说它是一种范围广泛，但功能有限的语言，使得它既简单又实用。</p>
+<p>人们对其不满的主要原因，可能是上面那篇博文中所列举的各种因素的遗留，开源的本质让这门语言失望了，并使其良好的名声陷入了泥潭。</p>
+<p>但是，随着 Perl 的最新版本修复了很多用户体验问题，以及即将发布的 Perl 7, Perl 的流行度可能会再次缓慢攀升，尤其是鉴于 Perl 在雇主中需求很大，尽管 Perl 作为一门编程语言存在诸多缺陷，但雇主认为它是一种出色的技能，这使得它在这个最流行的编程语言榜单上占有一席之地。
+希望加薪的开发人员学习 Perl 的最佳方法</p>
+<p>learn.perl.org[17] 网站可能是开始学习 Perl 最好的地方。与 R 和 Python 不同，很多用户都是从 Google 搜索和复制粘贴代码块中学习的，最好远离 Stack Overflow 这样的地方，因为那里可能有糟糕的代码片段。Modern Perl[18] 也是一个相对较新的文档，可以避免许多过时的、固执己见的教程，而 Perl Cookbook[19] 则是经过实践检验的资源。</p>
+
+<h3 id="04-ios-上最流行的移动应用开发编程语言swift"><a href="#04-ios-%e4%b8%8a%e6%9c%80%e6%b5%81%e8%a1%8c%e7%9a%84%e7%a7%bb%e5%8a%a8%e5%ba%94%e7%94%a8%e5%bc%80%e5%8f%91%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80swift">04 iOS 上最流行的移动应用开发编程语言：Swift</a></h3><p>R、Python 和 Perl 都是上个世纪开发的。而 Swift 则是 2014 年才被特别地开发成苹果的编程语言。顾名思义（译注：swift 即迅速的意思，也是一种鸟类雨燕的名词），它以快速构建 iOS 应用而著称，迅速超越了最初为此而生的 Objective-C。</p>
+<p>苹果官网自称[20] Swift 比 Objective-C 快 2.6 倍，比 Python 快 8.4 倍。尽管它是一门年轻的语言，但在 Stack Overflow 的 2020 年开发者调查中，它是最流行的第 9 种语言。要编写 iOS 应用，没有其他最流行的编程语言[21]。
+为什么如此流行？</p>
+<p>在 Dummies.com[22] 上写道：“开发 iOS 应用可能是你多年来职业生涯中最有趣的事情，投入的时间和金钱都很少（与 Windows 等平台的开发相比）。”对于那些想写代码的人来说，开发应用是展示你的技能，甚至可以从中赚点钱的好方法。</p>
+<p>与 Android 应用相比，iOS 拥有更强大的开发者程序，并且处理了在商店中创建和托管应用程序所面临的许多棘手问题。开发 iOS 应用的速度也比 Android 更快[23]。</p>
+<p>基于这些原因，对于那些想要开发 iOS 移动应用的人来说，Swift 是最流行的编程语言。
+应用程序开发者学习 Swift 的最佳方法</p>
+<p>显然，苹果在帮助开发者学习 Swift 方面有着既得利益，所以它是开源的。苹果公司居然开发了一款名为 Swift Playground[24] 的应用，该应用旨在帮助初级编程者学习 Swift 的基础知识，同时还提供其他一些资源[25]来帮助用户学习。如果你的编程水平比较高，或者想业余时间学习 Swift。</p>
+<p>之后，最好的方法就是干脆脚踏实地，用 Swift 设计你的第一个应用[26]。</p>
+
+<h3 id="05-横向思维者中最流行的编程语言ruby"><a href="#05-%e6%a8%aa%e5%90%91%e6%80%9d%e7%bb%b4%e8%80%85%e4%b8%ad%e6%9c%80%e6%b5%81%e8%a1%8c%e7%9a%84%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80ruby">05 横向思维者中最流行的编程语言：Ruby</a></h3><p>Ruby 是最受初创企业欢迎的编程语言[27]之一——这是一种有不止一种方式的语言，其非常简单的语法使得许多初创企业具有“快速行动，打破常规”的风气，而这种风气也受到了横向思维者的青睐。</p>
+<p>Ruby on Rails 是一个运行 Ruby 的全栈 Web 应用框架，而且由于它很容易在很短的时间内构建 Web 应用，所以很受欢迎。
+为什么如此流行？</p>
+<p>对于许多初学者来说，使用像 Python 这样的语言工作可能会感到一些局限性[28]，因为在这种语言中，通常只有一种方法来完成工作。Ruby 简单的语法允许灵活的方法，这对于那些正在学习第二种编程语言的人来说是个福音，对于那些更喜欢从另一个角度思考问题的人来说也是个福音。这使得 Ruby 在 2021 年最流行的编程语言榜单中名列前茅。
+横向思维者学习 Ruby 的最佳方法</p>
+<p>由于 Ruby 的动态性，因此没有一种单一的学习方法。尽管理解诸如变量、数据结构和条件语句等核心编程概念非常重要，但 Ruby 和 Ruby on Rails 的简单性意味着，一旦你掌握了基础知识，下一步应该是尝试构建一个自己的简单的 Web 应用。</p>
+
+<h3 id="06-最流行的移动应用和-web-开发编程语言javascript"><a href="#06-%e6%9c%80%e6%b5%81%e8%a1%8c%e7%9a%84%e7%a7%bb%e5%8a%a8%e5%ba%94%e7%94%a8%e5%92%8c-web-%e5%bc%80%e5%8f%91%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80javascript">06 最流行的移动应用和 Web 开发编程语言：JavaScript</a></h3><p>JavaScript 是最流行的 Web 编程语言，负责交互式网站。它开发于 1995 年，作为当今最主要的客户端脚本语言，95% 的网站[29]都在使用 JavaScript。随着 Node.js 的开发，很多人也开始将 JavaScript 用于服务器端。它与 CSS 和 HTML 一起，构建了你随时访问万维网时看到的东西。</p>
+<p>根据 Stack Overflow 的 2020 年开发者调查，它已经连续八年成为使用最多的语言[30]。对任何开发人员来说，只要网站存在，JavaScript 就会有用。显然，这对任何 Web 开发人员都是必须掌握的。即便你不想成为一个 Web 开发人员，建立自己网站的能力（现在常常用来制作简历和作品集）也是一 个吸引人的技巧，值得展示。
+为什么如此流行？</p>
+<p>对于 Web 开发和移动应用来说，JavaScript 是最流行的编程语言，这一点是非常了不起的，因为它是作为对第一次浏览器战争的回应而在短短十天内创建[31]的。</p>
+<p>它之所以如此流行，是因为它无处不在，但要了解它为什么无处不在也很好。首先，它可以用于几乎所有的前端和后端 Web 开发，但也有一些框架的开发使它更进一步。例如，JavaScript 也用于 Slack 和 Skype 这样的桌面应用，它们使用 Electron.js[32]。Vue.js[33]、Angular.js[34] 和 React.js[35] 是独立的 JavaScript 网络框架，用于构建用户界面，分别由谷歌前员工 Evan You、谷歌和 Facebook 开发。</p>
+<p>它也是标准化的，这意味着经常有新版本的更新和发布。无论你的编程生涯处于什么阶段，这门语言都能为你提供一些东西。
+Web 开发人员学习 JavaScript 的最佳方法</p>
+<p>如果你搜索“学习 JavaScript”，很容易被大量的信息、教程和指南所淹没。甚至很难知道你需要哪些框架和库。这就是为什么我推荐一种分层次的方法，使你能够系统地、持续地学习 Web 开发人员最流行的编程语言。一些例子包括《Node.js 开发实战》（JS: The Right Way[36]），以及 Qvault 的《编程基础入门》（Basic Intro to Coding[37]）。</p>
+
+<h3 id="07-能快速涨薪的最流行编程语言go"><a href="#07-%e8%83%bd%e5%bf%ab%e9%80%9f%e6%b6%a8%e8%96%aa%e7%9a%84%e6%9c%80%e6%b5%81%e8%a1%8c%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80go">07 能快速涨薪的最流行编程语言：Go</a></h3><p>Go 是由 Google 开发的，受到了编程语言巨头 C 的影响，但它是为了避免 C++ 的缺陷，而 C++ 被 Go 开发人员普遍鄙视[38]。其目的是创建一种适合在庞大代码库时代使用的语言。现在它已经被几家大公司使用[39]，谷歌显然是其中之一，但 Uber、Twitch 和 Dropbox 也在其中。</p>
+<p>在 Stack Overflows 的开发者调查中，它在最流行的语言排行榜[40]上排名第三（17.9%），同时也是全球最高的薪资中位数[41]（7.4 万美元）。
+为什么如此流行？</p>
+<p>它是最流行的编程语言，对于想要快速提高收入的开发人员来说，有几个原因。首先，它是一门为大型项目而生的语言。例如，与 Ruby 不同，Ruby 的构建速度快，但是很难扩展，而 Go 是谷歌为帮助他们更快地处理大型项目和任务而有意创建的。谷歌为了减少阅读和调试代码所需的时间，专门创建了 Go，以便使这些任务变得可行。这样，它就成了许多旨在实现该规模项目的大公司的吸引力语言。</p>
+<p>它还被誉为比 Perl 更快、也更容易学习，在最高薪资排行榜上名列前茅。Perl 拥有数十年的历史和意见，而 Go 是 2009 年才创建的，它的语法更简洁，也更现代。数据工程师 Samuel Jones 在使用 Go 构建了一个 API[42] 之后，发表了一篇关于 Go 的评论，他认为，Go 不像很多词汇表臃肿的编程语言，它小到足以“装进你的大脑”。这样可以减少在线和参考书中搜索答案和语法的时间。</p>
+<p>仅仅通过阅读来学习 Go 也是可能的，因为它的语法非常清晰，即使是不熟悉它的人，甚至是不懂编程的人，也能阅读代码，并理解它所发生的一切。
+希望快速涨薪的程序员学习 Go 的最佳方法</p>
+<p>作为谷歌为互联网打造的一门语言，可想而知会有几个免费的网络资源可以帮助你踏上学习之路。首先，有几个资源都值得推荐：《Go 语言之旅》（A Tour of Go[43]），在那里你可以学习使用 Go。它是交互式的，你可以在网站本身运行自己的代码片段。它被划分为不同的模块，这样就可以很容易地跟踪你所在的位置，并在必要时进行回溯。</p>
+<p>一旦你掌握了基础知识，其他一些很棒的资源，包括《实例学习 Go 语言》（Go By Example[44]）和《精通 Go》（Go Mastery[45]），在这些资源中，你将学会如何发现代码的实例，用于典型或常见的任务。</p>
+
+<h3 id="08-2022-年最流行的编程语言rust"><a href="#08-2022-%e5%b9%b4%e6%9c%80%e6%b5%81%e8%a1%8c%e7%9a%84%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80rust">08 2022 年最流行的编程语言：Rust</a></h3><p>根据 2020 年 Stack Overflow 的开发者调查[46]，Rust 连续五年成为最流行的语言，并且是排名第五的最想使用的语言（14.6%）。那么，为什么尽管它客观上是最受欢迎的编程语言，却没有排在榜首呢？因为根据同一份调查，97% 的调查对象[47]从未使用过 Rust。它的未来也不明朗。</p>
+<p>Mozilla 在 2009 年赞助了 Rust 的开发，并在 2010 年宣布 Rust[48]。它被视为其他系统编程语言[49]（例如 C 或 C++）的替代方案，根据它的<a href="https://en.wikipedia.org/wiki/Rust_(programming_language" title="维基百科词条">维基百科词条</a>#cite_ref-30)，它是一种用于高度并发和高度安全系统的语言。这对于开发人员来说，意味着他们能够快速高效地编写安全的代码。</p>
+<p>但由于新冠肺炎疫情，Mozilla 裁掉了 Rust 团队的大部分人员[50]，专注于商业产品。虽然他们已经宣布，将会成立一个基金会，以掌握未来的所有权和 Rust 的成本，但目前还没有确定运作方式。
+为什么如此流行？</p>
+<p>假设 Rust 能够克服当前的困难，我预期它将会逐年变得更加流行。它拥有一个由当前开发人员组成的专用粉丝群，越来越多的开发人员对学习它感兴趣。虽然它可能不会在 2021 年的排行榜上名列前茅，但我相信，它有望成为 2022 年或以后最流行的编程语言。</p>
+<p>在易于学习方面，许多开发人员[51]将它与 C++ 进行了比较。对许多开发人员来说，安全代码的优先级可能是令人沮丧的，因为他们在输入代码时只会得到令人恼火的错误信息，但这可能是一种转变，从“快速行动，打破陈规”的心态，更多地转向更安全、结构更合理的代码库。</p>
+<p>它既可以应用于长期以来的开发必需品，也可以应用于更多未来主义的事业。Mozilla[52] 关于它的网页描述了它的应用范围：“游戏引擎、操作系统、文件系统、浏览器组件和虚拟现实的模拟引擎。”</p>
+<p>由于这些原因，Rust 可能是未来最流行的编程语言。
+2022 年最流行的编程语言学习 Rust 的最佳方法</p>
+<p>由于 Rust 非常注重安全和结构，开发人员会花费很多时间和资源来确保错误信息是用户友好的，这与许多其他编程语言不同。这使得初学者学习起来特别有意义，因为他们在犯错误的时候很容易就能改正。</p>
+<p>Rust 网站[53]提供了三种尝试的途径：阅读名为“The Book[54]”的书，通过小项目尝试 Rustlings Course[55]，以帮助入门和运行，以及《实例学 Rust》（Rust By Example[56]），它阐明了支撑 Rust 的概念和库。所有这些资源都是免费的。</p>
+<p>正如 Reddit 论坛[57]上的一个网友所指出的那样，这是一门相对较新的语言，因为很多问题的答案，还没有在 Stack Overflow 这样的地方发布和回答。出于这一原因，他们建议加入 Discord 频道，以此作为获得导师和支持性社区学习 Rust 的途径。
+总结</p>
+<p>正如你从这个列表所看到的，现在有很多编程语言可供选择，其中很多都是最近才出现的。尽管一些语言在客观上比另一些语言更适合于特定的任务，但是大多数语言对某些人是有益的。如果你想学习 2021 年最流行的编程语言，你首先要决定你想从学习编程语言中得到什么。</p>
+<p>不管你坐在哪里，保持对趋势的关注，并确保你的编程游戏处于领先地位，这总归是一件好事。超过 70%[58] 的专业水平的开发人员每年至少学习一次新的编程技能。为什么不从 2021 年开始，使用一种 2021 年最流行的编程语言，优先考虑你未来的技能呢？这个列表将帮助你选择一个或多个来开始学习之旅。</p>
+<p><strong>原文作者：Zulie Rane</strong></p>
+<p>原文链接</p>
+<pre><code>https://towardsdatascience.com/the-8-most-popular-coding-languages-of-2021-b3dccb004635
+</code></pre>
+<h3 id="参考资料"><a href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99">参考资料</a></h3><p>[1]</p>
+<p>希望获得加薪: <a href="https://qvault.io/2020/12/09/highest-paying-computer-science-jobs/">https://qvault.io/2020/12/09/highest-paying-computer-science-jobs/</a>
+[2]</p>
+<p>从事初级编程工作: <a href="https://qvault.io/2020/11/19/getting-a-job-after-coding-bootcamp-is-hard/">https://qvault.io/2020/11/19/getting-a-job-after-coding-bootcamp-is-hard/</a>
+[3]</p>
+<p>初学者最佳编程语言: <a href="https://qvault.io/2020/10/07/top-4-coding-languages-to-learn-for-beginners-2020/">https://qvault.io/2020/10/07/top-4-coding-languages-to-learn-for-beginners-2020/</a>
+[4]</p>
+<p>GitHub 的排名: <a href="https://pypl.github.io/PYPL.html">https://pypl.github.io/PYPL.html</a>
+[5]</p>
+<p>Stack Overflow 的开发者调查: <a href="https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-wanted">https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-wanted</a>
+[6]</p>
+<p>最热门语言: <a href="https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities/fulltext">https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities/fulltext</a>
+[7]</p>
+<p>Python.org: <a href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a>
+[8]</p>
+<p>Python 版块: <a href="https://www.reddit.com/r/Python/">https://www.reddit.com/r/Python/</a>
+[9]</p>
+<p>Python 问题: <a href="https://stackoverflow.com/questions/tagged/python">https://stackoverflow.com/questions/tagged/python</a>
+[10]</p>
+<p>Ning: <a href="https://st1.ning.com/topology/rest/1.0/file/get/3840441960?profile=original">https://st1.ning.com/topology/rest/1.0/file/get/3840441960?profile=original</a>
+[11]</p>
+<p>Datacamp: <a href="https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R.pdf">https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R.pdf</a>
+[12]</p>
+<p>开发编辑器 RStudio: <a href="https://rstudio.com/products/rstudio/download/">https://rstudio.com/products/rstudio/download/</a>
+[13]</p>
+<p>你真正关心的项: <a href="https://towardsdatascience.com/the-fastest-way-to-learn-to-code-be-invested-in-your-numbers-ccb24d55d856">https://towardsdatascience.com/the-fastest-way-to-learn-to-code-be-invested-in-your-numbers-ccb24d55d856</a>
+[14]</p>
+<p>Stack Overflows 的调查: <a href="https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages">https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages</a>
+[15]</p>
+<p>博客 Some Dude Says: <a href="https://somedudesays.com/2020/02/perl-in-2020-is-it-still-worth-learning/">https://somedudesays.com/2020/02/perl-in-2020-is-it-still-worth-learning/</a>
+[16]</p>
+<p>Perl 子版块: <a href="https://www.reddit.com/r/perl/comments/5g25ak/why_should_i_learn_perl_6/">https://www.reddit.com/r/perl/comments/5g25ak/why_should_i_learn_perl_6/</a>
+[17]</p>
+<p>learn.perl.org: <a href="https://learn.perl.org/books/beginning-perl/">https://learn.perl.org/books/beginning-perl/</a>
+[18]</p>
+<p>Modern Perl: <a href="http://onyxneon.com/books/modern_perl/modern_perl_a4.pdf">http://onyxneon.com/books/modern_perl/modern_perl_a4.pdf</a>
+[19]</p>
+<p>Perl Cookbook: <a href="http://rgonzo.us/shiny/books/perlcookbook.pdf">http://rgonzo.us/shiny/books/perlcookbook.pdf</a>
+[20]</p>
+<p>苹果官网自称: <a href="https://www.apple.com/swift/">https://www.apple.com/swift/</a>
+[21]</p>
+<p>最流行的编程语言: <a href="https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages">https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages</a>
+[22]</p>
+<p>Dummies.com: <a href="https://www.dummies.com/web-design-development/mobile-apps/why-develop-ios-applications/">https://www.dummies.com/web-design-development/mobile-apps/why-develop-ios-applications/</a>
+[23]</p>
+<p>更快: <a href="https://infinum.com/the-capsized-eight/android-development-is-30-percent-more-expensive-than-ios">https://infinum.com/the-capsized-eight/android-development-is-30-percent-more-expensive-than-ios</a>
+[24]</p>
+<p>Swift Playground: <a href="https://www.apple.com/swift/playgrounds/">https://www.apple.com/swift/playgrounds/</a>
+[25]</p>
+<p>其他一些资源: <a href="https://swift.org/getting-started/">https://swift.org/getting-started/</a>
+[26]</p>
+<p>用 Swift 设计你的第一个应用: <a href="https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/">https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/</a>
+[27]</p>
+<p>初创企业欢迎的编程语言: <a href="https://stackify.com/popular-programming-languages-2018/#:~:text=Ruby%20is%20one%20of%20the%20most%20popular%20languages%20among%20tech%20startups.&amp;text=First%2C%20Ruby%20has%20an%20incredibly,time%20than%20in%20other%20frameworks">https://stackify.com/popular-programming-languages-2018/#:~:text=Ruby%20is%20one%20of%20the%20most%20popular%20languages%20among%20tech%20startups.&amp;text=First%2C%20Ruby%20has%20an%20incredibly,time%20than%20in%20other%20frameworks</a>.
+[28]</p>
+<p>局限性: <a href="http://wiki.c2.com/?PythonVsRuby">http://wiki.c2.com/?PythonVsRuby</a>
+[29]</p>
+<p>95% 的网站: <a href="https://w3techs.com/technologies/details/cp-javascript/">https://w3techs.com/technologies/details/cp-javascript/</a>
+[30]</p>
+<p>使用最多的语言: <a href="https://insights.stackoverflow.com/survey/2020#most-popular-technologies">https://insights.stackoverflow.com/survey/2020#most-popular-technologies</a>
+[31]</p>
+<p>短短十天内创建: <a href="https://news.codecademy.com/javascript-history-popularity/#:~:text=Server%2Dside%20JavaScript%20gained%20popularity,languages%20to%20communicate%20with%20databases.&amp;text=JS%2C%20or%20Node%2C%20is%20one,versions%20of%20server%2Dside%20JavaScript">https://news.codecademy.com/javascript-history-popularity/#:~:text=Server%2Dside%20JavaScript%20gained%20popularity,languages%20to%20communicate%20with%20databases.&amp;text=JS%2C%20or%20Node%2C%20is%20one,versions%20of%20server%2Dside%20JavaScript</a>.
+[32]</p>
+<p>Electron.js: <a href="https://angularjs.org/">https://angularjs.org/</a>
+[33]</p>
+<p>Vue.js: <a href="https://angularjs.org/">https://angularjs.org/</a>
+[34]</p>
+<p>Angular.js: <a href="https://angularjs.org/">https://angularjs.org/</a>
+[35]</p>
+<p>React.js: <a href="https://reactjs.org/">https://reactjs.org/</a>
+[36]</p>
+<p>JS: The Right Way: <a href="http://jstherightway.org/">http://jstherightway.org/</a>
+[37]</p>
+<p>Basic Intro to Coding: <a href="https://qvault.io/basic-intro-to-coding-course/">https://qvault.io/basic-intro-to-coding-course/</a>
+[38]</p>
+<p>鄙视: <a href="https://www.drdobbs.com/open-source/interview-with-ken-thompson/229502480">https://www.drdobbs.com/open-source/interview-with-ken-thompson/229502480</a>
+[39]</p>
+<p>大公司使用: <a href="https://brainhub.eu/library/companies-using-golang/">https://brainhub.eu/library/companies-using-golang/</a>
+[40]</p>
+<p>最流行的语言排行榜: <a href="https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted">https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted</a>
+[41]</p>
+<p>全球最高的薪资中位数: <a href="https://insights.stackoverflow.com/survey/2020#technology-what-languages-are-associated-with-the-highest-salaries-worldwide">https://insights.stackoverflow.com/survey/2020#technology-what-languages-are-associated-with-the-highest-salaries-worldwide</a>
+[42]</p>
+<p>Go 构建了一个 API: <a href="https://willowtreeapps.com/ideas/the-pros-and-cons-of-programming-in-go#:~:text=Go's%20syntax%20is%20small%20compared,of%20time%20looking%20things%20up.&amp;text=Non%2DGo%20programmers%2C%20especially%20those,usually%20understand%20what's%20going%20on">https://willowtreeapps.com/ideas/the-pros-and-cons-of-programming-in-go#:~:text=Go's%20syntax%20is%20small%20compared,of%20time%20looking%20things%20up.&amp;text=Non%2DGo%20programmers%2C%20especially%20those,usually%20understand%20what's%20going%20on</a>.
+[43]</p>
+<p>A Tour of Go: <a href="https://tour.golang.org/welcome/1">https://tour.golang.org/welcome/1</a>
+[44]</p>
+<p>Go By Example: <a href="https://gobyexample.com/">https://gobyexample.com/</a>
+[45]</p>
+<p>Go Mastery: <a href="https://qvault.io/go-mastery-course/">https://qvault.io/go-mastery-course/</a>
+[46]</p>
+<p>Stack Overflow 的开发者调查: <a href="http://jstherightway.org/">http://jstherightway.org/</a>
+[47]</p>
+<p>97% 的调查对象: <a href="https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/">https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/</a>
+[48]</p>
+<p>2010 年宣布 Rust: <a href="http://venge.net/graydon/talks/intro-talk-2.pdf">http://venge.net/graydon/talks/intro-talk-2.pdf</a>
+[49]</p>
+<p>系统编程语言: <a href="https://en.wikipedia.org/wiki/System_programming">https://en.wikipedia.org/wiki/System_programming</a>
+[50]</p>
+<p>裁掉了 Rust 团队的大部分人员: <a href="https://insights.dice.com/2020/08/27/rust-in-trouble-after-big-mozilla-layoffs/">https://insights.dice.com/2020/08/27/rust-in-trouble-after-big-mozilla-layoffs/</a>
+[51]</p>
+<p>许多开发人员: <a href="https://www.reddit.com/r/rust/comments/7rza1q/why_is_rust_difficult/dt0rp4o?utm_source=share&amp;utm_medium=web2x&amp;context=3">https://www.reddit.com/r/rust/comments/7rza1q/why_is_rust_difficult/dt0rp4o?utm_source=share&amp;utm_medium=web2x&amp;context=3</a>
+[52]</p>
+<p>Mozilla: <a href="https://research.mozilla.org/rust">https://research.mozilla.org/rust</a>
+[53]</p>
+<p>Rust 网站: <a href="https://www.rust-lang.org/learn">https://www.rust-lang.org/learn</a>
+[54]</p>
+<p>The Book: <a href="https://doc.rust-lang.org/book/">https://doc.rust-lang.org/book/</a>
+[55]</p>
+<p>Rustlings Course: <a href="https://github.com/rust-lang/rustlings/">https://github.com/rust-lang/rustlings/</a>
+[56]</p>
+<p>Rust By Example: <a href="https://doc.rust-lang.org/stable/rust-by-example/">https://doc.rust-lang.org/stable/rust-by-example/</a>
+[57]</p>
+<p>Reddit 论坛: <a href="https://www.reddit.com/r/rust/comments/bijkzd/best_way_to_learn_rust/em20uik?utm_source=share&amp;utm_medium=web2x&amp;context=3">https://www.reddit.com/r/rust/comments/bijkzd/best_way_to_learn_rust/em20uik?utm_source=share&amp;utm_medium=web2x&amp;context=3</a>
+[58]</p>
+<p>超过 70%: <a href="https://insights.stackoverflow.com/survey/2020#technology-what-languages-are-associated-with-the-highest-salaries-worldwide-global">https://insights.stackoverflow.com/survey/2020#technology-what-languages-are-associated-with-the-highest-salaries-worldwide-global</a></p>
+
+     </article>
+
+     <aside>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#2021-年这-8-种编程语言最流行go-入榜原来是这个原因">2021 年这 8 种编程语言最流行：Go 入榜原来是这个原因</a></li>
+        <li><a href="#01-最流行的初学者编程语言python">01 最流行的初学者编程语言：Python</a></li>
+        <li><a href="#02-对不想从事编程工作的人来说最流行的编程语言是-r">02 对不想从事编程工作的人来说，最流行的编程语言是 R</a></li>
+        <li><a href="#03-最流行的涨薪编程语言perl">03 最流行的涨薪编程语言：Perl</a></li>
+        <li><a href="#04-ios-上最流行的移动应用开发编程语言swift">04 iOS 上最流行的移动应用开发编程语言：Swift</a></li>
+        <li><a href="#05-横向思维者中最流行的编程语言ruby">05 横向思维者中最流行的编程语言：Ruby</a></li>
+        <li><a href="#06-最流行的移动应用和-web-开发编程语言javascript">06 最流行的移动应用和 Web 开发编程语言：JavaScript</a></li>
+        <li><a href="#07-能快速涨薪的最流行编程语言go">07 能快速涨薪的最流行编程语言：Go</a></li>
+        <li><a href="#08-2022-年最流行的编程语言rust">08 2022 年最流行的编程语言：Rust</a></li>
+        <li><a href="#参考资料">参考资料</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+     </aside>
+</main>
+
+
+
+
+    <div id="searchBox">
+        <input id="searchInput" tabindex="0" autocomplete="off">
+        <ul id="searchResults">
+        </ul>
+    </div>
+
+</body>
+
+</html>

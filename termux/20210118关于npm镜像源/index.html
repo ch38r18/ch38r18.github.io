@@ -1,0 +1,814 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content='chr�Ĳ���' />
+    <title>
+        
+关于npm镜像源
+
+        
+    </title>
+    <link rel="stylesheet" href='/css/markdown.css'>
+    <script src='/js/fuse.js' defer></script>
+    <script src='/js/search.js' defer></script>
+
+    <script>
+        function addLoadEvent(callback) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    callback();
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript" async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                    processEscapes: true,
+                    processEnvironments: true,
+                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    TeX: {
+                        equationNumbers: { autoNumber: "AMS" },
+                        extensions: ["AMSmath.js", "AMSsymbols.js"]
+                    }
+                }
+            });
+        </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3J4FRK59"></script>
+    
+    <style>
+        :root {
+            --black: #121314;
+            --primary: #1a73e8;
+            --red: #ea4335;
+            --light-gray: #eeeeee;
+            --dark-gray: #828282;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+        }
+
+         
+        ::-webkit-scrollbar-track {
+            background-color: var(--light-gray);
+        }
+
+         
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+        }
+
+         
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        body {
+            max-width: 800px;
+            margin: calc(5vw + 40px) auto;
+            padding: 0 20px;
+            color: var(--black);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+            position: relative;
+            width: calc(100% - 100px);
+        }
+
+        .left:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .left nav ol {
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .left nav ol li {
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .left nav ol li .dropdown-container {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 2;
+            font-size: 90%;
+            display: none;
+            min-width: 100%;
+            background-color: white;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .left nav ol li:hover .dropdown-container {
+                display: block;
+            }
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner {
+            border: 1px solid var(--black);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: -3px;
+            width: 0px;
+            height: 0px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--black);
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 9px;
+            top: -0.5px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner .dropdown a {
+            display: block;
+        }
+
+        .left nav ol li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 60%;
+            transform: translateY(-50%) rotate(20deg);
+            width: 2px;
+            height: 80%;
+            background-color: var(--light-gray);
+        }
+
+        .left nav ol li a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1px 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .left nav ol li:not(:last-child) a {
+                display: block;
+                width: 36px;
+                text-overflow: clip;
+            }
+        }
+
+        .left nav ol li a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            width: 100px;
+            justify-content: flex-end;
+        }
+
+        .right #searchIcon,
+        .right #github img {
+            margin: 0 8px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        #searchBox {
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            top: calc(5vw + 40px);
+            transform: translateX(-50%);
+            display: inline-block;
+            width: 600px;
+            background-color: white;
+            border: 2px solid var(--black);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        @media (max-width: 600px) {
+            #searchBox {
+                width: calc(100vw - 50px);
+            }
+        }
+
+        #searchBox input {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        #searchBox ul {
+            visibility: hidden;
+        }
+
+        #searchBox ul[style*="visibility: visible;"] {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        #searchBox ul li {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        #searchBox ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            display: block;
+            font-size: 15px;
+        }
+
+        #searchBox ul li a .title {
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        #searchBox ul li a:hover,
+        #searchBox ul li a:focus {
+            outline: 0;
+            background-color: var(--light-gray);
+        }
+
+        #searchBox ul li a .highlight-container {
+            color: var(--dark-gray);
+            font-size: 75%;
+            line-height: 1.5;
+        }
+
+        #searchBox ul li a .highlight-container .highlight {
+            color: var(--red);
+        }
+    </style>
+
+    
+<style>
+     h1 {
+          margin-bottom: 10px;
+     }
+
+     section {
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
+     }
+
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
+     }
+
+     section a {
+          color: var(--primary);
+          text-decoration: none;
+          margin-left: 10px;
+     }
+
+     main {
+          position: relative;
+     }
+
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
+          font-weight: normal;
+          font-size: 90%;
+     }
+</style>
+
+
+    
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
+
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <nav>
+  <ol>
+    
+
+
+
+
+
+<li>
+  <a href="/">
+    <span>
+      
+主页
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/about-me/">
+          <span>
+about me
+</span>
+        </a>
+        
+        <a href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+          <span>
+正则表达式
+</span>
+        </a>
+        
+        <a href="/%E6%B8%85%E5%8D%95/">
+          <span>
+清单
+</span>
+        </a>
+        
+        <a href="/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/">
+          <span>
+小狼毫输入法
+</span>
+        </a>
+        
+        <a href="/termux/">
+          <span>
+termux
+</span>
+        </a>
+        
+        <a href="/post/">
+          <span>
+Post
+</span>
+        </a>
+        
+        <a href="/%E6%91%98%E5%BD%95/">
+          <span>
+摘录
+</span>
+        </a>
+        
+        <a href="/hexo/">
+          <span>
+hexo
+</span>
+        </a>
+        
+        <a href="/hugo/">
+          <span>
+hugo
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/termux/">
+    <span>
+      
+termux
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/">
+          <span>
+在终端输出所有Unicode码
+</span>
+        </a>
+        
+        <a href="/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/">
+          <span>
+安卓termux部署hexo更换主题失败
+</span>
+        </a>
+        
+        <a href="/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/">
+          <span>
+关于npm镜像源
+</span>
+        </a>
+        
+        <a href="/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/">
+          <span>
+Termux-ADB
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/">
+    <span>
+      
+关于npm镜像源
+
+    </span>
+  </a>
+  
+</li>
+
+  </ol>
+</nav>
+
+        </div>
+
+        
+        <div class="right">
+            <img id="searchIcon" src='/image/search.png' alt="search">
+            <a id="github" href="https://github.com/ch38r18/blog" target="_blank">
+                <img src='/image/github.png' alt="github">
+            </a>
+            
+        </div>
+    </header>
+
+    
+<h1>
+     
+关于npm镜像源
+
+</h1>
+
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.19 01:29
+     </div>
+     
+     <a href='https://github.com/ch38r18/blog/blob/main/20210118%e5%85%b3%e4%ba%8enpm%e9%95%9c%e5%83%8f%e6%ba%90.md' target="_blank">Github</a>
+     
+</section>
+
+<main>
+     <article class="markdown">
+          
+<h3 id="关于npm镜像源的问题"><a href="#%e5%85%b3%e4%ba%8enpm%e9%95%9c%e5%83%8f%e6%ba%90%e7%9a%84%e9%97%ae%e9%a2%98">关于npm镜像源的问题</a></h3><p>当你下载某个</p>
+<pre><code>npm install hexo-render-swig
+npm ERR! code E404
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/hexo-render-swig - Not found
+npm ERR! 404
+npm ERR! 404  'hexo-render-swig@latest' is not in the npm registry.
+npm ERR! 404 You should bug the author to publish it (or use the name yourself!)
+npm ERR! 404
+npm ERR! 404 Note that you can also install from a
+npm ERR! 404 tarball, folder, http url, or git url.
+</code></pre><p>结果下载失败。原来问题处在无法访问源网站上 <a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></p>
+
+<h3 id="工具-nrm-管理"><a href="#%e5%b7%a5%e5%85%b7-nrm-%e7%ae%a1%e7%90%86">工具 nrm 管理</a></h3><p>安装nrm 管理，安装这个的前提是能确定链接到现在的镜像地址：</p>
+<pre><code>npm install -g nrm
+</code></pre><p>待安装完nrm 之后，通过nrm 管理镜像的地址，一条命令切换，如：</p>
+<pre><code>nrm use taobao
+</code></pre><p>nrm 除了淘宝站点镜像之外还有其他的，可以使用一下命令查看：</p>
+<pre><code>nrm ls
+</code></pre><p>呃，使用 sudo apt-get install npm 安装好npm之后就想把 nrm 安装好，结果安装好 nrm 之后，便执行起上面的那条命令，然后发现提示没有找到 nrm 命令 -_-|| 好吧，原来是忘了安装 node 了。</p>
+<p>下载 node，如下载 0.12.7版的 .tar.gz 压缩包：</p>
+<p>解压：</p>
+<pre><code>tar zxvf node-v0.12.7.tar.gz
+</code></pre><p>转到解压后的文件夹中之后：</p>
+<p>./configure &ndash;prefix=/usr/node</p>
+<p>&ndash;prefix=/usr/node 是指定安装后命令路径，使用默认的话可以不用，即只执行 ./configure 便可。</p>
+<p>编译，以及安装（前提是有 g++/gcc 编译工具）：</p>
+<pre><code>sudo make &amp;&amp; make install
+</code></pre><p>nrm use taobao</p>
+<pre><code>  npm ---- https://registry.npmjs.org/
+  cnpm --- http://r.cnpmjs.org/
+* taobao - http://registry.npm.taobao.org/
+  edunpm - http://registry.enpmjs.org/
+  eu ----- http://registry.npmjs.eu/
+  au ----- http://registry.npmjs.org.au/
+  sl ----- http://npm.strongloop.com/
+  nj ----- https://registry.nodejitsu.com/
+  pt ----- http://registry.npmjs.pt/
+</code></pre>
+<h3 id="中科大镜像站的-npm"><a href="#%e4%b8%ad%e7%a7%91%e5%a4%a7%e9%95%9c%e5%83%8f%e7%ab%99%e7%9a%84-npm">中科大镜像站的 npm</a></h3><p>编辑 ~/.npmrc ，添加</p>
+<pre><code>registry=http://npmreg.mirrors.ustc.edu.cn/
+</code></pre><p>若不想将本源设置为默认源，只想使用本源安装某个软件包，可在安装包时采用以下用法：</p>
+<pre><code>npm --registry http://npmreg.mirrors.ustc.edu.cn install &lt;packagename&gt;
+</code></pre><p>中科大 npm 镜像支持 https 安全连接，如果您的网络运营商部署了缓存设备，或您对所处的网络环境不信任，请使用 https 替换上述 URL1 中的 http 。</p>
+
+<h3 id="淘宝镜像"><a href="#%e6%b7%98%e5%ae%9d%e9%95%9c%e5%83%8f">淘宝镜像</a></h3><pre><code>淘宝镜像: 
+http://registry.npm.taobao.org
+临时
+npm --registry http://registry.npm.taobao.org install &lt;packagename&gt;
+</code></pre>
+<h3 id="单次使用"><a href="#%e5%8d%95%e6%ac%a1%e4%bd%bf%e7%94%a8">单次使用</a></h3><pre><code>npm install --registry=https://registry.npm.taobao.org
+</code></pre>
+<h3 id="永久使用"><a href="#%e6%b0%b8%e4%b9%85%e4%bd%bf%e7%94%a8">永久使用</a></h3><p>设置成全局的下载镜像站点，这样每次install的时候就不用加&ndash;registry，默认会从淘宝镜像下载，设置方法如下：</p>
+<pre><code>1.文件法
+打开.npmrc文件（nodejs\node_modules\npm\npmrc，没有的话可以使用git命令行建一个( touch .npmrc)，用cmd命令建会报错）
+增加 registry =https://registry.npm.taobao.org  即可。
+2.代码法
+npm config set registry https://registry.npm.taobao.org
+3.检查
+// 配置后可通过下面方式来验证是否成功
+npm config get registry
+// 或
+npm info express
+</code></pre>
+     </article>
+
+     <aside>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#关于npm镜像源的问题">关于npm镜像源的问题</a></li>
+        <li><a href="#工具-nrm-管理">工具 nrm 管理</a></li>
+        <li><a href="#中科大镜像站的-npm">中科大镜像站的 npm</a></li>
+        <li><a href="#淘宝镜像">淘宝镜像</a></li>
+        <li><a href="#单次使用">单次使用</a></li>
+        <li><a href="#永久使用">永久使用</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+     </aside>
+</main>
+
+
+
+
+    <div id="searchBox">
+        <input id="searchInput" tabindex="0" autocomplete="off">
+        <ul id="searchResults">
+        </ul>
+    </div>
+
+</body>
+
+</html>

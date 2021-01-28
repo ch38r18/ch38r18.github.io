@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>termux on </title>
+    <link>/termux/</link>
+    <description>Recent content in termux on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 20 Jan 2021 16:32:58 +0800</lastBuildDate><atom:link href="/termux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Termux-ADB</title>
+      <link>/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</link>
+      <pubDate>Wed, 20 Jan 2021 16:32:58 +0800</pubDate>
+      
+      <guid>/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</guid>
+      <description>Termux-ADB在Termux中安装ADB和FastBoot工具！ 仅适用于配备ARM或ARM64处理器的设备！
+https://github.com/MasterDevX/Termux-ADB
+ 如何安装 静默安装： 在Termux中复制并粘贴以下命令以静默安装工具： apt update &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; apt --assume-yes install wget &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q &amp;amp;&amp;amp; bash InstallTools.sh 常用安装： 在Termux中复制并粘贴以下命令以安装带有日志输出的工具： apt update &amp;amp;&amp;amp; apt install wget &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh &amp;amp;&amp;amp; bash InstallTools.sh   如何卸载 静默卸载： 在Termux中复制并粘贴以下命令以静默删除工具： apt update &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; apt --assume-yes install wget &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/RemoveTools.sh -q &amp;amp;&amp;amp; bash RemoveTools.sh 常见卸载： 在Termux中复制并粘贴以下命令，以删除带有日志输出的工具： apt update &amp;amp;&amp;amp; apt install wget &amp;amp;&amp;amp; wget https://github.</description>
+    </item>
+    
+    <item>
+      <title>关于npm镜像源</title>
+      <link>/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/</link>
+      <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/</guid>
+      <description>关于npm镜像源的问题当你下载某个
+npm install hexo-render-swig npm ERR! code E404 npm ERR! 404 Not Found - GET https://registry.npmjs.org/hexo-render-swig - Not found npm ERR! 404 npm ERR! 404 &#39;hexo-render-swig@latest&#39; is not in the npm registry. npm ERR! 404 You should bug the author to publish it (or use the name yourself!) npm ERR! 404 npm ERR! 404 Note that you can also install from a npm ERR! 404 tarball, folder, http url, or git url.</description>
+    </item>
+    
+    <item>
+      <title>安卓termux部署hexo更换主题失败</title>
+      <link>/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/</link>
+      <pubDate>Mon, 18 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/</guid>
+      <description> hexo更换主题失败 不知道为什么会失败 自带的主题都正常，那些好看的主题可能有其他插件 不知道什么问题  cd /storage/emulated/0/blog pwd pkg install git nodejs --save --no-bin-links npm install hexo-cli hexo init hexo g | hexo s 浏览器打开本地，正常  更换喜欢的主题：主题noise 简单 美观，手机端也好看
+git clone https://github.com/lotabout/hexo-theme-noise themes/noise 主题polarbear 简单，手机端好看
+git clone https://github.com/frostfan/hexo-theme-polarbear themes/polarbear  需要解决的问题 打开页面都是代码， 太难了，看不懂，找不到问题。 在blog中 npm install 会报错，也不知道安装成功没有  npm install hexo-renderer-scss --save npm install hexo-renderer-less --save npm install hexo-renderer-pug --save </description>
+    </item>
+    
+    <item>
+      <title>在终端输出所有Unicode码</title>
+      <link>/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</link>
+      <pubDate>Sun, 17 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</guid>
+      <description> 在终端输出所有Unicode码a). #!/bin/bash
+for i1 in {0..9} {A..F} do for i2 in {0..9} {A..F} do for i3 in {0..9} {A..F} do for i4 in {0..9} {A..F} do echo -ne \\u$i1$i2$i3$i4 done done done done b).
+printf $(printf &#39;\\u%04x&#39; {0..65535}) </description>
+    </item>
+    
+  </channel>
+</rss>

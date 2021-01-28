@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on </title>
+    <link>/hugo/</link>
+    <description>Recent content in hugo on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 25 Jan 2021 19:54:58 +0000</lastBuildDate><atom:link href="/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/hugo/a/</link>
+      <pubDate>Mon, 25 Jan 2021 19:54:58 +0000</pubDate>
+      
+      <guid>/hugo/a/</guid>
+      <description>hexo刚入门就开始hugo开始hugo
+ 安卓8 arm64 termux 0.105 https://f-droid.org/repo/com.termux_105.apk 这个版本已经包含了很多必须的包 go 1.15.6 hugo 0.80.0  pkg i golang pkg hugo hugo new site blog cd blog # 下载一个中文主题 git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant  文件夹管理器中修改： 在主题的 exampleSite 示例目录下有config.toml 文件， 把 config.toml 文件复制到你的站点目录下  hugo #生成静态文件 hugo s #开启网络服务  主题第一个 git clone https://github.com/nishanths/cocoa-hugo-theme.git themes/cocoa
+第二个 git clone https://github.com/mtn/cocoa-eh-hugo-theme.git themes/cocoa-eh</description>
+    </item>
+    
+  </channel>
+</rss>
