@@ -1,0 +1,863 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content='chr的博客' />
+    <title>
+        
+关于Obsidian知识循环利器
+
+        
+    </title>
+    <link rel="stylesheet" href='/css/markdown.css'>
+    <script src='/js/fuse.js' defer></script>
+    <script src='/js/search.js' defer></script>
+
+    <script>
+        function addLoadEvent(callback) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    callback();
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript" async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                    processEscapes: true,
+                    processEnvironments: true,
+                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    TeX: {
+                        equationNumbers: { autoNumber: "AMS" },
+                        extensions: ["AMSmath.js", "AMSsymbols.js"]
+                    }
+                }
+            });
+        </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3J4FRK59"></script>
+    
+    <style>
+        :root {
+            --black: #121314;
+            --primary: #1a73e8;
+            --red: #ea4335;
+            --light-gray: #eeeeee;
+            --dark-gray: #828282;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+        }
+
+         
+        ::-webkit-scrollbar-track {
+            background-color: var(--light-gray);
+        }
+
+         
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+        }
+
+         
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        body {
+            max-width: 800px;
+            margin: calc(5vw + 40px) auto;
+            padding: 0 20px;
+            color: var(--black);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+            position: relative;
+            width: calc(100% - 100px);
+        }
+
+        .left:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .left nav ol {
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .left nav ol li {
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .left nav ol li .dropdown-container {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 2;
+            font-size: 90%;
+            display: none;
+            min-width: 100%;
+            background-color: white;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .left nav ol li:hover .dropdown-container {
+                display: block;
+            }
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner {
+            border: 1px solid var(--black);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: -3px;
+            width: 0px;
+            height: 0px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--black);
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 9px;
+            top: -0.5px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner .dropdown a {
+            display: block;
+        }
+
+        .left nav ol li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 60%;
+            transform: translateY(-50%) rotate(20deg);
+            width: 2px;
+            height: 80%;
+            background-color: var(--light-gray);
+        }
+
+        .left nav ol li a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1px 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .left nav ol li:not(:last-child) a {
+                display: block;
+                width: 36px;
+                text-overflow: clip;
+            }
+        }
+
+        .left nav ol li a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            width: 100px;
+            justify-content: flex-end;
+        }
+
+        .right #searchIcon,
+        .right #github img {
+            margin: 0 8px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        #searchBox {
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            top: calc(5vw + 40px);
+            transform: translateX(-50%);
+            display: inline-block;
+            width: 600px;
+            background-color: white;
+            border: 2px solid var(--black);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        @media (max-width: 600px) {
+            #searchBox {
+                width: calc(100vw - 50px);
+            }
+        }
+
+        #searchBox input {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        #searchBox ul {
+            visibility: hidden;
+        }
+
+        #searchBox ul[style*="visibility: visible;"] {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        #searchBox ul li {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        #searchBox ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            display: block;
+            font-size: 15px;
+        }
+
+        #searchBox ul li a .title {
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        #searchBox ul li a:hover,
+        #searchBox ul li a:focus {
+            outline: 0;
+            background-color: var(--light-gray);
+        }
+
+        #searchBox ul li a .highlight-container {
+            color: var(--dark-gray);
+            font-size: 75%;
+            line-height: 1.5;
+        }
+
+        #searchBox ul li a .highlight-container .highlight {
+            color: var(--red);
+        }
+    </style>
+
+    
+<style>
+     h1 {
+          margin-bottom: 10px;
+     }
+
+     section {
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
+     }
+
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
+     }
+
+     section a {
+          color: var(--primary);
+          text-decoration: none;
+          margin-left: 10px;
+     }
+
+     main {
+          position: relative;
+     }
+
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
+          font-weight: normal;
+          font-size: 90%;
+     }
+</style>
+
+
+    
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
+
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <nav>
+  <ol>
+    
+
+
+
+
+
+<li>
+  <a href="https://ch38r18.github.io/">
+    <span>
+      
+chr63写点人生note
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="https://ch38r18.github.io/git/">
+          <span>
+💾 git
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/regex/">
+          <span>
+💾 正则表达式
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/list/">
+          <span>
+💾 清单
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/weasel/">
+          <span>
+💾 小狼毫输入法
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/note/">
+          <span>
+💾 笔记
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/termux/">
+          <span>
+💾 termux
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/via/">
+          <span>
+💾 摘录
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/hexo/">
+          <span>
+💾 hexo
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/about-me/">
+          <span>
+about me
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/hugo/">
+          <span>
+💾 hugo
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/links/">
+          <span>
+💾 Links
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="https://ch38r18.github.io/via/">
+    <span>
+      
+💾 摘录
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="https://ch38r18.github.io/via/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/">
+          <span>
+安卓修复锂电池
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/via/20210119a%E6%91%98%E5%BD%95via/">
+          <span>
+摘录
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/via/20210122a%E5%85%B3%E4%BA%8Eobsidian/">
+          <span>
+关于Obsidian知识循环利器
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/via/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+          <span>
+2021流行编程语言
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/via/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/">
+          <span>
+文摘
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/via/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/">
+          <span>
+2019年互联网信息大灭绝事件
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/via/20210124b%E6%96%87%E6%91%98/">
+          <span>
+1.14阅读文摘
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="https://ch38r18.github.io/via/20210122a%E5%85%B3%E4%BA%8Eobsidian/">
+    <span>
+      
+关于Obsidian知识循环利器
+
+    </span>
+  </a>
+  
+</li>
+
+  </ol>
+</nav>
+
+        </div>
+
+        
+        </div>
+    </header>
+
+    
+<h1>
+     
+关于Obsidian知识循环利器
+
+</h1>
+
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.22 07:08
+     </div>
+     
+</section>
+
+<main>
+     <article class="markdown">
+          <p>分类：阅读笔记</p>
+<p>标签：知识循环、笔记管理、笔记交互、Zettelkasten</p>
+<p>原文：玩转 Obsidian | 打造知识循环利器</p>
+
+<h3 id="阅读理解"><a href="#%e9%98%85%e8%af%bb%e7%90%86%e8%a7%a3">阅读理解</a></h3><ul>
+<li>思路：笔记管理方法Zettelkasten，如何优秀，如何超越传统笔记管理</li>
+<li>核心：卡片、索引</li>
+<li>软件：从优秀昂贵的Roam Research ，到免费的Obsidian。</li>
+<li>卡片：是笔记，可以是一段文章或论文的「摘录」，它也可以是我们对某个概念的「总结」，一张卡片或者说一篇笔记。结构3部分。唯一数字编号。</li>
+<li>索引：插入数字编号，通过编号在卡片之间产生交互和关联</li>
+<li>综上使得所有知识组成了一张网络，</li>
+</ul>
+<p><strong>认识2</strong></p>
+<ul>
+<li>卡片有一个或一组编号，索引编号组，一个或多个层级关系，形成逻辑表达。</li>
+<li>卡片积累形成知识库，卡片编号。</li>
+<li>综上，从传统分类，到分类+标签，到数字化分类和标签、多维表达。</li>
+</ul>
+<p><strong>认识3</strong></p>
+<ul>
+<li>数字化分类和标签，数组(数字标签,文字标签)，一个索引序列，一次知识表达</li>
+<li>模块化知识库，日积月累的笔记，不随时间推移而隐秘，知识可以循环</li>
+<li>最终形式逻辑知识网络，温故而知新，对比新旧知识观点，</li>
+</ul>
+
+<h3 id="原文梳理"><a href="#%e5%8e%9f%e6%96%87%e6%a2%b3%e7%90%86">原文梳理</a></h3><p><strong>Zettelkasten</strong></p>
+<ul>
+<li>Zettelkasten 笔记管理方法，被称为「卡片盒笔记法」</li>
+<li>优秀的 Roam Research 让大众开始认知此笔记管理法，但此软件也昂贵</li>
+<li>大环境：知识付费时代</li>
+<li>打造属于自己的「知识循环」体系</li>
+<li>知识循环：指的是我们整理知识的目标一定是写作，在写作的过程中经历研究/阅读/记录和写作。</li>
+<li>目前没有手机端。有个问题，linux为什么有那么多版本？ [^下载地址]: <a href="https://obsidian.md/download">https://obsidian.md/download</a></li>
+</ul>
+<p><strong>Zettelkasten由来</strong></p>
+<ul>
+<li>德国学者 Niklas Luhmann（尼克拉斯·卢曼）是德国当代重要的社会学家。</li>
+<li>卢曼自己总结的一套笔记管理方法，Zettelkasten 也被称为「卡片盒笔记法」或「卡片笔记法」。</li>
+<li>卢曼家里就有这样一套家具6x4存放文档。</li>
+<li>传统管理法 <strong>弊端</strong></li>
+<li>文件夹管理法，分类管理法，严重限制了一篇笔记被发现的几率，阻碍创意或者灵感的产生。跟它明显对比的就是「标签」管理法。</li>
+<li>标签管理法，逻辑性差，失去目标和方向</li>
+<li>如何 <strong>去除弊端</strong>呢？</li>
+<li>将 Evernote 中的笔记创建「知识图谱」，扩展知识管理的边界。</li>
+<li>Zettelkasten 的关键在「卡片」和 「索引」。</li>
+<li>无论是采用文件夹管理还是标签管理，时间一长，就会很容易让我们陷入 <strong>「收藏家谬论3/3」</strong></li>
+<li>1/3很多时候，我们收藏了一篇文章，就认为自己将来一定会读，所以自我感觉非常良好。</li>
+<li>2/3如果收藏的文章一旦超过了我们的管理能力，它就会越积越多，最后变成一堆垃圾。</li>
+<li>3/3即使我们对收藏了文章进行了阅读，他的意义依然不大，只会增加短期记忆，只有形成了笔记才能让知识参与到「知识循环」中。</li>
+</ul>
+<p><strong>Zettelkasten优势</strong></p>
+<ul>
+<li>会形成「知识网格」，优势3/3</li>
+<li>1/3笔记越多，网越大，更容易从中找到内在的联系。</li>
+<li>2/3当你带着问题或者一个想法去探索 Zettelkasten 时，就会想人类大脑思考那样，从一个线索跳转到另一个线索，是我们的思维更加活跃，更会激发我们的创造性。</li>
+<li>3/3大量研究表明，非线性笔记比线性笔记更有利于学习，尤其适用图表和概念图，更能促使信息选择和组织。</li>
+</ul>
+<p><strong>Obsidian含免费本地管理</strong></p>
+<ul>
+<li>Obsidian 就是一个支持 Zettelkasten 的笔记软件</li>
+<li>什么是「双向链接」？明确一下「Topic」的概念。</li>
+<li>Topic 是由「标题」和「内容」组成</li>
+<li>卢曼在 Zettelkasten 中对于 <strong>「卡片使用原则」中的定义</strong>：</li>
+<li>1/3原子性：即最小力度的说明一个概念，标准就是如果想在任何一个地方引用这个概念，都能用同一句话概括。在 Obsidian 中更加强调 Topic 的「标题」要具备「原子性」。</li>
+<li>2/3自主性：先理解一个概念，在一本书中，它的每一页都是有上下文关系的，也就是说，每一页的存在位置是固定的，如果被挪走或删除，会影响这本书的内容完整性。</li>
+<li>3/3自主性：在 Obsidian 中每个 Topic，不应该像「书中的每一页那样不能删除和移动」，它应该是自主的，能够独立说明一件事，可以被独立理解。也就是它和临近的「笔记」没有任何「依赖」关系，可以随意被移动、分离和连接。</li>
+<li><strong>双向链接</strong>：当 A 页面通过 [[B]] 关联了 B 页面时，在 A 页面可以通过「双向链接」跳转到 B 页面，同时在 B 页面中也可以看到 A 页面引用了自己。</li>
+<li>打造知识循环利器。Obsidian 的特性和功能非常有利于我们打造「知识循环」体系，从课题的的阅读到记录再到写作，在同一个软件形成「闭环」。</li>
+</ul>
+<p><strong>神评论</strong></p>
+<ul>
+<li>保存到本地markdown有两种，一种纯粹markdown，文章内图片是链接形式；另一种离线markdown内嵌图片，图片以base64编码在文件里，图片比较多比较大时，会影响编辑器的解析性能。</li>
+<li>「话题引用」和「别名引用」</li>
+<li>Obsidian 是一款笔记管理软件，因为我用它完成「知识循环」，所以我更在意如何用 Obsidian 完成知识收集和整理以及后续的输出</li>
+<li>网页文字收藏 [^网页插件剪切收藏]: <a href="https://mika-cn.github.io/maoxian-web-clipper/index-zh-CN.html">https://mika-cn.github.io/maoxian-web-clipper/index-zh-CN.html</a></li>
+<li>网址收藏插件 [^网址收藏插件]: <a href="https://github.com/GHPen/alfred-url-actions">https://github.com/GHPen/alfred-url-actions</a></li>
+<li>「富文本编辑器」的图片归属于这个文件，而「文本工具」只有「文本」归属于这个文件，图片是「附件」所以你才看到插入图片需要使用 MarkDown 语法而不是像 Evernote 那样直接可以拷贝进去。</li>
+<li>Obsidian 我认为适合文字组织和大纲，不适合最终产出，我一般是利用 Obsidian 的文字组织能力，将大纲完成（甚至几乎是最终稿），然后拷贝到 Ulysses 中最终完成编辑、排版和发布</li>
+<li>双向链接在适当的地方确实非常好用。我觉得目前市面上宣传双向笔记的文章全都跑偏了，都在讲具体操作。很少有人能讲方法论，什么类型应该用双向笔记，什么类型不应该用。或者先写几篇看起来无关的笔记，然后一步一步教读者如何拆分和连接。这样才能真正凸现出双向连接的价值。</li>
+<li></li>
+</ul>
+
+<h3 id="边界扩展"><a href="#%e8%be%b9%e7%95%8c%e6%89%a9%e5%b1%95">边界扩展</a></h3><ul>
+<li>之前阅读中，也常常看到 <strong>双向链接</strong>，也没有关注到底是什么功能</li>
+<li>其实很多软件都开始支持，双向链接。</li>
+<li>其实很多人都会有传统管理法局限性带来的困惑和无奈，</li>
+<li>自己也一直在想如何突破，没有想到有人已经想到了。标签组数组化_我来取个名字，这个思路很棒</li>
+<li>我最近在想，博客是标签组的最佳表达方式，观看也很棒，笔记类软件太密集，展示表达差一点。</li>
+<li>双向链接能否用到博客中，我这里说的是本地博客，相当于笔记软件哪种。目前学习使用hexo</li>
+<li>md格式文档库，博客软件来实现组织应用。</li>
+<li>搜索 博客双向链接，看看有没有收获。</li>
+</ul>
+<p><em>2021-01-22 于重庆民安华福</em></p>
+
+     </article>
+
+     <aside>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#阅读理解">阅读理解</a></li>
+        <li><a href="#原文梳理">原文梳理</a></li>
+        <li><a href="#边界扩展">边界扩展</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+     </aside>
+</main>
+
+
+
+
+    <div id="searchBox">
+        <input id="searchInput" tabindex="0" autocomplete="off">
+        <ul id="searchResults">
+        </ul>
+    </div>
+
+</body>
+
+</html>

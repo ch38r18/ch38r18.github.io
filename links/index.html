@@ -1,0 +1,873 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content='chr的博客' />
+    <title>
+        
+💾 Links
+
+        
+    </title>
+    <link rel="stylesheet" href='/css/markdown.css'>
+    <script src='/js/fuse.js' defer></script>
+    <script src='/js/search.js' defer></script>
+
+    <script>
+        function addLoadEvent(callback) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    callback();
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript" async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                    processEscapes: true,
+                    processEnvironments: true,
+                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    TeX: {
+                        equationNumbers: { autoNumber: "AMS" },
+                        extensions: ["AMSmath.js", "AMSsymbols.js"]
+                    }
+                }
+            });
+        </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3J4FRK59"></script>
+    
+    <style>
+        :root {
+            --black: #121314;
+            --primary: #1a73e8;
+            --red: #ea4335;
+            --light-gray: #eeeeee;
+            --dark-gray: #828282;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+        }
+
+         
+        ::-webkit-scrollbar-track {
+            background-color: var(--light-gray);
+        }
+
+         
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+        }
+
+         
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        body {
+            max-width: 800px;
+            margin: calc(5vw + 40px) auto;
+            padding: 0 20px;
+            color: var(--black);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+            position: relative;
+            width: calc(100% - 100px);
+        }
+
+        .left:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .left nav ol {
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .left nav ol li {
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .left nav ol li .dropdown-container {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 2;
+            font-size: 90%;
+            display: none;
+            min-width: 100%;
+            background-color: white;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .left nav ol li:hover .dropdown-container {
+                display: block;
+            }
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner {
+            border: 1px solid var(--black);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: -3px;
+            width: 0px;
+            height: 0px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--black);
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 9px;
+            top: -0.5px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner .dropdown a {
+            display: block;
+        }
+
+        .left nav ol li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 60%;
+            transform: translateY(-50%) rotate(20deg);
+            width: 2px;
+            height: 80%;
+            background-color: var(--light-gray);
+        }
+
+        .left nav ol li a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1px 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .left nav ol li:not(:last-child) a {
+                display: block;
+                width: 36px;
+                text-overflow: clip;
+            }
+        }
+
+        .left nav ol li a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            width: 100px;
+            justify-content: flex-end;
+        }
+
+        .right #searchIcon,
+        .right #github img {
+            margin: 0 8px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        #searchBox {
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            top: calc(5vw + 40px);
+            transform: translateX(-50%);
+            display: inline-block;
+            width: 600px;
+            background-color: white;
+            border: 2px solid var(--black);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        @media (max-width: 600px) {
+            #searchBox {
+                width: calc(100vw - 50px);
+            }
+        }
+
+        #searchBox input {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        #searchBox ul {
+            visibility: hidden;
+        }
+
+        #searchBox ul[style*="visibility: visible;"] {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        #searchBox ul li {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        #searchBox ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            display: block;
+            font-size: 15px;
+        }
+
+        #searchBox ul li a .title {
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        #searchBox ul li a:hover,
+        #searchBox ul li a:focus {
+            outline: 0;
+            background-color: var(--light-gray);
+        }
+
+        #searchBox ul li a .highlight-container {
+            color: var(--dark-gray);
+            font-size: 75%;
+            line-height: 1.5;
+        }
+
+        #searchBox ul li a .highlight-container .highlight {
+            color: var(--red);
+        }
+    </style>
+
+    
+<style>
+     h1 {
+          margin-bottom: 20px;
+     }
+
+     section {
+          margin-bottom: 15px;
+     }
+
+     section p {
+          font-size: 14px;
+          margin-top: 8px;
+     }
+
+     section a {
+          color: var(--primary);
+          text-decoration: none;
+     }
+
+     main {
+          border-top: 1px solid var(--light-gray);
+          padding-top: 15px;
+          display: grid;
+          grid-template-columns: 50% 50%;
+          grid-row-gap: 2px;
+          grid-column-gap: 20px;
+     }
+
+     @media (max-width: 600px) {
+          main {
+               grid-template-columns: 100%;
+          }
+     }
+
+     main strong {
+          display: block;
+          padding: 2px 0;
+          break-inside: avoid;
+          margin-left: -4px;
+          margin-right: -4px;
+     }
+
+     main strong a {
+          display: block;
+          padding: 4px;
+          color: var(--black);
+          text-decoration: none;
+          display: flex;
+          align-items: baseline;
+          width: 100%;
+     }
+
+     main strong a:hover {
+          background-color: var(--light-gray);
+     }
+
+     main strong a h2 {
+          flex: 1;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          text-decoration-color: var(--light-gray);
+          font-size: 15px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          position: relative;
+     }
+
+     main strong a span {
+          display: block;
+          color: var(--dark-gray);
+          font-weight: normal;
+          font-size: 12px;
+          margin-left: 10px;
+     }
+</style>
+
+
+    
+
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <nav>
+  <ol>
+    
+
+
+
+<li>
+  <a href="https://ch38r18.github.io/">
+    <span>
+      
+chr63写点人生note
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="https://ch38r18.github.io/git/">
+          <span>
+💾 git
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/regex/">
+          <span>
+💾 正则表达式
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/list/">
+          <span>
+💾 清单
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/weasel/">
+          <span>
+💾 小狼毫输入法
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/note/">
+          <span>
+💾 笔记
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/termux/">
+          <span>
+💾 termux
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/via/">
+          <span>
+💾 摘录
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/hexo/">
+          <span>
+💾 hexo
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/about-me/">
+          <span>
+about me
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/hugo/">
+          <span>
+💾 hugo
+</span>
+        </a>
+        
+        <a href="https://ch38r18.github.io/links/">
+          <span>
+💾 Links
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="https://ch38r18.github.io/links/">
+    <span>
+      
+💾 Links
+
+    </span>
+  </a>
+  
+</li>
+
+  </ol>
+</nav>
+
+        </div>
+
+        
+        </div>
+    </header>
+
+    
+
+<h1>
+     
+💾 Links
+
+</h1>
+
+<section>
+<h3 id="网址导航"><a href="#%e7%bd%91%e5%9d%80%e5%af%bc%e8%88%aa">网址导航</a></h3><p>我的firefox书签备份</p>
+
+<h3 id="pro-x"><a href="#pro-x">pro-x</a></h3><ul>
+<li>
+<p>[浏览器离线html](data:text/html, 标题)</p>
+</li>
+<li>
+<p><a href="http://ch38r18.ys168.com/">ch38r18.ys168.com</a></p>
+</li>
+<li>
+<p><a href="https://ch38r18.baklib.com/-/admin">baklib - 租户平台</a></p>
+<p><strong>博客</strong></p>
+</li>
+<li>
+<p><a href="https://ch38r18.baklib.com/">ch38r18 | 首页</a>                <a href="http://fanfou.com/">饭否</a>                <a href="https://ch38r18.blogspot.com/">不独白</a>                <a href="http://www.lofter.com/">网易·轻</a>                <a href="https://weibo.com/qibingniao/home?wvr=5">我的首页 微博-随时随地发现新鲜事</a>                <a href="http://mifan.us/index.php?app=feed">米饭之家 - 社区动态</a>                <a href="http://blog.sina.com.cn/qibingniao">ch38r18_新浪博客</a>                <a href="https://www.jianshu.com/">简书 - 创作你的创作</a>                <a href="http://414404733.qzone.qq.com/">Rong_6_柒冰鳥.</a>                <a href="https://twitter.com/">Twitter</a>                <a href="http://www.facebook.com/">Facebook</a>                <a href="http://about.me/ch38r18">ch38r18 on about.me</a>                <a href="http://www.typepad.com/">Typepad. Share your passions with the world. | Typepad</a>                <a href="http://www.blogware.com/">http://www.blogware.com/</a>                <a href="https://wordpress.org/">Blog Tool, Publishing Platform, and CMS — WordPress</a>                <a href="http://www.flickr.com/photos/ch38r18">Flickr: 你的所有內容</a>                <a href="http://500px.com/ch38r18">500px / 陈荣 / Photos</a>                <a href="http://ch38r18.imgur.com/">ch38r18的专辑 - Imgur</a>                <a href="http://www.kuandao.com/signin">宽岛</a>                <a href="http://www.tumblr.com/">Tumblr</a>                <a href="http://instagram.com/ch38r18">Instagram</a></p>
+</li>
+<li>
+<p><a href="https://wx.qq.com/?lang=en_US">wx</a></p>
+<p><strong>聊天</strong></p>
+</li>
+<li>
+<p><a href="http://www.126.com/">126网易免费邮</a>                <a href="http://w.qq.com/">QQ</a>                <a href="https://telegram.org/">页面载入出错</a>                       <a href="https://remotemeeting.io/account">remotemeeting</a>            <a href="https://outlook.com/">outlook</a></p>
+<p><strong>邮箱</strong></p>
+</li>
+<li>
+<p><a href="https://mail.google.com/">Gmail</a>                <a href="http://24mail.chacuo.net/">临时邮箱、十分钟邮箱（10分钟)、临时邮、临时Email、快速注册Email、24Mail&ndash;查错网</a>                <a href="http://groups.mail.163.com/mailteam/out/frames.html">网易邮件列表</a>                <a href="http://mail.yahoo.com/">Yahoo! Mail</a>                <a href="https://www.futureme.org/">futureme未来的邮件</a>                <a href="https://www.126.com/">126网易免费邮&ndash;你的专业电子邮</a></p>
+</li>
+<li>
+<p><a href="http://1diary.me/web/#/list">一本日记</a></p>
+</li>
+<li>
+<p><a href="https://workflowy.com/">WorkFlowy - Organize your brain.</a></p>
+</li>
+<li>
+<p><a href="https://transno.com/list">My Transnotes - Transno</a></p>
+</li>
+<li>
+<p>在线文字编辑                            <a href="https://www.evernote.com/Login.action">Welcome Back evernote</a>                <a href="https://shimo.im/">石墨</a>                <a href="https://shimo.im/doc/koSxU9SEctQNOB3w">石墨&ndash;网址收藏</a>                <a href="https://www.wunderlist.com/zh/">奇妙清单 | To-do, 清单, 备忘, 任务, 待办 - 年度最佳应用!</a>                <a href="https://worktile.com/dashboard">我的任务 | 工作台 - Worktile</a>                <a href="https://cloud.smartisan.com/#/">欢喜云 - 锤子科技</a>                <a href="https://www.zybuluo.com/mdeditor">Cmd Markdown 编辑阅读器 - 作业部落出品</a>                <a href="https://dynalist.io/compare">Compare - Dynalist</a>                <a href="http://www.processon.com/network">ProcessOn</a>                <a href="https://mubu.com/">幕布 - 极简大纲笔记 | 一键生成思维导图</a>                <a href="http://md.aclickall.com/">Md2All</a></p>
+</li>
+<li>
+<p><a href="https://www.feishu.cn/">飞书 - 在飞书，享高效</a></p>
+</li>
+<li>
+<p><a href="http://www.3adisk.com/?ch38r18">3ADisk网络硬盘</a></p>
+</li>
+</ul>
+<p>​</p>
+
+<h3 id="实体"><a href="#%e5%ae%9e%e4%bd%93">实体</a></h3><ul>
+<li><a href="https://www.taobao.com/">淘宝网 - 淘！我喜欢</a></li>
+<li><a href="https://www.jd.com/">京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</a></li>
+<li><a href="https://mall.gree.com/">格力董明珠店-格力电器唯一官方网上商城，即送即装，全场包邮至乡镇村!网购空调、冰箱、空气能热水器、生活电器的首选商城</a></li>
+<li>衣和生活                            <a href="http://www.amazon.cn/">亚马逊-网上购物商城：要网购, 就来Z.cn!</a>                <a href="http://www.360buy.com/">京东网上商城</a>                <a href="http://cq.meituan.com/">美团网重庆站</a>                <a href="http://www.gome.com.cn/ec/homeus">国美电器网上商城</a>                <a href="http://www.yihaodian.com/">1号店,只为更好的生活</a>                <a href="http://www.koubei.com/">口碑网</a>                <a href="http://www.v1v7.com/MyHome.aspx?UID=792">文艺复兴</a>                <a href="http://www.jianke.com/">健客网</a>                <a href="http://book.dangdang.com/">当当图书-全球最大的中文网上书店，有小说、少儿、教辅、青春、文艺等40多大品类的图书、特价书。提供图书阅读风向标—畅销榜</a>                <a href="http://tangcha.tc/books">字节社 | 网上书店</a>                <a href="http://www.winxuan.com/">文轩网</a>                <a href="http://www.suning.com/">苏宁易购</a>                <a href="http://www.boweiguan.com/index.php">【山珍博味馆】野生灵芝|冬虫夏草|人参|红参|鹿茸|燕窝|雪蛤|海参|山珍礼盒|蜂蜜|蜂胶|花茶|茶叶|特产|小吃|零食|坚果|炒货|山货|干货|年货</a>                <a href="http://www.360kxr.com/">开心人网上药店</a>                <a href="http://www.jxdyf.com/">金象大药房网上药店-网</a>                <a href="http://www.ehaoyao.com/">好药师网上药店</a>                <a href="http://www.a-hospital.com/w/%E5%87%A4%E5%87%B0%E8%A1%A3">凤凰衣,凤凰衣的功效与作用_中药凤凰衣_凤凰衣是什么_凤凰衣的用法用量_A+医学百科</a>                <a href="http://www.noxa20.net/goods-62.html">泰国娜莎NOXA20/诺莎/追风丸(痛风胶囊）</a>                <a href="https://www.maigoo.com/">品牌→买购网®Maigoo.com™，以十大品牌_名牌导购_精华推荐排行榜为特征的知识性_研究型_O2O行业门户网站！</a></li>
+<li>食和健康                            <a href="http://zf.39.net/">39健康增肥_中国专业健康增肥网站</a>                <a href="http://www.qm120.com/">全民健康网_让你的生活更健康</a>                <a href="http://www.familydoctor.com.cn/">家庭医生在线_做中国最专业的健康门户网站</a>                <a href="http://www.5ifit.com/fitness/">健身周刊：增肌健美，肌肉锻炼，减肥方法，减肥计划，健身计划 - 健网</a>                <a href="http://www.jirou.com/">肌肉网 - 肌肉、健美、健身学习网站，是您增肌、减肥、强壮体魄的好帮手。</a>                <a href="https://www.cnhnb.com/">惠农网-买卖农产品，就上惠农网</a>                <a href="http://www.xiachufang.com/">下厨房</a></li>
+<li>住和社区                            政府在线                                    <a href="http://www.bishan.gov.cn/">重庆市璧山区人民政府公众信息网</a>                    <a href="http://gaj.cq.gov.cn/">重庆市公安局</a>                    <a href="http://www.cqga.gov.cn/">重庆市公安局</a>                    <a href="http://www.cpta.com.cn/">中国人事考试网</a>                    <a href="http://www.cpta.com.cn/GB/index.html">中国人事考试网</a>                    <a href="http://www.cqhrss.gov.cn/">重庆人力资源和社会保障网</a>                    <a href="http://www.mca.gov.cn/article/sj/tjbz/a/2017/201801/201801151447.html">行政区划分</a>                    <a href="http://www.cqga.gov.cn/zxzx/">重庆市公安局公众信息网</a>                    <a href="http://search.www.gov.cn/search/fw/search.do?webid=1&amp;q=">全部服务_中国政府网服务频道</a>                    <a href="https://zwfw.mps.gov.cn/">公安部“互联网+政务服务”平台</a>                    <a href="http://wsjkw.cq.gov.cn/tzgg/">重庆市卫生健康委员会官网-新闻列表</a>                    <a href="http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml">疫情通报</a>                                政务                                                公共设施                                    <a href="http://www.chashebao.com/">社保查询网 - 社会保障卡查询,社会保险查询,社保网上查询</a>                    <a href="http://61.186.206.48:8299/newshjg/yhpzgs7.jsp">重庆市公共租赁房信息网</a>                    <a href="http://www.cqgas.cn/pay/">充值缴费_重庆燃气</a>                    <a href="http://www.12333sb.com/">12333社保查询网-全国养老、医疗、社会保险综合查询！</a>                    <a href="http://www.cettic.gov.cn/">中国就业培训技术指导中心(人力资源和社会保障部职业技能鉴定中心)</a>                    <a href="http://www.lm.gov.cn/">中国就业网 - 人力资源和社会保障部大型就业培训门户网站</a>                    <a href="http://osta.org.cn/">国家职业资格工作网</a>                    <a href="http://xa.bendibao.com/live/2016513/60936.shtm">西安市公安局各区县户政业务咨询电话- 西安本地宝</a>                    <a href="https://www.12333.gov.cn/">全国人社政务服务平台</a>                    <a href="http://rlsbj.cq.gov.cn/">重庆市人力资源和社会保障局</a>                    <a href="http://zwfw.cq.gov.cn/icity/public/index">政务服务网</a>                    <a href="https://www.tianyancha.com/">天眼查-商业安全工具_企业信息查询_公司查询_工商查询_企业信用信息系统</a>                    <a href="http://www.cqhri.gov.cn/rczx/index.html">重庆市人才交流服务中心</a>                                <a href="http://cq.fang.com/">【重庆房地产门户|重庆房地产网】- 重庆搜房网 房天下</a>                <a href="http://fang.com/SoufunFamily.htm">_搜房网</a>                <a href="http://cq.lianjia.com/">重庆房产网_重庆房地产_重庆房产门户-链家网重庆站</a>                <a href="http://xahrss.xa.gov.cn/fwdt/">西安市人力资源和社会保障局</a>                <a href="http://ggfw.rlsbj.cq.gov.cn/cqsi/c/2020-04-17/548707.html">单位参保和个人参保到底有啥区别？缴多少？对待遇有影响吗？</a></li>
+<li>行和交通                            <a href="http://www.gditu.net/">谷歌卫星高清地图-Google地图在线</a>                <a href="https://www.amap.com/">高德地图</a>                <a href="https://kyfw.12306.cn/otn/leftTicket/init">12306</a>                <a href="https://www.96096kp.com/index.html">愉客行官网：重庆市公路客运售票网，汽车票查询订票，重庆旅游</a>                <a href="http://flights.ctrip.com/">携程旅行</a>                <a href="http://flight.qunar.com/">机票查询</a>                <a href="http://www.airchina.com.cn/">中国国际航空公司-飞机票查询预订_航班查询_最新打折特价机票</a>                <a href="http://www.youbianku.com/%E9%99%95%E8%A5%BF%E7%9C%81%E5%BB%B6%E5%AE%89%E5%B8%82%E5%AE%9D%E5%A1%94%E5%8C%BA%E6%A1%A5%E6%B2%9F%E9%95%87%E9%A9%AC%E5%AE%B6%E6%B9%BE%E6%9D%91">陕西省延安市宝塔区桥沟镇马家湾村 邮政编码查询 - 邮编库</a>                <a href="http://www.qichezhan.cn/">汽车票查询|汽车时刻表|长途汽车时刻表查询—长途汽车票查询网</a>                <a href="http://car.kdslife.com/carlist/">宽带山汽车</a>                <a href="http://www.onegreen.net/">地图窝_中国地图_世界地图查询库</a>                <a href="https://map.51240.com/">中国地图 - 中国卫星地图 - 中国高清航拍地图</a>                <a href="https://www.earthol.com/">卫星地图-Google Earth中文地标分享-谷歌地图-地球在线</a></li>
+<li><a href="https://www.appinn.com/">小众软件 - 分享免费、小巧、实用、有趣、绿色的软件</a></li>
+<li>用和工具                            <a href="https://www.google.com/nexus/#/">Discover Nexus Devices</a>                <a href="http://buy.smartisan.com/">www.smartisan.cn</a>                <a href="https://secure1.store.apple.com/cn/sign_in?c=aHR0cDovL3N0b3JlLmFwcGxlLmNvbS9jbnwxYW9zOWVjNTQ1MDk2OWU2Y2MxZTkwNGU4NWUwYjQ3YjMzYmJkMWU2ZGNjZQ&amp;r=SDHCD9JUYKX777H9KT9JT7JJTAPAXHFKH&amp;s=aHR0cHM6Ly9zZWN1cmUxLnN0b3JlLmFwcGxlLmNvbS9jbi9hY2NvdW50L3NldHVwL3N0YXJ0P3BsdG49MzcyNTI1Nzh8MWFvczQ0ODI0OWVmYzU4MzQ2MGEyOGM5NTc1YmE0YTA5NTM4NGI2MmIxZGM&amp;up=t">登录 - Apple Store（中国）</a>                <a href="http://www.oneplus.cn/">一加手机官网_1+手机_一加科技_一加智能手机和配件官方正品销售网站</a>                <a href="http://www.oppo.com/">OPPO官方商城首页</a>                <a href="http://www.vmall.com/member/order?t=1459386067392">华为商城</a>                <a href="http://www.meizu.com/">魅族官网 - 首页</a>                <a href="http://www.myzte.com/">中兴手机商城 - 中兴手机唯一官方电子商务平台(青漾2,天机,Grand S)</a>                <a href="http://eshop.htc.com/mall/zh-CN/htc/allCategories?ntype=ecshop">欢迎光临 HTC官方网上商城</a>                <a href="http://www.sony.com.cn/">Sony China Portal 首页 - 索尼（Sony）中国网站</a>                <a href="http://shop.philips.com.cn/">飞利浦官方商城</a>                <a href="http://www.motorola.com.cn/">摩托罗拉手机官网</a>                <a href="http://www.nokia.com/cn-zh/">诺基亚官网</a>                <a href="http://shop.samsung.com.cn/index.shtml">三星商城</a>                <a href="http://www.0101shop.com/">佳能0101商场</a>                <a href="http://shop.bingle-tech.com.cn/">宾果网上商城</a>                <a href="http://www.10010.com/">中国联通</a>                <a href="http://www.hiwifi.com/">极壹S预约抢购</a>                <a href="http://product.noahedu.com/">优学派-产品信息-诺亚舟教育网</a>                <a href="http://www.lenovo.com.cn/">联想中国</a>                <a href="http://www.microsoftstore.com.cn/">微软官方网站|微软中国官方商城</a>                <a href="https://cn.msi.com/">微星中国</a>                <a href="http://www.hasee.net/index.html">神舟电脑在线商城</a>                <a href="http://www.zte.com.cn/cn/products/mobile/">手机 - 中兴通讯</a>                <a href="http://www.epson.com.cn/">爱普生中国</a>                <a href="https://www.vanward.com/">广东万和新电气股份有限公司 中国热水器和厨房电器的领先品牌 燃气热水器</a>                <a href="http://www.reachace.com/">达尔优-达尔优DAREU品牌官方网站</a></li>
+<li><a href="http://www.ccb.com/cn/jump/personal_loginbank.html">建设银行</a></li>
+<li>工作work                            <a href="https://www.huibo.com/">重庆人才网_重庆招聘网_重庆找工作最新招聘信息 - 汇博网</a>                <a href="https://www.51job.com/">招聘网_人才网_找工作_求职_上前程无忧</a>                <a href="https://www.liepin.com/">【猎聘】招聘_找工作_精英职业发展平台</a>                <a href="http://www.hrm.cn/">【重庆人才网】重庆招聘_重庆人才网最新招聘信息_联英人才网_重庆招聘会</a>                <a href="http://cq.jrzp.com/">重庆招聘 - 重庆招聘网 - 今日招聘重庆站</a>                <a href="http://www.demohour.com/">点名时间</a>                <a href="http://www.job1001.com/SearchResult.php">采油工程师招聘信息 - 招聘采油工程师人才 - 一览英才网</a>                <a href="http://oil.job1001.com/">一览石油英才网-石油人才网-中国最大最权威的石油行业人才求职招聘首选网站</a>                <a href="http://www.01hr.com/">数字英才网-人才招聘,人才推荐,猎头,求职找工作,找简历,最大的人才信息交互网站</a>                <a href="http://www.fenzhi.com/">分智 - 公司评论,晒工资,薪水</a>                <a href="http://www.1688fx.com/">澳华投资-福汇 FXCM 战略合作伙伴_中国内地最大的福汇代理商_FXCM代理_提供24小时福汇交易平台服务_外汇智能交易系统</a>                <a href="http://jzsgl.coc.gov.cn/archisearch/">全国建造师信息查询-住房和城乡建设部中国建造师网</a>                <a href="http://ican.edudisk.cn/">我行教育</a>                <a href="http://www.glzy8.com/">管理资源吧 - 企业管理资料免费下载</a>                <a href="https://www.233.com/">233网校-14年用专业护航梦想-【233网校官网】</a>                <a href="https://xiangdang.net/">工作总结,个人工作总结,工作计划,述职报告,范文,论文_香当网</a>                <a href="https://www.chsi.com.cn/">中国高等教育学生信息网（学信网）</a>                <a href="https://my.chsi.com.cn/archive/index.jsp">学信档案</a>                <a href="http://www.cqbys.com/index.html">重庆高校毕业生就业信息网</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="信息"><a href="#%e4%bf%a1%e6%81%af">信息</a></h3><ul>
+<li>国际新闻                            404                                    <a href="https://freeweibo.com/">匿名和不受屏蔽的新浪微博搜索 | 自由微博</a>                    <a href="http://chinadigitaltimes.net/chinese/">中国数字时代</a>                    <a href="http://www.zaobao.com/">联合早报网 | www.zaobao.com</a>                    <a href="http://cn.nytimes.com/">纽约时报中文网</a>                    <a href="http://cn.wsj.com/gb/">华尔街日报</a>                    <a href="http://cn.reuters.com/">路透中文网</a>                    <a href="http://www.ftchinese.com/">FT中文网</a>                    <a href="http://www.botanwang.com/">博谈网</a>                    <a href="http://www.bullock.cn/">嫣牛博 - 没有政治内容的牛博 (测试版)</a>                    <a href="http://niub.us/">牛B博客 niub.us</a>                    <a href="http://blog.dwnews.com/index.html">多维博客</a>                    <a href="https://yangjiaoshou.info/">China News, Current Events &amp; Headlines - China Digital Times (CDT) - Circumvent GFW https://yangjiaoshou.info</a>                    <a href="http://www.64tianwang.com/">六四天网</a>                    <a href="http://bbs.kanshifang.com/">十方论坛 • 首页</a>                    <a href="http://www.aboluowang.com/">阿波罗网</a>                    <a href="http://cn.ibtimes.com/">国际财经日报</a>                    <a href="http://www.dw.de/%E5%9C%A8%E7%BA%BF%E6%8A%A5%E5%AF%BC/s-9058">在线报导 | DW.DE</a>                    <a href="http://www.reddit.com/">reddit头版</a>                    <a href="http://cn.tmagazine.com/">纽约时报 国际生活</a>                    <a href="http://www.yhcqw.com/">炎黄春秋_主页_实事求是 秉笔直书 以史为鉴 与时俱进</a>                    <a href="https://github.com/freeweibo/s">GitHub - freeweibo/s</a>                                <a href="http://www.uzaobao.com/">联合早报中文网-南略网</a>                <a href="https://www.bbc.com/">BBC</a>                <a href="https://www.international.tbs.com/">东京广播公司(TBS)</a>                <a href="https://www.nhk.or.jp/">日本放送协会(NHK)</a></li>
+<li>新闻Top                            <a href="https://www.solidot.org/">奇客Solidot: 奇客的资讯，重要的东西</a>                <a href="http://solidot.org/">Solidot: 奇客</a>                <a href="http://jiliuwang.net/">激流网 - 激流</a>                <a href="https://www.cbnweek.com/">第一财经周刊</a>                <a href="http://www.caixin.com/">财新网</a>                <a href="https://www.yicai.com/">第一财经_专业创造价值</a>                <a href="http://www.caijing.com.cn/">财经网 - CAIJING.COM.CN</a>                <a href="http://www.sciencenet.cn/">科学网—构建全球华人科学社区</a>                <a href="https://36kr.com/">36氪_让一部分人先看到未来</a>                <a href="http://infzm.com/">南方周末</a>                <a href="http://news.163.com/">网易新闻</a>                网易163                                    <a href="http://data.163.com/special/datablog/">数读_网易新闻</a>                    <a href="http://view.163.com/special/resound/">回声</a>                    <a href="http://renjian.163.com/">人间_网易新闻</a>                    <a href="http://news.163.com/special/163theotherside/">另一面汇总_网易新闻中心</a>                    <a href="http://zhenhua.163.com/">UGC精选</a>                    <a href="http://j.news.163.com/#newsindexguide">网易荐新闻</a>                    <a href="http://tag.163.com/">网易聚合阅读</a>                    <a href="http://tie.163.com/plaza/build.html">网易盖楼</a>                    <a href="http://tie.163.com/plaza/recommend.html?from=topNav">精彩跟贴 - 跟贴广场</a>                    <a href="http://discovery.163.com/">探索频道_网易新闻中心</a>                    <a href="http://open.163.com/ted/">TED_网易公开课</a>                                <a href="http://www.hnr.cn/">映象网 河南第一新闻门户</a>                <a href="http://www.thepaper.cn/">澎湃新闻-专注时政与思想-ThePaper.cn</a>                <a href="http://www.zhiding.cn/">至顶网（zhiding.cn）- 记录和推动数字化创新</a></li>
+<li>资讯                            <a href="http://news.ceic.ac.cn/index.html?time=1560785040">中国地震台网——首页</a>                <a href="https://www.cea.gov.cn/cea/xwzx/zqsd/zqsdlb/index.html">震情速递列表</a>                <a href="https://earthquake.usgs.gov/">USGS Earthquake Hazards Program</a>                <a href="http://bbs.classic023.com/forum.php">重庆论坛,大重庆论坛,重庆两江新区论坛,西三角经济区论坛,大渝论坛,成渝经济区论坛,经典重庆论坛,重庆经典论坛,经典论坛,重庆社区,重庆BBS,重庆发展论坛,重庆人论坛,重庆区县论坛,重庆本土发展论坛,重庆时事论坛,重庆摄影论坛,摩天重庆论坛,重庆汽车论坛,重庆高楼论坛,重庆房产论坛,重庆楼市论坛,重庆交通论坛,时尚重庆论坛,重庆美女论坛,重庆生活论坛,重庆文化论坛,重庆娱乐论坛,西部发展论坛,重庆大学论坛,重庆美食论坛,重庆旅游论坛,重庆购物论坛,重庆音乐动漫论坛,重庆交友论坛,重庆体育论坛,重庆城市发展论坛,重庆贴图论坛,图说重庆论坛,重庆快播电影论坛,重庆人文论坛,重庆猎奇探索论坛,重庆军事博览论坛,国际重庆论坛,重庆宠物论坛,重庆民生论坛,健康重庆论坛,重庆统筹城乡发展论坛,森林重庆论坛,平安重庆论坛,宜居重庆论坛,重庆保税区论坛,重庆妈咪宝贝论坛,重庆电脑与数码论坛,重庆IT论坛,重庆商务合作论坛,重庆游戏玩家论坛,重庆人自己的论坛,重庆民间第一论坛  - 经典重庆旗下网站!</a>                <a href="http://www.ip138.com/post/shanxi/yanan/ansai/3.htm">邮编大全</a>                <a href="http://www.11183.com.cn/">中国邮政速递物流</a>                <a href="http://map2.zhcw.com/tbpd/index.shtml">数据图表_中彩网</a>                <a href="http://cq.weather.com.cn/index.shtml">天气预报</a>                <a href="http://www.cnr.cn/service/zyqy/">中央企业</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="info综合"><a href="#info%e7%bb%bc%e5%90%88">info综合</a></h3><ul>
+<li>IT改变生活                            <a href="https://www.ifanr.com/">爱范儿 · 让未来触手可及</a>                <a href="http://www.dgtle.com/">数字尾巴 分享美好数字生活 |</a>                <a href="https://cn.engadget.com/">Engadget 中国版 - 消费性电子产品新闻和评测</a>                <a href="https://www.cnbeta.com/">cnBeta.COM - 中文业界资讯站</a>                <a href="https://www.leiphone.com/">雷锋网_读懂智能&amp;未来</a>                <a href="http://www.iheima.com/">i黑马—创业创新服务平台</a>                <a href="https://www.newseed.cn/">新芽 - 创业者都关注的资本聚集地</a>                <a href="https://www.tmtpost.com/">钛媒体_引领未来商业与生活新知</a>                <a href="http://www.inexus.co/portal.php">Nexus中文网-nexus 5,android silver,silver,nexus 8,nexus 7,nexus 4,moto g,moto x,xphone,nexus 10,代购,评测,资讯,玩机,交流</a>                <a href="http://www.alibuybuy.com/">互联网</a>                <a href="http://www.guao.hk/">谷奥——探寻谷歌的奥秘</a>                <a href="http://www.kjxfx.com/">科技新发现|发现科技新乐趣|</a>                <a href="http://www.laoluoshouji.net/">老罗手机网</a></li>
+<li>人文导读                            <a href="http://www.mifengtd.cn/">褪墨・时间管理，个人提升，生活健康与习惯</a>                <a href="http://www.zreading.cn/">左岸读书_blog|一切成功均源自积累！</a>                <a href="http://www.caogen.com/">草根网</a>                <a href="https://www.gushiwen.org/">古诗文网-古诗文经典传承</a>                <a href="http://www.yeeyan.org/">译言网</a>                <a href="http://www.dili360.com/">中国国家地理网</a>                <a href="http://www.ngmchina.com.cn/">华夏地理</a>                <a href="http://yuedu.163.com/">网易云阅读&ndash;海量新闻、精彩资讯、图书、免费小说、漫画，免费畅读</a>                <a href="http://jiaren.org/">佳人 | 发现世间的情和美</a>                <a href="https://www.lz13.cn/">励志一生_励志名言名人名言大全_励志电影歌曲排行_经典语录语句</a>                <a href="http://meiriyiwen.com/">每日一文</a>                <a href="http://www.duwenzhang.com/wenzhang/jingdianwenzhang/">经典文章</a>                <a href="http://www.abbao.cn/">AB报_领先的原版数字报刊分享阅读网</a>                <a href="http://www.qikan.com.cn/">龙源期刊网</a>                <a href="http://www.bousun.com/">博享网</a>                <a href="http://www.ibeidou.net/">北斗 | 青年自我启蒙践行者</a>                <a href="http://www.luoo.net/">落网</a>                <a href="http://www.5time.cn/">5time经典语录网</a>                <a href="http://www.20ju.com/">草根网</a>                [红楼梦文学社区<a href="http://www.hlmbbs.com/forum/forum.php?mod=viewthread&amp;tid=1112&amp;extra=page%3D1">抚琴居]</a>                <a href="http://www.myzaker.com/channel/690">左岸读书&ndash;ZAKER新闻：传递价值资讯</a>                <a href="http://www.aisixiang.com/data/search.php?lanmu=722">中国近现代史_文章列表_爱思想</a></li>
+<li>文摘句子                            <a href="https://www.wenzhaiwang.com/">文摘网_读者在线阅读_美文摘抄_好文章_人生感悟</a>                <a href="http://www.meiriyixue.cn/">每日一学网 - 发现更精彩的电脑世界</a>                <a href="http://www.duwenzhang.com/">文章阅读网 -情感文章-美文故事-散文欣赏</a>                <a href="http://www.dsj365.cn/">大事记－以时间轴的方式展示历史事件，还原事件的发展过程</a></li>
+<li>科技-改变世界                            <a href="http://songshuhui.net/">科学松鼠会 :: 让我们剥开科学的坚果</a>                <a href="http://www.guokr.com/">果壳网</a>                <a href="https://www.guokr.com/">果壳 科技有意思</a>                <a href="http://www.sciencenet.cn/">科学网—构建全球华人科学社区</a></li>
+<li>知识社区                            <a href="http://cq.tianya.cn/">天涯</a>                <a href="https://www.zhihu.com/">知乎</a>                <a href="http://dajia.qq.com/">腾讯 · 大家</a>                <a href="http://www.chinavalue.net/">价值中国网</a>                <a href="http://www.ituring.com.cn/">图灵社区</a>                <a href="http://www.leica.org.cn/">『Leica中文摄影杂志』 - &hellip;摄影改变生活&hellip;中文独立摄影阅读&hellip;</a>                <a href="https://www.souid.com/">世界之最网 — 2019最新世界纪录大全，世界之最大全和图片</a>                <a href="http://www.ceconline.com/">世界经理人-世界经理人网站与杂志致力引导职业经理人实现卓越管理</a></li>
+<li>娱乐社区                            <a href="http://www.tianya.cn/71175204/bbs">论坛_金渊论天下_天涯社区</a>                <a href="http://dig.chouti.com/">抽屉新热榜-聚合每日热门、搞笑、有趣资讯</a>                <a href="http://jandan.net/">煎蛋</a>                <a href="http://www.sino-manager.com/">经理人网</a>                <a href="http://www.dapenti.com/blog/index.asp">喷嚏网</a>                <a href="http://www.wuliaoo.com/">无聊哦</a>                <a href="http://www.ipc.me/">iPc.me</a>                <a href="http://www.9haow.cn/">好玩</a>                <a href="http://www.tianya.cn/33163623/bbs">论坛_俺老年痴呆病人_天涯社区</a></li>
+<li><a href="https://www.csdn.net/">CSDN - 专业开发者社区</a></li>
+<li><a href="https://resource.yudouyudou.com/">Resource，愿您可以被生活温柔以待！</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="blog"><a href="#blog">blog</a></h3><ul>
+<li>hugo-theme                            <a href="https://github.com/pys1992/hugo-theme-simple-blog">pys1992/hugo-theme-simple-blog: 一个简洁的 hugo 主题。</a>                <a href="https://www.cnblogs.com/RyanXing/p/Hugo.html">用Hugo搭建博客并部署到GitHub Pages - RyanXing - 博客园</a></li>
+<li>hexo-themes                            <a href="https://github.com/ganto-cn/hexo-theme-heri">ganto-cn/hexo-theme-heri: hexo-theme-heri</a>                [outloudvi/hexo-theme-saas: <a href="https://github.com/outloudvi/hexo-theme-saas">WIP] A simple, awakening and sass-based Hexo theme.</a>                <a href="https://github.com/sshwy/hexo-theme-essence">sshwy/hexo-theme-essence: Theme for Hexo.</a>                <a href="https://github.com/hifun-team/hexo-theme-miracle">hifun-team/hexo-theme-miracle: A simple single-column theme for Hexo.</a>                <a href="https://github.com/lh1me/hexo-theme-aomori">lh1me/hexo-theme-aomori: A Hexo Theme. Hexo 博客主题</a>                <a href="https://github.com/mark0smith/Hexo_theme_stats">饼状图Hexo_theme_stats: hexo themes analytics</a>                <a href="https://github.com/korilin/hexo-theme-particle">korilin/hexo-theme-particle: 包含3种配色样式的简洁Hexo主题，地址：https://korilin.com</a>                <a href="https://github.com/lete114/hexo-theme-MengD">lete114/hexo-theme-MengD:  A respect for simplicity and elegance, as well as extreme performance ,  Focus on the content  一个崇尚简约优雅，以及极致的性能，把注意力集中到内容上（评论系统支持twikoo、waline、valine）</a>                <a href="https://github.com/jangdelong/hexo-theme-xups">jangdelong/hexo-theme-xups: hexo主题xups</a>                <a href="https://github.com/D0n9X1n/hexo-theme-gandalfr">D0n9X1n/hexo-theme-gandalfr: Yet, just another blog theme for hexo.</a>                <a href="https://github.com/zthxxx/hexo-theme-Wikitten">zthxxx/hexo-theme-Wikitten: A theme of Hexo for personal wiki which seems like Wikitten style.</a>                <a href="https://github.com/sanjinhub/hexo-theme-geek">sanjinhub/hexo-theme-geek: 一个符合极客精神主义极简的 Hexo 主题</a>                <a href="https://github.com/giscafer/hexo-theme-cafe">giscafer/hexo-theme-cafe: 精简的Hexo博客主题，样式风格如阮一峰老师博客</a>                <a href="https://github.com/zchengsite/hexo-theme-oranges">zchengsite/hexo-theme-oranges: 🍊A simple hexo-theme of minimalism</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_89a729a40102wjwp.html">飞扬时空 soft改良</a></li>
+<li><a href="https://www.cnblogs.com/jackadam/">上官飞鸿 - 博客园</a></li>
+<li><a href="https://www.cnblogs.com/hellojesson/">hello-Jesson - 博客园</a></li>
+<li><a href="https://www.cnblogs.com/lc161616/category/1318531.html">go学习笔记 - 随笔分类 - 垃圾站 - 博客园</a></li>
+<li><a href="https://i.ijrou.com/">蠢太の个人博客 - 只是自以为心若顽石,却终究人非草木</a></li>
+<li>BLOG经典设计                            <a href="http://stevelosh.com/">史蒂夫·洛斯</a>                <a href="https://sivers.org/">Derek Sivers</a>                <a href="http://beiyuu.com/">BeiYuu.com</a>                <a href="https://www.dnspod.cn/">DNSPod-免费智能DNS解析服务商-电信_网通_教育网,智能DNS</a>                <a href="http://beiyuu.com/why-blog">我为什么写博客？ | BeiYuu.com</a>                <a href="https://github.com/jekyll/jekyll">jekyll/jekyll: Jekyll is a blog-aware, static site generator in Ruby</a></li>
+<li><a href="">编程（本地版）</a></li>
+<li><a href="http://www.williamlong.info/">月光博客</a></li>
+<li><a href="http://coolshell.cn/">酷壳</a></li>
+<li><a href="https://coderschool.cn/">技术拉近你我！ | stay foolish,stay hungry!</a></li>
+<li><a href="http://www.yhjbox.com/">永恒君的百宝箱 - 分享互联网心得技巧</a></li>
+<li><a href="http://www.cnblogs.com/rubylouvre/">司徒正美 - 博客园</a></li>
+<li><a href="https://www.xuebuyuan.com/">学步园 | IT技术社区</a></li>
+<li><a href="https://shaneking.org/">ShaneKing</a></li>
+<li><a href="https://www.cnblogs.com/">博客园 - 开发者的网上家园</a></li>
+<li><a href="https://www.cnblogs.com/yychuyu/">良许Linux - 博客园</a></li>
+<li><a href="https://www.liwenzhou.com/">李文周的博客 | JPG程序员/全栈开发 &ndash; 专注互联网技术，相信代码改变世界。Go语言学习QQ群：645090316 公众号：李文周</a></li>
+<li><a href="https://c4ys.com/archives/1325">手机移动端富文本编辑器比较 | 为自己写代码</a></li>
+<li><a href="https://www.shuzhiduo.com/">术之多</a></li>
+<li><a href="https://note.qidong.name/">零壹軒·笔记</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="数据"><a href="#%e6%95%b0%e6%8d%ae">数据</a></h3><ul>
+<li>订阅Rss                            <a href="https://theoldreader.com/">The Old Reader</a>                <a href="https://www.inoreader.com/#welcome">InoReader • 轻便快捷的 RSS 阅读器</a>                <a href="http://xianguo.com/">鲜果 - 关注你感兴趣的人和事</a>                <a href="https://www.newsblur.com/">NewsBlur</a>                <a href="https://feedly.com/index.html">feedly</a>                <a href="https://www.readability.com/">桥 (ch38r18) on Readability</a>                <a href="http://ctrlq.org/rss/">即时RSS搜索</a>                <a href="http://feedvalidator.org/">Feed验证器</a>                <a href="http://vip.taorenqi.com/home.shtml">TaoRenQi - 为Amazon Kindle订阅推送微信公众订阅号文章服务</a>                <a href="https://bazqux.com/">BazQux Reader</a>                <a href="https://rss.anyant.com/about">蚁阅</a>                <a href="https://addons.mozilla.org/zh-CN/firefox/addon/feedbroreader/">Feedbro – 下载 🦊 Firefox 扩展（zh-CN）</a>                <a href="https://app.getpocket.com/">Pocket - 我的列表</a>                <a href="https://www.instapaper.com/u">Instapaper</a></li>
+<li>大杂烩                            <a href="http://www.lovehhy.net/Default.aspx">后花园网文 - 文章列表 - 所有文章 - 首 页</a></li>
+<li>博客1                            <a href="https://www.sayloving.com/">网络流行语_表情包_是什么意思网</a>                <a href="http://www.boke.la/">博客啦-优秀的个人独立博客聚集地</a>                <a href="https://blogwe.com/">博客我们 - 个人博客大全|博客导航|生活博客|日记博客|博客大全网 - BlogWe</a>                科技博客                                    <a href="http://ycool.com/user/pengyong126">pengyong126 - 歪酷 YCOOL.COM</a>                    <a href="http://www.umiwi.com/">优米网 -</a>                    <a href="http://niub.us/">牛B博客 niub.us</a>                    <a href="http://hello.42qu.com/">杨子江 . 80后非典型跨界程序猿，从事生物信息、互联网、B2C、移动 领域；同时持续关注 基因测序、可视化、数学、能源</a>                    <a href="http://www.netnoease.com/">网不易</a>                    <a href="http://xiaomi.ru/">小米分享</a>                    <a href="http://www.wangxiaofeng.net/">不许联想</a>                    <a href="http://www.weprint.cn/">微印网- 专业在线印刷网站</a>                    <a href="http://www.web20share.com/">天涯海阁 |</a>                    <a href="http://diannao.it/">网虫日志</a>                    <a href="http://shandian.biz/">闪电博客，神谋鬼计</a>                    <a href="http://weiwuhui.com/">It Talks &ndash; 上海魏武挥的Blog</a>                    <a href="http://www.ruancan.com/">软餐 - 实用的科技博客</a>                    <a href="http://www.anhuizlx.cn/">朱宇乐博客</a>                    <a href="http://www.songruihua.com/hk4win/">HK4WIN 官方网站</a>                    <a href="http://jacksonmind.lofter.com/post/42f5a_185cf2">技术贴汇总&amp;摄影书籍下载-昔寂</a>                    <a href="http://www.itouxian.com/">爱偷闲 - 偷得浮生半日闲</a>                                <a href="http://www.lao47.com/">lao47</a>                个人                                    <a href="https://jeffjade.com/">晚晴幽草轩</a>                    <a href="http://weiwuhui.com/">It Talks &ndash; 上海魏武挥的Blog</a>                    <a href="http://lusongsong.com/">卢松松博客&ndash;关注中小创业者和站长的媒体博客</a>                    <a href="http://shandian.biz/">闪电博客，神谋鬼计</a>                    <a href="http://mimi19730930.blog.techweb.com.cn/">米晓彬TechWeb博客</a>                    <a href="http://nicrosoft.net/">nicrosoft.net</a>                    <a href="http://blog.kakarot.net/">明远</a>                    <a href="http://www.10tiao.com/">十条 | 开发者公众号大全</a>                    [国学之窗<a href="http://lishouli.blog.hexun.com/">李守力]</a>                    <a href="http://www.netnoease.com/map/index_1.html">网不易</a>                    <a href="http://coolshell.cn/">酷壳</a>                    <a href="https://www.cnblogs.com/docnan/">DocNan - 博客园</a>                    <a href="http://blog.sina.com.cn/linbaiblog">林中白狼_新浪博客</a>                    <a href="http://www.web20share.com/">天涯海阁 |</a>                    <a href="http://blog.163.com/ygy8245@126/">思郁：从孤独中突围 - 思郁-说书人 - 网易博客</a>                    <a href="http://www.guhai66.com/">古道观海</a>                    <a href="http://xiaohan.blogchina.com/">萧瀚的博客中国专栏</a>                    <a href="http://www.yanghengjun.com/">杨恒均的独立博客 - 嫉恶如仇 从善如流</a>                    <a href="http://opinion.caixin.com/xiaohan/index.html">财新网 萧瀚</a>                    <a href="http://shared.opendns.com/dnscrypt/packages/windows-client/">Index of /dnscrypt/packages/windows-client</a>                    <a href="https://groups.google.com/forum/#!forum/williamlong">月光博客 - Google 网上论坛</a>                    <a href="http://linyunkai.com/">HOME : 林畇恺</a>                    <a href="http://sofi.sh/">幸福收藏夹</a>                    <a href="http://www.gtdlife.com/">小强的时间管理博客 | 高效率，慢生活</a>                    <a href="http://hutu.me/">小道消息</a>                    <a href="http://www.huzheng.org/">辟支佛胡正 · 阿罗汉尊者 · 功德藏闯菩萨 · 大慈愍心佛 - 菩萨道linux编程</a>                    <a href="https://github.com/wizardforcel">wizardforcel (飞龙) · GitHub</a>                                个人思想                                    <a href="http://www.wangxiaofeng.net/">不许联想</a>                    <a href="http://diannao.it/">网虫日志</a>                    <a href="http://hello.42qu.com/">杨子江 . 80后非典型跨界程序猿，从事生物信息、互联网、B2C、移动 领域；同时持续关注 基因测序、可视化、数学、能源</a>                    <a href="http://yule.tc/">天朝娱乐-每天开心一下!</a>                    <a href="http://hxyl.net/">火星娱乐 河蟹娱乐</a>                    <a href="http://www.anhuizlx.cn/">朱宇乐博客</a>                    <a href="http://www.wuliaoo.com/">无聊哦</a>                    <a href="http://jandan.net/">煎蛋</a>                                <a href="https://www.misiyu.cn/">首页 - 迷思雨 - 无道</a></li>
+<li><a href="https://blog.ichr.me/">ChrAlpha&rsquo;s Blog</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="list推荐"><a href="#list%e6%8e%a8%e8%8d%90">list推荐</a></h3><ul>
+<li><a href="https://www.v2ex.com/t/347176">用 Hexo 做个人 Wiki 知识管理系统 - V2EX</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="理论"><a href="#%e7%90%86%e8%ae%ba">理论</a></h3><ul>
+<li>WiKi                            <a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikiHow - 您可以编辑的指导手册</a>                <a href="https://www.baike.com/">头条百科 - 来这里，认识世界！</a>                百科平台                                    <a href="http://210.32.137.198/">非书资料管理系统</a>                    <a href="http://202.38.93.29/">非书资料管理系统</a>                    <a href="https://www.cn-ki.net/">iData-知识检索</a>                    <a href="https://zh.wikiquote.org/wiki/Wikiquote:%E9%A6%96%E9%A1%B5">维基语录，自由的名人名言录</a>                    <a href="http://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5">维基百科，自由的百科全书</a>                    <a href="http://www.mbalib.com/">MBA智库,专注于经济管理领域</a>                    <a href="http://cy.5156edu.com/serach.php">在线成语词典&mdash;成语词典</a>                    <a href="http://www.chinalivedoor.com/dict/chengyu/yjwx-46257/">在线成语词典</a>                    <a href="http://xinzhi.baidu.com/">百度新知</a>                    <a href="http://www.livehealthclub.com/forums/regtopic.php">健康问题 - 活出健康俱乐部</a>                    <a href="https://zhongyibaike.com/wiki/%E7%94%9F%E7%9F%B3%E8%86%8F">生石膏【中药】【中医百科】</a>                    <a href="http://prizes.org/">Prizes - Solve Problems. Win Contests. Make Money.</a>                    <a href="http://segmentfault.com/">SegmentFault</a>                    <a href="http://www.cnki.net/">中国知网</a>                    <a href="http://www.wanfangdata.com.cn/">万方数据知识服务平台</a>                    <a href="https://commons.wikimedia.org/wiki/%E9%A6%96%E9%A1%B5">首页 - Wikimedia Commons</a>                    <a href="https://zh.unesco.org/">联合国教科文组织 | 于人之思想中构建和平</a>                                <a href="http://wap.gxlib.org/ermsClient/browse.do">电子资源平台</a>                <a href="http://hao.199it.com/">大数据导航-大数据工具导航-199IT大数据导航-199IT大数据工具导航-Hao.199it.com</a></li>
+<li>图书馆                            <a href="http://www.library.metro.tokyo.jp/cn-sentence/tabid/2460/Default.aspx">Tokyo Metropolitan Library_index</a>                <a href="http://libgen.io/">图书馆创世纪</a>                <a href="http://www.law-lib.com/">法律图书馆:法律法规数据库|法律论文|法律图书,中国法律门户网站</a>                <a href="http://www.qulishi.com/">历史_历史故事大全_历史朝代表百科知识_历史的天空 - 趣历史网</a>                <a href="http://www.nlc.cn/">中国国家图书馆•中国国家数字图书馆</a></li>
+<li>语文                            <a href="https://github.com/chinese-poetry/chinese-poetry">古诗词数据库</a>                <a href="https://github.com/pwxcoo/chinese-xinhua">新华字典数据库</a>                <a href="http://xh.5156edu.com/">在线新华字典</a>                <a href="http://www.guoxue.com/">国学网</a>                <a href="http://www.haoshici.com/">中华诗词网：古诗鉴赏，诗歌荟萃【中国诗词电子化计划】</a>                <a href="http://ts300.5156edu.com/">古诗词大全&ndash;唐诗三百首全集&ndash;宋词三百首</a>                <a href="http://shici.chazidian.com/">古诗大全_诗词名句_文言文_诗词鉴赏 - 诗词大全</a>                <a href="http://www.zdic.net/">汉典 zdic.net</a>                <a href="http://www.chinapoesy.com/SongCi_luyou_chaitoufeng205.html">钗头凤_陆游诗词_宋词_诗词在线&ndash;中国最具影响力的开放式原创诗词网站</a>                <a href="https://www.gushiwen.org/gushi/">古诗大全_古代诗歌大全_古诗文网</a>                <a href="http://www.zgshige.com/">中国诗歌网-每日好诗，每天为您推荐一首原创好诗！</a>                <a href="https://www.gushimi.org/">古诗大全_古诗大全300首</a></li>
+<li>音乐                            <a href="http://www.yueqixuexi.com/xiaotiqin/">小提琴学习网_小提琴入门_小提琴教程_小提琴教学_小提琴谱</a>                <a href="https://www.jitatang.com/">吉他堂-吉他教程,吉他视频教学,吉他谱分享平台!</a></li>
+<li>数理化                            <a href="http://betterexplained.com/">Explanations for everyone. | BetterExplained</a>                <a href="http://www.ofweek.com/">光电新闻网</a>                <a href="http://www.ichemistry.cn/">CAS_CAS号查询_CAS no查询 - 爱化学</a></li>
+<li>历史哲学                            <a href="https://www.allhistory.com/">全历史</a></li>
+<li>非设计不生活                            <a href="http://365design.me/">——图形者 - 设计素材分享站</a>                <a href="http://helloracer.com/webgl/">HelloRacer™ WebGL 测试60FPS</a>                <a href="http://blog.yunrui.co/">云瑞-关注高品质设计资源的博客</a>                <a href="http://www.sj33.cn/">设计之家</a>                <a href="https://www.ellechina.com/">ELLEMEN睿士杂志</a>                <a href="http://www.vogue.com.cn/">VOGUE服饰与美容</a>                <a href="http://www.haibao.com/">海报时尚网&ndash;领先的时尚互动媒体</a>                <a href="https://www.gooood.cn/">谷德设计网 - 服务全球创意，推进中国创造</a>                <a href="https://www.zcool.com.cn/">站酷 (ZCOOL) - 设计师互动平台 - 打开站酷，发现更好的设计！</a>                <a href="https://huaban.com/">花瓣网_陪你做生活的设计师（创意灵感天堂，搜索、发现设计灵感、设计素材）</a></li>
+<li>商</li>
+</ul>
+<p>​</p>
+
+<h3 id="os文档"><a href="#os%e6%96%87%e6%a1%a3">OS文档</a></h3><ul>
+<li><a href="http://linux.vbird.org/">鳥哥的 Linux 私房菜 &ndash; 鳥哥的 Linux 私房菜 首頁</a></li>
+<li>安装环境                            <a href="https://nodejs.org/zh-cn/">Node.js</a>                <a href="http://www.gameais.com/">游戏服务器开发</a></li>
+<li>Linux                            <a href="https://www.linuxmint.com/">Main Page - Linux Mint</a>                <a href="https://www.deepin.org/zh/">深度科技社区</a>                <a href="https://ubuntu.com/">The leading operating system for PCs, IoT devices, servers and the cloud | Ubuntu</a>                <a href="https://www.debian.org/">Debian &ndash; 通用操作系统</a>                <a href="http://linux.linuxidc.com/index.php?folder=cHViL7Oj08O5pL7f">Linux公社资源站_Linux公社-Linux系统门户网站 Index of: Home/pub/常用工具/</a></li>
+<li>Linux/Windows                            <a href="http://www.wepe.com.cn/">微PE工具箱 - 最好用的WinPE装机维护工具</a>                <a href="http://www.newxitong.com/">【专注于Win7】致力于做最好用的win7系统-专注于win7官网</a>                <a href="http://www.pcbeta.com/">PCBeta 远景在线-Surface专注Windows爱好者的焦点</a>                <a href="http://www.d6pc.com/Class.asp?ID=35">D6电脑网</a>                <a href="https://getfedora.org/zh_CN/workstation/download/">下载 Fedora Workstation</a>                <a href="http://linux0818.blogspot.com/">我心无畏,源自于我心无知</a>                <a href="http://wowubuntu.com/">Wow! Ubuntu</a>                <a href="http://linux.chinaitlab.com/Special/Ubuntu/Index.html">Ubuntu中文开源频道|中国IT实验室</a>                <a href="http://www.linuxdeepin.com/download.cn.html">Linux Deepin</a>                <a href="http://www.linuxidc.com/">Linux公社 - Linux系统门户网站</a>                <a href="http://linux.chinaunix.net/">Linux时代 - 中国最大的Linux技术社区</a>                <a href="http://www.linux.org/">Linux.org</a>                <a href="http://www.linuxeden.com/">Linux伊甸园开源社区-24小时滚动更新开源资讯，全年无休！</a>                <a href="http://lxqt.org/">LXQt - The next generation of the Lightweight Desktop Environment</a>                <a href="https://www.cnblogs.com/harderqian/p/5322987.html">Win7下CentOS7安装指南 - Harder Qian - 博客园</a>                <a href="http://bckong.blog.51cto.com/5092126/1574489/">Win7下硬盘安装CentOS7！ - bckong - 51CTO技术博客</a>                <a href="http://blog.csdn.net/IMapMap/article/details/53380441?locationNum=15&amp;fps=1">Win 7 U盘安装CentOS 7 双系统 - IMapMap的专栏 - 博客频道 - CSDN.NET</a>                <a href="https://linux.cn/">Linux.中国-开源社区</a>                <a href="http://www.phoenixos.com/phoenixos">凤凰系统 - Phoenix OS</a>                <a href="https://www.deepin.org/download/">深度科技社区deepin</a>                <a href="https://www.linuxprobe.com/">《Linux就该这么学》 - 必读的Linux系统与红帽RHCE认证免费自学书籍</a>                <a href="https://www.runoob.com/linux/linux-tutorial.html">Linux 教程 | 菜鸟教程</a>                <a href="https://www.linux.org/pages/download/">Download Linux | Linux.org</a></li>
+<li>app/IOS//WP                            <a href="http://www.android-x86.org/download">Download - Android-x86 - Porting Android to x86</a>                <a href="http://www.acc.umu.se/technical/statistics/ftp/">File Archive transfer statistics</a>                <a href="http://www.wandoujia.com/apps">安卓全部软件下载 - 豌豆荚</a>                <a href="http://bbs.hiapk.com/">安卓论坛</a>                <a href="http://www.appchina.com/">掌上应用汇 - Android</a>                <a href="http://cn.engadget.com/tag/Android">Android &ndash; Engadget 中国版</a>                <a href="http://www.android.com/devices/">Android Device Gallery</a>                <a href="http://www.eoeandroid.com/portal.php">eoe·Android开发者门户</a>                <a href="http://goo.im/gapps/">Goo.im下载 - 浏览GAPPS</a>                <a href="http://gmm.10ml.net/">Gmmつ - ROM下载列表</a>                <a href="http://bbs.hiwp.com/">微饭网</a>                <a href="http://www.app111.com/">苹果园</a>                <a href="http://iapp4me.com/us/about/">关于我们 - iApp4Me Alpha</a>                <a href="http://www.androidonline.net/">安卓在线</a>                <a href="http://winp.cn/">WP8论坛微迷网</a>                <a href="http://wp.msn.com.cn/">windows phone 中文网</a>                <a href="http://www.apkmirror.com/">APKMirror - #APKPLZ #SOONBACKANSWER</a>                <a href="http://www.aptoide.com/">Aptoide - Android Apps Store</a>                <a href="http://hukai.me/android-training-course-in-chinese/index.html">序言 | Android官方培训课程中文版(v0.9.7)</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="lang文档"><a href="#lang%e6%96%87%e6%a1%a3">Lang文档</a></h3><ul>
+<li><a href="https://github.com/">GitHub</a></li>
+<li><a href="https://gitlab.com/ch38r18">ch38r18 · GitLab</a></li>
+<li><a href="https://www.oschina.net/">开源中国 - 找到您想要的开源项目，分享和交流</a></li>
+<li>.ahk                            <a href="https://www.autohotkey.com/docs/AutoHotkey.htm">最新en版帮助文档AutoHotkey</a>                <a href="http://thinkai.net/p/category/it/ahk/page/12">Autohotkey | Thinkai&rsquo;s Blog | Page 12</a>                <a href="https://autohotkey.com/boards/viewforum.php?f=29&amp;start=25">教程资料 - Page 2 - AutoHotkey Community</a>                <a href="https://autohotkey.com/boards/viewforum.php?f=28">脚本函数 - AutoHotkey Community</a>                <a href="https://zhuanlan.zhihu.com/autohotkey">AutoHotkey 之美</a>                <a href="http://autohotkey.cn/">——404——Autohotkey 中文论坛</a>                <a href="https://blog.csdn.net/liuyukuan/article/category/1352203">liuyukuan的专栏-AHK</a>                <a href="https://sourceforge.net/projects/ahkcn/files/?source=navbar">AutoHotkey 中文化项目 - Browse Files at SourceForge.net</a>                <a href="https://www.v2ex.com/t/263023">来聊一聊 AutoHotKey 有哪些实用技巧呗 - V2EX</a>                <a href="https://www.autoahk.com/archives/category/knowledge-sharing">知识分享 &gt; AutoAHK</a>                <a href="http://www.cnblogs.com/CyLee/p/8879824.html">Autohotkey window 下宏键盘、宏命令开发入门 - 贝尔塔猫 - 博客园</a>                <a href="https://github.com/fjxhkj/ahk-libs">GitHub - fjxhkj/ahk-libs: All the AHK (libs)!</a>                <a href="https://www.autohotkey.com/boards/viewtopic.php?t=4311">网页自动化初级教程 - AutoHotkey Community</a>                <a href="https://www.autohotkey.com/boards/viewtopic.php?t=9555">Msxml2.XMLHTTP 的几个严重问题 - AutoHotkey Community</a></li>
+<li>.html                            <a href="http://caibaojian.com/fend_note/chapter1/03_01_html_intro.html">HTML 简介 · 前端开发笔记本</a>                <a href="https://www.w3cschool.cn/html/">HTML 教程_w3cschool</a>                <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML">HTML（超文本标记语言） | MDN</a></li>
+<li>.bat .ps1                            <a href="https://www.cnblogs.com/aspirant/p/7233893.html">Bat命令学习 - aspirant - 博客园</a>                <a href="https://www.jb51.net/article/97204.htm">bat命令入门与高级技巧详解_DOS/BAT_脚本之家</a>                <a href="http://www.bathome.net/forum-5-1.html">BAT求助&amp;讨论 - 批处理之家 批处理_BAT脚本_PowerShell_VBS_CMD_DOS_Perl_Python - Powered by Discuz!</a>                <a href="http://cndos.fam.cx/forum/">中国DOS联盟论坛 - 中国DOS联盟之联合DOS论坛</a>                <a href="https://www.jb51.net/list/list_106_1.htm">DOS/BAT-脚本之家</a>                [<a href="http://www.bathome.net/thread-15275-1-1.html">已解决]批处理命令copy合并多个txt文件时如何自动换行？ - BAT求助&amp;讨论 - 批处理之家 批处理_BAT脚本_PowerShell_VBS_CMD_DOS_Perl_Python - Powered by Discuz!</a>                <a href="http://www.bathome.net/thread-17867-1-1.html">BAT脚本处理xml文件中时为何丢失空行？ - BAT求助&amp;讨论 - 批处理之家 批处理_BAT脚本_PowerShell_VBS_CMD_DOS_Perl_Python - Powered by Discuz!</a></li>
+<li>.go                            <a href="https://golang.google.cn/">The Go Programming Language</a>                <a href="https://studygolang.com/dl">Go下载 - Go语言中文网 - Golang中文社区</a>                <a href="http://docscn.studygolang.com/doc/">文档 - Go 编程语言</a>                <a href="https://github.com/Unknwon/the-way-to-go_ZH_CN">GitHub - Unknwon/the-way-to-go_ZH_CN: 《The Way to Go》中文译本，中文正式名《Go 入门指南》</a>                <a href="https://github.com/unknwon/the-way-to-go_ZH_CN">unknwon/the-way-to-go_ZH_CN: 《The Way to Go》中文译本，中文正式名《Go 入门指南》</a>                <a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/01.1.md">the-way-to-go_ZH_CN/01.1.md at master · Unknwon/the-way-to-go_ZH_CN · GitHub</a>                <a href="http://tour.studygolang.com/welcome/1">Go 指南</a>                <a href="https://gowalker.org/">Go Walker - Go 语言在线 API 文档</a>                <a href="https://www.flysnow.org/categories/Golang/page/7/">Golang | 飞雪无情的博客</a>                <a href="https://www.bilibili.com/video/av48141461/?p=18">尚学堂-GO语言全套教程_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>                <a href="http://studygolang.com/">首页 | Go语言中文网 | Golang中文社区 | Golang中国</a>                <a href="https://golangtc.com/?fr=studygolang">首页 - Golang中国</a>                <a href="https://godoc.org/">GoDoc</a></li>
+<li>.py                            <a href="https://github.com/yingnansong/pydouyu">GitHub - yingnansong/pydouyu: Python Wrapper for DouyuTV APIs, including support for accessing ChatRoom, e.g. DanMu/弹幕.</a>                <a href="http://www.pythontab.com/?fr=studygolang">PythonTab：Python中文开发者社区门户</a>                <a href="https://docs.python.org/zh-cn/3/">3.8.3 Documentation</a></li>
+<li><a href="https://www.runoob.com/">菜鸟教程 - 学的不仅是技术，更是梦想！</a></li>
+<li><a href="http://www.jb51.net/">脚本之家_www.jb51.net</a></li>
+<li><a href="http://www.w3school.com.cn/index.html">w3school 在线教程</a></li>
+<li><a href="http://www.csdn.net/">CSDN.NET - 全球最大中文IT社区，为IT专业技术人员提供最全面的信息传播和服务平台</a></li>
+<li>Perl</li>
+<li>RE                            <a href="https://blog.csdn.net/lwbeyond/article/details/7432493">EmEditor 正则表达式 - CSDN博客</a>                <a href="https://www.cnblogs.com/dragon/archive/2006/05/08/394078.html">深入浅出之正则表达式（一） - sema - 博客园</a>                <a href="https://www.cnblogs.com/easysky/p/4128315.html">AHK的正则表达式相关文档（二） - 旅途的风景 - 博客园</a>                <a href="https://www.autohotkey.com/boards/viewtopic.php?f=27&amp;t=7888&amp;hilit=%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D">【已解决】求助 一个 正则表达式 - AutoHotkey Community</a></li>
+<li>.js                            <a href="https://www.javascript.com/">JavaScript.com</a>                <a href="https://www.runoob.com/js/js-tutorial.html">JavaScript 教程 | 菜鸟教程</a>                <a href="https://juejin.im/post/5965943ff265da6c30653879#heading-0">JS正则表达式完整教程（略长） - 掘金</a>                <a href="https://www.jsdelivr.com/">jsDelivr - A free, fast, and reliable CDN for open source</a></li>
+<li>.jsx（PS）                            <a href="http://coolketang.com/psscript/menu9lesson1.php">Photoshop脚本 &gt; Javascript的基本语句</a>                <a href="https://blog.csdn.net/qq_35833855/article/details/52198498">Photoshop脚本 &gt; 文档对象操作 &gt; 属性与事件 - CSDN博客</a>                <a href="https://helpx.adobe.com/cn/photoshop/user-guide.html?topic=/cn/zh-Hans/photoshop/morehelp/text.ug.js">Photoshop 用户指南</a>                <a href="http://www.uisdc.com/manipulate-an-image-with-scripting">PS高端教程：在PS中用脚本语言来处理图片 - 优设-UISDC</a>                <a href="https://zhuanlan.zhihu.com/p/33681155">【汉化教程】【填字脚本优化更新】【墨问非名】 - 知乎</a></li>
+<li>.json                            <a href="https://www.json.org/json-zh.html">JSON</a></li>
+<li>.yaml                            <a href="https://yaml.org/">The Official YAML Web Site</a>                <a href="https://www.runoob.com/w3cnote/yaml-intro.html">YAML 入门教程 | 菜鸟教程</a></li>
+<li><a href="https://gitea.com/">Gitea一款极易搭建的自助 Git 服务 go语言</a></li>
+<li><a href="https://coding.net/">Coding - 代码托管 项目管理 WebIDE 企业服务</a></li>
+<li>帮助文档                            <a href="https://wyagd001.github.io/zh-cn/docs/AutoHotkey.htm">AutoHotkey文档</a>                <a href="https://ahkcn.github.io/docs/AutoHotkey.htm">AutoHotkey</a>                <a href="https://wiki.documentfoundation.org/Main_Page/zh-hans">LibreOffice 的Wiki</a>                <a href="https://documentation.libreoffice.org/zh-cn/cn/">LibreOffice 简体中文用户文档 | LibreOffice Documentation - Your documentation for LibreOffice</a>                <a href="http://www.emeditor.org/zh-cn/howto_search_search_regexp_syntax.html">EmEditor 帮助</a>                <a href="http://nullice.com/archives/1790#i">Adobe CEP 扩展开发教程 「 6 」 Photoshop 中文脚本参考 – 浅藏的宝藏</a>                <a href="https://wizardforcel.gitbooks.io/markdown-simple-world/1.html">Markdown 编辑器推荐 | Markdown 简单的世界</a>                不常用-文档                                    <a href="http://www.ttlsa.com/docs/greasemonkey/">深入浅出 Greasemonkey</a>                    <a href="https://cologler.gitbooks.io/greasemonkey/content/chapter1/1.html">1.1 Greasemonkey 是什么？ · Greasemonkey</a>                    <a href="http://www.wjjsoft.com/mybase_cn.html">myBase 知识管理软件, 自由格式数据库, 笔记软件以及个人信息管理系统</a>                    <a href="https://docs.rsshub.app/">介绍 | RSSHub</a>                    <a href="https://www.easywpbook.com/">本书介绍 · 人人都能学会的 WordPress 实战课</a>                                <a href="https://blog.csdn.net/mubingyun/article/details/5975397">系统%windir%规则 - CSDN博客</a>                <a href="http://www.pcre.org/">正则表达式PCRE - Perl Compatible Regular Expressions</a>                <a href="https://www.pstips.net/">PowerShell 中文博客 – 收集和分享 Windows PowerShell 相关教程,技术和最新动态</a>                <a href="https://gitee.com/help/articles/4107">初次运行 Git 前的配置 - Gitee.com</a>                <a href="https://docs.github.com/cn">GitHub Documentation</a>                <a href="https://hexo.io/zh-cn/docs/">文档 | Hexo</a>                <a href="https://gohugo.io/documentation/">雨果文档| 雨果</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="fun文档"><a href="#fun%e6%96%87%e6%a1%a3">fun文档</a></h3><p>​</p>
+
+<h3 id="soft文档"><a href="#soft%e6%96%87%e6%a1%a3">soft文档</a></h3><ul>
+<li><a href="http://cn.wordpress.org/">WordPress | China 简体中文</a></li>
+<li>Adobe                            <a href="http://www.51zxw.net/list.aspx?cid=559">Audition音频编辑教程-我要自学网</a>                <a href="https://blog.csdn.net/libenchu347/article/details/45935947">（转）AE学习心得 - CSDN博客</a>                <a href="http://www.psahz.com/">PS爱好者-Ps教程自学网-PhotoShop教程-ps抠图教程-Ps基础入门教程</a>                <a href="http://www.garden29.com/">PS教程自学网-Photoshop基础入门-PS抠图教程-照片PS实例教程网站</a>                <a href="http://www.ps-xxw.cn/">PS学习网 - 提供Photoshop教程的学习网站</a>                <a href="http://www.psdee.com/zone">PS专题教程,PS专题汇总,PS教程集合,PS教程专栏-PS教程自学网PSDEE.COM</a>                <a href="http://www.51zxw.net/">我要自学网</a>                <a href="https://www.zhihu.com/question/20870573">如何学习Adobe premiere？ - 知乎</a>                <a href="http://www.51zxw.net/list.aspx?cid=30">Premiere视频教程-我要自学网</a>                <a href="https://www.bilibili.com/video/av8703816/">【Pr入门教程】Premiere CC基础入门教程_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>                <a href="http://www.16xx8.com/photoshop/wangyesheji/logo/#">logo教程_logo设计_logo制作_logo设计教程_logo制作教程_photoshop教程</a></li>
+<li>MS office                            <a href="http://www.excelhome.net/">Excel Home- Excel视频教程培训中心，Excel软件表格模板下载中心</a>                <a href="http://www.accessoft.com/Index.asp">Access软件网</a>                <a href="http://www.kcch.cn/">excel表格的基本操作_excel教程网</a>                <a href="http://www.officezu.com/">【Office教程】Office办公软件下载和视频教程-办公族Office教程</a>                <a href="http://www.yn57.com/">Excel表格的35招必学秘技 | Excel表格的基本操作</a></li>
+<li><a href="http://www.hbg666.com/index.php?id=11">慧办公官网</a></li>
+<li><a href="https://www.cnblogs.com/linxiyue/p/10300087.html">富文本编辑器Quill(一)简单介绍 - 再见紫罗兰 - 博客园</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="技术"><a href="#%e6%8a%80%e6%9c%af">技术</a></h3><ul>
+<li>翻译                            <a href="https://translate.google.cn/">Google 翻译</a>                <a href="https://translate.google.cn/#auto/zh-CN/">Translate</a>                <a href="http://translate.google.com.hk/translate?hl=zh-CN&amp;sl=en&amp;u=http://demo.nickname.net/demo/testpak/encode.pl&amp;prev=/search%3Fq%3D%2526%26newwindow%3D1%26safe%3Dstrict%26es_sm%3D122">Google 翻译 网页编码</a>                <a href="http://fanyi.youdao.com/">在线翻译_有道</a>                <a href="https://cn.bing.com/translator/">Bing Microsoft Translator</a>                <a href="http://fanyi.baidu.com/translate">百度在线翻译</a>                <a href="http://dict.cn/">网络词典</a>                <a href="http://blog.beanwoo.com/english/content/newposts">每日英语</a>                <a href="http://yingwen.911usa.com.cn/">学英文|最好的学英文网站</a>                <a href="http://www.iciba.com/">爱词霸英语</a>                <a href="http://segmentfault.com/">SegmentFault</a>                <a href="http://d.xvna.com/list_1097/index.html">外语学习-下载 炫浪网</a>                <a href="http://www.englishonline.org.cn/zh-hans/listen-watch/stories">音频故事 | British Council - English Online</a>                <a href="http://www.aosk.net/">词义网|反义词大全|近义词大全|含有反义词的成语|含有近义词的成语|同义词|褒义词|贬义词</a>                <a href="http://cy.5156edu.com/">在线成语词典</a>                <a href="http://fishcodelib.com/Dictionary.htm">Dictionary .NET - A tiny, easy and smart multilingual dictionary and translation</a></li>
+<li><a href="https://www.deepl.com/zh/translator">DeepL翻译器</a></li>
+<li>采油/油藏/钻井                            <a href="http://10.78.195.13/default.aspx">长庆油田公司第四采油厂 - 主页</a>                <a href="https://10.78.173.156/">中国石油油气水井生产数据管理系统</a>                <a href="http://10.78.164.141:8088/ys/zjm/zjmlogin.jsp">长庆油田数字化生产指挥中心</a>                <a href="http://10.78.195.13/sites/gyyjs/default.aspx">采油工艺研究所</a>                <a href="http://10.78.173.185:8089/QHSEManage/">中国石油长庆油田分公司危险作业审批系统</a>                <a href="http://www.cqyteip.petrochina/Pages/default.aspx">长庆油田公司-主页</a>                <a href="http://10.78.4.148:7001/wscx/">长庆油田公积金网上查询系统</a>                <a href="http://www.cnpc.com.cn/cn/">中国石油天然气集团公司</a>                <a href="http://www.cnpc.com.cn/cn/sybk/">石油百科</a>                <a href="http://124.114.130.149:7001/wscx/">124.114.130.149:7001/wscx/</a></li>
+<li><a href="https://github.com/sindresorhus/awesome">awesome系列优秀项目</a></li>
+<li><a href="https://github.com/avelino/awesome-go">Go语言项目</a></li>
+<li><a href="https://awesomeopensource.com/">国外榜Topics</a></li>
+<li><a href="https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts">中文排行榜github</a></li>
+<li><a href="https://tensorflow.google.cn/about?hl=zh-cn">程序包制作TensorFlow</a></li>
+<li>学习                            <a href="https://cn.hostgator.com/news/">虚拟主机|VPS主机|服务器租用-HostGator中文官方博客</a>                摄影 素材                                    <a href="https://fotomen.cn/category/foto-lecture/page/6/">影像讲堂 – 第6页 – FOTOMEN</a>                    <a href="http://www.rxsy.net/">人像摄影网</a>                    <a href="http://fotomen.cn/category/photography/">摄影之友</a>                    <a href="https://hankai.tuchong.com/t/15225997/">【原创】从思路到操作 建立冷暖关系 完整地修一张片 - 韩凯 - 图虫网 - 最好的摄影师都在这</a>                    [(29 条消息)Nik Collection - 搜索结果 - 知乎](<a href="https://www.zhihu.com/search?type=content&amp;q=Nik">https://www.zhihu.com/search?type=content&amp;q=Nik</a> Collection)                    <a href="http://uuhy.com/?p=16841">Nothing found for ?p=16841</a>                    <a href="http://www.fengniao.com/pe/0_378094.html">怎样可以把翻拍的照片十分清晰的处理出来 - 蜂鸟网</a>                    <a href="https://fotomen.cn/">FOTOMEN</a>                    <a href="http://www.ren3.cn/">三人行PS学堂-PS自学教程网|免费PS学习资源下载</a>                    <a href="http://www.quanjing.com/">全景网_中国领先的图片库和图片素材网站</a>                    <a href="http://sc.chinaz.com/">站长素材_分享免费素材、付费素材、中国素材、外国素材下载！</a>                    <a href="https://wallroom.io/">HD/4K/5K Resolution Wallpapers/Backgrounds ▪ Wallroom.io</a>                                <a href="http://www.study-area.org/linux/linuxfr.htm">Study Area</a>                <a href="http://www.duobei.com/">多贝公开课</a>                <a href="http://www.yangzhiriji.com/page/96/">家庭怎样养花视频教程大全 - 养殖日记</a>                在线学习                                    <a href="http://www.ichunqiu.com/main">i春秋学院信息安全体验中心_在线安全培训第一平台</a>                    <a href="http://www.howzhi.com/">好知网 - 知识分享新社区!</a>                    <a href="http://www.5156edu.com/">无忧无虑中学语文网</a>                                google cloud                                    <a href="http://ch38r18-09.appspot.com/setting">Setting - Kindle&rsquo;s Ear</a>                    Google Me                                            <a href="https://plus.google.com/">Google+</a>                        <a href="https://www.google.com/accounts">Google 帐户</a>                        <a href="http://www.blogger.com/home?pli=1">Blogger: 信息中心</a>                        <a href="http://rongox.blogspot.com/">Rong_6.</a>                        <a href="https://drive.google.com/keep">Google Keep</a>                        <a href="https://inbox.google.com/u/0/?pli=1">Inbox – ch38r18@gmail.com</a>                        <a href="https://mail.google.com/">Gmail</a>                        <a href="https://drive.google.com/drive/my-drive">我的云端硬盘 - Google 云端硬盘</a>                                        Google墙                                            <a href="https://github.com/greatfire/wiki">greatfire/wiki · GitHub</a>                        <a href="http://blog.xiaohai.co/">小孩&rsquo;Blog</a>                        <a href="http://www.chinagfw.org/">GFW BLOG（功夫网与翻墙）</a>                        <a href="http://ip.yqie.com/dns.htm">世界各地DNS服务器地址大全</a>                        <a href="http://www.ip.cn/dns.html">IP.cn - 全国 DNS 服务器 IP 地址汇总 | 公共 DNS 服务器 | DNS 地址</a>                        <a href="https://bitbucket.org/greatfire/wiki/wiki/Home">greatfire / wiki / wiki / Home — Bitbucket</a>                        <a href="http://boafanx.tabboa.com/free">免费账号 - boafanx官方网站</a>                        <a href="http://hellohostnet.com/proxy.html">上网服务 - Hello, Host!</a>                                        Google旗下                                            <a href="http://goo.gl/">G Sh</a>                        <a href="http://translate.google.cn/?hl=zh-CN">GT</a>                        <a href="http://music.google.com/">google Music</a>                        <a href="https://www.foldedsoft.at/+/allmy+/user/109827504270152977165">All my + are belong to **</a>                        <a href="http://www.google.com/trends">谷歌趋势</a>                        <a href="http://www.google.com/logos">Google Doodle</a>                        <a href="http://books.google.com/">Google 图书</a>                        <a href="http://www.google.com/contacts/u/0">Google 通讯录</a>                        <a href="https://www.google.com/dashboard">Google 信息中心</a>                        <a href="https://www.google.com/takeout/?pli=1">Google Takeout</a>                        <a href="http://www.google.com/phone/">Google 手机图库</a>                        <a href="http://socialstatistics.com/">谷歌+统计</a>                        <a href="http://www.google.com/intl/zh-CN/sky/">Google Sky</a>                        <a href="https://www.google.com/reader/shared/18425538078917118530?hl=en">Google Reader - shared items</a>                        <a href="http://gplusfeed.herokuapp.com/">PlusFeed - 非官方谷歌+用户内容</a>                        <a href="http://www.chromechina.com/">Chrome中文论坛</a>                        <a href="http://www.google.com/+/learnmore/">Google+ 项目</a>                        <a href="http://guge.jooit.com/">Home | 谷歌知音</a>                        <a href="http://chrome.theworld.cn/testbrowser.html">浏览器测试</a>                        <a href="http://www.google.com/realtime">Google Realtime Search</a>                        <a href="http://www.google.com/profiles/qibingniao">Google profiles</a>                        <a href="http://www.chromi.org/">Chrome迷 |</a>                        <a href="http://www.guao.hk/">谷奥——探寻谷歌的奥秘</a>                        <a href="https://code.google.com/hosting/">谷歌项目托管</a>                        <a href="https://www.google.com.hk/intl/zh-CN/about/products/">Google - 产品</a>                        <a href="https://code.google.com/p/gaephotos/">gaephotos - Web albums based on GAE. - Google Project Hosting</a>                        <a href="https://appengine.google.com/">appengine</a>                                        Google搜索                                            <a href="http://www.google.com.hk/">香港谷歌</a>                        <a href="http://www.google.tw/">台湾谷歌</a>                        <a href="http://www.google.jp/">日本谷歌</a>                        <a href="http://www.google.as/">美属萨摩亚谷歌</a>                        <a href="http://www.google.am/">亚美尼亚谷歌</a>                        <a href="http://www.google.ba/">波斯尼亚和黑塞哥维那谷歌</a>                        <a href="http://www.google.bo/">玻利维亚谷歌</a>                        <a href="http://www.google.bi/">布隆迪谷歌</a>                        <a href="http://www.google.bj/">贝宁谷歌</a>                        <a href="http://www.google.com.co/webhp?hl=zh-CN">哥伦比亚谷歌</a>                        <a href="http://209.116.186.231/">Google</a>                        <a href="https://developers.google.com/android/nexus/images">Factory Images for Nexus Devices - Android — Google Developers</a>                        <a href="https://www.google.com.hk/">Google</a>                                                    <a href="https://www.ted.com/">TED: Ideas worth spreading</a>                <a href="https://www.theschooloflife.com/">The School of Life | Lead a More Fulfilled Life</a>                <a href="https://waitbutwhy.com/">Wait But Why</a>                <a href="https://80000hours.org/">80,000 Hours: How to make a difference with your career</a>                <a href="http://erya.mooc.chaoxing.com/">超星尔雅</a>                <a href="http://xuejis.com/">学技树-来学技树，得一技之长！</a>                <a href="https://www.ageeye.cn/">发现中国 - 地图分享知识</a></li>
+<li>sync                            <a href="http://jianguoyun.com/">坚果云</a>                <a href="https://send.firefox.com/">Firefox Send</a>                <a href="https://kita.teracloud.jp/browser/">TeraCLOUD文件浏览器</a>                <a href="https://teracloud.jp/en/">https://teracloud.jp/en/</a>                云储存                                    <a href="https://www.lanzou.com/">蓝奏·云存储</a>                    <a href="https://www.weiyun.com/disk/share">分享链接－腾讯微云</a>                    <a href="http://pan.baidu.com/">百度网盘</a>                    <a href="https://onedrive.live.com/?id=root&amp;cid=965E2716878FDDB5">OneDrive</a>                    <a href="https://kodcloud.com/">可道云-KodExplorer </a>                    <a href="http://115.com/">115网盘|圈子|115，改变分享</a>                    <a href="http://xzc.cn/">上传文件</a>                    <a href="http://app360.cn/portal/index.html">App360云平台_&ldquo;云+端&quot;解决方案，助力企业移动信息化，专注高质量App</a>                    <a href="https://yunpan.360.cn/">安全存储的云盘_360安全云盘</a>                    <a href="https://www.henghost.com/cloud-vps.shtml">香港云服务器_美国云服务器_国内云服务器_香港vps主机_恒创科技</a>                    <a href="http://hhvps.com/">HHVPS - Powered by Hello, Host!</a>                    <a href="http://www.freehao123.com/syncthing/">Syncthing免费开源的文件同步工具-带版本控制可用于构建个人云存储 | 免费资源部落</a>                    <a href="https://www.amazonaws.cn/">AWS中国云服务-中国领先的可扩展云计算平台</a>                    <a href="https://owncloud.org/download/">Download ownCloud today - customized for your needs.</a>                    <a href="https://verystream.com/">verystream - much wow!</a>                    <a href="https://quqi.com/p/login.html">曲奇云盘官网</a>                    <a href="https://www.amazon.cn/gp/drive/download-apps">Amazon Cloud Drive：云存储 - 在线备份</a>                    <a href="https://www.mediafire.com/">File sharing and storage made simple</a>                    <a href="http://own-cloud.cn/">小麦云盘 | 文件传输服务</a>                    <a href="https://www.backblaze.com/">The Best Unlimited Online Backup and Cloud Storage Services</a>                    <a href="https://www.asuswebstorage.com/navigate/a/#/index">ASUS WebStorage</a>                    <a href="https://cloud.189.cn/">天翼云盘 极速安全 家庭云|网盘|文件备份|资源分享</a>                    <a href="https://mooc1.chaoxing.com/yunpan">超星云盘</a>                    <a href="http://www.3adisk.com/">3ADisk网络硬盘-可永久免费使用的专业网盘-提供专业网络硬盘服务-适合商用的网络硬盘</a>                    <a href="https://www.transip.nl/stack/">TransIP | STACK - Jouw online cloud opslag</a>                                <a href="https://degoo.com/me">ch38r18@outlook.com | Degoo Cloud - Top Secret Cloud Storage</a>                <a href="https://app.degoo.com/moments">Degoo Cloud</a>                云盘404                                    <a href="https://www.dropbox.com/">Dropbox</a>                    <a href="https://drop.me/">Drop.me - Free File Sharing Service. Upload Images, Photos And Documents In One Click!</a>                    <a href="https://www.pcloud.com/">pCloud - Best Secure Encrypted Cloud Storage</a>                    <a href="https://mega.nz/">https://mega.nz/</a>                    <a href="https://disk.yandex.com/">https://disk.yandex.com/</a>                    <a href="https://passport.escience.cn/login">登录</a>                                <a href="https://nextcloud.com/signup/">Simple sign-up for hosted Nextcloud – Nextcloud</a>                <a href="https://wetransfer.com/">WeTransfer奶牛快传模仿</a>                <a href="https://cowtransfer.com/">奶牛快传 | CowTransfer | 文件传输服务</a>                <a href="https://www.wenshushu.cn/">文叔叔 - 传文件，找文叔叔（大文件、永不限速）</a>                同步                                    <a href="https://telegramcn.org/apps">Telegram下载</a>                    <a href="https://airmore.cn/">爱莫助手 - 无线数据互传</a>                    <a href="http://web.airmore.cn/">爱莫助手-无线数据互传</a>                    <a href="https://www.getsync.com/">BT Sync</a>                    <a href="http://portal.pushbullet.com/">Portal by Pushbullet</a>                    <a href="http://www.ai.com/">ai.com domain name is for sale. Inquire now.</a>                                <a href="https://send-anywhere.com/">Send Anywhere - File transfer</a>                <a href="http://www.xender.com/">Xender - The mobile file transfer and sharing app.</a>                分享                                    [分享到](javascript:(function(){var w=window,d=document,s;if(!w.jiathis){w.jiathis=1;s=d.createElement(&lsquo;script&rsquo;);s.src=&lsquo;<a href="http://www.jiathis.com/code/j.js';d.getElementsByTagName('head')%5B0%5D.appendChild(s);s=null%7Delse%7B$CKE.center()%7D%7D)(">http://www.jiathis.com/code/j.js';d.getElementsByTagName('head')[0].appendChild(s);s=null}else{$CKE.center()}})(</a>))                    <a href="http://www.cutt.com/index">简网 - Cutt.com 持续提供您所关注的信息</a>                    <a href="http://www.utuii.com/utuii/frontpage">由推网 - 享自由·推精彩</a>                    <a href="http://www.jiathis.com/">加网分享</a>                    <a href="http://ifttt.com/dashboard">ifttt / Dashboard</a>                    <a href="http://ifttt.com/wtf">ifttt / About ifttt</a>                    <a href="http://www.chatterous.com/go/profile/qibingniao/">Chatterous | qibingniao</a>                    <a href="http://www.feedsky.com/feeds/feeds.html">Feeds 中心 - Feedsky.com</a>                    <a href="http://blogtrottr.com/">Free realtime RSS and Atom feed to email service. Get your favourite blogs, feeds, and news delivered to your inbox.</a>                    <a href="http://fullrss.net/">fullrss.net RSSReader</a>                                <a href="http://www.vua.sh/">Vuash - 安全发送信息</a>                <a href="https://pastebin.com/">文字分享 无须注册</a>                <a href="https://cp.anyknew.com/">拷贝兔(Copytool) - 轻量级纯Web跨平台文件、文字分享工具</a>                <a href="https://www.baixiongz.com/">白熊站（白熊云） - 肥宅快乐发源地，白熊云盘资源论坛</a>                <a href="https://v3-beta.6pan.cn/files/all/">全部文件-6pan</a></li>
+<li>IP                            <a href="https://www.ipaddress.com/">查询真实地址IP</a>                <a href="https://www.ip138.com/">域名解析 查询iP</a></li>
+<li>404解决                            <a href="https://www.ioiox.com/archives/102.html">分享优质工具 - gh-proxy 代理下载或 git clone Github 仓库 - 思有云 - IOIOX</a>                <a href="https://raw.now.sh/">Github RAW</a></li>
+<li>vpn                            <a href="https://ip.cn/dns.html">IP.cn - 全国 DNS 服务器 IP 地址汇总 | 公共 DNS 服务器 | DNS 地址</a>                <a href="https://ip.cn/">IP.cn - IP 地址查询 | 地理位置 | 手机归属地</a>                <a href="https://onlinesecurity.website/zh/servers/tools/">Server recommended by NordVPN | NordVPN</a>                <a href="https://onlinesecurity.website/zh/">最佳VPN服务，轻轻一点即可获取在线安全。 | NordVPN</a>                <a href="https://onlinesecurity.website/servers/tools/">特殊的连接通道</a>                <a href="https://nordchina1.website/how-to-connect/">CN Site</a>                <a href="https://github.com/XX-net/XX-Net">XX-net/XX-Net: a web proxy tool</a>                <a href="https://www.4spaces.org/0-1-shadowsocks-start/">从零开始：史上最详尽Shadowsocks搭建教程-四个空格</a>                <a href="https://www.xicidaili.com/">免费代理IP_HTTP代理服务器IP_隐藏IP_QQ代理_国内外代理_西刺免费代理IP</a></li>
+<li><a href="https://www.alexa.com/topsites">Alexa - Top sites</a></li>
+<li>在线工具                            <a href="https://wn.run/cn/">万能命令-快捷寻找和直达你想要的各类工具</a>                <a href="https://www.speedtest.net/">Speedtest by Ookla测网速</a>                <a href="https://www.toolfk.com/">ToolFK面向开发人员的免费在线工具 ToolFk程序员在线开发工具</a>                <a href="https://www.chuangkit.com/">创客贴_平面设计作图神器_免费设计模板_在线稿定设计印刷</a>                <a href="https://minapp.com/miniapp/1957/">微软小蜜 | 知晓程序</a>                <a href="https://www.eguidedog.net/cn/ekho_cn.php">Ekho(余音) - 中文语音合成软件(支持粤语、普通话)</a>                <a href="https://www.ofoct.com/zh">小熊免费文件格式在线转换工具 | 免费在线转换Office文档,音视频文件,图像等各种文件格式</a>                <a href="https://fonts2u.com/mv-boli.font">MV Boli font的PS的postscript名称查询</a>                <a href="http://t.im/">T.IM 短网址/短链接生成器</a>                <a href="https://dwz.cn/">百度短网址</a>                <a href="http://tool.mkblog.cn/">首页 - 孟坤工具箱网页版</a></li>
+<li><a href="https://www.bookmarkearth.com/">首页-书签地球-中国首家浏览器书签共享平台</a></li>
+<li>书签导航                            <a href="http://www.ifanqiang.com/">爱翻墙 - 网址导航</a>                <a href="http://youquhome.com/">有趣网址之家 – 收藏全球最有趣的网站</a>                <a href="http://www.moudaohang.com/">某导航 - 一个有用的导航网站</a>                <a href="http://www.shouqu.me/my.html">收趣云书签</a>                <a href="http://coat3.xyz/">正品蓝导航-收录全面的福利导航</a>                <a href="http://coat2.top/">正品蓝导航-收录全面的福利导航</a>                <a href="http://www.addog.vip/">广告创意/设计/文案/PPT模板/营销策略大全网址导航 【addog】</a>                <a href="http://daok.cc/">刀客导航_与众不同的导航</a>                <a href="http://gufenso.coderschool.cn/">谷粉搜导航</a>                <a href="https://www.egouz.com/">国外网站推荐-分享互联网-外国网站大全</a></li>
+<li>炒股                            <a href="http://www.gupang.com/">股旁网-股票公式,股票指标公式网</a>                <a href="http://www.yaoyuanba.cn/201305/50553.html">(趋势)战略趋势(同花顺)－同花顺,公式_同花顺公式,同花顺指标公式,公式破解</a>                <a href="http://www.imaibo.net/home">投资脉搏</a>                <a href="http://xueqiu.com/4226803442/21990358">小秘书: 美股开户扫盲一贴通 球友们分享了不少关于『美股开户』的经验，为了&hellip; - 雪球</a>                <a href="http://blog.ifeng.com/778510.html">牛刀&ndash;凤凰网博客</a>                <a href="http://stock.hexun.com/">和讯股票-访问量最大最专业的股票投资交流平台</a></li>
+<li><a href="http://www.fjhbg.cn/?s=#">讯呱呱站点</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="作品"><a href="#%e4%bd%9c%e5%93%81">作品</a></h3><ul>
+<li><a href="https://book.douban.com/top250?icn=index-book250-all">豆瓣读书 Top 250</a></li>
+<li>novel                            <a href="https://booklink.me/">BookLink.Me:最有爱的小说搜索引擎</a>                <a href="http://www.zxcs.me/">知轩藏书-精校小说-校对全本TXT小说下载网</a>                <a href="http://www.eshuba.com/">E书吧-免费电子书下载</a>                网络小说                                    <a href="http://www.bookdown.net/">TXT图书下载网—TXT小说下载|TXT电子书下载|TXT格式手机电子书下载</a>                    <a href="http://www.bookshuku.com/">TXT图书下载网—TXT小说下载|TXT电子书下载|TXT格式手机电子书下载</a>                    <a href="http://www.balingtxt.com/">TXT电子书免费下载,好看的全本TXT小说免费下载,全集,完整(结)版小说</a>                    <a href="http://www.balingtxt.com/support/about.html">搜索_八零电子书</a>                    <a href="https://www.xslou.com/">小说楼</a>                    <a href="https://www.luoxia.com/">落霞小说 - 九州缥缈录小说, 尉官正年轻小说, 半生缘小说線上看</a>                    <a href="https://www.kunnu.com/">鯤弩小說 - 經典小说線上看</a>                    <a href="http://www.janpn.com/">键盘小说网 - 下载小说,免费全本小说下载,txt全本下载,好看的小说,txt小说下载</a>                    <a href="http://kgbook.com/">苦瓜书盘</a>                    404                                            <a href="https://www.woaidu.net/">我爱读电子书-电子书下载,免费txt电子书下载,txt电子书免费下载</a>                        <a href="http://www.uu234.cc/">UU小说_TXT电子书下载_全本小说免费下载</a>                        <a href="http://www.iebook8.com/">我爱书吧 - PDF电子书免费下载</a>                        [红楼梦文学社区<a href="http://www.hlmbbs.com/forum/forum.php?mod=viewthread&amp;tid=1112&amp;extra=page%3D1">抚琴居]</a>                        <a href="http://www.caihongbook.com/">彩虹文学网 - 小说迷最值得收藏的小说阅读网</a>                        <a href="http://www.yankanshu.com/">眼看书-新版快眼看书</a>                        <a href="https://www.nmtxt.com/forum-37-1.html">合集全集 - 糯米TXT论坛 txt论坛|txt小说免费下载|最新最全的txt电子书免费下载论坛|txt电子书免费下载全集全本完结</a>                        <a href="http://www.eshuu.com/book/">电子书</a>                        <a href="http://www.mianhuatang.la/">宝鉴_打眼_宝鉴最新章节列表_宝鉴txt阅读_棉花糖小说网(mianhuatang.la)</a>                        <a href="https://www.nmtxt.com/forum-37-1.html">合集全集 - 糯米TXT论坛 txt论坛|txt小说免费下载|最新最全的txt电子书免费下载论坛|txt电子书免费下载全集全本完结</a>                        <a href="http://www.mianhuatang.la/74/74777/">征途(雷云风暴)_征途最新章节列表_无弹窗广告_棉花糖小说网</a>                        <a href="https://www.qisuu.la/">奇书网-电子书,电子书下载,TXT电子书全本免费下载</a>                        <a href="http://www.zxcs8.com/">知轩藏书-精校小说-校对全本TXT小说下载网</a>                        <a href="http://txt.nokiacn.net/">糯米TXT论坛</a>                                        <a href="http://www.woaidu.la/">我爱读电子书-电子书下载,免费txt电子书下载,txt电子书免费下载</a>                    <a href="http://www.uu234.net/">UU小说_www.uu234.net主站</a>                    <a href="https://www.xuu234.cc/">UU小说_TXT电子书下载_全本小说免费下载</a>                    <a href="http://www.kenshuwx.com/">啃书小说网_啃书小说阅读网_啃书言情小说</a>                    <a href="http://www.630book.la/">恋上你看书网-好看的网络小说免费阅读,全本小说免费阅读</a>                    <a href="http://kehuan.net.cn/">科幻小说网-经典科幻小说在线阅读</a>                    <a href="http://www.ik777.net/">艾克小说网_好看的小说阅读网</a>                    <a href="http://www.shushu8.com/">书书网,无弹窗,新书在线阅读网,拳镇山河</a>                    <a href="http://www.xiaoshuotxt.org/">TXT小说天堂-txt小说下载 手机电子书txt下载</a>                    <a href="https://www.aitxtbbs.com/bbs45">『合集全集』TXT下载 - - 免费下载txt电子书</a>                    <a href="https://www.60book.com/">时光电子书-免费电子书下载_txt全本电子书免费下载_小说全集下载</a>                    <a href="https://www.hkshu.com/">好看书吧_免费好看的小说排行榜_最好看的小说阅读网</a>                    <a href="https://www.guishuji.com/">鬼书集_恐怖小说_悬疑小说_盗墓小说_灵异小说_好看的恐怖小说排行榜</a>                    <a href="https://www.tuhaoxs.com/">土豪小说-正版小说免费看-好看的小说在土豪</a>                    <a href="https://www.xstt5.com/">TXT小说天堂-txt小说下载 手机电子书txt下载</a>                    <a href="http://www.balingtxt.com/txtxz/27.html">赘婿</a>                    <a href="http://www.uuxs.net/">uu小说_书荒者最喜爱的免费小说阅读网</a>                    <a href="https://www.idejian.com/">得间免费小说 - 阅读有滋味，免费在得间</a>                    <a href="http://www.7017k.net/txt/jianlai.html">剑来txt下载_剑来txt全集下载_电子书免费下载_7017k小说网</a>                    <a href="http://www.zxcs.info/">知轩藏书-玄幻小说排行榜精校-校对全本TXT小说下载网</a>                    <a href="https://www.boyunso.com/">拨云搜索 - 专注于小说搜索引擎</a>                    <a href="http://www.yushuwu.info/">御宅屋_御书屋_自由的小说阅读网</a>                    <a href="https://www.caimoge.org/">全本小说网-无弹窗全文阅读-彩墨阁</a>                    <a href="https://www.buxiuwenxue.com/">不朽文学</a>                    <a href="https://www.hetushu.com/index.php">和图书</a>                    <a href="https://www.yushuwen.com/">御书文_自由的小说阅读网</a>                    <a href="http://www.sanhaoxs.net/">三好小说网_小说免费在线阅读</a>                                评书                                    <a href="http://www.mp3ba.cn/">有声小说，免费下载，有声读物，有声小说打包下载-Mp3听书吧</a>                    <a href="http://www.ysxs8.com/">有声小说,有声小说打包下载,评书网,在线收听,有声下吧 - 有声小说吧</a>                    <a href="http://www.ting85.com/">有声小说|有声小说下载|有声小说在线收听|畅听网</a>                    <a href="http://www.boting.co/">有声小说_有声小说在线收听网_有声小说打包下载mp3_博听网</a>                    <a href="https://www.ysts8.com/">有声听书吧-有声小说</a>                    <a href="http://www.pingshu8.com/music/newys_1.htm">评书吧 - 有声小说下载,在线收听</a>                    <a href="https://www.qktsw.vip/">乾坤听书网_有声小说_有声小说打包下载_在线收听网</a>                    <a href="https://www.ysx8.net/">有声听书吧-有声小说</a>                    <a href="https://www.ting22.com/">有声小说在线收听 - 爱听书网，轻轻松松听小说</a>                    <a href="http://www.520tingshu.com/">520听书网|520有声小说连播|MP3免费下载|粤语有声小说|听书网站</a>                    <a href="http://www.audio699.com/">免费在线听书_有声小说_听书网_静听网</a>                                网文官网                                    <a href="http://www.zongheng.com/">小说,小说网-纵横中文网|最热门的免费小说网</a>                    <a href="https://www.17k.com/">小说_17k小说网|最新小说下载-一起免费看小说</a>                    <a href="http://www.motie.com/index">磨铁-网络小说、都市玄幻、磨铁文、悬疑推理小说、仙侠修真小说、男性原创</a>                    <a href="http://www.motie.com/">网络小说、恐怖灵异小说、仙侠修真小说_男性原创_磨铁</a>                    <a href="http://www.jjwxc.net/">言情小说_都市言情小说_免费言情小说在线阅读_晋江文学城</a>                    <a href="https://www.hongxiu.com/">红袖添香_阅文集团旗下网站</a>                    <a href="https://www.heiyan.com/">黑岩网-小说阅读网|好看的小说|小说推荐</a>                    <a href="https://www.readnovel.com/finish">完本小说排行榜_好看的完本小说下载网_小说阅读网</a>                    <a href="https://www.qidian.com/">起点中文网_阅文集团旗下网站</a>                    <a href="http://anyew.cn/book/11985">蛇妻美人 - 恰灵小道 - 悬疑 - 暗夜文学,免费小说阅读网</a>                    <a href="http://www.2cloo.com/">二层楼书院-免费、仙侠、玄幻、言情、穿越_手机小说</a>                    <a href="http://www.3gsc.com.cn/">小说,都市小说,好看的小说,小说网-3G小说网</a>                    <a href="https://www.luochen.com/">落尘文学_原创网络文学,免费手机小说阅读</a>                    <a href="http://www.kujiang.com/">酷匠网_小说,轻小说,免费小说,免费轻小说</a>                    <a href="http://www.tiandizw.com/">天地中文网 - 原创小说网站,小说免费阅读下载 最新最好看的小说阅读平台!</a>                    <a href="https://www.lingyun5.com/">凌云文学网-倾力打造男女频精品小说的移动阅读平台</a>                    <a href="http://aibookchina.com/#/book/685/directory">御书房</a>                    <a href="http://www.itangyuan.com/">用手机写小说-汤圆创作-让创作变得简单快乐-创新的移动创作客户端-首页</a>                                漫画书官网                                                <a href="https://memo.bookfere.com/community/posts">全部书摘</a>                <a href="http://www.simayi.net/">读后感 - 百家笔记网读后感大全与读书笔记大全！</a>                <a href="http://www.zoudupai.com/">走读派读书导航 - 读书学习第一站！</a>                <a href="http://www.yunjiale.net/">云家乐－为品质阅读而生－又名“Kindle大玩家”</a>                <a href="https://bookfere.com/">书伴 - 为静心阅读而生（原名“Kindle伴侣”）</a>                <a href="http://cn.epubee.com/">在线电子书转换, 免费电子书转换器</a>                <a href="https://gitlab.com/axet/android-book-reader">Projects · axet / android-book-reader · GitLab</a>                <a href="https://www.iyd.wang/">kindle电子书_epub电子书_电子书下载_爱悦读网</a>                <a href="http://downnovel.com/search.htm">小说搜索-小说下载免费阅读</a>                <a href="https://www.jiumodiary.com/">Jiumo Search 鸠摩搜索 - 文档搜索引擎</a>                <a href="https://www.jiumodiary.com/">Jiumo Search 鸠摩搜索 - 文档搜索引擎</a></li>
+<li>Book                            <a href="http://www.hawes.com/pastlist.htm">New York Times Best Seller List</a>                <a href="https://www.amazon.cn/b/ref=s9_acss_bw_h1_CNKCD_md3_w?node=116175071&amp;pf_rd_m=A1U5RCOVU0NYF2&amp;pf_rd_s=merchandised-search-top-2&amp;pf_rd_r=9ES3FQN5QJA0Y8TNEQPC&amp;pf_rd_t=101&amp;pf_rd_p=f42f74c1-7797-406e-b35f-b85bd79fd718&amp;pf_rd_i=116169071">免费Kindle电子书下载_Kindle免费资源_txt电子书免费下载-亚马逊Kindle电子书</a>                <a href="http://zuopinj.com/">作品集 - 小说作家作品集合网站 - 小说全集在线阅读</a>                <a href="https://ctext.org/zhs">中国哲学书电子化计划</a>                <a href="https://new.shuge.org/">书格</a>                <a href="https://yabook.org/">雅书 - PDF电子书学习下载站</a>                <a href="http://ibooks.org.cn/">读书小站 | 为阅读而生，书籍下载，有爱分享。</a>                <a href="http://www.dushu369.com/">读书369-名著小说在线阅读-手机读书</a>                <a href="https://github.com/justjavac/free-programming-books-zh_CN">GitHub免费的计算机编程类中文书籍，欢迎投稿</a>                <a href="http://neikuw.com/?cat=81">图书合集-內酷网</a>                ISBN功能404                                    <a href="http://haodoo.net/">首頁- 好讀</a>                    <a href="https://epubw.com/">ePUBw.COM-免费优质电子书下载</a>                    <a href="http://www.mytxt.cn/">麦梯网 - 看书，找书，上麦梯网</a>                    <a href="http://haoshu100.com/">好书推荐排行榜</a>                    <a href="https://books.gimhoy.com/">Gimhoy图书 | 免费电子书下载 - 亚马逊、当当、京东五星书包 | books.Gimhoy.com</a>                    <a href="http://51wanjuan.com/">,电子书搜索</a>                    <a href="http://cn.epubee.com/books/">ePUBee电子书库，最大的电子书库，在线电子书管理</a>                    <a href="http://www.ireadweek.com/">周读：提供免费电子书下载、分享。包括mobi、epud、pdf、txt格式，kindle电子书下载 - 周读</a>                    <a href="https://i-book.in/">i-Book.in</a>                    <a href="https://book.tstrs.me/">i-Book.in</a>                                <a href="https://www.douban.com/doulist/175032/">20世纪中文小说100强</a>                <a href="http://shu.ziyuandi.cn/">资源帝电子书导航_在这里发现更多好书&hellip;</a>                <a href="https://github.com/programthink/books">GitHub - programthink/books: 【编程随想】收藏的电子书清单（多个学科，含下载链接）</a>                <a href="https://onedrive.live.com/?id=F5B0090663FEEADA!828&amp;cid=F5B0090663FEEADA">电子书 - OneDrive</a>                <a href="https://www.douban.com/group/topic/90339947/">资料——一帖在手，找书无忧，各类网盘书籍分享达&hellip;</a>                <a href="https://tc5.us/dir/1406576-34037321-dd2e2b">已分享电子书文件夹- 来自laisoocom的分享</a>                <a href="https://www.tuijianshu.net/">推荐书_好书推荐排行榜及理由_推荐一本好书书单_书籍推荐网站</a>                ISBN网站404                                    <a href="http://www.xkreading.com/">醒客读书 | kindle电子书免费下载_推荐好书_推荐书单书评网</a>                    <a href="https://www.bukebook.cn/">布克书屋&ndash;您的图书分享之家</a>                    <a href="https://list.ideahub.ml/#X:/">IDEAHUB - 私人阅读列表</a>                    <a href="https://list.ideahub.ml/#">IDEAHUB - 私人阅读列表</a>                    <a href="https://www.biikan.com/">必看网_人生必看的书籍</a>                    <a href="https://book.shuyuzhe.com/">书语者电子图书馆 Kindle电子书 Powered By ShuYuZhe.com!</a>                    <a href="https://5kindle.com/">子午书简 | mobi,azw3,TXT,PDF,epub格式Kindle电子书百度云网盘资源免费下载 | 免费电子书分享交流下载</a>                                <a href="http://www.seosee.info/">SEO观察_电子书下载_pdf/epub/txt/mobi电子书在线看 - 每天推荐优质电子书！</a>                <a href="https://www.pdfzj.com/">PDF之家 – PDF杂志,PDF图书免费下载</a>                <a href="http://www.pdfbook.cn/">云海免费电子图书馆 ct</a>                <a href="https://www.kgbook.com/">苦瓜书盘</a>                <a href="http://www.yftxt.com/">雨枫TXT电子书|免费下载小说|文学名著|名家名作|人生哲学|TXT书籍</a>                <a href="http://cn-library.rukomos.ru/">书 在线上 - 很高兴见到你 阅读中国 已读</a>                <a href="http://www.dushudaren.com/">读书达人_epub电子书下载_mobi电子书下载_kindle电子书下载 – txt电子书下载_pdf电子书下载免费电子书下载网站</a>                <a href="https://yidanshu.com/?iao.su">首页|一单书-读有价值的书</a>                <a href="http://www.xiangshi123.com/">相识电子书-海量优质pdf,txt电子书免费下载</a></li>
+<li>Picture                            <a href="http://www.zdqx.com/">壁纸图片_桌面壁纸_高清壁纸_电脑桌面壁纸下载-精品壁纸站</a>                <a href="https://www.beautyleg7.com/index.html">Beautyleg美女写真_美女图片大图高清写真</a>                <a href="https://img.404ol.com/">- 404 online ! -</a>                <a href="https://b7.cn/">表情包大全 - QQ表情包 - 微信表情包 - 斗图 - B7.CN</a>                <a href="http://www.meirenso.com/">性感美女图片_清纯美女组图_高清MM写真 - 美人搜图</a>                <a href="https://unsplash.com/">Beautiful Free Images &amp; Pictures | Unsplash</a>                <a href="https://pixabay.com/">免费图片 - Pixabay</a>                <a href="http://www.pcclean.io/imdesktop-online-wallpapers/">imDesktop – Online HD Wallpapers Free Download | YL Computing</a>                <a href="http://www.pygif.com/">漂移GIF车|原创GIF动态图车牌|</a>                <a href="https://www.mmkk.me/">MMKK - 不一样的美女图库分享网站</a>                <a href="http://www.tsmnt.com/">特色美女图</a>                ——404——                                    <a href="http://www.9090rt.info/">GOGO人体艺术-高清大胆全球美女人体艺术摄影专业图片网站</a>                    <a href="http://www.9900rt.com/html/yazhou/">亚洲人体艺术 中国 韩国 泰国 日本人体艺术 - GOGO人体艺术-高清大胆全球美女人体艺术摄影专业图片网站</a>                    <a href="http://www.9900rt.net/">GOGO人体艺术-高清大胆全球美女人体艺术摄影专业图片网站</a>                    <a href="http://www.ggrrtt.com/">GOGO人体艺术-高清大胆全球美女人体艺术摄影专业图片网站</a>                    <a href="http://www.gg99rt.pro/">GOGO人体艺术-高清大胆全球美女人体艺术摄影专业图片网站</a>                                <a href="http://www.mmonly.cc/tag/fqwz/">风情万种图片-风情万种的女人图片_第 1 页-唯一图库</a>                <a href="http://www.mmonly.cc/">【唯一图库】主要分享美女图片大全,唯美图片大全以及风景图片大全等</a>                <a href="https://www.yalayi.com/">雅拉伊 - 原创人像摄影作品，高清写真图片，有温度的写真集</a>                <a href="https://bing.ioliu.cn/">必应每日高清壁纸 - 精彩，从这里开始</a>                <a href="http://bimg.top/">Bing每日高清壁纸-必应4K壁纸,下一张很精彩|Bimg.top</a>                <a href="https://wallpaper.wispx.cn/">首页 - 青青壁纸 - 坚持你所热爱的，热爱你所坚持的，剩下的交给时间就好🎈</a>                <a href="http://www.bingimg.cn/">必应高清壁纸 | 必应每日一图</a>                <a href="http://wuzuowei.vip/tool/xiu.html">随机买家秀图片</a>                <a href="https://233.fi/explore/trending/?list=images">探索 热门 - LALAの图库</a>                <a href="https://www.anray.org/?iao.su">岸光美图</a>                <a href="https://diskgirl.com/">硬盘少女 - 收藏在你硬盘中的美少女|美女视频|美女短视频|美女图集|美女写真|短视频下载|MM短视频</a>                <a href="https://www.kanxiaojiejie.com/">看小姐姐</a>                <a href="https://tupian.gq/">图图ACG</a>                <a href="https://www.bkj233b.top/">小昊の图库</a>                <a href="http://www.obzhi.com/">乌云高清壁纸站|每日分享美丽壁纸。</a>                <a href="https://wallhaven.cc/">Awesome Wallpapers - wallhaven.cc</a>                <a href="https://de.hentai-cosplays.com/">TOP - Hentai Cosplay</a></li>
+<li><a href="https://music.douban.com/top250">豆瓣音乐 Top 250</a></li>
+<li>在线听歌                            <a href="https://yinyue.qugeek.com/app/onlyrain">雨滴入睡Rainy - 墨灵音乐</a>                <a href="https://yinyue.qugeek.com/app/player">在线音乐播放器 - 墨灵音乐</a>                <a href="http://ting.yeyulingfeng.com/">正在播放</a>                <a href="https://www.binye.xyz/Music/">在线音乐播放MKOnlionePlayer</a>                <a href="http://tongzhong.xyz/">铜钟 - 在一处聆听所有音乐</a>                <a href="http://music.sonimei.cn/">全网音乐免费下载 - 音乐搜索,音乐在线试听,下载,在线解析网</a>                <a href="http://music.ifkdy.com/">疯狂音乐搜索</a>                <a href="https://www.mosq.cn/yy/music/">MKOnlinePlayer v2.4</a>                <a href="https://www.jikefan.com/music/">MKOnlinePlayer v2.4</a>                <a href="https://music.itmxue.cn/">MxuePlayer-茗血在线听歌房|收费歌曲在线下载|MKOnlinePlayer</a></li>
+<li>Song                            <a href="https://www.50yin.com/">50音资源分享 - 一个免费音乐资源分享网站</a>                <a href="http://blog.sina.com.cn/u/3700455595">浪人书斋_新浪博客</a>                <a href="http://www.app-echo.com/#/">echo回声 | 潮流音乐生活方式-3D音乐 弹幕社交 趣味铃声 变声录音 KTV</a>                <a href="http://mp3bst.com/">音乐下载 - 百视听|320K_无损高品质音乐下载FLAC_WAV_24bit_AAC</a>                <a href="https://mp3bst.com/">音乐下载 - 百视听|320K_无损高品质音乐下载FLAC_WAV_24bit_AAC</a>                <a href="http://www.carflac.com/">车载音乐|无损音乐下载-汽车音乐_无损音乐_FLAC_APE_WAV_DSD_DTS_5.1声道_无损音乐下载网站</a>                <a href="http://www.52wusun.com/">我爱无损音乐网|320K_无损高品质音乐下载</a>                <a href="https://tzg.ylzmjd.com/">5.1音乐网-精选好听的歌曲，车载超高品质无损音乐，DTS,WAV,APE,FLAC,DSD音乐免费下载！</a>                <a href="http://wumzhi.com/">無名誌 | 看見音樂</a>                <a href="http://www.51ape.com/">51Ape.Com | 无损音乐免费下载</a>                <a href="http://tzg.ylzmjd.com/">5.1音乐网（原5.1音乐网）-精选好听的歌曲，超高品质无损音乐！</a>                <a href="http://5dian1.ylzmjd.com/">5.1音乐网-无损音乐下载,车载音乐,汽车音乐,APE,DTS,WAV,flac,5.1声道无损音乐免费下载,让音响发烧!</a>                <a href="http://www.kugou.com/yy/html/special.html">酷狗推荐_精选集_乐库频道_酷狗网</a>                <a href="http://gecimi.com/">歌词迷-开放歌词计划</a>                <a href="http://www.aigei.com/">爱给网_音效配乐_3D模型_视频素材_游戏素材_免费下载</a>                <a href="https://freepd.com/">FreePD.com - Free Public Domain Music Creative Commons 0 Completely Royalty Free</a>                <a href="https://musopen.org/">Free Sheet Music, Royalty Free &amp; Public Domain Music | Musopen</a>                <a href="http://www.djaaa.cn/">dj嗨曲 dj嗨歌 dj舞曲 dj视频 2018最新好听的DJ嗨嗨网歌曲 劲爆的dj嗨曲免费下载网站</a>                <a href="http://tool.yijingying.com/musictools/">http://tool.yijingying.com/musictools/</a>                <a href="http://www.yinyue.tw/">音乐客</a>                <a href="http://www.younagou.com/musicMaster/index.php">优纳狗音乐-海量音乐免费下载</a>                <a href="http://www.hzou.net/">红嘴鸥音乐电台</a>                <a href="https://www.hifige.com/">HIFI阁 – 高品质无损音乐下载网</a>                <a href="https://www.wsyyxz.com/">无损音乐下载-FLAC、APE、WAV、DSD、DTS免费的无损音乐下载网站</a>                <a href="http://www.shaodts.net/">烧DTS音乐网-DTS音乐,DTS音乐下载,SACD音乐,DSD音乐,发烧音乐,发烧音乐下载,5.1声道音乐,5.1声道音乐下载-无损音乐下载</a>                <a href="https://trix360.com/">【Hires后花园】索尼hires音乐资源_sacd下载_dsd音乐资源_高品质无损音乐下载网站_Trix&rsquo;s TRIX360 海量 MQA Hi-Res</a>                <a href="http://mp34.butterfly.mopaasapp.com/">音乐试听外链站</a>                <a href="https://rapzh.com/">RapZH 中文说唱数据库 歌词</a>                <a href="https://www.tunefind.com/">美剧原声音乐Find Music From TV and Movies | Tunefind</a>                <a href="https://www.momishi.com/">魔迷士博客 - 无损音乐下载|FLAC|WAV|APE|MP3|高品质无损音乐免费下载网站</a></li>
+<li>Music                            <a href="https://www.bandari.net/">欢迎莅临 班得瑞全球网 聆听大自然赐于我们的天籁之音 Bandari.Net -</a>                <a href="https://cn.imslp.org/">国际乐谱库：曲谱PDF下载</a>                <a href="https://audionautix.com/">Free Production Music by Jason Shaw</a></li>
+<li>音频                            <a href="http://www.ximalaya.com/">喜马拉雅</a>                <a href="https://m.qingting.fm/vchannels/224798/">《夜空守望者》全集</a>                <a href="http://www.justing.com.cn/">静雅思听 智慧声音</a>                <a href="https://tingfm.com/radio/5">音乐之声 - Music Radio - 在线收听「高保真」 - 央广 - TingFM</a></li>
+<li><a href="https://movie.douban.com/top250">豆瓣电影 Top 250</a></li>
+<li>在线播                            <a href="https://www.okzy.co/">OK资源采集-最新影视资源大全</a>                <a href="http://www.zuidazy1.net/">最大资源网－全球最大在线电影资源网站</a>                <a href="http://www.kuyunzyw.tv/">酷云资源网-最新最热高清电影资源在线观看,免费采集资源,在线播放资源www.kuyunzy.zom</a>                <a href="http://www.okzyw.com/">OK资源采集</a>                <a href="http://www.zabaye.com/">扎巴野影院-免VIP抢先观看最新好看的电影和电视剧</a>                <a href="http://tv8.fun/">影视娱乐吧 | 华人娱乐休闲的后花园</a>                <a href="https://www.lzvod.net/">龙珠电影网_真正免费的高清电影天堂-超清视频网|龙珠影院</a>                404                                    <a href="http://www.hmytv.com/">黑蚂蚁影院-全看影院-YY4480新视觉-神马影院-秋霞电影网</a>                    <a href="https://www.m3u8play.cf/">m3u8在线播放器</a>                    <a href="http://www.xiaohejutv.com/">小河居电影网</a>                                112                                    <a href="https://txxx.life/wetmoviesflow/dHBoNWM3ZjljZTBjZGZkZg==/18%E6%AD%B3%E6%9C%AA%E6%BA%80%EF%BC%81%EF%BC%9F%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%E3%81%AE%E3%83%AD%E3%83%AA%E5%A8%98%E3%81%AE%E3%82%AA%E3%83%8A%E3%83%8B%E3%83%BC%E9%85%8D%E4%BF%A1">18歳未満！？ショートカットのロリ娘のオナニー配信 | Txxx</a>                    <a href="https://txxx.life/wetmoviesflow/dHBoNWNiMDA4YjgyMjQwYQ==/japanesse-horny">japanesse horny | Txxx</a>                    <a href="https://txxx.life/wetmoviesflow/dHBoNWM4M2NmNzI0NzZlYg==/uncensored-jav-sexy-pussy-hair-multiple-squirts-creampie">Uncensored Jav, sexy pussy hair, multiple squirts, creampie | Txxx</a>                    <a href="http://www.chplayer.com/down/v1.0/">chplayer</a>                    <a href="http://www.chplayer.com/">chplayer</a>                    <a href="https://github.com/billy21/Tvlist-awesome-m3u-m3u8/blob/master/list.md">Tvlist-awesome-m3u-m3u8/list.md at master · billy21/Tvlist-awesome-m3u-m3u8</a>                                <a href="http://2w2w.tv/">电影天堂_免费电影_OK资源网</a>                <a href="http://www.ub888.com/">2019最新更新电视剧_2019最新好看的电影_在线观看 - 云播电影网</a>                <a href="https://www.baishixi.com/">百事影院</a>                <a href="http://www.leidian5.com/">雷电网</a>                <a href="https://51-kdy.com/">51看电影</a>                <a href="http://www.xgzyw.com/">西瓜影音,西瓜影院,西瓜影视,西瓜电影网,西瓜资源网</a>                <a href="https://www.t6dy.com/vod-play-id-19594-sid-1-nid-17.html">破冰行动第17集在线播放_天龙m3u8_国产剧连续剧 - 天龙影院 - T6电影天堂</a>                <a href="http://www.kuyitv.com/">2018最新电影-热播电视剧在线观看-酷艺电影</a>                <a href="https://www.fyj8.com/">樱花动漫_风车动漫_琉璃神社_风之动漫-动漫星空</a>                <a href="https://www.kankanwu.com/">看看屋</a>                <a href="http://www.weibotu.com/">微博兔免费电影网_2018最新电视剧电影在线观看</a>                <a href="https://www.e99w.com/">悠久影院 - YY6042玄天影视网 - 最新大片抢先看 - 免费看电影网</a>                <a href="http://www.kuyunzyw.tv/?m=vod-type-id-22.html">伦理片-酷云资源站</a>                <a href="http://www.okzy.co/">OK资源采集-最新影视资源大全</a>                <a href="http://ifkdy.com/">疯狂影视搜索-最有用的影视搜索引擎</a>                <a href="http://www.6er.nz/">六耳TV资源厂分享广场 - 免费高清MP4视频在线观看下载资源站 - www.6er.nz黑猴站</a>                <a href="http://pan.523.nz/">六耳TV资源厂分享广场 - 免费高清MP4视频在线观看下载资源站 - pan.523.nz</a>                <a href="http://www.6er.tv/">六耳TV - 523影视网 - 视频内容上传发布平台,无广告即点即播！</a>                <a href="https://www.idy6.com/">夜狼影视 - 近期热门电影、午夜电影在线观看、电视剧无广告播放</a>                <a href="https://m.meijutt.tv/">美剧天堂 - 高清美剧下载、手机在线观看！</a>                <a href="http://kanba.cc/">2020最新好看的电影推荐_热门电影大全排行榜_看吧电影网 - 看吧影院</a>                <a href="http://www.qvod163.com/">QVOD电影之家</a>                <a href="http://www.etours.tv/">极速影院首页-极速影院热播vip电影电视剧免费在线观看</a>                <a href="http://07fv.com/">琪琪电影网_八戒电影网_宅宅电影在线_被窝电影网_被窝色</a></li>
+<li>影视zh                            <a href="http://www.zmz2019.com/">YYeTs 人人影视|字幕组官方下载站</a>                <a href="http://cili001.com/">磁力下载站</a>                <a href="https://www.bd-film.cc/">首页 - BD影视分享 - 最新高清电影资源免费下载</a>                <a href="https://www.pianku.tv/">片库 - 高清影视资源下载</a>                <a href="https://www.dyjihe.com/">电影集合_无广告影视大全_免费在线观看和下载</a>                <a href="https://www.meijutt.tv/">美剧天堂 - 海量好看的美剧在线观看、最新美剧下载！</a>                <a href="https://91mjw.com/">91美剧网 | 在线美剧天堂,最新美剧资源,高清美剧在线观看</a>                <a href="http://rrys.tv/">美剧,日剧,韩剧,电影,资讯-影视资讯网</a>                <a href="http://www.allyingshi.com/">全影视网址导航</a>                <a href="http://www.415.net/">BT之家415.net</a>                <a href="https://gaoqing.fm/">高清电台|高清电影|电影字幕|在线播放|在线点播|磁力链|高清美剧|BT种子下载聚合网站</a>                <a href="http://www.yinfans.me/">音范丝|影音集|精选4K蓝光原盘下载，顶级收藏</a>                <a href="http://www.hkb123.com/">迅雷电影下载网站、免费电影下载网站、百度云电影资源-好恐怖</a>                404                                    <a href="http://www.mp4ba.com/">高清MP4吧-免费高清电影资源下载_mp4ba.com</a>                    <a href="http://www.btbus.co/">BTBus</a>                    <a href="https://www.haokongbu.com/">迅雷电影下载网站、免费电影下载网站、迅雷电视剧下载网站-好恐怖</a>                    <a href="https://www.kantiantang.net/">看天堂 - 电影天堂 - BT下载 - 电影下载</a>                    <a href="https://www.dybee.tv/">电影蜜蜂-高清电影资源最新电影下载</a>                    <a href="https://pan.baidu.com/share/home?uk=3042175850">MP4ba百度云</a>                    <a href="http://www.lemaotv.net/">乐猫TV</a>                    <a href="http://btufo.com/forum.php">BT探索 - btufo</a>                    <a href="https://agmeiju.com/">AG美剧（又名阿哥美剧）免费高清视频在线观看热门美剧在线免费观看国内播放速度最快的中文美剧网站-AG美剧（又名阿哥美剧）</a>                    <a href="http://52movieba.com/">52movieba论坛</a>                    <a href="https://www.bdys.co/">首页 - BD影视分享 - 最新高清电影资源免费下载</a>                    <a href="http://www.ttmeiju.com/">天天美剧 - 您的高清美剧片源下载中心</a>                    <a href="http://www.inapian.com/index.html">就爱那片儿</a>                    <a href="http://www.dygod.net/">电影天堂:高清电影下载,高品质生活</a>                    <a href="http://www.xiazai001.com/forum.php">XiaZai001-下载001-分享资源</a>                    <a href="http://www.chimeiju.com/">吃美剧,天天美剧,人人美剧,天天美剧在线,天天美剧在线看,天天美剧在线播放,天天美剧在线观看,美剧迷真正的美剧天堂</a>                    <a href="http://tvfantasy.net/">天涯小筑 | 您通向英语电视世界的中文门户</a>                    <a href="https://www.ibtba.cc/">BT吧-高清电影电视剧BT种子迅雷下载</a>                                过期                                    <a href="http://demo3.moban456.com/">牛宝宝电影网 最新1080p/720p高清电影BT种子下载 免费迅雷电影下载网站</a>                    <a href="https://www.dy2018.tv/">大主宰电影网|DY2018伦理电影天堂|韩国电影 - 伦理片</a>                    <a href="http://www.dy100.me/">电影100,经典电影分享,高分电影,高清电影下载,新片首发</a>                    <a href="http://www.706dy.com/">久久热,播播影院,韩国伦理片大全 - 新视觉影院</a>                    <a href="http://www.liangzijievip.com/">量子谷/量子界论坛-分享是一种快乐！（中文字幕/百度网盘/迅雷下载）</a>                    <a href="http://www.dytt.com/">电影淘淘-电影天堂-迅雷电影下载-免费电影</a>                    <a href="http://www.btbtt.pw/">BT之家-BT电影天堂-影视资源交流社区</a>                    <a href="http://www.80s.tw/">80s电影网 - 高清手机电影迅雷下载_最新MP4电视剧磁力下载</a>                    <a href="http://gscq.me/forum-2.htm">HQC剧集-乐赏 GSCQ.ME</a>                    <a href="https://www.dy2018.com/">电影天堂_电影下载_高清首发</a>                    <a href="https://www.dytt89.com/">电影天堂_电影下载_高清首发</a>                    <a href="http://www.dytt8.net/">电影天堂_免费电影_迅雷电影下载</a>                    <a href="http://www.gscq.online/">乐赏 GSCQ.ME</a>                    <a href="https://www.meijutt.com/">美剧天堂 - 海量好看的美剧在线观看、最新美剧下载！</a>                    <a href="http://mp4ba.cc/">高清MP4吧-免费高清电影资源下载_mp4ba.cc</a>                                <a href="http://www.zxba.cc/">80s手机电影网 - MP4高清手机电影下载</a>                <a href="http://www.8080s.net/">80s手机电影网 - MP4高清手机电影下载</a>                <a href="http://www.80s.cm/">80s手机电影网 - MP4高清手机电影下载</a>                <a href="http://www.yztown.club/forum.php">影知堂社区-原创高清华语怀旧精品影视社区 - Powered by Discuz!</a>                <a href="https://www.bd-film.co/">首页 - BD影视分享 - 最新高清电影资源免费下载</a>                <a href="http://www.haokongbu.net/">迅雷电影下载网站、免费电影下载网站、迅雷电视剧下载网站-好恐怖</a>                <a href="http://www.dayi.ca/">达意网 | 达意网是给海外华人提供中文生活服务的综合平台：包括影视娱乐、新闻资讯、难题解答、衣食住行等生活服务内容。</a>                <a href="http://www.btrenren.com/">bt天堂_bt种子_bt电影_MP4ba电影下载 - bt人人网</a>                <a href="http://dayi.ca/ys/">达意影视 – 达意电影电视剧集</a>                <a href="http://weibo.com/hqcteam?is_all=1">HQC小组的微博_微博</a>                <a href="https://www.douban.com/doulist/45659551/">2016观影年度十佳候选</a>                <a href="https://www.douban.com/doulist/46400798/?sort=seq&amp;sub_type=1">2018年大陆院线电影</a>                <a href="http://www.meijutt.com/">好看的美剧,美剧在线观看,美剧下载,美剧迷真正的美剧天堂 - Powered by www.meijutt.com</a>                <a href="http://www.kaixindy.com/">海阔天空-2017最新电影下载,电视剧下载,高清电影迅雷下载 | 开心电影网</a>                <a href="http://rrmj.tv/">人人美剧</a>                <a href="http://dianying.fm/search/">电影大全|电影FM</a>                <a href="http://www.zhuixinfan.com/main.php">首页 - 追新番日剧站 - Powered by Discuz!</a>                <a href="http://www.yyets.com/">YYeTs人人影视 |YYeTs.com |人人影视字幕组,人人影视APP,人人影视PRO,为您翻译最新最快的海外影视字幕</a>                <a href="https://www.appcgn.com/high-mark-hd-movies">高分の影片 - 软件缘</a>                <a href="http://www.yinfans.com/">音范丝|影音集|精选蓝光原盘下载，顶级收藏</a>                <a href="https://cctv1024.club/">CCTV1024.COM - CCTV影视官网</a>                <a href="http://www.btba.cc/">BT吧-高清电影电视剧BT种子迅雷下载</a>                <a href="http://gaoqing.la/">中国高清网 | 高清电影网|720P|1080P|蓝光原盘|磁力链迅雷下载高清的电影天堂</a>                <a href="http://www.llduang.com/">一只大榴莲的分享 |</a>                <a href="https://www.dygod.net/">电影天堂:高清电影下载,高品质生活</a>                <a href="https://www.66s.cc/">6v电影-新版</a>                <a href="https://www.90ttys.com/">90天堂影视-YY4480高清影院-YY6080官网-YY6090青苹果影院-90天堂影视</a>                <a href="http://www.yue365.com/tv/">2020好看的电视剧大全_2020最新好看的热播电视剧_365电视剧</a>                <a href="http://www.66ys.co/">66影视网-最新电影,最新电视剧,迅雷电影下载</a>                <a href="http://www.kandytt.com/">看电影天堂- 电影天堂 - BT下载 - 电影下载</a></li>
+<li>影视en                            <a href="https://thepiratebay.org/">Download music, movies, games, software! The Pirate Bay - The galaxy&rsquo;s most resilient BitTorrent site</a>                <a href="http://www.rarbg.com/torrents.php?category=18">Rarbg.com Torrents , filmi , download</a>                <a href="http://extratorrent.cc/">ExtraTorrent.cc The World&rsquo;s Largest BitTorrent System</a>                <a href="https://torrentz.eu/i">myTorrentz - iTorrentz</a>                <a href="https://kickass.so/">Download Torrents. Fast and Free Torrent Downloads - KickassTorrents</a>                <a href="https://eztv.ch/">EZTV - TV Torrents Online</a>                <a href="https://eztv.it/">EZTV - TV Torrents Online</a>                <a href="http://www.monova.org/">Download Torrents for Free. Verified Torrent Download and Search at Monova.org.</a>                <a href="http://www.addic7ed.com/">Addic7ed.com - The source of latest TV subtitles</a>                <a href="http://www.pogdesign.co.uk/">无法访问 http://www.pogdesign.co.uk/</a>                <a href="http://www.movie4k.to/">Watch movies online for free movie download at Movie2k.to Movie4k.to</a>                <a href="http://www.torrentreactor.net/">Torrent Reactor - The most active torrents on the web</a>                <a href="http://www.seriessub.com/">SeriesSub - Sous-titres de séries TV - Accueil</a>                <a href="http://www.bitmetv.org/">BitMeTV.ORG</a>                <a href="http://subscene.com/">Subscene - Passionate about good commentaries</a>                <a href="http://www.rarbg.com/index6.php">Rarbg.com Rarbg Index page</a>                <a href="http://www.rlslog.net/">Releaselog | RLSLOG.net</a>                <a href="https://thepiratebay.se/">Download music, movies, games, software! The Pirate Bay - The galaxy&rsquo;s most resilient BitTorrent site</a>                <a href="http://www.btstorrent.so/">BTScene  Torrents - Beyond Bittorrent - Download Movies, Music, Mp3, Games, Tv  Shows, Software, Books, Audio Books, Anime and more</a>                <a href="http://torrents.to/">torrents | your torrent search</a>                <a href="https://www.bt66.org/">BT66电影天堂_bt电影_bt种子_电影下载 - bt66.org</a></li>
+<li>字幕zh/en                            <a href="http://zmk.tw/">字幕库</a>                <a href="http://www.zimuku.la/">字幕库(zimuku.la) &ndash; 字幕下载网站</a>                <a href="http://subhd.com/subs">最新字幕 - Sub HD</a>                <a href="http://www.jgzmz.com/#allworks">极光字幕组 - 首页</a>                <a href="http://bbs.sfile2012.com/">伊甸园国外连续剧交流站 - Powered by Discuz!</a>                <a href="http://www.opensubtitles.org/en/search">http://www.opensubtitles.org/zh/search</a>                <a href="http://www.ragbear.com/">破烂熊乐园</a>                <a href="http://sub.eastgame.org/">TLF字幕组-公益之理念，分享创作之乐，共赏字幕之美</a>                <a href="http://sub.makedie.me/">首页 - 射手网(伪) - sub.makedie.me - tous pour un, un pour tous</a>                <a href="http://www.opensubtitles.org/zh">字幕 - 从最大的开放式字幕库中下载电影及剧集字幕</a>                <a href="http://subom.net/">中文字幕下载 | 字幕下载 | 电影字幕 | 外挂字幕 | Sub of Movies.</a>                <a href="http://treehousesub.com/">树屋经典影视论坛-留住经典，不忘怀旧 - Powered by Discuz!</a>                <a href="http://dbfansub.com/">电波字幕组 | 诚心诚译 | 您的美英喜剧中心 电波字幕组</a></li>
+<li>纪录片                            <a href="http://www.jlpdq.com/">记录片之家-BBC国家地理探索频道高清纪录片大全</a>                <a href="http://www.opclass.com/index.php/search/bbc/">包含关键字 bbc 的文章 - 公开课纪录片下载网</a>                <a href="http://docuwiki.net/index.php?title=Category:BBC">Category:BBC - DocuWiki</a>                <a href="http://forums.mvgroup.org/">Board Message</a>                <a href="http://www.xmqzmz.org/">夏末秋字幕组｜原创优质纪录片字幕英剧字幕｜纪录片英剧交流平台 - Powered by Discuz!</a>                <a href="http://www.vdonghua.cn/">V动画－专注全球优秀动画短片分享</a>                <a href="http://www.daofire.com/">盗火纪录片 - 全球纪录片数据库 - 纪录片下载</a>                <a href="http://www.jlpcn.net/">纪录片,国家地理纪录片,探索频道纪录片,BBC纪录片,奥视纪录片天地 www.jlpcn.net</a></li>
+<li>动漫                            <a href="https://share.dmhy.org/topics/list?keyword=%E6%A5%93%E9%9B%AA%E5%8B%95%E6%BC%AB">動漫花園</a>                <a href="https://share.dongmanhuayuan.com/">首頁 - 動漫花園資源網 - 動漫愛好者的自由交流平台</a>                [动漫花园镜像站](<a href="https://www.dongmanhuayuan.com/search/">https://www.dongmanhuayuan.com/search/</a> OPFans楓雪動漫/)                <a href="https://www.jiyingdongman.com/">极影动漫资源网 - 动漫资源聚合平台</a>                <a href="http://miobt.com/search.php?keyword=%E6%B5%B7%E8%B4%BC%E7%8E%8B">海贼王 - ＊MioBT＊</a>                <a href="https://bangumi.moe/">萌番组</a>                <a href="http://dm1080p.com/">D动漫1080P – 高清动漫下载资料站</a>                <a href="http://www.kisssub.org/">爱恋动漫BT下载</a>                <a href="http://www.comicat.org/">漫猫动漫BT下载</a>                <a href="http://uwps.magn.space/programme.html">通用每週番組™ X 動漫研究 Universal Weekly Program Schedule TVアニメーション番組表「通用™」公式サイト 全球資訊網</a>                <a href="http://dmhy.aewb.cn/">动漫花园镜像站</a>                <a href="http://www.hldm123.com/">红旅动漫</a>                <a href="http://bbs.opfans.org/forum.php">论坛 - Powered by Discuz!</a>                <a href="https://acg.rip/series/76">海贼王 - ACG.RIP</a>                <a href="https://www.dlkoo.com/down/">DLKOO－韩国娱乐音乐</a>                <a href="https://mikanani.me/">蜜柑计划 - Mikan Project</a>                <a href="http://www.dilidili.name/">嘀哩嘀哩，这里是兴趣使然的无名小站（D站）_dilidili</a>                <a href="http://bt.acg.gg/">ACG狗狗 | 动漫资源分享 - 动漫下载|BT|漫画|动画|游戏</a>                <a href="http://www.meijuhui520.com/archives/162530.html">海贼王-第806集-在线播放_美剧汇</a>                <a href="https://www.agefans.tv/">在线动画 动漫下载 - AGE动漫</a></li>
+<li><a href="https://airpano.org.cn/">360°航拍全景，全球360°虚拟游览，地球上最有趣的地方照片</a></li>
+<li>直播                            <a href="http://www.acfun.cn/">AcFun弹幕视频网</a>                <a href="http://www.doseeing.com/">在看直播排行榜 - 实时斗鱼直播间排行</a>                <a href="http://www.xiaohulu.com/Box/index.html?plat=2">小葫芦抢宝箱_直播平台宝箱提醒工具_斗鱼抢宝箱_熊猫福袋_虎牙藏宝图_小葫芦</a>                <a href="https://www.douyu.com/room/my_follow">斗鱼直播</a>                <a href="http://cc.163.com/user/follow/">网易CC直播</a>                <a href="https://www.zhanqi.tv/user/follow">战旗</a>                <a href="http://v.qq.com/live/p/topic/38686/index.html#player">QQ直播</a>                <a href="http://www.huajiao.com/user">我的关注 - 花椒直播,美颜椒友,疯狂卖萌</a>                <a href="http://tv.cctv.com/live/cctv6/">CCTV-6 电影频道高清直播</a>                <a href="http://www.cbg.cn/1ive/">重庆视界网</a>                <a href="https://live.wasu.cn/show/id/1516408">华数TV</a>                <a href="https://live.kuaishou.com/u/HQ8686886">王者荣耀韩二娃：国服李白-快手直播</a>                <a href="https://app.zhibo.at/">Z 直播</a></li>
+<li>视频                            <a href="https://space.bilibili.com/230989676/fans/follow">哔哩哔哩bilibili</a>                <a href="https://v.qq.com/cartoon">腾讯视频</a>                <a href="http://www.iqiyi.com/">爱奇艺-中国领先的视频门户，高清影视剧，网络视频在线观看</a>                <a href="http://youtube.com/">youtube</a>                <a href="http://open.163.com/ted/">TED_网易公开课</a>                <a href="http://open.sina.com.cn/school/id_57">TED_新浪公开课_新浪教育_新浪网</a>                <a href="http://www.tedtochina.com/">TEDtoChina</a>                <a href="https://www.ted.com/">TED: Ideas worth spreading</a>                <a href="http://www.fantasy.tv/">范特西视频|创建自己的视频频道、上传、观看和分享|开放的视频分享平台Fantasy.tv</a>                <a href="http://yixi.tv/">一席 | 人文.科技.白日梦</a>                <a href="http://www.openclasses.info/">公开课纪录片下载网 - 网易、新浪、中国公开课，CCTV、BBC纪录片大全，演讲、励志视频下载www.openclasses.info</a>                <a href="http://www.clipconverter.cc/download/zJZ4sEBQ/376586894/">TAYLOR SWIFT - Look What You Made Me Do (Dance Video) | Kyle Hanagami Choreography.mp4 - ClipConverter.cc</a>                <a href="http://en.savefrom.net/">Free Online YouTube Downloader: Download YouTube Videos, Facebook and many others!</a>                <a href="http://i.56.com/malashusheng">麻辣书生的视频空间_麻辣书生的视频专辑、相册_56.com</a>                <a href="http://v.xiacoo.com/">小姐姐福利视频_随机刷小姐姐短视频 - 虾库微视频</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="软件"><a href="#%e8%bd%af%e4%bb%b6">软件</a></h3><ul>
+<li>资源综合                            <a href="http://www.w168.net/">无作为|分享不仅仅是一种态度！</a>                <a href="https://52sharing.cn/">吾爱分享网|分享是一种态度</a>                <a href="http://www.dayanzai.me/">大眼仔旭 - 专注视频剪辑、解压、录屏、思维导图等办公软件分享</a>                <a href="https://lai.yuweining.cn/">不死鸟 - 分享为王</a>                404                                    <a href="https://www.wuzuowei.net/">无作为资源|分享不仅仅是一种态度！</a>                    <a href="https://www.fbisb.com/">无崖子资源网-专注软件,教程分享,分享不仅仅是一种态度!</a>                    <a href="http://www.pigguli.com/">最专业的资源收集分享平台</a>                                <a href="https://hao.su/">不死鸟 - 分享为王</a>                <a href="https://topbook.cc/overview">Topbook | 高效生活视频书</a>                <a href="https://www.lanzous.com/u/wuzuowei">无作为分享：wuzuowei.net - 蓝奏云网盘</a>                <a href="http://www.rdonly.com/">只读</a>                <a href="https://linkfind.cn/">LinkFind</a>                <a href="https://meta.appinn.net/">小众软件官方论坛 - 小众软件</a>                <a href="https://xinquji.com/">新趣集 - 一起发现有趣的新产品</a></li>
+<li>down                            <a href="https://www.423down.com/">423Down，Win+Android</a>                <a href="https://zhs.moo0.com/">Moo0 - Windows有用的免费软件 (not MooO)</a>                <a href="https://www.portablesoft.org/">精品绿色便携软件，Win</a>                <a href="https://f-droid.org/zh_Hans/">F-Droid，Android</a>                ——404——                                    <a href="http://flyonzone.ys168.com/">飞扬时空</a>                                ——lost——                                    <a href="https://www.appcgn.com/">软件缘，Win+Android</a>                    <a href="http://www.carrotchou.blog/">胡萝卜周-欢迎访问胡萝卜周博客</a>                    <a href="https://hrtsea.com/">烈火软件汉化-心海e站 | 点亮未来，见证精彩</a>                                ys168                                    <a href="http://kyon945.ys168.com/">阿虚同学的储物间</a>                    <a href="http://smusic.ys168.com/">共享是人类社会进步的象征</a>                    <a href="http://zdsrj.ys168.com/">五筆藏經閣(王碼分部)</a>                                <a href="https://www.cnblogs.com/sztom/p/12441020.html">F-Droid - osoft - 博客园</a>                字幕                                    <a href="https://arctime.org/download.html">Arctime字幕软件</a>                    <a href="http://www.aegisub.org/downloads/">Aegisub Advanced Subtitle Editor</a>                    <a href="https://github.com/zhw2590582/SubPlayer/releases/tag/2.0.0">Release 2.0.0 · zhw2590582/SubPlayer</a>                                <a href="http://www.v5pc.com/">v5pc_免费实用绿色软件V5PC绿软</a>                <a href="https://www.mpyit.com/">老殁 - 免费推荐优秀软件</a></li>
+<li>软件站                            <a href="https://www.nocmd.com/">NoCmd - 绿色软件站 | 打造最纯净的绿色软件下载站！</a>                <a href="http://www.91sh.cn/">就要分享91sh.cn-有爱共分享-SOLDIER|繁华博客</a>                <a href="https://www.wufuba.com/ruanjian/film-music">影音工具_五福吧</a>                [PhraseExpress 凡人办公利器,唯有<a href="http://phraseexpress.ys168.com/">片语快递]</a>                <a href="http://xbeta.info/">善用佳软</a>                <a href="http://www.rjno1.com/">绿色软件 - 绿色便携软件下载 - 软件No1</a>                <a href="http://www.flighty.cn/">轻狂志 - 少轻狂分享优质软件资源！</a>                <a href="https://www.xia1ge.com/">下1个好软件 – 安全好用的Mac,安卓,iOS,Windows下载站</a>                <a href="https://izyx.xyz/">软荐 | 第一眼的惊艳，再回眸的感动</a>                <a href="http://windows.dailydownloaded.com/zh/">软件评论，下载，游戏和应用&hellip;.. | Windows</a>                <a href="https://cn.uptodown.com/windows">下载Windows应用程序-下载，恢复，在Uptodown分享</a>                <a href="https://en.softonic.com/windows">Softonic</a>                <a href="http://www.downg.com/">绿软家园(绿色下载站)┊打造第一绿色软件家园</a>                <a href="http://www.xiazaiba.com/">下载吧</a>                <a href="http://www.ed2000.com/">ED2000资源分享</a>                <a href="http://www.x-berry.com/">软矿 - 工欲善其事，必先利其器！</a>                <a href="http://www.xitongzhijia.net/">系统之家官网</a>                <a href="http://www.newxitong.com/?qh_44g">专注于Win7官方网站</a>                <a href="http://msdn.itellyou.cn/">MSDN, 我告诉你</a>                <a href="http://www.canadiancontent.net/tech/">Canadian Content Software - Free software downloads</a>                <a href="http://xiaojun911.com/">小俊博客</a>                <a href="http://www.lanqibing.com/">蓝骑兵-JAVA,技术,美食,杂七杂八的记录</a>                <a href="http://www.bokeboke.net/">爱软客 | 专注常用软件绿色版、优化版、便携版</a>                <a href="https://www.yikuzy.com/">易酷资源网-免费分享安卓绿色软件</a>                <a href="http://www.qiuziyuan.net/">求资源网-破解绿色汉化软件分享平台</a>                <a href="https://www.cuiuc.com/">CUIUC - 发现好软件</a>                <a href="http://www.ziyuandaquan.net/">求资源网备用域名(qiuziyuan.net)</a>                <a href="https://www.itren.org/">ITren</a>                <a href="https://mirror-hk.koddos.net/">Perl存档网络 镜像站</a>                <a href="https://myqqjd.com/android/">安卓应用 | 芊芊精典</a>                <a href="https://www.fosshub.com/">FOSSHUB软件下载站en</a></li>
+<li>安卓TV盒子                            <a href="https://www.lanzoux.com/b0f1944aj">Android⠀TV⠀Apps</a>                <a href="https://github.com/billy21/Tvlist-awesome-m3u-m3u8">billy21/Tvlist-awesome-m3u-m3u8: 直播源相关资源汇总 📺 💯 IPTV、M3U —— 勤洗手、戴口罩，祝愿所有人百毒不侵</a>                <a href="https://github.com/iptv-org/iptv">Server Error · GitHub</a>                <a href="http://www.dangbei.com/ysks/">当贝影视(当贝影视快搜)_智能电视视频点播直播软件_电视影视TVAPP_当贝市场</a>                <a href="http://www.shafa.com/">沙发网 - 沙发管家官方下载网站</a>                <a href="http://www.tvhuan.com/">欢视网 - 中文智能电视交流平台_欢视商店官方下载网站</a>                <a href="http://www.fengmanginfo.com/">蜜蜂视频，蜜蜂市场，锋芒信息，电视应用，机顶盒论坛 - 锋芒信息</a>                <a href="https://hrtsea.com/27447.html">电视/盒子/手机直播应用合集 2020.01.11-心海e站</a></li>
+<li>soft                            安卓阅读                                    <a href="https://github.com/XIU2/yuedu">yuedu阅读 Andriod</a>                    <a href="https://github.com/HeroIsUseless/MyBook">MyBook电子书阅读器（支持全平台）</a>                    <a href="https://github.com/gedoor/MyBookshelf">MyBookshelf:阅读 apk</a>                    <a href="https://github.com/eprendre/tingshu">tingshu听书 apk</a>                    <a href="http://axet.gitlab.io/android-book-reader/">Book Reader</a>                                404墙外花香                                    <a href="https://www.notion.so/ch38r18">notion</a>                                <a href="http://98wb.ys168.com/">98五笔资源库</a>                <a href="https://github.com/wangqr/Aegisub/releases">Aegisub字幕 GitHub</a>                <a href="https://calibre-ebook.com/download_windows">calibre - Download for Windows</a>                <a href="https://www.voidtools.com/zh-cn/downloads/">Everything下载 - voidtools</a>                <a href="https://golang.google.cn/dl/">golang下载官网镜像站</a>                <a href="https://hexo.io/zh-cn/">Hexo博客框架</a>                <a href="https://www.mozilla.org/zh-CN/firefox/new/">Firefox</a>                <a href="https://ffmpeg.org/download.html#build-windows">下载FFmpeg</a>                <a href="https://www.gyan.dev/ffmpeg/builds/">FFmpeg Windows构建-gyan.dev</a>                <a href="http://blog.sina.com.cn/go2spa">foobar2000_Asion</a>                <a href="https://blog.csdn.net/juissky">Juissky-迷你TXT小说阅读器</a>                <a href="https://github.com/lyswhut/lx-music-desktop">lx洛雪音乐助手</a>                <a href="https://mercurial.selenic.com/">Mercurial SCM</a>                <a href="https://www.virtualbox.org/">Oracle VM VirtualBox开源虚拟机</a>                rime_weasel                                    <a href="http://rime.im/">RIME | 中州韻輸入法引擎</a>                    <a href="https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md">Rime_Schema.yaml详解</a>                    <a href="https://www.zybuluo.com/eternity/note/81763">致第一次安装RIME的你 - 作业部落 Cmd Markdown 编辑阅读器</a>                    <a href="http://tieba.baidu.com/p/3288634121">【图片】致第一次安装 RIME 的你之修订版【rime吧】_百度贴吧</a>                    <a href="https://github.com/rime/rime-terra-pinyin">rime/rime-terra-pinyin: 【地球拼音】輸入方案</a>                    <a href="https://github.com/rime/home/issues/17">如何解决.(点号)作地球拼音声调的候选上屏问题？ · Issue #17 · rime/home</a>                    <a href="https://github.com/oott123/rime_config/blob/master/Rime/luna_pinyin_simp.custom.yaml">rime_config/luna_pinyin_simp.custom.yaml at master · oott123/rime_config</a>                    <a href="https://github.com/rime/librime/blob/master/thirdparty/include/X11/keysymdef.h">librime/keysymdef.h at master · rime/librime</a>                    <a href="https://github.com/rime/home/wiki/CustomizationGuide">CustomizationGuide · rime/home Wiki</a>                    <a href="https://github.com/rime/home/issues/557">关于spelling algebra中speller/algebra这一字段的理解 · Issue #557 · rime/home</a>                    <a href="https://www.giuspen.com/cherrytree/#downl">cherrytree – giuspen</a>                    <a href="https://standardnotes.org/">Standard Notes开源多平台笔记</a>                                <a href="https://github.com/sandboxie-plus/Sandboxie/releases">Sandboxie沙盒 Releases · sandboxie-plus/Sandboxie</a>                <a href="https://www.sumatrapdfreader.org/free-pdf-reader.html">Sumatra PDF免费PDF阅读器</a>                <a href="https://github.com/syncthing/syncthing/releases">syncthing同步神器</a>                <a href="https://f-droid.org/en/packages/com.nutomic.syncthingandroid/">Syncthing Android App</a>                TXT-笔记-记录                                    <a href="https://focusapp.ink/#/">专注笔记(Focus Note) - 精致的学习笔记软件</a>                    <a href="https://joplinapp.org/">Joplin-具有同步功能的开源笔记记录和待办事项应用程序</a>                    <a href="https://github.com/laurent22/joplin-android/releases">joplin-android.apk</a>                    <a href="https://github.com/laurent22/joplin/releases">joplin-win.exe 支持webDav开源笔记</a>                    <a href="https://github.com/gsantner/markor">markor，Android， Markdown</a>                    <a href="https://obsidian.md/">Obsidian</a>                    <a href="https://www.orgroam.com/">Org-roam</a>                    <a href="http://www.pspad.com/">PSPad编辑器-免费软件HTML编辑器，PHP编辑器，XHTML，JavaScript，ASP，Perl，C，HEX编辑器</a>                    <a href="https://giffmex.org/stroll/stroll.html">Stroll -TiddlyWiki - A Roam-like experience in a free, downloadable file</a>                    <a href="https://github.com/standardnotes/desktop/releases">standardnotes笔记本-帐号同步-开源</a>                    <a href="https://simplenote.com/">simplenote简单笔记</a>                    <a href="https://www.typora.io/#windows">Typora.md编辑+Win</a>                                <a href="https://tabbles.net/download-page/">tabbles 文件和标签管理</a>                <a href="http://www.taglyst.com/download-next">tagLyst 官网 | 用标签分类整理文件资料</a>                <a href="http://1.update.ts1.cn/ts3/releases/">Teamspeak3 语音软件</a>                <a href="https://www.videolan.org/">VLC全平台的自由多媒体解决方案</a>                <a href="https://code.visualstudio.com/Download">Visual Studio Code - Mac, Linux, Windows</a>                <a href="https://www.lanzous.com/b073c7g4f">比特彗星</a>                <a href="https://github.com/Molunerfinn/PicGo/releases/tag/v2.3.0-beta.4">PicGo图床工具</a>                <a href="http://www.medieval.it/downloads/menu-id-63.html">medieval CUE Spliter整轨分割</a>                <a href="https://github.com/muesli/beehive/releases/tag/v0.4.0">Release 0.4.0 · muesli/beehive</a></li>
+<li>不常用soft                            <a href="http://spek.cc/">Spek –免费的声学频谱分析仪/频谱图查看器</a>                <a href="https://github.com/gchudov/cuetools.net/releases">cuetools.net内嵌CUE</a></li>
+<li><a href="https://www.iplaysoft.com/">异次元软件世界 - 软件改变生活！</a></li>
+<li><a href="http://www.gnu.org/">GNU操作系统和自由软件运动</a></li>
+<li>搜索                            <a href="https://www.dogedoge.com/">DogeDoge 多吉搜索 — 不追踪，不误导</a>                <a href="https://mijisou.com/">秘迹搜索</a>                <a href="https://www.bing.com/">必应</a>                404                                    <a href="https://www.google.com/">google谷歌</a>                    <a href="https://searx.me/">searx.me</a>                    <a href="https://duckduckgo.com/">DuckDuckGo</a>                                <a href="https://search.chongbuluo.com/">快搜 - 搜索快人一步 - Google</a>                <a href="http://www.sogou.com/">搜狗引擎</a>                <a href="https://weixin.sogou.com/">搜狗微信搜索_订阅号及文章内容独家收录，一搜即达</a>                <a href="http://www.bidesou.com/">必得搜索 - 最好用的中文搜索引擎</a>                <a href="https://startpage.com/">StartPage Web Search</a>                <a href="http://www.45112.cn/?s=&amp;gpc=stf%3D1573370945%2C1573975745%7Cstftype%3D1">搜索45112</a>                <a href="https://www.douban.com/search?q=">搜索:</a>                <a href="https://jrccn.cn/so/">搜索_作文辅导网</a>                <a href="http://www.rufengso.net/">如风搜</a></li>
+<li><a href="https://img.fghrsh.net/">FGHRSH 私家图床 - FGHRSH Private Image Host</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="online"><a href="#online">online</a></h3><ul>
+<li><a href="https://gualemang.com/">网址检测，挂了吗</a></li>
+<li><a href="https://www.douban.com/doulist/30299/">豆瓣电影【口碑榜】2019-07-20 更新</a></li>
+<li><a href="https://movie.douban.com/cinema/nowplaying/chongqing/">豆瓣电影重庆</a></li>
+<li><a href="https://mall.gree.com/goods/product/details?id=1002930266&amp;skuId=1000258808">格力2599元 小1.5P1级能效</a></li>
+<li><a href="https://www.ximalaya.com/zhubo/103008459/sound/">主播：喜马拉雅健康频道的声音_喜马拉雅健康频道发布的音频-喜马拉雅FM</a></li>
+<li><a href="http://www.zreading.cn/page/7?s=%E8%AF%AD%E4%B8%8D%E6%83%8A%E4%BA%BA%E6%AD%BB%E4%B8%8D%E4%BC%91">语不惊人死不休 – 搜索结果 – 左岸读书 - 第7页</a></li>
+<li><a href="https://www.wqge.cc/75_75584/">剑来无弹窗_剑来最新章节列表_剑来5200_笔趣阁</a></li>
+<li><a href="http://www.ztv.la/115/115584/">剑来最新章节</a></li>
+<li><a href="http://book.zongheng.com/showchapter/672340.html">目录</a></li>
+<li><a href="http://forum.zongheng.com/160116.html">剑来-圈子</a></li>
+<li><a href="http://home.zongheng.com/show/attention/52441297.html#follow">关注的</a></li>
+<li><a href="http://www.kenshuzw.com/xiaoshuo/68946/0/">剑来 - 啃书言情小说</a></li>
+<li><a href="http://www.balingtxt.com/txtxz/6194.html">剑来TXT下载,剑来全集,全本,完结,全文完整版小说TXT电子书免费下载_八零电子书</a></li>
+<li><a href="http://www.bookshuku.com/read/41582.html">剑来在线阅读,剑来全文阅读-TXT图书下载网(www.bookshuku.com)</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="soft软件"><a href="#soft%e8%bd%af%e4%bb%b6">Soft软件</a></h3><ul>
+<li>图乐视秀                            Play播放器                                    <a href="http://mcool.appinn.me/">Mcool 极简音乐播放器</a>                    <a href="https://www.mp3tag.de/en/dodownload.html">Mp3tag - Thanks for using Mp3tag</a>                    <a href="https://github.com/AnyListen/YaVipCore/releases">鱼声音乐</a>                    <a href="https://github.com/lyswhut/lx-music-desktop/releases">Releases · lyswhut/lx-music-desktop</a>                    <a href="https://github.com/guyueyingmu/avbook">电影管理系统</a>                                <a href="http://www.shipinyu.cn/">视频鱼 - 视频下载|bilibili视频|b站视频下载|acfun视频|a站视频下载</a>                <a href="https://www.apowersoft.cn/video-download-capture">Apowersoft视频下载王 - 功能强大的视频下载软件</a>                <a href="http://www.flvcd.com/xdown.php?id=809330286">FLVCD硕鼠官网|FLV下载</a>                <a href="https://www.videofk.com/">VideoFk免费在线视频下载 - 网页视频下载工具</a>                <a href="http://ffmpeg.org/">FFmpeg</a>                编辑工具                                    <a href="http://www.pazera-software.com/products/audio-extractor/">Pazera Free Audio Extractor提取音频</a>                    <a href="https://sourceforge.net/projects/mkvextractgui-2/files/">MKVExtractGUI-2 - Browse Files at SourceForge.net</a>                    <a href="https://www.fosshub.com/MKVToolNix.html">Download MKVToolNix.</a>                    <a href="https://github.com/mifi/lossless-cut">lossless-cut音视频无损剪切</a></li>
+<li><a href="http://www.th-sjy.com/">th_sjy 汉化博客，专注软件汉化和资源分享，www.th-sjy.com</a></li>
+<li><a href="http://yun.misiai.com/">懒盘 - 聚合搜索 | 百度网盘,蓝奏网盘搜索全在懒盘聚合搜索</a></li>
+<li><a href="https://www.qzhou.com.cn/">百度云搜索,百度云盘资源下载,百度网盘搜索,轻舟已过万重山 - 搜索资源最快最全就在轻舟网</a></li>
+<li><a href="http://www.daihema.com/">百度网盘-百度云盘-百度网盘资源搜索-百度网盘搜索引擎-微盘,新浪微盘-全网网盘搜索-如风搜_呆河马</a></li>
+<li><a href="http://www.lanzouba.com/">蓝奏网盘搜索 - 蓝奏吧</a></li>
+<li><a href="http://www.panduoduo.net/last">最新网盘资源_盘多多</a></li>
+<li><a href="https://www.lzpan.com/">首页 - 懒盘(lzpan.com)</a></li>
+<li><a href="http://ilxdh.com/">龙轩导航-做个有用的导航</a></li>
+<li>win软件站                            <a href="http://yyzsoft.com/index.html">视频剪辑软件，免费视频剪切合并软件，免费视频转换器，免费视频播放器，免费MP3剪切器下载</a>                <a href="http://www.songyongzhi.com/">宋永志博客 - 系统爱好者</a>                <a href="https://www.luochenzhimu.com/">落尘之木-TO BE THE BEST!</a>                <a href="http://www.cyxitong.com/">辰羿&rsquo;S_Blog</a>                <a href="http://www.mefcl.com/">mefcl - 学习▪分享</a>                <a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a>                <a href="http://www.lookae.com/">LookAE.com | 大众脸影视后期特效</a>                <a href="http://www.ylhh.net/forum.php">永乐汉化后期资源网,PS滤镜,AE插件,edius,绘声绘影，汉化版,永乐汉化，苹果软件中文版 - Powered by Discuz!</a>                <a href="http://wxhp.org/">望星湖畔 – 仰望星空，翱翔启程！</a></li>
+<li>apk应用站                            <a href="https://apkcombo.com/zh-cn/">APKCombo: #1 APK Downloader - 下载 APK &amp; OBB (免费)</a>                <a href="http://www.yxssp.com/">异星软件空间 | 感受不一样的精彩体验！</a>                <a href="http://ku.mumuceo.com/">源仓库 ku.mumuceo.com</a>                <a href="https://soft.shouji.com.cn/">安卓软件 - 手机乐园</a>                <a href="https://www.x6d.com/html/96.html">绿色软件 / 游戏助手-小刀娱乐网 - 专注活动，软件，教程分享！总之就是网络那些事。</a>                <a href="https://www.xd0.com/i_wz_103904.html">绿软分享-汇聚全网络绿化、优秀软件 - 小刀娱乐网_专注资源与福利收集分享的一个平台</a>                <a href="https://www.coolapk.com/">酷安网 - 发现科技新生活</a>                <a href="https://www.lanzous.com/b0f1944aj">Android_TV_Apps</a>                <a href="https://apk-mirror.net/">APKMirror - Free APK Downloads For Android Apps &amp; Games</a>                <a href="https://www.apklinker.com/">APKLinker - Latest Android APK Download</a>                <a href="https://forum.mobilism.org/index.php">国外安卓破解Index | Mobilism</a>                <a href="http://yx.bsh.me/">异星软件空间 | 感受不一样的精彩体验！</a>                <a href="https://www.appcgn.com/android-installed-necessary">安卓の装机 - 软件缘</a>                <a href="http://syncthing-android/">syncthing/syncthing-android: Wrapper of syncthing for Android.</a></li>
+<li><a href="https://jeffjade.com/2015/10/19/2015-10-18-Efficacious-win-software/">Windows下效率必备软件 | 晚晴幽草轩</a></li>
+<li>微操作win                            <a href="https://webtorrent.io/desktop/">WebTorrent Desktop - Streaming torrent app for Mac, Windows, and Linux</a>                <a href="https://instant.io/">Instant.io - Streaming file transfer over WebTorrent</a>                <a href="https://www.7-zip.org/download.html">Download</a>                <a href="https://www.iavira.com/avira-free-antivirus-windows.html">防毒Avira</a>                <a href="http://systemexplorer.net/">系统资源管理器 - 让系统受到控制</a>                <a href="https://www.resilio.com/individuals/?utm_source=navbar&amp;utm_medium=synchome">Resilio Sync Home - 在您的所有设备上获取所有文件的快速安全方式</a>                <a href="https://bookfere.com/post/347.html">Resilio Sync：自由地分享电子书资源 – 书伴</a>                <a href="https://bookfere.com/post/581.html">如何解决 Resilio Sync 无法正常同步的问题 – 书伴</a>                <a href="https://github.com/syncthing/syncthing-gtk/releases">Releases · syncthing/syncthing-gtk</a>                <a href="https://www.virtualbox.org/wiki/Downloads">免费开源虚拟机VirtualBox</a>                <a href="http://www.centbrowser.cn/">百分浏览器 - 追求速度、简约和安全的网络浏览器</a>                <a href="https://www.aioboot.com/en/download/">AIO Boot启动U盘</a>                <a href="http://jaist.dl.sourceforge.jp/crystaldiskinfo/">硬盘健康状况crystaldiskinfo</a>                <a href="https://nodejs.org/zh-cn/about/">网络应用Node.js</a>                <a href="https://github.com/egoist/eme/releases">Markdown文本编辑 eme · GitHub</a>                <a href="https://xdown.org/">Xdown</a>                <a href="https://www.speedpan.com/index.html">白毒克星速盘之4-SpeedPan</a>                <a href="http://pandownload.com/">白毒克星速盘之3-PanDownload</a>                <a href="https://github.com/proxyee-down-org/proxyee-down">白毒克星速盘之2-proxyee-down</a>                <a href="https://www.lanzous.com/b109231/">驱动人生-蓝奏网盘破解版</a>                <a href="http://www.443w.com/tts/">朗读女</a>                <a href="https://github.com/goreliu/vimdesktop/releases/tag/v2.2.2">Release v2.2.2 · goreliu/vimdesktop · GitHub</a>                <a href="http://www.xuetr.com/">恶意代码检测 虚拟机脱壳. Rootkit检测 木马检测</a>                <a href="https://github.com/shadowsocks">shadowsocks · GitHub</a>                <a href="https://www.zionladderc.com/">梯子Z 来自巴黎的稳定快速安全ShadowsocksR梯子</a>                <a href="https://cc.greatfire.org/en">How does your VPN speed measure against other VPNs in China? - GreatFire Circumvention Central</a>                <a href="https://nord-for-apps.com/zh/download/">下载VPN客户端：设置和使用非常简单！ | NordVPN</a>                <a href="https://getsharex.com/">ShareX - Screen capture, file sharing and productivity tool</a>                <a href="http://www.centbrowser.cn/history.html">百分浏览器 - 更新日志</a>                <a href="https://motrix.app/zh-CN/">Motrix</a>                <a href="http://shark007.net/index.html">The best codecs for Windows 10.</a>                <a href="http://www.codecguide.com/">Codec Guide: K-Lite Codec Pack - For Windows 10 / 8.1 / 7 / Vista / XP</a>                <a href="https://github.com/dengyuhan/magnetW/releases">搭建本地磁力搜索github</a>                <a href="https://github.com/meowtec/Imagine/releases">Releases · meowtec/Imagine图片压缩</a>                <a href="https://github.com/microsoft/PowerToys/releases">Releases · microsoft/PowerToys微软开源win10工具集</a>                <a href="https://github.com/mumble-voip/mumble/releases">开源语音聊天Releases · mumble-voip/mumble</a>                <a href="https://www.jianpian.com/">首页</a></li>
+<li>多操作win                            <a href="https://www.autoahk.com/archives/15117">影子输入法 &gt; AutoAHK</a>                <a href="http://www.ghisler.com/">Total Commander - home</a>                <a href="http://www.listary.com/">Listary – File Search &amp; App Launcher</a>                <a href="https://singularlabs.com/software/system-ninja/">System Ninja - SingularLabs</a>                <a href="https://github.com/cmderdev/cmder/releases">windows控制台仿真器cmder · GitHub</a>                <a href="https://handbrake.fr/">HandBrake: Open Source Video Transcoder</a>                <a href="https://gitee.com/cc12655/ShanaEncoder">小樱/ShanaEncoder - 码云 - 开源中国</a>                <a href="http://balabolka.site/cn/balabolka.htm">Balabolka</a>                <a href="https://syncthing.net/">Syncthing个人同步开源软件</a>                <a href="https://github.com/syncthing/syncthing/releases/latest">syncthing</a>                <a href="https://u.tools/">uTools - 打造你的专属工具集</a>                不常用                                    <a href="https://www.airdroid.com/zh-cn/get.html">下载 | AirDroid</a>                    <a href="http://www.dandanplay.com/?from=dmhy">弹弹play</a>                    <a href="http://www.zhizhireader.com/">知之阅读 - 基于读书笔记的知识管理软件 - 主页</a>                    <a href="https://potplayer.daum.net/?lang=zh_CN">Global Potplayer</a>                    <a href="http://www.sxe-injected.cn/">sXe-Injected 反作弊软件</a>                    <a href="https://www.foobar2000.org/">foobar2000的</a>                    <a href="http://www.xinshuru.com/index.html?p=win">手心输入法</a>                                过期                                    <a href="http://www.freedownloadmanager.org/">免费下载管理器 - 从互联网下载所有内容</a>                    <a href="http://ugetdm.com/">uGet Download Manager</a>                    <a href="http://www.fishlee.net/soft/bt_resouce_grabber/index.html">比目鱼 - 鱼の后花园</a>                    <a href="http://www.scintilla.org/SciTEDownload.html">Scintilla和SciTE</a>                    <a href="http://www.eagleget.com/cn/">EagleGet - 猎鹰：高速下载管理器，免费在线视频下载、Facebook 视频下载、优酷视频下载、土豆视频下载与更多</a>                    <a href="http://www.splayer.org/">射手影音播放器SPlayer_官方网站_小巧_开源_绿色_高性能_备受赞誉的全能多媒体播放器</a>                                <a href="https://tianruoocr.cn/">天若OCR文字识别</a>                <a href="https://www.raidrive.com/">webdav管理RaiDrive</a></li>
+<li>创作win                            <a href="http://www.diary365.net/member/">追梦人日记 会员中心</a>                <a href="http://www.fei2yu.com/">鸿飞日记本官方网_电子日记本|日记本软件</a>                <a href="https://wuzhi.me/last">吾志 - 此刻</a>                <a href="http://www.telnote.cn/">生活日记网</a>                笔记类                                    <a href="http://www.haoxg.net/">eDiary软件主页</a>                    <a href="https://boostnote.io/">Boostnote专注于程序员开发的一种新开源式记事本</a>                    <a href="https://github.com/Jermolene/TiddlyDesktop">Releases · Jermolene/TiddlyDesktop · GitHub</a>                    <a href="https://github.com/zhaopengme/gitnote/releases">Releases · zhaopengme/gitnote · GitHub</a>                    <a href="https://github.com/Mikescher/AlephNote/releases/tag/v1.6.31">Release Version 1.6.31 · Mikescher/AlephNote · GitHub</a>                    <a href="https://github.com/Laverna/laverna/releases">Releases · Laverna/laverna</a>                    <a href="https://github.com/pbek/QOwnNotes">GitHub  - pbek/QOwnNotes: QOwnNotes is a plain-text file notepad and todo-list  manager with markdown support and ownCloud / Nextcloud integration.</a>                    <a href="https://github.com/BoostIO/boost-releases/releases/">Releases · BoostIO/boost-releases</a>                                <a href="https://www.emeditor.com/download/">Download – EmEditor (Text Editor)</a>                <a href="https://www.libreoffice.org/download/download/">LibreOffice - Free Office Suite</a>                <a href="https://zh-cn.libreoffice.org/download/libreoffice/">下载 LibreOffice | LibreOffice 简体中文官方网站 - 自由免费的办公套件</a>                <a href="https://www.vim.org/download.php#pc"> vim</a>                <a href="http://www.xmindchina.net/xiazai.html">XMind 8思维导图软件中文版免费下载-XMind中文网站</a>                <a href="https://www.pixelplanet.com/pdfeditor/download/">PixelPlanet PdfEditor - Download full- and trial-versions of our PDF editor</a>                <a href="https://jp.archboy.org/yu-writer/">Index of /yu-writer/</a>                <a href="http://www.gnu.org/software/emacs/">GNU Emacs - GNU项目</a>                <a href="https://getsharex.com/">ShareX - Screen capture, file sharing and productivity tool</a>                <a href="https://code.visualstudio.com/docs/?dv=winzip">Documentation for Visual Studio Code</a>                [<a href="http://www.yqarch.cn/">源泉设计] YQBudget,YQStat,官方网站</a>                <a href="https://www.notion.so/Notion-APP-2f2d70f5e503419ba15b9679115292fa">Notion 最新APP 下载 &amp; 相关程序、插件</a>                <a href="http://www.sublimetextcn.com/3/">Sublime Text 3中文版下载 - Sublime Text中文官网</a>                <a href="http://strlen.com/treesheets/">TreeSheets</a>                <a href="https://github.com/NaoTu/DesktopNaotu">NaoTu/DesktopNaotu: 桌面版脑图 (百度脑图离线版，思维导图) 跨平台支持 Windows/Linux/Mac OS. (A cross-platform multilingual Mind Map Tool)</a>                <a href="http://www.softany.com/winchm/">WinCHM Pro-创建帮助文件，HTML帮助创作工具，制作Chm，Chm软件生成器</a></li>
+<li>安卓app                            <a href="https://github.com/drakeet/resources/blob/master/more/README.md">纯纯写作README.md at master · drakeet/resources</a>                <a href="http://www.estrongs.com/">ES文件浏览器</a>                <a href="https://www.quqi.com/office.html">曲奇办公官网</a>                [<a href="https://forum.xda-developers.com/showpost.php?p=23109280&amp;postcount=2">APP] [2.0+] MiXplorer v6.x发布（功能齐全的文件管理器）-发布＃2</a>                <a href="http://mixplorer.com/#intro">MiXplorer</a>                <a href="https://github.com/osfans/trime/releases">Rime安卓版osfans/trime</a>                <a href="https://f-droid.org/packages/com.osfans.trime/">Trime安卓版</a></li>
+<li><a href="https://greasyfork.org/zh-CN">Greasy Fork - 安全、有用的用户脚本大全</a></li>
+<li>脚本工具                            <a href="http://ahkscript.org/">AutoHotkey</a>                <a href="https://github.com/proxyee-down-org/proxyee-down/wiki/%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B">使用教程 · proxyee-down-org/proxyee-down Wiki · GitHub</a>                <a href="https://www.switchyomega.com/download/">下载安装 | Proxy SwitchyOmega</a>                <a href="http://chromecj.com/">Chrome插件(谷歌浏览器插件) - 提供Chrome商店中优秀的Chrome插件推荐与下载服务</a>                <a href="https://chrome.zzzmh.cn/">极简插件_优质chrome浏览器crx扩展插件</a></li>
+<li><a href="http://lab.mkblog.cn/FCGames/#/">FC 游戏在线玩</a></li>
+<li><a href="https://bingshaotv.cn/?post=144">最新某宝单机游戏合集 - 花都逸者</a></li>
+<li><a href="https://www.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5">灰机wiki</a></li>
+<li>游戏game                            <a href="https://www.oldmanemu.net/">老男人游戏网 | OldmanEmu.net |</a>                <a href="http://www.k73.com/">psp游戏下载_psp中文游戏下载_手游排行榜下载-k73电玩之家</a>                <a href="http://www.ali213.net/">单机游戏_单机游戏下载_中国单机游戏门户_游侠网</a>                <a href="https://www.gamersky.com/">游民星空 - 大型单机游戏媒体 提供特色单机游戏资讯、下载</a>                <a href="http://www.gamersky.com/">游民星空 - 大型单机游戏媒体 提供最具特色单机游戏资讯、下载</a>                <a href="http://www.golue.com/">单机游戏下载_单机游戏大全_单机游戏下载基地 - 游戏爱好者</a>                <a href="http://www.yyyxbl.com/listinfo-3-1.html">精品单机游戏-推荐年度精品单机游戏&ndash;亚鹰悠嘻</a>                <a href="https://www.mcmod.cn/">MC百科|最大的Minecraft中文MOD百科</a>                <a href="http://vs.5eplay.com/server">CS在线约战_5Eplay易玩网</a>                <a href="https://aim400kg.com/">Reflex training for gamers. Gaming computers.</a>                <a href="http://tv.nga.cn/">NGA直播聚合站 - NGA玩家社区 - 艾泽拉斯国家地理</a>                <a href="http://www.8lag.cn/index.html###">8LAG加速器-布卡游戏加速专家官方网站|众神之下|STEAM加速器|绝地求生加速器|魔兽怀旧服|H1Z1加速器|NBA2K18|实况足球2018</a>                <a href="https://www.c5game.com/">dota2 item trade, csgo skin trade, steam market price,c5game</a>                <a href="https://indienova.com/steam/mustbuy">必买 Steam 独立游戏 | indienova 独立游戏</a></li>
+<li><a href="http://ping.pe/">Ping and mtr from multiple locations</a></li>
+<li><a href="http://devbootcamp.com/">Dev Bootcamp - Learn Ruby on Rails in 9 weeks.</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="资源"><a href="#%e8%b5%84%e6%ba%90">资源</a></h3><ul>
+<li><a href="http://www.52sk2.com/">CC软件站</a></li>
+<li>11                            <a href="https://txxx.life/">Free Sex Movies &amp; Porn Videos Online, page 11 - Txxx</a>                <a href="http://www.jiahes.com/">做爱姿势,夫妻自拍,同性恋,性疾病,婚外恋,性交图,两性小说,性网站,sm,潮吹,性爱技巧,性生活,高潮,口交,两性知识_家合网</a>                <a href="https://txxx.life/tags/259luxu">Free 259luxu Porn Videos from Txxx</a>                <a href="http://www.68bt.cc/">资源坊-精品资源聚集地</a>                <a href="http://www.smk114.com/">精品资源网</a></li>
+<li><a href="http://www.panduoduo.net/">盘多多-百度云盘-百度云搜索-百度云盘资源搜索-百度网盘搜索引擎-微盘,新浪微盘-网盘搜索_盘多多</a></li>
+<li><a href="http://www.yunpangou.com/">云盘狗-百度云网盘搜索</a></li>
+<li><a href="https://868888.net/">838888磁力链接 - 最好用的磁力链接搜索引擎</a></li>
+<li><a href="https://www.xxhh360.com/">云盘搜索大师 - www.xxhh360.com</a></li>
+<li><a href="http://www.cilihou2.com/">磁力猴 - cilihou.vip | 磁力链接搜索引擎</a></li>
+<li>云分享者                            <a href="http://www.panduoduo.net/u/bd-1870504545">qi0bn2的百度云盘资源下载和分享_盘多多</a>                <a href="http://www.panduoduo.net/u/bd-4106576397">言**言若的百度云盘资源下载和分享_盘多多</a>                <a href="http://www.panduoduo.net/u/bd-537312361/5">仉岗村133号的百度云盘资源下载和分享_盘多多</a>                <a href="http://www.yunziyuan888.com/user.php?id=3591221377">网盘会员 - ybang1</a>                <a href="http://www.panduoduo.net/u/bd-1244771807">富怡娜家纺的百度云盘资源下载和分享_盘多多</a>                <a href="http://www.panduoduo.net/u/bd-279358467">136*****612的百度云盘资源下载和分享_盘多多</a>                <a href="http://www.panduoduo.net/u/bd-861409414">亦凡***阳萌的百度云盘资源下载和分享_盘多多</a>                <a href="http://www.panduoduo.net/u/bd-2922262727">优之童家庭教育的百度云盘资源下载和分享_盘多多</a>                <a href="http://www.panduoduo.net/u/bd-2315611397">rucool的百度云盘资源下载和分享_盘多多</a>                <a href="http://www.yunziyuan888.com/user.php?id=4061565315">网盘会员 - WLC爱妍</a>                <a href="http://www.panduoduo.net/u/bd-3473121568">ly***ng的书籍</a>                <a href="http://www.rufengso.net/u/bd-872800233/2">海水味道可爱的百度网盘资源下载和分享_如风搜</a></li>
+<li><a href="https://www.panc.cc/">Panc.cc-胖次网盘搜索 - 胖次分享社区 - 我们热爱分享</a></li>
+<li><a href="http://www.tebaidu.com/">特白度网盘,白度网盘搜索,白度云盘 - 特白度云网盘搜索</a></li>
+<li><a href="http://www.pansou.com/">网盘搜索，盘搜一下，百度网盘就搜到-国内优秀百度网盘搜索引擎</a></li>
+<li><a href="https://wangpan007.com/">网盘搜索_网盘搜索引擎_网盘007</a></li>
+<li><a href="http://www.wodepan.com/">我的盘 - 最好用的网盘搜索引擎</a></li>
+<li><a href="https://pan.baidu.com/s/1i5FFlKp#list/path=%2F">POI 原声音乐（至第四季）_免费高速下载|百度网盘-分享无限制</a></li>
+<li><a href="https://www.douban.com/doulist/1739529/?start=25&amp;sort=seq&amp;playable=0&amp;sub_type=">豆瓣9分以上小说，文学，历史，哲学，心理学，法学，经济学图书</a></li>
+<li><a href="https://m.qingting.fm/vchannels/224798">《夜空守望者》全集</a></li>
+<li><a href="http://www.boting.co/book/9226-263626.htm">百年孤独有声小说-马尔克斯-百年孤独-聂梅19收听-mp3下载-博听网</a></li>
+<li><a href="https://www.mingxiaozi.com/">明小子资源库 - 自学教程资源下载</a></li>
+</ul>
+<p>​</p>
+
+<h3 id="临时"><a href="#%e4%b8%b4%e6%97%b6">临时</a></h3><ul>
+<li><a href="http://www.lrfans.com/234-1.html">ps雪景后期|我想为你下场雪（含福利） - Photoshop教程 - 人民攻摄</a></li>
+<li><a href="http://www.99lib.net/book/4882/174737.htm">魁拔之书 : 第一章 第一节 宇宙大爆炸中同时诞生的两个世界_青青树_在线阅读_九九藏书网</a></li>
+<li><a href="http://www.3dmgame.com/mj/201707/3667668.html">绝地</a></li>
+<li><a href="http://gl.ali213.net/z/33107/">金庸群侠传5攻略秘籍</a></li>
+<li><a href="https://hankai.tuchong.com/">韩凯</a></li>
+<li><a href="https://nicelinks.site/explore/all">探索美好 - 倾城之链</a></li>
+<li><a href="http://www.btrenren.com/subject/23519.html">2018年1月院线电影大集合720p|1080p高清BT种子下载 - bt天堂_MP4电影下载_BTrenren</a></li>
+<li><a href="https://www.iplaysoft.com/public-dns.html">全球免费公共 DNS 解析服务器 IP 地址列表推荐 (解决无法上网/加速/防劫持) | 异次元软件下载</a></li>
+<li><a href="https://www.bilibili.com/video/av896710/">中国武侠电影人物志【50集全】_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a></li>
+<li><a href="https://www.mifengtd.cn/articles/26/">文章列表 - 第 26 页</a></li>
+<li><a href="http://www.zreading.cn/archives/tag/%E4%B8%80%E8%AF%AD%E6%83%8A%E4%BA%BA/page/10">一语惊人 – 左岸读书 - 第10页</a></li>
+<li><a href="https://item.jd.com/1579513.html#crumb-wrap">【万和330W13】万和（Vanward）13升无级变升 6年质保 变频智能恒温燃气热水器(天然气)JSQ25-330W13【行情 报价 价格 评测】-京东</a></li>
+<li><a href="https://detail.tmall.com/item.htm?spm=a1z10.4-b-s.w10971653-15817713873.6.6e2947d1gO22sv&amp;abtest=_AB-LR130-PR130&amp;pvid=343e41c3-a5f6-49c6-8446-f5cb74580ee7&amp;pos=2&amp;abbucket=_AB-M130_B12&amp;acm=03131.1003.1.702582&amp;id=548202120682&amp;scm=1007.12940.25805.100200300000000&amp;sku_properties=10208271:7191691&amp;scene=taobao_shop">Vanward/万和 JSQ25-365T13天然气燃气热水器家用恒温强排式13升-tmall.com天猫</a></li>
+<li><a href="http://git.oschina.net/progit/1-%E8%B5%B7%E6%AD%A5.html">1 起步 - Pro Git</a></li>
+<li><a href="https://www.douban.com/note/725382000/">2019上半年最好的50部电影，你错过了多少？</a></li>
+<li><a href="https://blog.csdn.net/YANFAN0916/article/details/7824136">发个真正高效清理垃圾的脚本（请慎用，效果很强） - 代码狂 - CSDN博客</a></li>
+<li><a href="https://msg.douyu.com/motorcade/#/motorcade/%40TGS%234IKMGONFN">我的车队</a></li>
+<li><a href="https://www.cnblogs.com/maoxiong/p/4179145.html">用calibre抓取RSS新闻制作电子书及推送到kindle - 一只红松鼠 - 博客园</a></li>
+<li>[面具哥 网络小说 - 搜索结果 - 哔哩哔哩弹幕视频网 - ( ゜- ゜)つロ 乾杯~ - bilibili](<a href="https://search.bilibili.com/all?keyword=">https://search.bilibili.com/all?keyword=</a>面具哥 网络小说&amp;order=pubdate&amp;duration=0&amp;tids_1=0)</li>
+</ul>
+<p>​</p>
+<p><a href="http://www.4399.com/">小游</a></p>
+
+<h3 id="互联网"><a href="#%e4%ba%92%e8%81%94%e7%bd%91">互联网</a></h3><ul>
+<li><a href="http://linkv.org/nord">关于Nord</a></li>
+<li><a href="https://my.nordaccount.com/login/">My Account | Nord</a></li>
+</ul>
+</section>
+
+
+</main>
+
+
+    <div id="searchBox">
+        <input id="searchInput" tabindex="0" autocomplete="off">
+        <ul id="searchResults">
+        </ul>
+    </div>
+
+</body>
+
+</html>

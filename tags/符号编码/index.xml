@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>符号编码 on </title>
+    <link>https://ch38r18.github.io/tags/%E7%AC%A6%E5%8F%B7%E7%BC%96%E7%A0%81/</link>
+    <description>Recent content in 符号编码 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 17 Jan 2021 01:29:18 +0800</lastBuildDate><atom:link href="https://ch38r18.github.io/tags/%E7%AC%A6%E5%8F%B7%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在终端输出所有Unicode码</title>
+      <link>https://ch38r18.github.io/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</link>
+      <pubDate>Sun, 17 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>https://ch38r18.github.io/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</guid>
+      <description> 在终端输出所有Unicode码a). #!/bin/bash
+for i1 in {0..9} {A..F} do for i2 in {0..9} {A..F} do for i3 in {0..9} {A..F} do for i4 in {0..9} {A..F} do echo -ne \\u$i1$i2$i3$i4 done done done done b).
+printf $(printf &#39;\\u%04x&#39; {0..65535}) </description>
+    </item>
+    
+  </channel>
+</rss>
