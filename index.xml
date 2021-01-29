@@ -42,7 +42,7 @@ hugo生成静态网页文件
 hugo 在 public中就是生成好的静态网页文件，可以用浏览器打开
 把public重命名未我的博客 ch38r18.github.io 和github上的仓库名称一致
 在上面文件夹中，git bash打开，执行一下代码
-git init //初始化git git add . git push -u origin master //验证用户 git commit -m &amp;quot;第一次上传&amp;quot; //备注信息 让后到我的https://ch38r18.</description>
+git init //初始化git git add . git commit -m &amp;quot;第一次上传&amp;quot; //提交更新，备注信息 git push -u origin master //验证用户 让后到我的https://ch38r18.</description>
     </item>
     
     <item>

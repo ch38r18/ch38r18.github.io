@@ -749,9 +749,10 @@ hugo server -b &quot;http://192.168.199.216&quot; -p 8080 --bind &quot;192.168.1
 <p>在上面文件夹中，git bash打开，执行一下代码</p>
 <pre><code>git init  //初始化git
 git add .
+git commit -m &quot;第一次上传&quot;  //提交更新，备注信息
 git push -u origin master
 //验证用户
-git commit -m &quot;第一次上传&quot;  //备注信息
+
 
 </code></pre><p>让后到我的<code>https://ch38r18.github.io/</code> 中查看效果</p>
 <p><strong>第四个问题更新hugo</strong></p>
@@ -760,15 +761,14 @@ git commit -m &quot;第一次上传&quot;  //备注信息
 <pre><code>hugo --baseUrl=&quot;https://ch38r18.github.io/&quot;
 </code></pre><p>部署到github仓库</p>
 <pre><code>git pull git@github.com:ch38r18/ch38r18.github.io.git //将仓库与本地同步
-git rm * -r //-r 当给出主目录名时允许递归删除，删除本地仓库中所有文件
 
-//忽略上面步骤 直接从下面开始应该也可以，下次试一试
-git add . //把本地仓库的文件上传到缓存。前提，除.git文件夹 其余都删除
-git commit -m &quot;2021.01.29-删除旧博客数据&quot;   //上一步上传到缓存的东西上传到本地仓库
+git rm * -r //-r 当给出主目录名时允许递归删除，删除本地仓库中所有文件
 //把新数据复制到目录中 执行下面参数，上传
+git add .
+git commit -m &quot;2021-01-29 29/365更新&quot;  //提交本次删除和更新
 git push -u origin master
 //用户验证 帐号 密码
-git commit -m &quot;2021-01-29 29/365更新&quot;
+
 </code></pre><p>刷新 <code>https://ch38r18.github.io/</code>看看效果如何</p>
 
      </article>
