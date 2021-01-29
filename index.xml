@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chr63写点人生note on </title>
+    <link>/</link>
+    <description>Recent content in chr63写点人生note on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Jan 2021 23:31:08 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/list/20210129f%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Fri, 29 Jan 2021 23:31:08 +0800</pubDate>
+      
+      <guid>/list/20210129f%E8%BD%AF%E4%BB%B6/</guid>
+      <description> 软件清单</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/hugo/20210129f%E5%88%B6%E4%BD%9C%E7%9B%B8%E5%86%8C/</link>
+      <pubDate>Fri, 29 Jan 2021 21:50:23 +0800</pubDate>
+      
+      <guid>/hugo/20210129f%E5%88%B6%E4%BD%9C%E7%9B%B8%E5%86%8C/</guid>
+      <description>添加相册 hugo添加相册页面功能：把指定文件夹的图片展示在页面上
+日常操作：把图片放到 static/photos 中即可，搭配 Github Action 自动化部署
+static └── photos ├── 1.jpeg ├── 2.jpeg └── 3.jpeg  集成到我的主题中 把照片放入 static/photos 创建content/photos/_index.md  --- title: &amp;quot;⚛ 我的相册&amp;quot; layout: &amp;quot;photos&amp;quot; ---  新建 layouts/_default/photos.html  {{ define &amp;quot;main&amp;quot; }} &amp;lt;div class=&amp;quot;post&amp;quot;&amp;gt; &amp;lt;h2 class=&amp;quot;post-title&amp;quot;&amp;gt;{{.Title}}&amp;lt;/h2&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;page-photos&amp;quot;&amp;gt; {{ range (readDir &amp;quot;./static/photos&amp;quot;) }} &amp;lt;figure&amp;gt; &amp;lt;img src=&amp;quot;{{&amp;quot;photos/&amp;quot; | absURL }}{{ .Name }}&amp;quot; alt=&amp;quot;{{ .Name }}&amp;quot; /&amp;gt; alt=&amp;quot;{{ .Name }}&amp;quot; /&amp;gt; &amp;lt;figcaption&amp;gt;{{ .Name | replaceRE &amp;quot;(.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/hugo/20210129c%E4%B8%BB%E9%A2%98%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Fri, 29 Jan 2021 06:53:56 +0000</pubDate>
+      
+      <guid>/hugo/20210129c%E4%B8%BB%E9%A2%98%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>hugo基本操作 不需要生成静态网页 hugo server 就可以本机浏览器查看，局域网不行 hugo 生成静态网页文件夹public，为了上传到远程的仓库 hugo new 文件夹/文件名.md  主题与配置文件 主题文件夹 exampleSite/config.toml 复制到根目录， 有[[menu.main]]即配置导航菜单   [[menu.main]] identifier = &amp;quot;blog&amp;quot; name = &amp;quot;Blogs&amp;quot; url = &amp;quot;/posts&amp;quot; [[menu.main]] name = &amp;quot;Categories&amp;quot; identifier = &amp;quot;categories&amp;quot; url = &amp;quot;/categories/&amp;quot; [[menu.main]] identifier = &amp;quot;tags&amp;quot; name = &amp;quot;Tags&amp;quot; url = &amp;quot;/tags/&amp;quot; [[menu.main]] identifier = &amp;quot;about&amp;quot; name = &amp;quot;About&amp;quot; url = &amp;quot;about/&amp;quot;  有[[params.social]]即配置图标链接  [[params.social]] name = &amp;quot;email&amp;quot; url = &amp;quot;mailto:untilthecore@gmail.com&amp;quot; [[params.social]] name = &amp;quot;github&amp;quot; url = &amp;quot;https://github.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/hugo/20210129b%E5%BC%80%E5%A7%8Bhugo%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/</link>
+      <pubDate>Fri, 29 Jan 2021 05:47:32 +0000</pubDate>
+      
+      <guid>/hugo/20210129b%E5%BC%80%E5%A7%8Bhugo%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85/</guid>
+      <description>开始hugo的博客之旅用md编辑器整理自己的所有东西，当想发布的时候，就把要分享的文章分享出去
+第一个问题时区
+新建文件的固定格式 archetypes\default.md
+title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{ .Date }} draft: true 修改：draft草稿、date时区问题
+title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{.Date}}+08:00 PC端的date 有时区，手机termux端没有时区，怎么办
+第二个问题局域网查看
+局域网查看命令和hexo s不一样，不能只用hugo 还得又其他参数。
+hugo server -b &amp;quot;http://192.168.199.216&amp;quot; --bind &amp;quot;192.168.199.216&amp;quot; hugo server -b &amp;quot;http://192.168.199.218&amp;quot; --bind &amp;quot;192.168.199.218&amp;quot; hugo server -b &amp;quot;http://192.168.199.216&amp;quot; -p 8080 --bind &amp;quot;192.168.199.216&amp;quot; 第三个问题上传hugo到github仓库
+hugo生成静态网页文件
+hugo 在 public中就是生成好的静态网页文件，可以用浏览器打开
+把public重命名未我的博客 ch38r18.github.io 和github上的仓库名称一致
+在上面文件夹中，git bash打开，执行一下代码</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/git/20210129a%E6%9C%AC%E5%9C%B0%E4%B8%8Egithub%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Fri, 29 Jan 2021 00:00:18 +0800</pubDate>
+      
+      <guid>/git/20210129a%E6%9C%AC%E5%9C%B0%E4%B8%8Egithub%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</guid>
+      <description>git同步本地与github  cd 到目录
+  cd public #hugo静态博客生成的目录
+cd publicgit initgit remote add origin https://github.com/ch38r18/ch38r18.github.io.gitgit add -Agit commit -m &amp;quot;first commit&amp;quot;git push -u origin master  git add #添加文件
+  git commit -m &amp;lsquo;first commit&amp;rsquo; 告诉Git，把文件提交到仓库。引号内为提交说明 
+  git remote add origin 你的远程库地址
+  git pull &amp;ndash;rebase origin master 获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）
+  git push -u origin master 把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</description>
+    </item>
+    
+    <item>
+      <title>about me</title>
+      <link>/about-me/</link>
+      <pubDate>Thu, 28 Jan 2021 21:32:29 +0800</pubDate>
+      
+      <guid>/about-me/</guid>
+      <description>关于github本blog是静态博客，用hugo管理md文件生成html
+ 使用hugo生成静态bolg，因为文章数量多了以后，生成速度快。 主题使用 简单的文件夹 模式 https://github.com/pys1992/hugo-theme-simple-blog 使用github免费服务，本网址 https://ch38r18.github.io/ 简洁无评论插件，到ys168给我留言 ，小白之间才能更好的砥砺前行！  2021-01-29 29/365 于重庆
+关于我不好总结，难以捉摸！
+以下，可证：
+2021Top
+x. 不为金钱而活，只为生存而活。
+x. 天天向上，砥砺前行，生生不息，循序渐进！
+2020喜欢Top
+ 网络小说：剑来  2019喜欢Top
+ 斗鱼直播：彡彡九户外   以上
+end</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/hugo/20210127a%E4%B8%BB%E9%A2%98%E9%80%89%E6%8B%A9/</link>
+      <pubDate>Wed, 27 Jan 2021 00:31:31 +0000</pubDate>
+      
+      <guid>/hugo/20210127a%E4%B8%BB%E9%A2%98%E9%80%89%E6%8B%A9/</guid>
+      <description>如何制作主题入门文章 https://hanmei.live/%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AAhugo%E4%B8%BB%E9%A2%98/
+2017.Hugo的theme使用与定制 https://note.qidong.name/2017/06/22/hugo-theme/
+还是简单的文件夹模板好用这个simple-blog好用 https://github.com/pys1992/hugo-theme-simple-blog</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/hugo/20210125a%E5%85%A5%E9%97%A8hugo/</link>
+      <pubDate>Mon, 25 Jan 2021 19:54:58 +0000</pubDate>
+      
+      <guid>/hugo/20210125a%E5%85%A5%E9%97%A8hugo/</guid>
+      <description>hexo刚入门就开始hugo开始hugo
+ 安卓8 arm64 termux 0.105 https://f-droid.org/repo/com.termux_105.apk 这个版本已经包含了很多必须的包 go 1.15.6 hugo 0.80.0  pkg i golang pkg hugo hugo new site blog cd blog # 下载一个中文主题 git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant  文件夹管理器中修改： 在主题的 exampleSite 示例目录下有config.toml 文件， 把 config.toml 文件复制到你的站点目录下  hugo #生成静态文件 hugo s #开启网络服务  主题第一个 git clone https://github.com/nishanths/cocoa-hugo-theme.git themes/cocoa
+第二个 git clone https://github.com/mtn/cocoa-eh-hugo-theme.git themes/cocoa-eh
+主题什么的都很好，但是我驾驭不了啊。来一个新鲜出炉的。查找最新编辑的，直接用。文件夹模式  
+关于局域网访问 2021-01-29局域网是不能直接用hugo server实现的
+通过命令 hugo server -b &amp;quot;http://192.168.199.216&amp;quot; --bind &amp;quot;192.168.199.216&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title>c默认主题优化</title>
+      <link>/hexo/20210125c/</link>
+      <pubDate>Mon, 25 Jan 2021 11:55:39 +0000</pubDate>
+      
+      <guid>/hexo/20210125c/</guid>
+      <description>via unangela.com
+Hexo默认主题landscape优化  landscape 作为 Hexo 默认主题还是非常简洁大方的，该有的都有
+  图片路径：…\themes\landscape\source\css\images\banner.jpg 分辨率尽量一致：1900*1200，大小不宜过大，否则影响加载，尽量500kb以内。
+  字体&amp;amp;配色&amp;amp;布局
+基础样式：…\themes\landscape\source\css_variables.styl // Colors // Fonts
+详细文件：…\themes\landscape\source\css_partial*.styl
+页面布局：…\themes\landscape\layout*.ejs
+添加文章评论
+ 注册 Disqus，获得 shortname 打开 …\themes\landscape\layout_partial\article.ejs ，在文件最后添加下面的代码：   &amp;lt;% if (!index &amp;amp;&amp;amp; post.comments){ %&amp;gt; &amp;lt;section id=&amp;quot;comments&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;disqus_thread&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; (function() { var d = document, s = d.createElement(&#39;script&#39;); //下面 shortname 修改为对应的 shortname s.src = &#39;https://shortname.disqus.com/embed.js&#39;; s.setAttribute(&#39;data-timestamp&#39;, +new Date()); (d.head || d.body).appendChild(s); })(); &amp;lt;/script&amp;gt; &amp;lt;noscript&amp;gt;Please enable JavaScript to view the &amp;lt;a href=&amp;quot;https://disqus.</description>
+    </item>
+    
+    <item>
+      <title>hexo相关数据</title>
+      <link>/hexo/20210125b/</link>
+      <pubDate>Mon, 25 Jan 2021 11:11:38 +0000</pubDate>
+      
+      <guid>/hexo/20210125b/</guid>
+      <description>1.26
+关于hexo源码，解析：
+源码解析1
+源码分析2
+这个网站有问题还是via阅读理解学习一下 默认主题优化</description>
+    </item>
+    
+    <item>
+      <title>读懂 Hexo 源码设计模式</title>
+      <link>/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Mon, 25 Jan 2021 10:21:20 +0000</pubDate>
+      
+      <guid>/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/</guid>
+      <description>hexo定义 是一个JS语言编写的静态网站生成器， 主要作用是解析Markdown语法，并配合模板引擎，快速生成静态网站。 同时，还可以自定义主题，引用第三方插件， 除了搭建个人博客之外，Hexo还被许许多多的项目拿来生成API文档  框架特色 Node.js运行环境，速度极快，扩展能力强，强大的插件系统，可配置性高，一键编译部署， 适用于博客，静态个人网站，开源项目文档， 最受欢迎的JS静态网站生成器。  Hexo命令行设计 在命令行模块，Hexo选择使用minimist来解析命令行参数得到一个js对象， 并建立一个Hexo实例并初始化， 最后通过实例对象call方法传递命令行指令。  var args = minimist(process.argv.slice(2)) var cmd = args._.shift() var hexo = new Hexo() hexo.init() hexo.call(cmd, args)  Hexo入口模块设计 同大多数框架相同，Hexo采用构造-原型组合模式定义类，采用组合继承的方式继承Node中EventEmitter模块，更容易得通过on与emit发布与订阅事件。 在实例化阶段，保存所编译文件存放的路径、输出路径及其它脚本、插件、主题等所处的路径，保存环境变量，即命令行参数、版本号等基本信息。 创建扩展对象，按不同的功能进行分类，作用是创建store，用于注册句柄，获取句柄，以便后续编译过程调用， 在Hexo中，扩展类型包括 控制台(Console)、 部署器(Deployer)、 过滤器(Filter)、 生成器(Generator)、 辅助函数(Helper)、 处理器(Processor）、 渲染引擎(Renderer)等等。  function Hexo(base, args) { EventEmitter.call(this) this.public_dir = path.join(base, &#39;public&#39;); this.source_dir = path.join(base, &#39;source&#39;); ... this.extend = { console: new extend.Console(), generator: new extend.Generator(), processor: new extend.</description>
+    </item>
+    
+    <item>
+      <title>1.14阅读文摘</title>
+      <link>/via/20210124b%E6%96%87%E6%91%98/</link>
+      <pubDate>Sun, 24 Jan 2021 08:18:53 +0000</pubDate>
+      
+      <guid>/via/20210124b%E6%96%87%E6%91%98/</guid>
+      <description>2020网络信息灭绝评论 每时每刻吧，像 WX，WB 这种封闭生态，没被删留下来的都是被“喜欢”的。如果哪天不喜欢哪个，服务器一敲键盘，内容就在整个生态里从此消失，就像从来没发生过一样。谁掌握了过去，谁就掌握了未来；谁掌握了现在，谁就掌握了过去。 2021 年，脸书推特 instagram 等社交平台全面封杀川普及其支持者，亚马逊强行停服 parler 。世界终于趋于大同。 你这些都不是事，p 站还我收藏的视频！ TypeError：2020初墙内微博微信大肆封删 COVID19 相关的信息，有兴趣可以去了解下 GitHub 很多人做过的备份 在线服务都不可靠，就像做分布式的默认单个节点机器不可靠一样，所以本地+多处备份最好。 看来去中心化的平台，很有必要了 中文互联网社区的内容基本上都报销了 2021 年，虾米音乐通知关闭 再过两年中文内容可能就全在一个个 APP 里了，浏览器 Web 可以消亡了。 p**nhub 删除非认证视频是大事件 AppStore 下架所有没有版号的游戏，蝈区彻底成了鬼区 多说”前几年也没了，那会应该是用的最多的评论框。 估计这个世界还剩北欧一个政治净土 xiunobbs 关站。酷 Q 等多家 QQ 机器人软件 大部分停止运营  js功能评论区 主要是原生 js （严格来说是浏览器 DOM 的 api 标准）把 jquery 的优点都抄过去了，可以理解为现在 js 本身已经自带了一个简单版的 jquery 。 我有个需求：某网站(我管不着的)是用 react 写的，ajax 或 fetch 过来数据之后渲染的页面，现在我针对这个网站写个浏览器扩展，添加一些元素，监听一些事件，ajax 获取一些数据, 我觉得我用 jQuery 挺合适的。有大佬有办法用 react vue 之类的实现我这个需求吗？ 对后端来说，最不能接受的是：javascript 是一种需要编译的语言 JQ 时代结束了。但是目前依然有无数依赖 JQ 开发的网站 初次看到 Livewire 的时候，亮瞎了我一眼，果然是给全干工程师的好东西。 jq 已经完成了历史使命 它的很多部分已经成了 es 的标准 百度首页不也在用 jq，据说版本还很老 因为 js 现在已经吸收了很多 jq 的长处了吧，ES6 开始原生已经很强了， 但是不得不说很多人在当年没有学过 js 的情况下都是直接上手 jq 就能学着用的（比如我），很多老的网站还是 jq 维护着，只是新的项目选型基本不太会选他了 已经不用了。ARV 三大框架，数据驱动，组件化开发，再也不用在业务逻辑里面写一堆选择器了，节省代码量，开发更轻松。jquery 的一部分 api 都可以用原生的 javascript 来代替了。兼容性也有 babel 来解决了。你要是觉得你的代码上能跑通 chrome87，下能兼容 ie7，无所谓了，随你开心。webpack 编译、打包、压缩、上传 cdn，一个命令，一条龙服务。 var 都亡了, 现在都是 const 和 let 了  其他如何提高 NOTION 在国内的访问速度</description>
+    </item>
+    
+    <item>
+      <title>2019年互联网信息大灭绝事件</title>
+      <link>/via/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/</link>
+      <pubDate>Sun, 24 Jan 2021 08:10:23 +0000</pubDate>
+      
+      <guid>/via/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/</guid>
+      <description> 2019年互联网信息大灭绝事件 2019 年 5 月份，百度贴吧删除大量 2017 年以前的帖子，很多动漫和老游戏贴吧的资源贴全军覆没 2019 年 9 月 28 日，爱拍视频网站突然关闭，从 27 号夜间通知到到 28 号立刻关站，甚至都没给用户多留几个小时的备份时间 2019 年 12 月 31 日多玩论坛宣布关闭 2019 年，网易博客彻底关闭  个人点评 突然觉得网络没有那么美好了， 以前以为网络没有岁月感，现在才知道，网络的岁月感，最强烈！ 从此，网络云端都是浮云，自己的东西，自己保存。  </description>
+    </item>
+    
+    <item>
+      <title>文摘</title>
+      <link>/via/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/</link>
+      <pubDate>Sat, 23 Jan 2021 10:29:07 +0000</pubDate>
+      
+      <guid>/via/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/</guid>
+      <description>md聚合阅读激流网
+ “我们学新闻也好，学法律也好，都救不了自己。”庹继光的遗言 尸骸若不被埋在活人心中，那便真成了尸骸。对于庹继光教授的死，怎能不让人联想到上一个溺水自杀的成都大学的党委书记毛洪涛呢！怎能不让人联想到，为讨回自己的血汗钱，不惜用汽油浇身，点燃自己的蜂鸟配送员呢！又怎能不让人回想起无数个只能失落地结束自己生命，以控诉自己无处可走的遭遇，想要唤醒麻木他人的自杀者呢！有人说，“选择自杀是懦夫，不是明智的行为。”我们终究很难体会到或理解庹继光为何会选择这条绝路，但我们可以猜测，庹继光作为一名高级知识分子，四川师范大学文学院教授，他看清了如铁壁般的事实，选择了以死相拼，从高高的楼上一跃而下。 从旧社会过来的老工人，都有一部血泪斑斑的家史。回想旧社会，工人“吃的猪狗食，干的牛马活”，“做工做到老，不及一根草”，政治上受压迫，生活上无保障，日子越过越苦。 舆论工具从不掌握在发出批判意见的人群手中。 定义，不仅需要申明自己是什么，还需要声明自己不是什么，这才构成一个完整的定义。 “没有任何绝对的价值，因为对货币来说，价值本身是相对的。没有任何东西是不可让渡的，因为一切东西都可以为换取货币而让渡。没有任何东西是高尚的、神圣的等等，因为一切东西都可以通过货币而占有。正如在上帝面前人人平等一样，在货币面前也不存在‘不能估价、不能抵押或转让的’，‘处于人类商业之外的’，‘谁也不能占有的’，‘神圣的’和‘宗教的东西’。”（马克思恩格斯全集：第46卷下[M].北京：人民出版社，1980：368） 雄关漫道真如铁，而今迈步从头越。 初听不识曲中意，再闻已是乐中人。 “无产阶级要按照自己的世界观改造世界，资产阶级也要按照自己的世界观改造世界。”（《关于正确处理人民内部矛盾的问题》人民出版社27页，引自《毛主席语录》，1967年版，16页。） 996顾名思义，指的是早上9点上班，晚上9点下班，一周工作6天；什么是11-11-6呢？显而易见，这就是指，早上11点上班，晚上11点下班，一周工作6天。 拜物教本来是指人们迷信某种物具有神秘的力量，而加以崇拜的一种宗教。在社会生产力水平很低时，由于人们控制自然的能力很薄弱，在自然力面前软弱无能，因此把自然力神秘化起来，以为象雷、电、水、火这样的自然界力量，有什么神灵在那里主宰着，因而拜倒在它们脚下。在以私有制为基础的商品经济中，也存在着类似的情况。商品本来是人们自己双手创造出来的东西，但它却被看成为凌驾于人们之上的，具有支配人们命运的力量。这种现象，马克思把它叫做商品拜物教。 商品货币关系并不是永恒的东西，而是一种历史现象。从而，以商品作为细胞的资本主义经济制度，也决不是永恒的。在一定历史条件下产生的东西，必将随着历史条件的变化而消灭，这是不以人们的意志为转移的客观规律。同理可证 维系或者摧毁一段婚姻，金钱都扮演着重要的角色。除了爱和浪漫，婚姻里还充满了各种经济考量。 英国有一位左派作家乔治·奥威尔。他有一本名著《动物农场》，在国内算是人尽皆知。书中象征着马克思的白猪死后，动物们继承他的遗志，在墙上写上这样一句标语：“每一只动物都是平等的。” 可是后来，篡改经典的黑猪掌权。它既要承认平等的价值观，又想标明自己高人一等，于是把这句标语改成了：“每一只动物都是平等的，但是有些动物更平等。”  ve2x
+ win10+深蓝词库 极度舒适 请拒绝一切大厂国产软件，能不用就不用，他们有的是办法恶心你 …  **</description>
+    </item>
+    
+    <item>
+      <title>2021流行编程语言</title>
+      <link>/list/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Fri, 22 Jan 2021 09:01:37 +0000</pubDate>
+      
+      <guid>/list/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+      <description>2021 年这 8 种编程语言最流行：Go 入榜原来是这个原因怎样判断哪种编程语言最流行？正如要挑选最受欢迎的冰激凌一样，每个人都有自己的最爱。实际上，由于各种原因，不同的开发人员喜欢不同的编程语言，当你认为一种编程语言可能占主导地位时，一种新的编程语言出现了，或者一种老的语言与新的应用联系起来了。
+2021 年最流行的编程语言将基于相关开发人员想要完成的任务以及他们已经学习或完成的工作。对希望获得加薪[1]的有经验的程序员来说，最流行的编程语言将不同于那些刚开始工作的程序员，这些人在参加了编程训练营后想要从事初级编程工作[2]。
+有这么多不断变化的语言，很难知道该从何处入手，尤其是开源语言一直在变化，新的包和框架不断涌现。无论你的兴趣或需求是什么，如果你想了解 2021 年最流行的编程语言，你可以从本文这个列表中找到它们。
+01 最流行的初学者编程语言：Python无论你查看什么榜单，Python 几乎都被列为最受初学者欢迎的编程语言：在 Qvault 关于初学者最佳编程语言[3]的帖子，GitHub 的排名[4]，Stack Overflow 的开发者调查[5]，甚至是大学教授计算机科学专业的最热门语言[6]，都是如此。
+来源：https://pypl.github.io/PYPL.html
+它不像 Rust 那样快速发展，也不像 JavaScript 那样老掉牙。但它是一种不可阻挡的编程语言。它已经有 30 年的历史了，它在使用和流行方面都经历了稳步的增长，足以使它成为几乎所有排行榜的榜首。 为什么如此流行？
+Python 的伟大之处在于它是根据开发者的经验编写的。从实践来看，这意味着它读起来就像英语一样：特别是对于没有编程背景的人来说，学习起来更容易。
+同时，它也能非常快速地构建任何东西的基本原型，这使得初学者能够在短短几分钟内编写出具有良好教程的函数代码，从而极大地增强了他们的能力，也使他们得到了回报。
+最后，它具有广泛的通用性。无论你的需求是数据科学，机器学习还是 Web 开发，你都可以通过 Python 来完成。
+总之，Python 的语法，易用性和通用性使其成为最受初学者欢迎的编程语言。 初学者学习 Python 的最佳方法
+Python 是最受初学者欢迎的编程语言，因为它为全新的开发者提供了强大的支持网络。你可以使用 Python.org[7] 上面向初学者的免费教程开始编程。
+你还应该利用 Python 用户和爱好者组成的丰富而富有支持性的在线社区。大部分 Python 支持者会记得自己学习 Python 的时光，并乐意向初学者伸出援手。浏览 Reddit 论坛上的 Python 版块[8]，在 Stack Overflow 上阅读和发布 Python 问题[9]，看看是否能在 Discord 小组或 Slack 频道上找到编程伙伴。
+02 对不想从事编程工作的人来说，最流行的编程语言是 R当我担任客户成功经理时，我的工作完全不涉及编程。但是，我仍然发现能够在 R 中进行分析，查看保留率、流失率、交流量等等，这是非常有用的。R 是另一种开源编程语言，尽管没有 Python 那么流行，但在数据科学界仍然非常活跃，深受人们欢迎。</description>
+    </item>
+    
+    <item>
+      <title>关于Obsidian知识循环利器</title>
+      <link>/via/20210122a%E5%85%B3%E4%BA%8Eobsidian/</link>
+      <pubDate>Fri, 22 Jan 2021 07:08:24 +0000</pubDate>
+      
+      <guid>/via/20210122a%E5%85%B3%E4%BA%8Eobsidian/</guid>
+      <description>分类：阅读笔记
+标签：知识循环、笔记管理、笔记交互、Zettelkasten
+原文：玩转 Obsidian | 打造知识循环利器
+阅读理解 思路：笔记管理方法Zettelkasten，如何优秀，如何超越传统笔记管理 核心：卡片、索引 软件：从优秀昂贵的Roam Research ，到免费的Obsidian。 卡片：是笔记，可以是一段文章或论文的「摘录」，它也可以是我们对某个概念的「总结」，一张卡片或者说一篇笔记。结构3部分。唯一数字编号。 索引：插入数字编号，通过编号在卡片之间产生交互和关联 综上使得所有知识组成了一张网络，  认识2
+ 卡片有一个或一组编号，索引编号组，一个或多个层级关系，形成逻辑表达。 卡片积累形成知识库，卡片编号。 综上，从传统分类，到分类+标签，到数字化分类和标签、多维表达。  认识3
+ 数字化分类和标签，数组(数字标签,文字标签)，一个索引序列，一次知识表达 模块化知识库，日积月累的笔记，不随时间推移而隐秘，知识可以循环 最终形式逻辑知识网络，温故而知新，对比新旧知识观点，  原文梳理Zettelkasten
+ Zettelkasten 笔记管理方法，被称为「卡片盒笔记法」 优秀的 Roam Research 让大众开始认知此笔记管理法，但此软件也昂贵 大环境：知识付费时代 打造属于自己的「知识循环」体系 知识循环：指的是我们整理知识的目标一定是写作，在写作的过程中经历研究/阅读/记录和写作。 目前没有手机端。有个问题，linux为什么有那么多版本？ [^下载地址]: https://obsidian.md/download  Zettelkasten由来
+ 德国学者 Niklas Luhmann（尼克拉斯·卢曼）是德国当代重要的社会学家。 卢曼自己总结的一套笔记管理方法，Zettelkasten 也被称为「卡片盒笔记法」或「卡片笔记法」。 卢曼家里就有这样一套家具6x4存放文档。 传统管理法 弊端 文件夹管理法，分类管理法，严重限制了一篇笔记被发现的几率，阻碍创意或者灵感的产生。跟它明显对比的就是「标签」管理法。 标签管理法，逻辑性差，失去目标和方向 如何 去除弊端呢？ 将 Evernote 中的笔记创建「知识图谱」，扩展知识管理的边界。 Zettelkasten 的关键在「卡片」和 「索引」。 无论是采用文件夹管理还是标签管理，时间一长，就会很容易让我们陷入 「收藏家谬论3/3」 1/3很多时候，我们收藏了一篇文章，就认为自己将来一定会读，所以自我感觉非常良好。 2/3如果收藏的文章一旦超过了我们的管理能力，它就会越积越多，最后变成一堆垃圾。 3/3即使我们对收藏了文章进行了阅读，他的意义依然不大，只会增加短期记忆，只有形成了笔记才能让知识参与到「知识循环」中。  Zettelkasten优势</description>
+    </item>
+    
+    <item>
+      <title>front-matter</title>
+      <link>/hexo/20210121b_front-matter/</link>
+      <pubDate>Thu, 21 Jan 2021 17:07:41 +0000</pubDate>
+      
+      <guid>/hexo/20210121b_front-matter/</guid>
+      <description>Front-matter就是文件最上方的分割区域。</description>
+    </item>
+    
+    <item>
+      <title>配置文件注释</title>
+      <link>/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 21 Jan 2021 16:25:06 +0000</pubDate>
+      
+      <guid>/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>配置文件注释 _config.yml
+# Hexo Configuration## Docs: https://hexo.io/docs/configuration.html## Source: https://github.com/hexojs/hexo/# Site网站title: chr63写点人生note #网站标题subtitle: &#39;忽然春天，蓦然夏天，突然秋天，已然冬天。&#39; #副标题description: &#39;事出有因，未必结果。&#39; #网站描述keywords: 笔记 #网站关键词author: chr63 #作者language: zh-CN #使用语言timezone: &#39;Asia/Shanghai&#39; #时区# URL网址root: / #网站根目录permalink: :year/:month/:day/:title/ #永久链接格式permalink_defaults: #永久链接中各部分默认值pretty_urls: #改写permalink的值来美化urltrailing_index: true #是否保留尾部index.htmltrailing_html: true #是否保留尾部.html# Directory目录source_dir: source #资源文件夹public_dir: public #公共文件夹tag_dir: tags #标签archive_dir: archives #归档文件夹category_dir: categories #分类文件夹code_dir: downloads/code #source子文件夹i18n_dir: :lang #国际化文件夹skip_render: #跳过指定文件的渲染# Writing文章new_post_name: :year:month:day-:title.</description>
+    </item>
+    
+    <item>
+      <title>从零开始hexo</title>
+      <link>/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/</link>
+      <pubDate>Wed, 20 Jan 2021 17:48:31 +0000</pubDate>
+      
+      <guid>/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/</guid>
+      <description>被拖延的博客梦想自己做一个博客，纯小白，什么都不懂，看到那些代码，没有人教，的确也是一个头2个大。
+从零开始设置github page从网络上，无意中了解到，github可以写博客，一直不懂，搞不明白，博客怎么弄的，en就是一个障碍，最近给firefox弄了一个插件网页翻译，问题缓解了好多。
+github 可以做静态的博客，意思就是，把写好的东西，保存到github上，网页只是读取文件，显示。
+github page博客，网址是 .github.io ，所以在github上新建一个 .github.io 而且name必须是自己的用户名。
+有了上面的项目，github.io，就可以展示写的博客了。
+这个时候，知道有一个静态博客模板的东西，我才知道，写博客，发布，博客主题样式，都可以用这样的系统来生成，我就只需要写内容，再也不用那些复杂的操作了。
+第一个接触到的就是hexo。
+hexo初遇遇到hexo也是一个个人觉得搞笑的过程。某天，我手机 酷安发现一个叫 termux的软件，通过搜索发现用termux在手机上搭建博客，当然就是认识hexo契机。
+这个时候，我还才知道手机都能建立博客，维护博客了，电脑应该更加方便的。
+在termux上用hexo建立了博客，但是太丑了，于是又搜索，知道主题，又浏览了很多的主题。
+直到，一直找不到合适的</description>
+    </item>
+    
+    <item>
+      <title>hexo主题收藏</title>
+      <link>/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/</link>
+      <pubDate>Wed, 20 Jan 2021 17:22:36 +0800</pubDate>
+      
+      <guid>/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/</guid>
+      <description>hexo主题收藏# 喜欢的都收藏一下 # 设置好以后记得一键三连：hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s https://github.com/zchengsite/hexo-theme-oranges git clone https://github.com/joway/hugo-theme-yinyang.git themes/yinyang https://github.com/sshwy/hexo-theme-essence https://github.com/ganto-cn/hexo-theme-heri git clone https://github.com/lotabout/hexo-theme-noise themes/noise # 好评，简单，喜欢 https://github.com/sanjinhub/hexo-theme-geek # 自带 valine 评论 , 使用说明见 https://valine.js.org 评论系统key 申请https://valine.js.org/quickstart.html polk-x # 极简，一般 --- # https://github.com/FoxerLee/awesome-hexo-themes # 推荐主题，收集页面 ---- git clone https://github.com/gary-Shen/hexo-theme-bear themes/bear.git git clone https://github.com/JeremyFan/hexo-theme-still.git git clone https://github.com/frostfan/hexo-theme-polarbear.git git clone https://github.com/Litreily/hexo-theme-snark.git # 需要查看网页，配置 https://github.com/honjun/hexo-theme-sakura https://docs.hojun.cn/sakura/docs/#/home # 文档 https://github.com/fengkx/hexo-theme-purer 好看，但是还没有测试成功 https://github.com/KevinOfNeu/hexo-theme-xoxo 手机上看还行 https://github.com/jangdelong/hexo-theme-xups 带github评论系统 1.26</description>
+    </item>
+    
+    <item>
+      <title>Termux-ADB</title>
+      <link>/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</link>
+      <pubDate>Wed, 20 Jan 2021 16:32:58 +0800</pubDate>
+      
+      <guid>/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</guid>
+      <description>Termux-ADB在Termux中安装ADB和FastBoot工具！ 仅适用于配备ARM或ARM64处理器的设备！
+https://github.com/MasterDevX/Termux-ADB
+ 如何安装 静默安装： 在Termux中复制并粘贴以下命令以静默安装工具： apt update &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; apt --assume-yes install wget &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q &amp;amp;&amp;amp; bash InstallTools.sh 常用安装： 在Termux中复制并粘贴以下命令以安装带有日志输出的工具： apt update &amp;amp;&amp;amp; apt install wget &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh &amp;amp;&amp;amp; bash InstallTools.sh   如何卸载 静默卸载： 在Termux中复制并粘贴以下命令以静默删除工具： apt update &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; apt --assume-yes install wget &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/RemoveTools.sh -q &amp;amp;&amp;amp; bash RemoveTools.sh 常见卸载： 在Termux中复制并粘贴以下命令，以删除带有日志输出的工具： apt update &amp;amp;&amp;amp; apt install wget &amp;amp;&amp;amp; wget https://github.</description>
+    </item>
+    
+    <item>
+      <title>hexo更换主题失败总结</title>
+      <link>/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/</guid>
+      <description>hexo更换主题失败总结  没有按照hexo的步骤，所以失败
+  每次更换完主题后，都需要，一键三连
+hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s   原因分析
+ 对于每个命令的作用不清出。 hexo静态博客模板的工作原理不清楚    hexo指令指令有步骤
+hexo init [folder] # 没有设置 folder ，Hexo 默认在目前的文件夹建立博客系统 hexo new [layout] &amp;lt;title&amp;gt; # 新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 hexo new &amp;quot;hi chr63&amp;quot; -p, --path 自定义新文章的路径 -r, --replace 如果存在同名文章，将其替换 -s, --slug 文章的 Slug，作为新文章的文件名和发布后的 URL hexo generate # 生成静态文件。网页显示的是生成静态文件，博客设置修改后，必须 hexo g 设置才能生效 -d, --deploy 文件生成后立即部署网站 -w, --watch 监视文件变动 -b, --bail 生成过程中如果发生任何未处理的异常则抛出异常 -f, --force 强制重新生成文件 Hexo 引入了差分机制，如果 public 目录存在，那么 hexo g 只会重新生成改动的文件。 使用该参数的效果接近 hexo clean &amp;amp;&amp;amp; hexo generate -c, --concurrency 最大同时生成文件的数量，默认无限制 hexo publish [layout] &amp;lt;filename&amp;gt; # 发表草稿 hexo server # 启动服务器。默认情况下，访问网址为： http://localhost:4000/ -p, --port 重设端口 -s, --static 只使用静态文件 -l, --log 启动日记记录，使用覆盖记录格式 hexo deploy # 部署网站 -g, --generate 部署之前预先生成静态文件 hexo render &amp;lt;file1&amp;gt; [file2] .</description>
+    </item>
+    
+    <item>
+      <title>关于npm镜像源</title>
+      <link>/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/</link>
+      <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/</guid>
+      <description>关于npm镜像源的问题当你下载某个
+npm install hexo-render-swig npm ERR! code E404 npm ERR! 404 Not Found - GET https://registry.npmjs.org/hexo-render-swig - Not found npm ERR! 404 npm ERR! 404 &#39;hexo-render-swig@latest&#39; is not in the npm registry. npm ERR! 404 You should bug the author to publish it (or use the name yourself!) npm ERR! 404 npm ERR! 404 Note that you can also install from a npm ERR! 404 tarball, folder, http url, or git url.</description>
+    </item>
+    
+    <item>
+      <title>安卓修复锂电池</title>
+      <link>/via/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/</link>
+      <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/via/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/</guid>
+      <description>2014.09.24当手机锂电池开始老化时，
+ 一般表现为手机空载时显示电压基本正常，满格， 待机时间短， 充电时很快就显示已充满。  此类电池可尝试以下方式修复。 冷冻法(1)
+ 多层吸水纸和多层塑料膜密封 放进冰箱冷冻室里（零下18度） 冻了整整二天二夜，48h 取出后连包装放室内常温二天，36h。恢复室温  放电法(2)
+ 可采取开机放电或者接电阻的方法。 开机放电应放到手机开机即停的程度；接电阻放电可采取连接相应电压的小电珠长时间放电，直到小电珠接上瞬间即灭的程度即可。 放电电流以大电流为佳。  激活法(3)
+ 串接12V交流电，在电池之间还要串联一小电珠或者电阻，用于限流。 首先采用小电流激活，使控制回路交流电为数十毫安，维持30到60分钟， 然后加大电流到电池的标称值的1~2倍。 例如，1000毫安时的电池加至1000~2000毫安，激活30~60分钟。 在上述过程中应注意观察电池的温度和外观：应无发烫、冒烟、鼓包等异常现象，如温度过高（40℃以上）应适当减低电流。 经过上述激活处理的锂电池一般均可以正常使用，但不能与新电池相比！  2018.05.28 电池看起来是“死”了，但也有很大概率能救活。我总结出来的方法是：用等于电池设计电压的直流电对电池充电。 这种“死”去的电池，用原装充电器是充不进电的（根本没电流通过），但是用等于电池设计电压的直流电对电池充电就会发现有比较大的电流，而且这个充电电流会慢慢减少，数分钟后接近0，这是一个好消息：电池电压正在恢复到设计水平。 这时候停止充电，再用万用表测量电池两极，是不是有正常电压了 然后，就可以使用原装充电器对其充电。 用这种方法，我修复了不少电池，而且，很多都能恢复到设计容量一半左右的水平。 为了彻底激活电池，还需要彻底充、放电几次。放电电路用电阻和发光二极管组成，能通过发光二极管估测放电的状态。  就我的经验来讲，这种方法对于第一种电池，很有效。而后面两种情况的电池，则很难修复，在网上找的资料，也很少有明显效果的。尤其是第三种“能充电，而且容量也比较充足，但是大电流放电电压下降明显（具体表现比如：用相机的拍摄模式只能坚持几分钟，而用回看模式则能坚持很久）”这种电池，丢弃的话实在可惜。
+锂电池修复的三种方法： 1.使用干净的橡皮擦或者其他材质的清洁工具轻轻擦拭锂电池上的金属触点及手机上的金属触点，有助于充电状况及电力的持久。 2.将用到自动关机的旧手机锂电池用保鲜膜将其牢牢裹住，包裹时尽量服帖，里外共三层，确保电池处于真空状态。然后，再在保鲜膜外面包三层报纸，使锂电池完全密封。放入冰箱的冷冻层，48小时后，取出电池，一一去掉包裹在外的六层纸膜，锂电池没有因冷冻而导致表面膨胀或变形。冷却一段时间后，然后充电。 3.让接近报废的锂电池彻底放电，然后重新充电激活电池。具体方法为：对手机进行深度放电，就是通过耗尽内部电能，来达到更深程度的再充电，这需要采用一些非常规的方法。用特定的装置连接手机与一个低电压小灯泡，电池内部的电量会传输到小灯泡上，直到全部都放光。“手机需要通过较低的电压慢慢耗尽电能。正常情况下，手机接通后若低于3.6伏的额定电压，就会自动关机。”放完电后，再次充电的手机电池可以使用更长时间。
+三种锂电池修复方法原理：
+ 锂电池修复方法一的原理：长时间使用的锂电池的金属表面会有一定程度的氧化，导致手机电池跟手机接触不好，锂电池使用时间变短，而用橡皮檫或其他清洁工具可擦除表面的生锈物质，让电池与手机接触变好。
+  锂电池修复方法二的原理：浙江大学物理学系的叶高翔教授关于此锂电池“冰冻疗法”的专业解释：“低温能使锂电池内部的电解液发生变化，促进刚刚经过冷冻的电池发生化学反应。锂电池的使用过程其实是一个充放电过程。在这期间，电池内的阴电荷和阳电荷相互交撞。电池之所以会越来越不经用，是因为在正常的室温下，电子内部的动能比较大，因而电池处于活跃状态，漏电情况相对频繁。而将锂电池放入低温环境里，锂电池表面的锂膜与电解液的微观结构，以及它们的交界面都会发生明显变化，导致电池内部暂不活跃，漏电流减少。所以再次充电后，手机的待电时间会增加。
+锂电池的循环使用寿命约600多次。如果充电次数多了，分子的热运动会使其内部分子排列微观结构逐渐被破坏，存储电荷效率会渐渐降低。而“冷冻的过程容易破坏电池原来的内部结构，短时间内或许可以增加充载电荷的能力，但长期使用未必有效。”叶教授说，锂电池内的微观结构一旦被破坏，再要完全恢复过来是不可能的，长期使用这种方法会加速手机电池的损耗。
+  锂电池修复方法三的原理：对手机进行深度放电，就是通过耗尽内部电能，来达到更深程度的再充电，这需要采用一些非常规的方法。想办法将手机与一个1.5V小灯泡相连，锂电池内部的电量会传输到小灯泡上，直到全部都放光。“手机需要通过较低的电压慢慢耗尽电能。正常情况下，手机接通后若低于3.6伏的额定电压，就会自动关机。”放完电后，再次充电的手机电池可以使用更长时间。
+ 手机锂电池修复&amp;ndash;”冰冻疗法”全过程解析: 2009年4月份买的诺基亚BL-5C原装锂电池作为实验对象。该锂电池已经使用了近两年，正常使用的情况下，这部手机的待机时间维持一天左右。如果通话次数比较多，电量持续的时间会更短。如果平均每个电话的通话时间为3分钟，接听或拨打10次，电量就岌岌可危。
+　测试前，将手机关机，在电量充满后再开机。此后，不用这部手机接听和拨打任何电话，也不收发短信。在没有任何干扰的状态下，手机安静地待机，将近3天后完全没电。
+　进入实验阶段：把全身装备好的手机锂电池放入冰箱的冷冻格（为防止锂电池受潮，需要先用保鲜膜将手机牢牢裹住，包裹时尽量服帖，里外共需三层，确保锂电池处于真空状态。然后，再在保鲜膜外面包三层报纸，使手机电池完全密封）。48小时后，取出锂电池，一一去掉包裹在外的六层纸膜，电池没有因冷冻而导致表面膨胀或变形。冷却一段时间后，把锂电池装入手机充满并开机。同样情况下，第三天时原本会自动关机的手机，屏幕上才少了一格电。一个星期后，手机屏幕上还剩余一格电。到了第九天，手机才因电量不足发出提示音。
+“冰冻疗法”测试前后的表现验证了一点： 第一次经过冰冻的电池可以延长手机的待电时间。但冰冻并非手机电池的“不死仙丹”，长期使用会损坏锂电池。
+　专家提醒锂电池的价格并不算太高，与其费力进行锂电池修复，不如购买一块新电池来得方便划算。此外，养成良好的使用习惯，也是延长锂电池寿命的一条捷径。
+？？？
+　把电池取出来用座充单独充电，充一段时间之后再用一个20到30欧的电阻连接正负极放电。一般连续几次充放电之后可激活电池。如果几次充放电之后仍无法正常充电，那电池就是坏的了。
+　找一块满电的锂电池和3根细铜丝，用透明胶将两根细铜丝粘在该电池的正负极上。然后找到一个几十欧姆左右的电阻，一端与正极铜丝相连，另一端再接一段铜丝。最后用透明胶将两根铜丝与没电的锂电池的正负极对应相连，充电约半个小时，取下。将取下的电池进行正常充电，如果能充电，说明OK。否则，将电池的充电保护板拆下(在有电极的一端)，找到电池芯的正负极，重复上面的充电过程。如果能充电，说明OK，焊接正负极引线，只能做实验电池。如果不能充电，将电池放入垃圾桶中，注意环保！
+　首先把电池从手机里取出来用报纸把电池包起来，最少包三层。我们用的报纸要是干燥的，不要潮湿的。</description>
+    </item>
+    
+    <item>
+      <title>摘录</title>
+      <link>/via/20210119a%E6%91%98%E5%BD%95via/</link>
+      <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/via/20210119a%E6%91%98%E5%BD%95via/</guid>
+      <description> 2021-01-19 19/365 via.平常大家都是好人，至少也是普通人，但这些人一到关键时刻就会变坏人，所以才不能大意！   </description>
+    </item>
+    
+    <item>
+      <title>安卓termux部署hexo更换主题失败</title>
+      <link>/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/</link>
+      <pubDate>Mon, 18 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/</guid>
+      <description> hexo更换主题失败 不知道为什么会失败 自带的主题都正常，那些好看的主题可能有其他插件 不知道什么问题  cd /storage/emulated/0/blog pwd pkg install git nodejs --save --no-bin-links npm install hexo-cli hexo init hexo g | hexo s 浏览器打开本地，正常  更换喜欢的主题：主题noise 简单 美观，手机端也好看
+git clone https://github.com/lotabout/hexo-theme-noise themes/noise 主题polarbear 简单，手机端好看
+git clone https://github.com/frostfan/hexo-theme-polarbear themes/polarbear  需要解决的问题 打开页面都是代码， 太难了，看不懂，找不到问题。 在blog中 npm install 会报错，也不知道安装成功没有  npm install hexo-renderer-scss --save npm install hexo-renderer-less --save npm install hexo-renderer-pug --save </description>
+    </item>
+    
+    <item>
+      <title>博客收藏</title>
+      <link>/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/</link>
+      <pubDate>Sun, 17 Jan 2021 16:32:58 +0800</pubDate>
+      
+      <guid>/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/</guid>
+      <description>1.15https://gddhy.net/ 良好 https://nanguaren.github.io. 优秀 https://pumpkin_melon.gitee.io/myblog https://chitang.tk https://www.nesxc.com https://pzb568.github.io/ https://htname.github.io/
+1.16https://d2fan.com/ 简单，优秀
+1.17easy4me- 基于 Hexo 主题
+4ark-Polarbear 基于 Hexo Polarbear 主题改造
+runoob-npm镜像源 npm安装不上原来是玄学问题，需要国内源
+​
+1.20https://blog.umu618.com/</description>
+    </item>
+    
+    <item>
+      <title>在终端输出所有Unicode码</title>
+      <link>/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</link>
+      <pubDate>Sun, 17 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</guid>
+      <description> 在终端输出所有Unicode码a). #!/bin/bash
+for i1 in {0..9} {A..F} do for i2 in {0..9} {A..F} do for i3 in {0..9} {A..F} do for i4 in {0..9} {A..F} do echo -ne \\u$i1$i2$i3$i4 done done done done b).
+printf $(printf &#39;\\u%04x&#39; {0..65535}) </description>
+    </item>
+    
+    <item>
+      <title>20210114a用termux实现hexo</title>
+      <link>/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 14 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/</guid>
+      <description>用termux在安卓手机实现hexo博客安卓安装termux.apk
+在手机安装了 termux 的apk，实现了 安卓手机的linnux终端。
+注意，网上的教程中，第一次打开软件会连接官网，但是官网被墙，～…～，新版本不需要连接，省略这些攻略
+连接国外插件，网速慢，需要连接国内镜像站，清华镜像。
+新版本直接执行命令行即可：
+1.编辑
+/data/data/com.termux/files/usr/etc/apt/sources.list 为如下内容
+# The termux repository mirror from TUNA: deb [arch=all,arm] http://mirrors.tuna.tsinghua.edu.cn/termux stable main 2.你也可以使用 sed 命令进行文本替换：
+sed -i &#39;s@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.ustc.edu.cn/termux stable main@&#39; $PREFIX/etc/apt/sources.list pkg up 注：Termux 会自动将环境变量 $PREFIX 设定为 /data/data/com.termux/files/usr
+利用termux安装了 hexo，就可以写博客了。
+hexo的博客文件夹，要放在可以修改的地方，
+其中有个很关键的命令：
+ npm install &amp;ndash;save &amp;ndash;no-bin-links
+ 步骤1
+安卓手机上安装 termux 也是技术活，我夜折腾了好久，后期把步骤补充齐全
+主要是网上提到的，连接主站，不成功，软件激活不成功，
+我也是因为，最新版的软件不需要连接主站了，所以才可以安装成功的。
+但是还是要更改配置，设置国内镜像站，这样很多插件更新就快多了
+用清华镜像站
+步骤2
+通过termux 安装hexo
+需要安装git、nodejs
+命令行：
+ pkg install git
+pkg install nodejs</description>
+    </item>
+    
+    <item>
+      <title>github pages 开始</title>
+      <link>/note/20200611githubpages%E5%BC%80%E5%A7%8B/</link>
+      <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
+      
+      <guid>/note/20200611githubpages%E5%BC%80%E5%A7%8B/</guid>
+      <description> 2020.06.11 什么时候开始呢， 那就从 我的WiKi 开始吧。  2020-06-22 12:55:23 修改一个地址 ch38r18.github.io 以后可以用 http://ch38r18.github.io 直接打开  </description>
+    </item>
+    
+    <item>
+      <title>小狼毫weasel-如何使用emoji</title>
+      <link>/weasel/20200611b%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</link>
+      <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
+      
+      <guid>/weasel/20200611b%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</guid>
+      <description>配置emoji方法一：
+ 1.文件夹opencc 放到用户目录 如：D:\Date\Rime
+  2.文件emoji_suggestion.yaml 放到用户目录 如：D:\Date\Rime
+  3.在需要使用的输入法自定义配置文件 如 D:\Date\Rime\terra_pinyin.custom.yaml
+   注意格式，空2格，只有patch顶格写。
+    patch:
+    __include: emoji_suggestion:/patch #执行emoji导入看看效果
+   重新部署，生效
+ 方法二：
+ 1.文件夹opencc 放到用户目录 如：D:\Date\Rime
+  2.在需要使用的输入法自定义配置文件 如 D:\Date\Rime\terra_pinyin.custom.yaml
+   把 emoji_suggestion.yaml 内容都粘贴进去，自己注意格式问题
+   重新部署，生效
+ 实现效果
+ 安装成功后，根据文件关键字，提供对应图形表情，例如 一家 会变换成对应图形图像
+ 快捷开关设置
+ 输入状态，左Ctrl实现有无emoji
+ 测试可以正常使用使用 地球拼音terra_pinyin 20200611165540</description>
+    </item>
+    
+    <item>
+      <title>小狼毫weasel-怎么输入符号</title>
+      <link>/weasel/20200611a%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</link>
+      <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
+      
+      <guid>/weasel/20200611a%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</guid>
+      <description>配置符号输入法默认输入符号方式
+ 1.系统默认输入方式 如 /fh
+  2.就是半角/ 和 0-10数字，字母组合。
+  3.问题来了，小狼毫默认输入/效率很低
+  4.如果默认第一个 / 就是 半角/ 那么问题就很简单，方法如下
+ 步骤：
+ 1.在使用的输入法方案配置文件，如地球拼音 terra_pinyin.custom.yaml
+  2.加入代码，注意格式，每行前的空格数量问题2，4，6
+   patch: ... punctuator: full_shape: &amp;quot;/&amp;quot;: [ &amp;quot;/&amp;quot;, &amp;quot;／&amp;quot;, &amp;quot;÷&amp;quot; ] half_shape: &amp;quot;/&amp;quot;: [ &amp;quot;/&amp;quot;, &amp;quot;、&amp;quot;, &amp;quot;／&amp;quot;, &amp;quot;÷&amp;quot; ] symbols: &amp;quot;/v1&amp;quot;: [&amp;quot;&amp;lt;(￣︶￣)↗&amp;quot;, &amp;quot;(o′ω`o)ノ&amp;quot;, &amp;quot;(^人^)&amp;quot; ] import_preset: symbols recognizer: import_preset: default patterns: punct: &amp;quot;^/([0-9A-Za-z]{1,5})$&amp;quot; ...      ​	3.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/note/20200609%E7%9F%A5%E9%81%93github%E4%BA%86/</link>
+      <pubDate>Tue, 09 Jun 2020 01:29:18 +0800</pubDate>
+      
+      <guid>/note/20200609%E7%9F%A5%E9%81%93github%E4%BA%86/</guid>
+      <description>写在开头
+  我希望自己多懂点
+  不好意思我是一个有点懂的小白，喜欢折腾一些小东西
+  让后把自己的一些尝试，写出来
+  有喜欢的，可以一起探讨、借鉴、互动
+  那天我又发现了
+我也不知道，这里写点什么。
+  我的ys168用来放图，这里可以引用，无压力，哈哈
+  很多时候都沉溺看小说，哎
+  </description>
+    </item>
+    
+  </channel>
+</rss>
