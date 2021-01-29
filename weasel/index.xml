@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>💾 小狼毫输入法 on </title>
+    <link>https://ch38r18.github.io/weasel/</link>
+    <description>Recent content in 💾 小狼毫输入法 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 11 Jun 2020 01:29:18 +0800</lastBuildDate><atom:link href="https://ch38r18.github.io/weasel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小狼毫weasel-如何使用emoji</title>
+      <link>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</link>
+      <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
+      
+      <guid>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</guid>
+      <description>配置emoji方法一：
+ 1.文件夹opencc 放到用户目录 如：D:\Date\Rime
+  2.文件emoji_suggestion.yaml 放到用户目录 如：D:\Date\Rime
+  3.在需要使用的输入法自定义配置文件 如 D:\Date\Rime\terra_pinyin.custom.yaml
+   注意格式，空2格，只有patch顶格写。
+    patch:
+    __include: emoji_suggestion:/patch #执行emoji导入看看效果
+   重新部署，生效
+ 方法二：
+ 1.文件夹opencc 放到用户目录 如：D:\Date\Rime
+  2.在需要使用的输入法自定义配置文件 如 D:\Date\Rime\terra_pinyin.custom.yaml
+   把 emoji_suggestion.yaml 内容都粘贴进去，自己注意格式问题
+   重新部署，生效
+ 实现效果
+ 安装成功后，根据文件关键字，提供对应图形表情，例如 一家 会变换成对应图形图像
+ 快捷开关设置
+ 输入状态，左Ctrl实现有无emoji
+ 测试可以正常使用使用 地球拼音terra_pinyin 20200611165540</description>
+    </item>
+    
+    <item>
+      <title>小狼毫weasel-怎么输入符号</title>
+      <link>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</link>
+      <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
+      
+      <guid>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</guid>
+      <description>配置符号输入法默认输入符号方式
+ 1.系统默认输入方式 如 /fh
+  2.就是半角/ 和 0-10数字，字母组合。
+  3.问题来了，小狼毫默认输入/效率很低
+  4.如果默认第一个 / 就是 半角/ 那么问题就很简单，方法如下
+ 步骤：
+ 1.在使用的输入法方案配置文件，如地球拼音 terra_pinyin.custom.yaml
+  2.加入代码，注意格式，每行前的空格数量问题2，4，6
+   patch: ... punctuator: full_shape: &amp;quot;/&amp;quot;: [ &amp;quot;/&amp;quot;, &amp;quot;／&amp;quot;, &amp;quot;÷&amp;quot; ] half_shape: &amp;quot;/&amp;quot;: [ &amp;quot;/&amp;quot;, &amp;quot;、&amp;quot;, &amp;quot;／&amp;quot;, &amp;quot;÷&amp;quot; ] symbols: &amp;quot;/v1&amp;quot;: [&amp;quot;&amp;lt;(￣︶￣)↗&amp;quot;, &amp;quot;(o′ω`o)ノ&amp;quot;, &amp;quot;(^人^)&amp;quot; ] import_preset: symbols recognizer: import_preset: default patterns: punct: &amp;quot;^/([0-9A-Za-z]{1,5})$&amp;quot; ...      ​	3.</description>
+    </item>
+    
+  </channel>
+</rss>

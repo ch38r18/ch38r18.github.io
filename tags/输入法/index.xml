@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>输入法 on </title>
-    <link>/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+    <link>https://ch38r18.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
     <description>Recent content in 输入法 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 11 Jun 2020 01:29:18 +0800</lastBuildDate><atom:link href="/tags/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Jun 2020 01:29:18 +0800</lastBuildDate><atom:link href="https://ch38r18.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>小狼毫weasel-如何使用emoji</title>
-      <link>/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</link>
+      <link>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</link>
       <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
       
-      <guid>/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</guid>
+      <guid>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</guid>
       <description>配置emoji方法一：
  1.文件夹opencc 放到用户目录 如：D:\Date\Rime
   2.文件emoji_suggestion.yaml 放到用户目录 如：D:\Date\Rime
@@ -34,10 +34,10 @@
     
     <item>
       <title>小狼毫weasel-怎么输入符号</title>
-      <link>/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</link>
+      <link>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</link>
       <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
       
-      <guid>/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</guid>
+      <guid>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</guid>
       <description>配置符号输入法默认输入符号方式
  1.系统默认输入方式 如 /fh
   2.就是半角/ 和 0-10数字，字母组合。

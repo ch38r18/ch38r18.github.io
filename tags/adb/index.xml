@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>adb on </title>
-    <link>/tags/adb/</link>
+    <link>https://ch38r18.github.io/tags/adb/</link>
     <description>Recent content in adb on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 20 Jan 2021 16:32:58 +0800</lastBuildDate><atom:link href="/tags/adb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jan 2021 16:32:58 +0800</lastBuildDate><atom:link href="https://ch38r18.github.io/tags/adb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Termux-ADB</title>
-      <link>/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</link>
+      <link>https://ch38r18.github.io/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</link>
       <pubDate>Wed, 20 Jan 2021 16:32:58 +0800</pubDate>
       
-      <guid>/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</guid>
+      <guid>https://ch38r18.github.io/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</guid>
       <description>Termux-ADB在Termux中安装ADB和FastBoot工具！ 仅适用于配备ARM或ARM64处理器的设备！
 https://github.com/MasterDevX/Termux-ADB
  如何安装 静默安装： 在Termux中复制并粘贴以下命令以静默安装工具： apt update &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; apt --assume-yes install wget &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q &amp;amp;&amp;amp; bash InstallTools.sh 常用安装： 在Termux中复制并粘贴以下命令以安装带有日志输出的工具： apt update &amp;amp;&amp;amp; apt install wget &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh &amp;amp;&amp;amp; bash InstallTools.sh   如何卸载 静默卸载： 在Termux中复制并粘贴以下命令以静默删除工具： apt update &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; apt --assume-yes install wget &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/RemoveTools.sh -q &amp;amp;&amp;amp; bash RemoveTools.sh 常见卸载： 在Termux中复制并粘贴以下命令，以删除带有日志输出的工具： apt update &amp;amp;&amp;amp; apt install wget &amp;amp;&amp;amp; wget https://github.</description>

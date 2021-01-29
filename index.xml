@@ -1,28 +1,99 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>主页 on </title>
-    <link>/</link>
-    <description>Recent content in 主页 on </description>
+    <title>chr63写点人生note on </title>
+    <link>https://ch38r18.github.io/</link>
+    <description>Recent content in chr63写点人生note on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 25 Jan 2021 19:54:58 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Jan 2021 15:01:57 +0800</lastBuildDate><atom:link href="https://ch38r18.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>20210129c</title>
+      <link>https://ch38r18.github.io/hugo/20210129c/</link>
+      <pubDate>Fri, 29 Jan 2021 06:53:56 +0000</pubDate>
+      
+      <guid>https://ch38r18.github.io/hugo/20210129c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>20210129b</title>
+      <link>https://ch38r18.github.io/hugo/20210129b/</link>
+      <pubDate>Fri, 29 Jan 2021 14:52:38 +0800</pubDate>
+      
+      <guid>https://ch38r18.github.io/hugo/20210129b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>20210129a开始博客之旅</title>
+      <link>https://ch38r18.github.io/hugo/20210129a%E5%BC%80%E5%A7%8Bhugo%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 29 Jan 2021 05:47:32 +0000</pubDate>
+      
+      <guid>https://ch38r18.github.io/hugo/20210129a%E5%BC%80%E5%A7%8Bhugo%E5%8D%9A%E5%AE%A2/</guid>
+      <description>开始hugo的博客之旅用md编辑器整理自己的所有东西，当想发布的时候，就把要分享的文章分享出去
+第一个问题时区
+新建文件的固定格式 archetypes\default.md
+title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{ .Date }} draft: true 修改：draft草稿、date时区问题
+title: &amp;quot;{{ replace .Name &amp;quot;-&amp;quot; &amp;quot; &amp;quot; | title }}&amp;quot; date: {{.Date}}+08:00 PC端的date 有时区，手机termux端没有时区，怎么办
+第二个问题局域网查看
+局域网查看命令和hexo s不一样，不能只用hugo 还得又其他参数。
+hugo server -b &amp;quot;http://192.168.199.216&amp;quot; --bind &amp;quot;192.168.199.216&amp;quot; hugo server -b &amp;quot;http://192.168.199.216&amp;quot; -p 8080 --bind &amp;quot;192.168.199.216&amp;quot; 第三个问题更新hugo
+当文件夹结构更换以后
+生成静态网页 public 文件夹
+hugo --baseUrl=&amp;quot;https://ch38r18.github.io/&amp;quot; --builddrafts 部署到github仓库
+cd public git add . git commit -m &amp;quot;2021-01-29 29/365更新&amp;quot; git push -u origin master 刷新 https://ch38r18.</description>
+    </item>
+    
+    <item>
+      <title>about me</title>
+      <link>https://ch38r18.github.io/about-me/</link>
+      <pubDate>Thu, 28 Jan 2021 21:32:29 +0800</pubDate>
+      
+      <guid>https://ch38r18.github.io/about-me/</guid>
+      <description>关于github本blog是静态博客，用hugo管理md文件生成html
+ 使用hugo生成静态bolg，因为文章数量多了以后，生成速度快。 主题使用 简单的文件夹 模式 https://github.com/pys1992/hugo-theme-simple-blog 使用github免费服务，本网址 https://ch38r18.github.io/ 简洁无评论插件，到ys168给我留言 ，小白之间才能更好的砥砺前行！  2021-01-29 29/365 于重庆
+关于我不好总结，难以捉摸！
+以下，可证：
+2021Top
+x. 不为金钱而活，只为生存而活。
+x. 天天向上，砥砺前行，生生不息，循序渐进！
+2020喜欢Top
+ 网络小说：剑来  2019喜欢Top
+ 斗鱼直播：彡彡九户外   以上
+end</description>
+    </item>
+    
+    <item>
+      <title>20210127a主题hugo</title>
+      <link>https://ch38r18.github.io/hugo/20210127a%E4%B8%BB%E9%A2%98hugo/</link>
+      <pubDate>Wed, 27 Jan 2021 00:31:31 +0000</pubDate>
+      
+      <guid>https://ch38r18.github.io/hugo/20210127a%E4%B8%BB%E9%A2%98hugo/</guid>
+      <description>如何制作主题入门文章 https://hanmei.live/%E5%A6%82%E4%BD%95%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AAhugo%E4%B8%BB%E9%A2%98/
+2017.Hugo的theme使用与定制 https://note.qidong.name/2017/06/22/hugo-theme/
+还是简单的文件夹模板好用这个simple-blog好用 https://github.com/pys1992/hugo-theme-simple-blog</description>
+    </item>
+    
     <item>
       <title></title>
-      <link>/hugo/a/</link>
+      <link>https://ch38r18.github.io/hugo/20210125a%E5%BC%80%E5%A7%8Bhugo/</link>
       <pubDate>Mon, 25 Jan 2021 19:54:58 +0000</pubDate>
       
-      <guid>/hugo/a/</guid>
+      <guid>https://ch38r18.github.io/hugo/20210125a%E5%BC%80%E5%A7%8Bhugo/</guid>
       <description>hexo刚入门就开始hugo开始hugo
  安卓8 arm64 termux 0.105 https://f-droid.org/repo/com.termux_105.apk 这个版本已经包含了很多必须的包 go 1.15.6 hugo 0.80.0  pkg i golang pkg hugo hugo new site blog cd blog # 下载一个中文主题 git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant  文件夹管理器中修改： 在主题的 exampleSite 示例目录下有config.toml 文件， 把 config.toml 文件复制到你的站点目录下  hugo #生成静态文件 hugo s #开启网络服务  主题第一个 git clone https://github.com/nishanths/cocoa-hugo-theme.git themes/cocoa
-第二个 git clone https://github.com/mtn/cocoa-eh-hugo-theme.git themes/cocoa-eh</description>
+第二个 git clone https://github.com/mtn/cocoa-eh-hugo-theme.git themes/cocoa-eh
+主题什么的都很好，但是我驾驭不了啊。来一个新鲜出炉的。查找最新编辑的，直接用。文件夹模式  
+关于局域网访问 2021-01-29局域网是不能直接用hugo server实现的
+通过命令 hugo server -b &amp;quot;http://192.168.199.216&amp;quot; --bind &amp;quot;192.168.199.216&amp;quot;</description>
     </item>
     
     <item>
       <title>c默认主题优化</title>
-      <link>/hexo/20210125c/</link>
+      <link>https://ch38r18.github.io/hexo/20210125c/</link>
       <pubDate>Mon, 25 Jan 2021 11:55:39 +0000</pubDate>
       
-      <guid>/hexo/20210125c/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210125c/</guid>
       <description>via unangela.com
 Hexo默认主题landscape优化  landscape 作为 Hexo 默认主题还是非常简洁大方的，该有的都有
   图片路径：…\themes\landscape\source\css\images\banner.jpg 分辨率尽量一致：1900*1200，大小不宜过大，否则影响加载，尽量500kb以内。
@@ -36,10 +107,10 @@ Hexo默认主题landscape优化  landscape 作为 Hexo 默认主题还是非常�
     
     <item>
       <title>hexo相关数据</title>
-      <link>/hexo/20210125b/</link>
+      <link>https://ch38r18.github.io/hexo/20210125b/</link>
       <pubDate>Mon, 25 Jan 2021 11:11:38 +0000</pubDate>
       
-      <guid>/hexo/20210125b/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210125b/</guid>
       <description>1.26
 关于hexo源码，解析：
 源码解析1
@@ -49,37 +120,37 @@ Hexo默认主题landscape优化  landscape 作为 Hexo 默认主题还是非常�
     
     <item>
       <title>读懂 Hexo 源码设计模式</title>
-      <link>/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/</link>
+      <link>https://ch38r18.github.io/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/</link>
       <pubDate>Mon, 25 Jan 2021 10:21:20 +0000</pubDate>
       
-      <guid>/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/</guid>
       <description>hexo定义 是一个JS语言编写的静态网站生成器， 主要作用是解析Markdown语法，并配合模板引擎，快速生成静态网站。 同时，还可以自定义主题，引用第三方插件， 除了搭建个人博客之外，Hexo还被许许多多的项目拿来生成API文档  框架特色 Node.js运行环境，速度极快，扩展能力强，强大的插件系统，可配置性高，一键编译部署， 适用于博客，静态个人网站，开源项目文档， 最受欢迎的JS静态网站生成器。  Hexo命令行设计 在命令行模块，Hexo选择使用minimist来解析命令行参数得到一个js对象， 并建立一个Hexo实例并初始化， 最后通过实例对象call方法传递命令行指令。  var args = minimist(process.argv.slice(2)) var cmd = args._.shift() var hexo = new Hexo() hexo.init() hexo.call(cmd, args)  Hexo入口模块设计 同大多数框架相同，Hexo采用构造-原型组合模式定义类，采用组合继承的方式继承Node中EventEmitter模块，更容易得通过on与emit发布与订阅事件。 在实例化阶段，保存所编译文件存放的路径、输出路径及其它脚本、插件、主题等所处的路径，保存环境变量，即命令行参数、版本号等基本信息。 创建扩展对象，按不同的功能进行分类，作用是创建store，用于注册句柄，获取句柄，以便后续编译过程调用， 在Hexo中，扩展类型包括 控制台(Console)、 部署器(Deployer)、 过滤器(Filter)、 生成器(Generator)、 辅助函数(Helper)、 处理器(Processor）、 渲染引擎(Renderer)等等。  function Hexo(base, args) { EventEmitter.call(this) this.public_dir = path.join(base, &#39;public&#39;); this.source_dir = path.join(base, &#39;source&#39;); ... this.extend = { console: new extend.Console(), generator: new extend.Generator(), processor: new extend.</description>
     </item>
     
     <item>
       <title>1.14阅读文摘</title>
-      <link>/%E6%91%98%E5%BD%95/20210124b%E6%96%87%E6%91%98/</link>
+      <link>https://ch38r18.github.io/via/20210124b%E6%96%87%E6%91%98/</link>
       <pubDate>Sun, 24 Jan 2021 08:18:53 +0000</pubDate>
       
-      <guid>/%E6%91%98%E5%BD%95/20210124b%E6%96%87%E6%91%98/</guid>
+      <guid>https://ch38r18.github.io/via/20210124b%E6%96%87%E6%91%98/</guid>
       <description>2020网络信息灭绝评论 每时每刻吧，像 WX，WB 这种封闭生态，没被删留下来的都是被“喜欢”的。如果哪天不喜欢哪个，服务器一敲键盘，内容就在整个生态里从此消失，就像从来没发生过一样。谁掌握了过去，谁就掌握了未来；谁掌握了现在，谁就掌握了过去。 2021 年，脸书推特 instagram 等社交平台全面封杀川普及其支持者，亚马逊强行停服 parler 。世界终于趋于大同。 你这些都不是事，p 站还我收藏的视频！ TypeError：2020初墙内微博微信大肆封删 COVID19 相关的信息，有兴趣可以去了解下 GitHub 很多人做过的备份 在线服务都不可靠，就像做分布式的默认单个节点机器不可靠一样，所以本地+多处备份最好。 看来去中心化的平台，很有必要了 中文互联网社区的内容基本上都报销了 2021 年，虾米音乐通知关闭 再过两年中文内容可能就全在一个个 APP 里了，浏览器 Web 可以消亡了。 p**nhub 删除非认证视频是大事件 AppStore 下架所有没有版号的游戏，蝈区彻底成了鬼区 多说”前几年也没了，那会应该是用的最多的评论框。 估计这个世界还剩北欧一个政治净土 xiunobbs 关站。酷 Q 等多家 QQ 机器人软件 大部分停止运营  js功能评论区 主要是原生 js （严格来说是浏览器 DOM 的 api 标准）把 jquery 的优点都抄过去了，可以理解为现在 js 本身已经自带了一个简单版的 jquery 。 我有个需求：某网站(我管不着的)是用 react 写的，ajax 或 fetch 过来数据之后渲染的页面，现在我针对这个网站写个浏览器扩展，添加一些元素，监听一些事件，ajax 获取一些数据, 我觉得我用 jQuery 挺合适的。有大佬有办法用 react vue 之类的实现我这个需求吗？ 对后端来说，最不能接受的是：javascript 是一种需要编译的语言 JQ 时代结束了。但是目前依然有无数依赖 JQ 开发的网站 初次看到 Livewire 的时候，亮瞎了我一眼，果然是给全干工程师的好东西。 jq 已经完成了历史使命 它的很多部分已经成了 es 的标准 百度首页不也在用 jq，据说版本还很老 因为 js 现在已经吸收了很多 jq 的长处了吧，ES6 开始原生已经很强了， 但是不得不说很多人在当年没有学过 js 的情况下都是直接上手 jq 就能学着用的（比如我），很多老的网站还是 jq 维护着，只是新的项目选型基本不太会选他了 已经不用了。ARV 三大框架，数据驱动，组件化开发，再也不用在业务逻辑里面写一堆选择器了，节省代码量，开发更轻松。jquery 的一部分 api 都可以用原生的 javascript 来代替了。兼容性也有 babel 来解决了。你要是觉得你的代码上能跑通 chrome87，下能兼容 ie7，无所谓了，随你开心。webpack 编译、打包、压缩、上传 cdn，一个命令，一条龙服务。 var 都亡了, 现在都是 const 和 let 了  其他如何提高 NOTION 在国内的访问速度</description>
     </item>
     
     <item>
       <title>2019年互联网信息大灭绝事件</title>
-      <link>/%E6%91%98%E5%BD%95/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/</link>
+      <link>https://ch38r18.github.io/via/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/</link>
       <pubDate>Sun, 24 Jan 2021 08:10:23 +0000</pubDate>
       
-      <guid>/%E6%91%98%E5%BD%95/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/</guid>
+      <guid>https://ch38r18.github.io/via/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/</guid>
       <description> 2019年互联网信息大灭绝事件 2019 年 5 月份，百度贴吧删除大量 2017 年以前的帖子，很多动漫和老游戏贴吧的资源贴全军覆没 2019 年 9 月 28 日，爱拍视频网站突然关闭，从 27 号夜间通知到到 28 号立刻关站，甚至都没给用户多留几个小时的备份时间 2019 年 12 月 31 日多玩论坛宣布关闭 2019 年，网易博客彻底关闭  个人点评 突然觉得网络没有那么美好了， 以前以为网络没有岁月感，现在才知道，网络的岁月感，最强烈！ 从此，网络云端都是浮云，自己的东西，自己保存。  </description>
     </item>
     
     <item>
       <title>文摘</title>
-      <link>/%E6%91%98%E5%BD%95/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/</link>
+      <link>https://ch38r18.github.io/via/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/</link>
       <pubDate>Sat, 23 Jan 2021 10:29:07 +0000</pubDate>
       
-      <guid>/%E6%91%98%E5%BD%95/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/</guid>
+      <guid>https://ch38r18.github.io/via/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/</guid>
       <description>md聚合阅读激流网
  “我们学新闻也好，学法律也好，都救不了自己。”庹继光的遗言 尸骸若不被埋在活人心中，那便真成了尸骸。对于庹继光教授的死，怎能不让人联想到上一个溺水自杀的成都大学的党委书记毛洪涛呢！怎能不让人联想到，为讨回自己的血汗钱，不惜用汽油浇身，点燃自己的蜂鸟配送员呢！又怎能不让人回想起无数个只能失落地结束自己生命，以控诉自己无处可走的遭遇，想要唤醒麻木他人的自杀者呢！有人说，“选择自杀是懦夫，不是明智的行为。”我们终究很难体会到或理解庹继光为何会选择这条绝路，但我们可以猜测，庹继光作为一名高级知识分子，四川师范大学文学院教授，他看清了如铁壁般的事实，选择了以死相拼，从高高的楼上一跃而下。 从旧社会过来的老工人，都有一部血泪斑斑的家史。回想旧社会，工人“吃的猪狗食，干的牛马活”，“做工做到老，不及一根草”，政治上受压迫，生活上无保障，日子越过越苦。 舆论工具从不掌握在发出批判意见的人群手中。 定义，不仅需要申明自己是什么，还需要声明自己不是什么，这才构成一个完整的定义。 “没有任何绝对的价值，因为对货币来说，价值本身是相对的。没有任何东西是不可让渡的，因为一切东西都可以为换取货币而让渡。没有任何东西是高尚的、神圣的等等，因为一切东西都可以通过货币而占有。正如在上帝面前人人平等一样，在货币面前也不存在‘不能估价、不能抵押或转让的’，‘处于人类商业之外的’，‘谁也不能占有的’，‘神圣的’和‘宗教的东西’。”（马克思恩格斯全集：第46卷下[M].北京：人民出版社，1980：368） 雄关漫道真如铁，而今迈步从头越。 初听不识曲中意，再闻已是乐中人。 “无产阶级要按照自己的世界观改造世界，资产阶级也要按照自己的世界观改造世界。”（《关于正确处理人民内部矛盾的问题》人民出版社27页，引自《毛主席语录》，1967年版，16页。） 996顾名思义，指的是早上9点上班，晚上9点下班，一周工作6天；什么是11-11-6呢？显而易见，这就是指，早上11点上班，晚上11点下班，一周工作6天。 拜物教本来是指人们迷信某种物具有神秘的力量，而加以崇拜的一种宗教。在社会生产力水平很低时，由于人们控制自然的能力很薄弱，在自然力面前软弱无能，因此把自然力神秘化起来，以为象雷、电、水、火这样的自然界力量，有什么神灵在那里主宰着，因而拜倒在它们脚下。在以私有制为基础的商品经济中，也存在着类似的情况。商品本来是人们自己双手创造出来的东西，但它却被看成为凌驾于人们之上的，具有支配人们命运的力量。这种现象，马克思把它叫做商品拜物教。 商品货币关系并不是永恒的东西，而是一种历史现象。从而，以商品作为细胞的资本主义经济制度，也决不是永恒的。在一定历史条件下产生的东西，必将随着历史条件的变化而消灭，这是不以人们的意志为转移的客观规律。同理可证 维系或者摧毁一段婚姻，金钱都扮演着重要的角色。除了爱和浪漫，婚姻里还充满了各种经济考量。 英国有一位左派作家乔治·奥威尔。他有一本名著《动物农场》，在国内算是人尽皆知。书中象征着马克思的白猪死后，动物们继承他的遗志，在墙上写上这样一句标语：“每一只动物都是平等的。” 可是后来，篡改经典的黑猪掌权。它既要承认平等的价值观，又想标明自己高人一等，于是把这句标语改成了：“每一只动物都是平等的，但是有些动物更平等。”  ve2x
  win10+深蓝词库 极度舒适 请拒绝一切大厂国产软件，能不用就不用，他们有的是办法恶心你 …  **</description>
@@ -87,10 +158,10 @@ Hexo默认主题landscape优化  landscape 作为 Hexo 默认主题还是非常�
     
     <item>
       <title>2021流行编程语言</title>
-      <link>/post/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <link>https://ch38r18.github.io/via/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
       <pubDate>Fri, 22 Jan 2021 09:01:37 +0000</pubDate>
       
-      <guid>/post/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+      <guid>https://ch38r18.github.io/via/20210122b2021%E6%B5%81%E8%A1%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
       <description>2021 年这 8 种编程语言最流行：Go 入榜原来是这个原因怎样判断哪种编程语言最流行？正如要挑选最受欢迎的冰激凌一样，每个人都有自己的最爱。实际上，由于各种原因，不同的开发人员喜欢不同的编程语言，当你认为一种编程语言可能占主导地位时，一种新的编程语言出现了，或者一种老的语言与新的应用联系起来了。
 2021 年最流行的编程语言将基于相关开发人员想要完成的任务以及他们已经学习或完成的工作。对希望获得加薪[1]的有经验的程序员来说，最流行的编程语言将不同于那些刚开始工作的程序员，这些人在参加了编程训练营后想要从事初级编程工作[2]。
 有这么多不断变化的语言，很难知道该从何处入手，尤其是开源语言一直在变化，新的包和框架不断涌现。无论你的兴趣或需求是什么，如果你想了解 2021 年最流行的编程语言，你可以从本文这个列表中找到它们。
@@ -108,10 +179,10 @@ Python 是最受初学者欢迎的编程语言，因为它为全新的开发者�
     
     <item>
       <title>关于Obsidian知识循环利器</title>
-      <link>/post/20210122a%E5%85%B3%E4%BA%8Eobsidian/</link>
+      <link>https://ch38r18.github.io/via/20210122a%E5%85%B3%E4%BA%8Eobsidian/</link>
       <pubDate>Fri, 22 Jan 2021 07:08:24 +0000</pubDate>
       
-      <guid>/post/20210122a%E5%85%B3%E4%BA%8Eobsidian/</guid>
+      <guid>https://ch38r18.github.io/via/20210122a%E5%85%B3%E4%BA%8Eobsidian/</guid>
       <description>分类：阅读笔记
 标签：知识循环、笔记管理、笔记交互、Zettelkasten
 原文：玩转 Obsidian | 打造知识循环利器
@@ -124,29 +195,29 @@ Python 是最受初学者欢迎的编程语言，因为它为全新的开发者�
     
     <item>
       <title>front-matter</title>
-      <link>/hexo/20210121b_front-matter/</link>
+      <link>https://ch38r18.github.io/hexo/20210121b_front-matter/</link>
       <pubDate>Thu, 21 Jan 2021 17:07:41 +0000</pubDate>
       
-      <guid>/hexo/20210121b_front-matter/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210121b_front-matter/</guid>
       <description>Front-matter就是文件最上方的分割区域。</description>
     </item>
     
     <item>
       <title>配置文件注释</title>
-      <link>/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <link>https://ch38r18.github.io/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
       <pubDate>Thu, 21 Jan 2021 16:25:06 +0000</pubDate>
       
-      <guid>/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
       <description>配置文件注释 _config.yml
 # Hexo Configuration## Docs: https://hexo.io/docs/configuration.html## Source: https://github.com/hexojs/hexo/# Site网站title: chr63写点人生note #网站标题subtitle: &#39;忽然春天，蓦然夏天，突然秋天，已然冬天。&#39; #副标题description: &#39;事出有因，未必结果。&#39; #网站描述keywords: 笔记 #网站关键词author: chr63 #作者language: zh-CN #使用语言timezone: &#39;Asia/Shanghai&#39; #时区# URL网址root: / #网站根目录permalink: :year/:month/:day/:title/ #永久链接格式permalink_defaults: #永久链接中各部分默认值pretty_urls: #改写permalink的值来美化urltrailing_index: true #是否保留尾部index.htmltrailing_html: true #是否保留尾部.html# Directory目录source_dir: source #资源文件夹public_dir: public #公共文件夹tag_dir: tags #标签archive_dir: archives #归档文件夹category_dir: categories #分类文件夹code_dir: downloads/code #source子文件夹i18n_dir: :lang #国际化文件夹skip_render: #跳过指定文件的渲染# Writing文章new_post_name: :year:month:day-:title.</description>
     </item>
     
     <item>
       <title>从零开始hexo</title>
-      <link>/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/</link>
+      <link>https://ch38r18.github.io/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/</link>
       <pubDate>Wed, 20 Jan 2021 17:48:31 +0000</pubDate>
       
-      <guid>/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/</guid>
       <description>被拖延的博客梦想自己做一个博客，纯小白，什么都不懂，看到那些代码，没有人教，的确也是一个头2个大。
 从零开始设置github page从网络上，无意中了解到，github可以写博客，一直不懂，搞不明白，博客怎么弄的，en就是一个障碍，最近给firefox弄了一个插件网页翻译，问题缓解了好多。
 github 可以做静态的博客，意思就是，把写好的东西，保存到github上，网页只是读取文件，显示。
@@ -162,19 +233,19 @@ hexo初遇遇到hexo也是一个个人觉得搞笑的过程。某天，我手机
     
     <item>
       <title>hexo主题收藏</title>
-      <link>/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/</link>
+      <link>https://ch38r18.github.io/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/</link>
       <pubDate>Wed, 20 Jan 2021 17:22:36 +0800</pubDate>
       
-      <guid>/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/</guid>
       <description>hexo主题收藏# 喜欢的都收藏一下 # 设置好以后记得一键三连：hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s https://github.com/zchengsite/hexo-theme-oranges git clone https://github.com/joway/hugo-theme-yinyang.git themes/yinyang https://github.com/sshwy/hexo-theme-essence https://github.com/ganto-cn/hexo-theme-heri git clone https://github.com/lotabout/hexo-theme-noise themes/noise # 好评，简单，喜欢 https://github.com/sanjinhub/hexo-theme-geek # 自带 valine 评论 , 使用说明见 https://valine.js.org 评论系统key 申请https://valine.js.org/quickstart.html polk-x # 极简，一般 --- # https://github.com/FoxerLee/awesome-hexo-themes # 推荐主题，收集页面 ---- git clone https://github.com/gary-Shen/hexo-theme-bear themes/bear.git git clone https://github.com/JeremyFan/hexo-theme-still.git git clone https://github.com/frostfan/hexo-theme-polarbear.git git clone https://github.com/Litreily/hexo-theme-snark.git # 需要查看网页，配置 https://github.com/honjun/hexo-theme-sakura https://docs.hojun.cn/sakura/docs/#/home # 文档 https://github.com/fengkx/hexo-theme-purer 好看，但是还没有测试成功 https://github.com/KevinOfNeu/hexo-theme-xoxo 手机上看还行 https://github.com/jangdelong/hexo-theme-xups 带github评论系统 1.26</description>
     </item>
     
     <item>
       <title>Termux-ADB</title>
-      <link>/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</link>
+      <link>https://ch38r18.github.io/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</link>
       <pubDate>Wed, 20 Jan 2021 16:32:58 +0800</pubDate>
       
-      <guid>/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</guid>
+      <guid>https://ch38r18.github.io/termux/20210120a%E5%85%B3%E4%BA%8Etermux-adb/</guid>
       <description>Termux-ADB在Termux中安装ADB和FastBoot工具！ 仅适用于配备ARM或ARM64处理器的设备！
 https://github.com/MasterDevX/Termux-ADB
  如何安装 静默安装： 在Termux中复制并粘贴以下命令以静默安装工具： apt update &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; apt --assume-yes install wget &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q &amp;amp;&amp;amp; bash InstallTools.sh 常用安装： 在Termux中复制并粘贴以下命令以安装带有日志输出的工具： apt update &amp;amp;&amp;amp; apt install wget &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh &amp;amp;&amp;amp; bash InstallTools.sh   如何卸载 静默卸载： 在Termux中复制并粘贴以下命令以静默删除工具： apt update &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; apt --assume-yes install wget &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&amp;amp; wget https://github.com/MasterDevX/Termux-ADB/raw/master/RemoveTools.sh -q &amp;amp;&amp;amp; bash RemoveTools.sh 常见卸载： 在Termux中复制并粘贴以下命令，以删除带有日志输出的工具： apt update &amp;amp;&amp;amp; apt install wget &amp;amp;&amp;amp; wget https://github.</description>
@@ -182,10 +253,10 @@ https://github.com/MasterDevX/Termux-ADB
     
     <item>
       <title>hexo更换主题失败总结</title>
-      <link>/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/</link>
+      <link>https://ch38r18.github.io/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/</link>
       <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
       
-      <guid>/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/</guid>
       <description>hexo更换主题失败总结  没有按照hexo的步骤，所以失败
   每次更换完主题后，都需要，一键三连
 hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s   原因分析
@@ -195,20 +266,20 @@ hexo init [folder] # 没有设置 folder ，Hexo 默认在目前的文件夹建�
     
     <item>
       <title>关于npm镜像源</title>
-      <link>/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/</link>
+      <link>https://ch38r18.github.io/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/</link>
       <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
       
-      <guid>/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/</guid>
+      <guid>https://ch38r18.github.io/termux/20210118%E5%85%B3%E4%BA%8Enpm%E9%95%9C%E5%83%8F%E6%BA%90/</guid>
       <description>关于npm镜像源的问题当你下载某个
 npm install hexo-render-swig npm ERR! code E404 npm ERR! 404 Not Found - GET https://registry.npmjs.org/hexo-render-swig - Not found npm ERR! 404 npm ERR! 404 &#39;hexo-render-swig@latest&#39; is not in the npm registry. npm ERR! 404 You should bug the author to publish it (or use the name yourself!) npm ERR! 404 npm ERR! 404 Note that you can also install from a npm ERR! 404 tarball, folder, http url, or git url.</description>
     </item>
     
     <item>
       <title>安卓修复锂电池</title>
-      <link>/post/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/</link>
+      <link>https://ch38r18.github.io/via/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/</link>
       <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
       
-      <guid>/post/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/</guid>
+      <guid>https://ch38r18.github.io/via/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/</guid>
       <description>2014.09.24当手机锂电池开始老化时，
  一般表现为手机空载时显示电压基本正常，满格， 待机时间短， 充电时很快就显示已充满。  此类电池可尝试以下方式修复。 冷冻法(1)
  多层吸水纸和多层塑料膜密封 放进冰箱冷冻室里（零下18度） 冻了整整二天二夜，48h 取出后连包装放室内常温二天，36h。恢复室温  放电法(2)
@@ -233,19 +304,19 @@ npm install hexo-render-swig npm ERR! code E404 npm ERR! 404 Not Found - GET htt
     
     <item>
       <title>摘录</title>
-      <link>/%E6%91%98%E5%BD%95/20210119a%E6%91%98%E5%BD%95via/</link>
+      <link>https://ch38r18.github.io/via/20210119a%E6%91%98%E5%BD%95via/</link>
       <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
       
-      <guid>/%E6%91%98%E5%BD%95/20210119a%E6%91%98%E5%BD%95via/</guid>
+      <guid>https://ch38r18.github.io/via/20210119a%E6%91%98%E5%BD%95via/</guid>
       <description> 2021-01-19 19/365 via.平常大家都是好人，至少也是普通人，但这些人一到关键时刻就会变坏人，所以才不能大意！   </description>
     </item>
     
     <item>
       <title>安卓termux部署hexo更换主题失败</title>
-      <link>/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/</link>
+      <link>https://ch38r18.github.io/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Mon, 18 Jan 2021 01:29:18 +0800</pubDate>
       
-      <guid>/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/</guid>
+      <guid>https://ch38r18.github.io/termux/20210118%E5%AE%89%E5%8D%93termux%E9%83%A8%E7%BD%B2hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5/</guid>
       <description> hexo更换主题失败 不知道为什么会失败 自带的主题都正常，那些好看的主题可能有其他插件 不知道什么问题  cd /storage/emulated/0/blog pwd pkg install git nodejs --save --no-bin-links npm install hexo-cli hexo init hexo g | hexo s 浏览器打开本地，正常  更换喜欢的主题：主题noise 简单 美观，手机端也好看
 git clone https://github.com/lotabout/hexo-theme-noise themes/noise 主题polarbear 简单，手机端好看
 git clone https://github.com/frostfan/hexo-theme-polarbear themes/polarbear  需要解决的问题 打开页面都是代码， 太难了，看不懂，找不到问题。 在blog中 npm install 会报错，也不知道安装成功没有  npm install hexo-renderer-scss --save npm install hexo-renderer-less --save npm install hexo-renderer-pug --save </description>
@@ -253,10 +324,10 @@ git clone https://github.com/frostfan/hexo-theme-polarbear themes/polarbear  需
     
     <item>
       <title>博客收藏</title>
-      <link>/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/</link>
+      <link>https://ch38r18.github.io/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/</link>
       <pubDate>Sun, 17 Jan 2021 16:32:58 +0800</pubDate>
       
-      <guid>/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/</guid>
       <description>1.15https://gddhy.net/ 良好 https://nanguaren.github.io. 优秀 https://pumpkin_melon.gitee.io/myblog https://chitang.tk https://www.nesxc.com https://pzb568.github.io/ https://htname.github.io/
 1.16https://d2fan.com/ 简单，优秀
 1.17easy4me- 基于 Hexo 主题
@@ -268,10 +339,10 @@ runoob-npm镜像源 npm安装不上原来是玄学问题，需要国内源
     
     <item>
       <title>在终端输出所有Unicode码</title>
-      <link>/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</link>
+      <link>https://ch38r18.github.io/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</link>
       <pubDate>Sun, 17 Jan 2021 01:29:18 +0800</pubDate>
       
-      <guid>/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</guid>
+      <guid>https://ch38r18.github.io/termux/20210117%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84termux/</guid>
       <description> 在终端输出所有Unicode码a). #!/bin/bash
 for i1 in {0..9} {A..F} do for i2 in {0..9} {A..F} do for i3 in {0..9} {A..F} do for i4 in {0..9} {A..F} do echo -ne \\u$i1$i2$i3$i4 done done done done b).
 printf $(printf &#39;\\u%04x&#39; {0..65535}) </description>
@@ -279,10 +350,10 @@ printf $(printf &#39;\\u%04x&#39; {0..65535}) </description>
     
     <item>
       <title>20210114a用termux实现hexo</title>
-      <link>/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://ch38r18.github.io/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Thu, 14 Jan 2021 01:29:18 +0800</pubDate>
       
-      <guid>/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://ch38r18.github.io/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/</guid>
       <description>用termux在安卓手机实现hexo博客安卓安装termux.apk
 在手机安装了 termux 的apk，实现了 安卓手机的linnux终端。
 注意，网上的教程中，第一次打开软件会连接官网，但是官网被墙，～…～，新版本不需要连接，省略这些攻略
@@ -312,19 +383,19 @@ pkg install nodejs</description>
     
     <item>
       <title>github pages 开始</title>
-      <link>/post/20200611githubpages%E5%BC%80%E5%A7%8B/</link>
+      <link>https://ch38r18.github.io/note/20200611githubpages%E5%BC%80%E5%A7%8B/</link>
       <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
       
-      <guid>/post/20200611githubpages%E5%BC%80%E5%A7%8B/</guid>
+      <guid>https://ch38r18.github.io/note/20200611githubpages%E5%BC%80%E5%A7%8B/</guid>
       <description> 2020.06.11 什么时候开始呢， 那就从 我的WiKi 开始吧。  2020-06-22 12:55:23 修改一个地址 ch38r18.github.io 以后可以用 http://ch38r18.github.io 直接打开  </description>
     </item>
     
     <item>
       <title>小狼毫weasel-如何使用emoji</title>
-      <link>/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</link>
+      <link>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</link>
       <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
       
-      <guid>/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</guid>
+      <guid>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8emoji/</guid>
       <description>配置emoji方法一：
  1.文件夹opencc 放到用户目录 如：D:\Date\Rime
   2.文件emoji_suggestion.yaml 放到用户目录 如：D:\Date\Rime
@@ -347,10 +418,10 @@ pkg install nodejs</description>
     
     <item>
       <title>小狼毫weasel-怎么输入符号</title>
-      <link>/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</link>
+      <link>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</link>
       <pubDate>Thu, 11 Jun 2020 01:29:18 +0800</pubDate>
       
-      <guid>/%E5%B0%8F%E7%8B%BC%E6%AF%AB%E8%BE%93%E5%85%A5%E6%B3%95/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</guid>
+      <guid>https://ch38r18.github.io/weasel/20200611%E5%B0%8F%E7%8B%BC%E6%AF%ABweasel-%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5%E7%AC%A6%E5%8F%B7/</guid>
       <description>配置符号输入法默认输入符号方式
  1.系统默认输入方式 如 /fh
   2.就是半角/ 和 0-10数字，字母组合。
@@ -364,10 +435,10 @@ pkg install nodejs</description>
     
     <item>
       <title></title>
-      <link>/post/20200609%E7%9F%A5%E9%81%93github%E4%BA%86/</link>
+      <link>https://ch38r18.github.io/note/20200609%E7%9F%A5%E9%81%93github%E4%BA%86/</link>
       <pubDate>Tue, 09 Jun 2020 01:29:18 +0800</pubDate>
       
-      <guid>/post/20200609%E7%9F%A5%E9%81%93github%E4%BA%86/</guid>
+      <guid>https://ch38r18.github.io/note/20200609%E7%9F%A5%E9%81%93github%E4%BA%86/</guid>
       <description>写在开头
   我希望自己多懂点
   不好意思我是一个有点懂的小白，喜欢折腾一些小东西
@@ -382,16 +453,17 @@ pkg install nodejs</description>
     
     <item>
       <title></title>
-      <link>/about-me/</link>
+      <link>https://ch38r18.github.io/git/git%E6%9C%AC%E5%9C%B0%E4%B8%8Egithub%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/about-me/</guid>
-      <description>关于我不好总结，难以捉摸！
-以下，可证：
-2020喜欢Top
- 网络小说：剑来  2019喜欢Top
- 斗鱼直播：彡彡九户外   以上
-end</description>
+      <guid>https://ch38r18.github.io/git/git%E6%9C%AC%E5%9C%B0%E4%B8%8Egithub%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</guid>
+      <description>git同步本地与github  cd 到目录
+  cd public #hugo静态博客生成的目录
+cd publicgit initgit remote add origin https://github.com/ch38r18/ch38r18.github.io.gitgit add -Agit commit -m &amp;quot;first commit&amp;quot;git push -u origin master  git add #添加文件
+  git commit -m &amp;lsquo;first commit&amp;rsquo; 告诉Git，把文件提交到仓库。引号内为提交说明 
+  git remote add origin 你的远程库地址
+  git pull &amp;ndash;rebase origin master 获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）
+  git push -u origin master 把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</description>
     </item>
     
   </channel>
