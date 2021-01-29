@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>💾 hexo on </title>
+    <link>/hexo/</link>
+    <description>Recent content in 💾 hexo on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 25 Jan 2021 11:55:39 +0000</lastBuildDate><atom:link href="/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>c默认主题优化</title>
+      <link>/hexo/20210125c/</link>
+      <pubDate>Mon, 25 Jan 2021 11:55:39 +0000</pubDate>
+      
+      <guid>/hexo/20210125c/</guid>
+      <description>via unangela.com
+Hexo默认主题landscape优化  landscape 作为 Hexo 默认主题还是非常简洁大方的，该有的都有
+  图片路径：…\themes\landscape\source\css\images\banner.jpg 分辨率尽量一致：1900*1200，大小不宜过大，否则影响加载，尽量500kb以内。
+  字体&amp;amp;配色&amp;amp;布局
+基础样式：…\themes\landscape\source\css_variables.styl // Colors // Fonts
+详细文件：…\themes\landscape\source\css_partial*.styl
+页面布局：…\themes\landscape\layout*.ejs
+添加文章评论
+ 注册 Disqus，获得 shortname 打开 …\themes\landscape\layout_partial\article.ejs ，在文件最后添加下面的代码：   &amp;lt;% if (!index &amp;amp;&amp;amp; post.comments){ %&amp;gt; &amp;lt;section id=&amp;quot;comments&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;disqus_thread&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; (function() { var d = document, s = d.createElement(&#39;script&#39;); //下面 shortname 修改为对应的 shortname s.src = &#39;https://shortname.disqus.com/embed.js&#39;; s.setAttribute(&#39;data-timestamp&#39;, +new Date()); (d.head || d.body).appendChild(s); })(); &amp;lt;/script&amp;gt; &amp;lt;noscript&amp;gt;Please enable JavaScript to view the &amp;lt;a href=&amp;quot;https://disqus.</description>
+    </item>
+    
+    <item>
+      <title>hexo相关数据</title>
+      <link>/hexo/20210125b/</link>
+      <pubDate>Mon, 25 Jan 2021 11:11:38 +0000</pubDate>
+      
+      <guid>/hexo/20210125b/</guid>
+      <description>1.26
+关于hexo源码，解析：
+源码解析1
+源码分析2
+这个网站有问题还是via阅读理解学习一下 默认主题优化</description>
+    </item>
+    
+    <item>
+      <title>读懂 Hexo 源码设计模式</title>
+      <link>/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/</link>
+      <pubDate>Mon, 25 Jan 2021 10:21:20 +0000</pubDate>
+      
+      <guid>/hexo/20210125a%E8%AF%BB%E6%87%82hexo%E6%BA%90%E7%A0%81/</guid>
+      <description>hexo定义 是一个JS语言编写的静态网站生成器， 主要作用是解析Markdown语法，并配合模板引擎，快速生成静态网站。 同时，还可以自定义主题，引用第三方插件， 除了搭建个人博客之外，Hexo还被许许多多的项目拿来生成API文档  框架特色 Node.js运行环境，速度极快，扩展能力强，强大的插件系统，可配置性高，一键编译部署， 适用于博客，静态个人网站，开源项目文档， 最受欢迎的JS静态网站生成器。  Hexo命令行设计 在命令行模块，Hexo选择使用minimist来解析命令行参数得到一个js对象， 并建立一个Hexo实例并初始化， 最后通过实例对象call方法传递命令行指令。  var args = minimist(process.argv.slice(2)) var cmd = args._.shift() var hexo = new Hexo() hexo.init() hexo.call(cmd, args)  Hexo入口模块设计 同大多数框架相同，Hexo采用构造-原型组合模式定义类，采用组合继承的方式继承Node中EventEmitter模块，更容易得通过on与emit发布与订阅事件。 在实例化阶段，保存所编译文件存放的路径、输出路径及其它脚本、插件、主题等所处的路径，保存环境变量，即命令行参数、版本号等基本信息。 创建扩展对象，按不同的功能进行分类，作用是创建store，用于注册句柄，获取句柄，以便后续编译过程调用， 在Hexo中，扩展类型包括 控制台(Console)、 部署器(Deployer)、 过滤器(Filter)、 生成器(Generator)、 辅助函数(Helper)、 处理器(Processor）、 渲染引擎(Renderer)等等。  function Hexo(base, args) { EventEmitter.call(this) this.public_dir = path.join(base, &#39;public&#39;); this.source_dir = path.join(base, &#39;source&#39;); ... this.extend = { console: new extend.Console(), generator: new extend.Generator(), processor: new extend.</description>
+    </item>
+    
+    <item>
+      <title>front-matter</title>
+      <link>/hexo/20210121b_front-matter/</link>
+      <pubDate>Thu, 21 Jan 2021 17:07:41 +0000</pubDate>
+      
+      <guid>/hexo/20210121b_front-matter/</guid>
+      <description>Front-matter就是文件最上方的分割区域。</description>
+    </item>
+    
+    <item>
+      <title>配置文件注释</title>
+      <link>/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 21 Jan 2021 16:25:06 +0000</pubDate>
+      
+      <guid>/hexo/20210121a%E6%B3%A8%E9%87%8Ahexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description>配置文件注释 _config.yml
+# Hexo Configuration## Docs: https://hexo.io/docs/configuration.html## Source: https://github.com/hexojs/hexo/# Site网站title: chr63写点人生note #网站标题subtitle: &#39;忽然春天，蓦然夏天，突然秋天，已然冬天。&#39; #副标题description: &#39;事出有因，未必结果。&#39; #网站描述keywords: 笔记 #网站关键词author: chr63 #作者language: zh-CN #使用语言timezone: &#39;Asia/Shanghai&#39; #时区# URL网址root: / #网站根目录permalink: :year/:month/:day/:title/ #永久链接格式permalink_defaults: #永久链接中各部分默认值pretty_urls: #改写permalink的值来美化urltrailing_index: true #是否保留尾部index.htmltrailing_html: true #是否保留尾部.html# Directory目录source_dir: source #资源文件夹public_dir: public #公共文件夹tag_dir: tags #标签archive_dir: archives #归档文件夹category_dir: categories #分类文件夹code_dir: downloads/code #source子文件夹i18n_dir: :lang #国际化文件夹skip_render: #跳过指定文件的渲染# Writing文章new_post_name: :year:month:day-:title.</description>
+    </item>
+    
+    <item>
+      <title>从零开始hexo</title>
+      <link>/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/</link>
+      <pubDate>Wed, 20 Jan 2021 17:48:31 +0000</pubDate>
+      
+      <guid>/hexo/20210120b%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bhexo/</guid>
+      <description>被拖延的博客梦想自己做一个博客，纯小白，什么都不懂，看到那些代码，没有人教，的确也是一个头2个大。
+从零开始设置github page从网络上，无意中了解到，github可以写博客，一直不懂，搞不明白，博客怎么弄的，en就是一个障碍，最近给firefox弄了一个插件网页翻译，问题缓解了好多。
+github 可以做静态的博客，意思就是，把写好的东西，保存到github上，网页只是读取文件，显示。
+github page博客，网址是 .github.io ，所以在github上新建一个 .github.io 而且name必须是自己的用户名。
+有了上面的项目，github.io，就可以展示写的博客了。
+这个时候，知道有一个静态博客模板的东西，我才知道，写博客，发布，博客主题样式，都可以用这样的系统来生成，我就只需要写内容，再也不用那些复杂的操作了。
+第一个接触到的就是hexo。
+hexo初遇遇到hexo也是一个个人觉得搞笑的过程。某天，我手机 酷安发现一个叫 termux的软件，通过搜索发现用termux在手机上搭建博客，当然就是认识hexo契机。
+这个时候，我还才知道手机都能建立博客，维护博客了，电脑应该更加方便的。
+在termux上用hexo建立了博客，但是太丑了，于是又搜索，知道主题，又浏览了很多的主题。
+直到，一直找不到合适的</description>
+    </item>
+    
+    <item>
+      <title>hexo主题收藏</title>
+      <link>/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/</link>
+      <pubDate>Wed, 20 Jan 2021 17:22:36 +0800</pubDate>
+      
+      <guid>/hexo/20210118hexo%E4%B8%BB%E9%A2%98%E6%94%B6%E8%97%8F/</guid>
+      <description>hexo主题收藏# 喜欢的都收藏一下 # 设置好以后记得一键三连：hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s https://github.com/zchengsite/hexo-theme-oranges git clone https://github.com/joway/hugo-theme-yinyang.git themes/yinyang https://github.com/sshwy/hexo-theme-essence https://github.com/ganto-cn/hexo-theme-heri git clone https://github.com/lotabout/hexo-theme-noise themes/noise # 好评，简单，喜欢 https://github.com/sanjinhub/hexo-theme-geek # 自带 valine 评论 , 使用说明见 https://valine.js.org 评论系统key 申请https://valine.js.org/quickstart.html polk-x # 极简，一般 --- # https://github.com/FoxerLee/awesome-hexo-themes # 推荐主题，收集页面 ---- git clone https://github.com/gary-Shen/hexo-theme-bear themes/bear.git git clone https://github.com/JeremyFan/hexo-theme-still.git git clone https://github.com/frostfan/hexo-theme-polarbear.git git clone https://github.com/Litreily/hexo-theme-snark.git # 需要查看网页，配置 https://github.com/honjun/hexo-theme-sakura https://docs.hojun.cn/sakura/docs/#/home # 文档 https://github.com/fengkx/hexo-theme-purer 好看，但是还没有测试成功 https://github.com/KevinOfNeu/hexo-theme-xoxo 手机上看还行 https://github.com/jangdelong/hexo-theme-xups 带github评论系统 1.26</description>
+    </item>
+    
+    <item>
+      <title>hexo更换主题失败总结</title>
+      <link>/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 19 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/hexo/20210118hexo%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E5%A4%B1%E8%B4%A5%E5%88%86%E6%9E%90/</guid>
+      <description>hexo更换主题失败总结  没有按照hexo的步骤，所以失败
+  每次更换完主题后，都需要，一键三连
+hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s   原因分析
+ 对于每个命令的作用不清出。 hexo静态博客模板的工作原理不清楚    hexo指令指令有步骤
+hexo init [folder] # 没有设置 folder ，Hexo 默认在目前的文件夹建立博客系统 hexo new [layout] &amp;lt;title&amp;gt; # 新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。 hexo new &amp;quot;hi chr63&amp;quot; -p, --path 自定义新文章的路径 -r, --replace 如果存在同名文章，将其替换 -s, --slug 文章的 Slug，作为新文章的文件名和发布后的 URL hexo generate # 生成静态文件。网页显示的是生成静态文件，博客设置修改后，必须 hexo g 设置才能生效 -d, --deploy 文件生成后立即部署网站 -w, --watch 监视文件变动 -b, --bail 生成过程中如果发生任何未处理的异常则抛出异常 -f, --force 强制重新生成文件 Hexo 引入了差分机制，如果 public 目录存在，那么 hexo g 只会重新生成改动的文件。 使用该参数的效果接近 hexo clean &amp;amp;&amp;amp; hexo generate -c, --concurrency 最大同时生成文件的数量，默认无限制 hexo publish [layout] &amp;lt;filename&amp;gt; # 发表草稿 hexo server # 启动服务器。默认情况下，访问网址为： http://localhost:4000/ -p, --port 重设端口 -s, --static 只使用静态文件 -l, --log 启动日记记录，使用覆盖记录格式 hexo deploy # 部署网站 -g, --generate 部署之前预先生成静态文件 hexo render &amp;lt;file1&amp;gt; [file2] .</description>
+    </item>
+    
+    <item>
+      <title>博客收藏</title>
+      <link>/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/</link>
+      <pubDate>Sun, 17 Jan 2021 16:32:58 +0800</pubDate>
+      
+      <guid>/hexo/20210117%E5%8D%9A%E5%AE%A2%E6%94%B6%E8%97%8F/</guid>
+      <description>1.15https://gddhy.net/ 良好 https://nanguaren.github.io. 优秀 https://pumpkin_melon.gitee.io/myblog https://chitang.tk https://www.nesxc.com https://pzb568.github.io/ https://htname.github.io/
+1.16https://d2fan.com/ 简单，优秀
+1.17easy4me- 基于 Hexo 主题
+4ark-Polarbear 基于 Hexo Polarbear 主题改造
+runoob-npm镜像源 npm安装不上原来是玄学问题，需要国内源
+​
+1.20https://blog.umu618.com/</description>
+    </item>
+    
+    <item>
+      <title>20210114a用termux实现hexo</title>
+      <link>/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 14 Jan 2021 01:29:18 +0800</pubDate>
+      
+      <guid>/hexo/20210114%E5%AE%89%E5%8D%93hexo%E5%8D%9A%E5%AE%A2/</guid>
+      <description>用termux在安卓手机实现hexo博客安卓安装termux.apk
+在手机安装了 termux 的apk，实现了 安卓手机的linnux终端。
+注意，网上的教程中，第一次打开软件会连接官网，但是官网被墙，～…～，新版本不需要连接，省略这些攻略
+连接国外插件，网速慢，需要连接国内镜像站，清华镜像。
+新版本直接执行命令行即可：
+1.编辑
+/data/data/com.termux/files/usr/etc/apt/sources.list 为如下内容
+# The termux repository mirror from TUNA: deb [arch=all,arm] http://mirrors.tuna.tsinghua.edu.cn/termux stable main 2.你也可以使用 sed 命令进行文本替换：
+sed -i &#39;s@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.ustc.edu.cn/termux stable main@&#39; $PREFIX/etc/apt/sources.list pkg up 注：Termux 会自动将环境变量 $PREFIX 设定为 /data/data/com.termux/files/usr
+利用termux安装了 hexo，就可以写博客了。
+hexo的博客文件夹，要放在可以修改的地方，
+其中有个很关键的命令：
+ npm install &amp;ndash;save &amp;ndash;no-bin-links
+ 步骤1
+安卓手机上安装 termux 也是技术活，我夜折腾了好久，后期把步骤补充齐全
+主要是网上提到的，连接主站，不成功，软件激活不成功，
+我也是因为，最新版的软件不需要连接主站了，所以才可以安装成功的。
+但是还是要更改配置，设置国内镜像站，这样很多插件更新就快多了
+用清华镜像站
+步骤2
+通过termux 安装hexo
+需要安装git、nodejs
+命令行：
+ pkg install git
+pkg install nodejs</description>
+    </item>
+    
+  </channel>
+</rss>
