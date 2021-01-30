@@ -5,7 +5,18 @@
     <link>/hugo/</link>
     <description>Recent content in 💾 hugo on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 29 Jan 2021 21:50:23 +0800</lastBuildDate><atom:link href="/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jan 2021 13:47:47 +0800</lastBuildDate><atom:link href="/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/hugo/20210130c%E6%B7%BB%E5%8A%A0%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8/</link>
+      <pubDate>Sat, 30 Jan 2021 13:47:47 +0800</pubDate>
+      
+      <guid>/hugo/20210130c%E6%B7%BB%E5%8A%A0%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8/</guid>
+      <description>hugo添加音频播放器  方法来源于网络
+ Aplayer中文文档 https://aplayer.js.org/#/zh-Hans/ 方法来源 https://corpython.github.io/post/hugo添加音乐最终章之悬浮音乐播放器/    实现方法
+ 主题文件夹下新建 layouts/partials/ting.html  &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;!-- require APlayer --&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- require MetingJS --&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;demo&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;player1&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var ap = new APlayer ({ element: document.getElementById(&#39;player1&#39;), narrow: false, fixed: true, autoplay: false, showlrc: true, mini: true, theme: &#39;#FADFA3&#39;, loop: &#39;all&#39;, order: &#39;random&#39;, preload: &#39;auto&#39;, volume: 0.</description>
+    </item>
+    
     <item>
       <title></title>
       <link>/hugo/20210129f%E5%88%B6%E4%BD%9C%E7%9B%B8%E5%86%8C/</link>

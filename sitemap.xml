@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/via/20210130b/</loc>
-    <lastmod>2021-01-30T04:16:10+08:00</lastmod>
+    <loc>/ting/20210130d%E5%B7%A6%E4%B8%8B%E8%A7%92%E8%BF%B7%E4%BD%A0%E6%92%AD%E6%94%BE/</loc>
+    <lastmod>2021-01-30T15:22:23+08:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2021-01-30T15:22:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/ting/</loc>
+    <lastmod>2021-01-30T15:22:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/ting/20210130f%E5%88%AB%E4%BA%BA%E7%9A%84%E6%AD%8C%E5%8D%95/</loc>
+    <lastmod>2021-01-30T15:05:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/ting/20210130e%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B/</loc>
+    <lastmod>2021-01-30T14:45:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo/20210130c%E6%B7%BB%E5%8A%A0%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8/</loc>
+    <lastmod>2021-01-30T13:47:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo/</loc>
+    <lastmod>2021-01-30T13:47:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/20210130b%E6%84%9F%E8%B0%A2%E4%BD%A0%E7%9A%84hugo%E4%B8%BB%E9%A2%98/</loc>
+    <lastmod>2021-01-30T12:52:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/</loc>
+    <lastmod>2021-01-30T12:52:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/via/20210130b/</loc>
     <lastmod>2021-01-30T04:16:10+08:00</lastmod>
   </url>
   
@@ -29,11 +69,6 @@
   
   <url>
     <loc>/hugo/20210129f%E5%88%B6%E4%BD%9C%E7%9B%B8%E5%86%8C/</loc>
-    <lastmod>2021-01-29T21:50:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo/</loc>
     <lastmod>2021-01-29T21:50:23+08:00</lastmod>
   </url>
   
@@ -289,11 +324,6 @@
   
   <url>
     <loc>/weasel/</loc>
-    <lastmod>2020-06-11T01:29:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/</loc>
     <lastmod>2020-06-11T01:29:18+08:00</lastmod>
   </url>
   

@@ -1,7 +1,6 @@
 <html>
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,7 +8,7 @@
         content='chr的博客' />
     <title>
         
-chr63写点人生note
+20210130d左下角迷你播放
 
         
     </title>
@@ -315,85 +314,228 @@ chr63写点人生note
     
 <style>
      h1 {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
      }
 
      section {
-          margin-bottom: 15px;
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
      }
 
-     section p {
-          font-size: 14px;
-          margin-top: 8px;
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
      }
 
      section a {
           color: var(--primary);
           text-decoration: none;
+          margin-left: 10px;
      }
 
      main {
-          border-top: 1px solid var(--light-gray);
-          padding-top: 15px;
-          display: grid;
-          grid-template-columns: 50% 50%;
-          grid-row-gap: 2px;
-          grid-column-gap: 20px;
-     }
-
-     @media (max-width: 600px) {
-          main {
-               grid-template-columns: 100%;
-          }
-     }
-
-     main strong {
-          display: block;
-          padding: 2px 0;
-          break-inside: avoid;
-          margin-left: -4px;
-          margin-right: -4px;
-     }
-
-     main strong a {
-          display: block;
-          padding: 4px;
-          color: var(--black);
-          text-decoration: none;
-          display: flex;
-          align-items: baseline;
-          width: 100%;
-     }
-
-     main strong a:hover {
-          background-color: var(--light-gray);
-     }
-
-     main strong a h2 {
-          flex: 1;
-          text-decoration: underline;
-          text-underline-offset: 2px;
-          text-decoration-color: var(--light-gray);
-          font-size: 15px;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
           position: relative;
      }
 
-     main strong a span {
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
           display: block;
-          color: var(--dark-gray);
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
           font-weight: normal;
-          font-size: 12px;
-          margin-left: 10px;
+          font-size: 90%;
      }
 </style>
 
 
     
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
 
-    
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
 </head>
 
 <body>
@@ -403,6 +545,10 @@ chr63写点人生note
             <nav>
   <ol>
     
+
+
+
+
 
 <li>
   <a href="/">
@@ -503,6 +649,58 @@ about me
   
 </li>
 
+
+<li>
+  <a href="/ting/">
+    <span>
+      
+🎧 音频播放
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/ting/20210130e%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B/">
+          <span>
+20210130e自己动手
+</span>
+        </a>
+        
+        <a href="/ting/20210130f%E5%88%AB%E4%BA%BA%E7%9A%84%E6%AD%8C%E5%8D%95/">
+          <span>
+20210130f别人的歌单
+</span>
+        </a>
+        
+        <a href="/ting/20210130d%E5%B7%A6%E4%B8%8B%E8%A7%92%E8%BF%B7%E4%BD%A0%E6%92%AD%E6%94%BE/">
+          <span>
+20210130d左下角迷你播放
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/ting/20210130d%E5%B7%A6%E4%B8%8B%E8%A7%92%E8%BF%B7%E4%BD%A0%E6%92%AD%E6%94%BE/">
+    <span>
+      
+20210130d左下角迷你播放
+
+    </span>
+  </a>
+  
+</li>
+
   </ol>
 </nav>
 
@@ -513,147 +711,130 @@ about me
     </header>
 
     
-
 <h1>
      
-chr63写点人生note
+20210130d左下角迷你播放
+
+     <!DOCTYPE html>
+<html>
+  
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+</head>
+  
+<body>
+    <div class="demo">
+        <div id="player1">
+        </div>
+    </div>
+    <script>
+        var ap = new APlayer
+            ({
+                element: document.getElementById('player1'),
+                narrow: false,
+                fixed: true,
+                autoplay: false,
+                showlrc: true,
+                mini: true,
+                theme: '#FADFA3',
+                loop: 'all',
+                order: 'random',
+                preload: 'auto',
+                volume: 0.7,
+                mutex: false,
+                listFolded: false,
+                listMaxHeight: 90,
+                lrcType: 2,
+                music:
+                    [
+                        {
+                            name: "1吃面条",
+                            artist: "陈佩斯朱时茂小品集",
+                            url: 'http://ys-k.ys168.com/607857151/318064457/Vf5Wj6t55147L53INJG88/%E9%99%88%E4%BD%A9%E6%96%AF%E6%9C%B1%E6%97%B6%E8%8C%82.%E7%BB%8F%E5%85%B8%E5%B0%8F%E5%93%81%E5%90%88%E9%9B%861%E5%90%83%E9%9D%A2%E6%9D%A1.mp3',
+                        },{
+                            name: "seve",
+                            artist:"tez cadey",
+                            url:"http://m10.music.126.net/20210130135228/26b632ef8b6b3074030a4c3977445a85/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/2976514901/db05/96c1/0687/5900f464a863cb4fb7ab1f0730252ff2.mp3",
+                        },{
+                            name:"天下有情人",
+                            artist:"齐豫&周华健",
+                            url:"https://sharefs.yun.kugou.com/202101301331/3c0941263c5a38af7cb7b1d5f89a204c/KGTX/CLTX001/545dfe8eedc278fa24f57519adffe5c4.mp3",
+                            },
+                            {
+                                name:'Daybreak(GoPro HERO3 Edit)',
+                                artist:'Overwerk',
+                                url:'http://m10.music.126.net/20210130140159/cf931498fd27a8c8894b35daadbc621a/ymusic/1005/e66e/8c92/edfbaa10905c2b40d5672dea82cf6b43.mp3',
+                            }
+                    ]
+                    
+        });
+        
+    </script>
+</body>
 
 </h1>
 
-<section><p><strong>博客系统：hugo，开源主题：simple-blog ，免费主页：github</strong></p>
-<p> </p>
-<p><strong>世界无限，你是唯一，我也是唯一，真的好巧啊！</strong></p>
-<p> </p>
-<p><a href="http://ch38r18.ys168.com/">到ys168给我留言</a></p>
-<p> </p>
-<p>我们始终是凡人，总会淡出哗众取宠的舞台，总会消失在喧嚣的世界里，归于质朴，从于恬淡，从于平凡。</p>
-<p> </p>
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.30 15:22
+     </div>
+     
 </section>
 
-
 <main>
-     
-     
-     <strong>
-          <a href="/photos/">
-               <h2>
-🏞 我的相册
-</h2>
-               <span>0001.01.01</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/regex/">
-               <h2>
-💾 正则表达式
-</h2>
-               <span>0001.01.01</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/weasel/">
-               <h2>
-⌨ 小狼毫输入法
-</h2>
-               <span>2020.06.11</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/termux/">
-               <h2>
-📱 安卓终端termux
-</h2>
-               <span>2021.01.20</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/hexo/">
-               <h2>
-💾 hexo
-</h2>
-               <span>2021.01.25</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/about-me/">
-               <h2>
-about me
-</h2>
-               <span>2021.01.28</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/git/">
-               <h2>
-💾 git
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/links/">
-               <h2>
-🔗 网址链接
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/list/">
-               <h2>
-🖐 清单
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/via/">
-               <h2>
-📚 摘录
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/note/">
-               <h2>
-✍️ 笔记
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/hugo/">
-               <h2>
-💾 hugo
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/ting/">
-               <h2>
-🎧 音频播放
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     
-     
+     <article class="markdown">
+          <ul>
+<li>迷你播放器，</li>
+<li>左下角，</li>
+<li>可以代码到所有的博客文章页面</li>
+</ul>
+<pre><code>&lt;body&gt;
+    &lt;div class=&quot;demo&quot;&gt;
+        &lt;div id=&quot;player1&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var ap = new APlayer
+            ({
+                element: document.getElementById('player1'),
+                narrow: false,
+                fixed: true,
+                autoplay: false,
+                showlrc: true,
+                mini: true,
+                theme: '#FADFA3',
+                loop: 'all',
+                order: 'random',
+                preload: 'auto',
+                volume: 0.7,
+                mutex: false,
+                listFolded: false,
+                listMaxHeight: 90,
+                lrcType: 2,
+                music:
+                    [
+                        {
+                        ...
+                            }
+                    ]
+                    
+        });
+        //ap.init();
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+     </article>
+
+     <aside>
+          <nav id="TableOfContents"></nav>
+     </aside>
 </main>
+
+
 
 
     <div id="searchBox">

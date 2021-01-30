@@ -1,7 +1,6 @@
 <html>
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,7 +8,7 @@
         content='chr的博客' />
     <title>
         
-chr63写点人生note
+20210130b感谢你的hugo主题
 
         
     </title>
@@ -315,85 +314,228 @@ chr63写点人生note
     
 <style>
      h1 {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
      }
 
      section {
-          margin-bottom: 15px;
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
      }
 
-     section p {
-          font-size: 14px;
-          margin-top: 8px;
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
      }
 
      section a {
           color: var(--primary);
           text-decoration: none;
+          margin-left: 10px;
      }
 
      main {
-          border-top: 1px solid var(--light-gray);
-          padding-top: 15px;
-          display: grid;
-          grid-template-columns: 50% 50%;
-          grid-row-gap: 2px;
-          grid-column-gap: 20px;
-     }
-
-     @media (max-width: 600px) {
-          main {
-               grid-template-columns: 100%;
-          }
-     }
-
-     main strong {
-          display: block;
-          padding: 2px 0;
-          break-inside: avoid;
-          margin-left: -4px;
-          margin-right: -4px;
-     }
-
-     main strong a {
-          display: block;
-          padding: 4px;
-          color: var(--black);
-          text-decoration: none;
-          display: flex;
-          align-items: baseline;
-          width: 100%;
-     }
-
-     main strong a:hover {
-          background-color: var(--light-gray);
-     }
-
-     main strong a h2 {
-          flex: 1;
-          text-decoration: underline;
-          text-underline-offset: 2px;
-          text-decoration-color: var(--light-gray);
-          font-size: 15px;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
           position: relative;
      }
 
-     main strong a span {
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
           display: block;
-          color: var(--dark-gray);
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
           font-weight: normal;
-          font-size: 12px;
-          margin-left: 10px;
+          font-size: 90%;
      }
 </style>
 
 
     
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
 
-    
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
 </head>
 
 <body>
@@ -403,6 +545,10 @@ chr63写点人生note
             <nav>
   <ol>
     
+
+
+
+
 
 <li>
   <a href="/">
@@ -503,6 +649,58 @@ about me
   
 </li>
 
+
+<li>
+  <a href="/note/">
+    <span>
+      
+✍️ 笔记
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/note/20200609%E7%9F%A5%E9%81%93github%E4%BA%86/">
+          <span>
+20200609知道github了
+</span>
+        </a>
+        
+        <a href="/note/20200611githubpages%E5%BC%80%E5%A7%8B/">
+          <span>
+github pages 开始
+</span>
+        </a>
+        
+        <a href="/note/20210130b%E6%84%9F%E8%B0%A2%E4%BD%A0%E7%9A%84hugo%E4%B8%BB%E9%A2%98/">
+          <span>
+20210130b感谢你的hugo主题
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/note/20210130b%E6%84%9F%E8%B0%A2%E4%BD%A0%E7%9A%84hugo%E4%B8%BB%E9%A2%98/">
+    <span>
+      
+20210130b感谢你的hugo主题
+
+    </span>
+  </a>
+  
+</li>
+
   </ol>
 </nav>
 
@@ -513,147 +711,54 @@ about me
     </header>
 
     
-
 <h1>
      
-chr63写点人生note
+20210130b感谢你的hugo主题
 
 </h1>
 
-<section><p><strong>博客系统：hugo，开源主题：simple-blog ，免费主页：github</strong></p>
-<p> </p>
-<p><strong>世界无限，你是唯一，我也是唯一，真的好巧啊！</strong></p>
-<p> </p>
-<p><a href="http://ch38r18.ys168.com/">到ys168给我留言</a></p>
-<p> </p>
-<p>我们始终是凡人，总会淡出哗众取宠的舞台，总会消失在喧嚣的世界里，归于质朴，从于恬淡，从于平凡。</p>
-<p> </p>
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.30 12:52
+     </div>
+     
 </section>
 
-
 <main>
-     
-     
-     <strong>
-          <a href="/photos/">
-               <h2>
-🏞 我的相册
-</h2>
-               <span>0001.01.01</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/regex/">
-               <h2>
-💾 正则表达式
-</h2>
-               <span>0001.01.01</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/weasel/">
-               <h2>
-⌨ 小狼毫输入法
-</h2>
-               <span>2020.06.11</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/termux/">
-               <h2>
-📱 安卓终端termux
-</h2>
-               <span>2021.01.20</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/hexo/">
-               <h2>
-💾 hexo
-</h2>
-               <span>2021.01.25</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/about-me/">
-               <h2>
-about me
-</h2>
-               <span>2021.01.28</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/git/">
-               <h2>
-💾 git
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/links/">
-               <h2>
-🔗 网址链接
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/list/">
-               <h2>
-🖐 清单
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/via/">
-               <h2>
-📚 摘录
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/note/">
-               <h2>
-✍️ 笔记
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/hugo/">
-               <h2>
-💾 hugo
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/ting/">
-               <h2>
-🎧 音频播放
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     
-     
+     <article class="markdown">
+          
+<h3 id="感谢你的hugo主题"><a href="#%e6%84%9f%e8%b0%a2%e4%bd%a0%e7%9a%84hugo%e4%b8%bb%e9%a2%98">感谢你的hugo主题</a></h3><p>感谢你的主题，我还给自己添加了一个相册</p>
+<p><strong>1.</strong>
+本人小白，用网页翻译弄博客。在手机上看到termux可以做github page，于是从hexo开始，不断的搜索，发现好多人都从hexo转到hugo了，我又开始搜索hugo。</p>
+<p><strong>2.</strong>
+hugo的主题好难找，我搜索看到你的主题（2021.01.26左右），很喜欢，就拷贝了下来。直接就可以用，其他的很多主题都用不了，我也不知道什么原因，代码知识基本没有。</p>
+<p><strong>3.</strong>
+感谢你的主题！
+感谢你的主题！
+感谢你的主题！</p>
+<p><strong>4.</strong>
+前2天看你更新了，从新拷贝了，就报错，用不了，我就沿用之前的。</p>
+<p>昨天2021.01.29，我无意发现一个添加相册的办法，按照网上的步骤，相册也搞定了。但是 在 <!-- raw HTML omitted -->.github.io 无法显示照片，本来想问一下你，有没有什么办法的。结果刚才2021-01-30 11:47 无意中搞定了。主题文件夹下 <code>layouts\_default\photos.html</code></p>
+<p>代码 <code>&lt;img src=&quot;{{ . | absURL }}{{ .Name }}&quot; alt=&quot;{{ .Name }}&quot;  style=&quot;width:100%&quot;/&gt;</code> 解决了相册图片不显示的问题</p>
+<p><strong>5.</strong>
+再次感谢你的主题。</p>
+
+     </article>
+
+     <aside>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#感谢你的hugo主题">感谢你的hugo主题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+     </aside>
 </main>
+
+
 
 
     <div id="searchBox">

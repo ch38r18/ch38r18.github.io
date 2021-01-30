@@ -5,7 +5,62 @@
     <link>/</link>
     <description>Recent content in chr63写点人生note on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 30 Jan 2021 04:16:10 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jan 2021 15:22:23 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/ting/20210130d%E5%B7%A6%E4%B8%8B%E8%A7%92%E8%BF%B7%E4%BD%A0%E6%92%AD%E6%94%BE/</link>
+      <pubDate>Sat, 30 Jan 2021 15:22:23 +0800</pubDate>
+      
+      <guid>/ting/20210130d%E5%B7%A6%E4%B8%8B%E8%A7%92%E8%BF%B7%E4%BD%A0%E6%92%AD%E6%94%BE/</guid>
+      <description> 迷你播放器， 左下角， 可以代码到所有的博客文章页面  &amp;lt;body&amp;gt;&amp;lt;div class=&amp;quot;demo&amp;quot;&amp;gt;&amp;lt;div id=&amp;quot;player1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var ap = new APlayer({element: document.getElementById(&#39;player1&#39;),narrow: false,fixed: true,autoplay: false,showlrc: true,mini: true,theme: &#39;#FADFA3&#39;,loop: &#39;all&#39;,order: &#39;random&#39;,preload: &#39;auto&#39;,volume: 0.7,mutex: false,listFolded: false,listMaxHeight: 90,lrcType: 2,music:[{...}]});//ap.init();&amp;lt;/script&amp;gt;&amp;lt;/body&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/ting/20210130f%E5%88%AB%E4%BA%BA%E7%9A%84%E6%AD%8C%E5%8D%95/</link>
+      <pubDate>Sat, 30 Jan 2021 15:05:51 +0800</pubDate>
+      
+      <guid>/ting/20210130f%E5%88%AB%E4%BA%BA%E7%9A%84%E6%AD%8C%E5%8D%95/</guid>
+      <description>自己用别人的音频js 方便省事，不需要挑选歌曲。  	&amp;lt;body&amp;gt;&amp;lt;meting-js server=&amp;quot;netease&amp;quot; type=&amp;quot;playlist&amp;quot; id=&amp;quot;60198&amp;quot;&amp;gt;&amp;lt;/meting-js&amp;gt;&amp;lt;/body&amp;gt; 解析：server=&amp;ldquo;netease&amp;rdquo; type=&amp;ldquo;playlist&amp;rdquo; id=&amp;ldquo;60198&amp;rdquo; server指音乐平台，netease指网易云音乐， type类型， playlist列表，id指歌曲的i或者专辑或列表外链id 因此重点在于指定平台，指定外链id  中文版选项
+   选项 默认 描述     id(编号) require 歌曲ID /播放列表ID /专辑ID /搜索关键字   server(平台) require 音乐平台：netease，tencent，kugou，xiami，baidu   type（类型） require song，playlist，album，search，artist   auto（支持类种 类） options 音乐链接，支持：netease，tencent，xiami   fixed（固定模式） false 启用固定模式，默认false   mini（迷你模式） false 启用迷你模式,默认false   autoplay（自动播放） false 音频自动播放，默认false   theme(主题颜色) #2980b9 默认#2980b9   loop（循环） all 播放器循环播放，值：“all”，one”，“none”   order(顺序) list 播放器播放顺序，值：“list”，“random”   preload(加载) auto 值：“none”，“metadata”，“&amp;lsquo;auto”   volume（声量） 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/ting/20210130e%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B/</link>
+      <pubDate>Sat, 30 Jan 2021 14:45:51 +0800</pubDate>
+      
+      <guid>/ting/20210130e%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B/</guid>
+      <description>  自己选择音频 为什么不自动播放呢？  &amp;lt;body&amp;gt;&amp;lt;div class=&amp;quot;demo&amp;quot;&amp;gt;&amp;lt;div id=&amp;quot;player1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var ap = new APlayer({container: document.getElementById(&#39;player1&#39;),autoplay: true,showlrc: true,theme: &#39;#b7daff&#39;,loop: &#39;all&#39;,order: &#39;list&#39;,preload: &#39;auto&#39;,volume: 0.7,mutex: true,listFolded: false,listMaxHeight: 300,lrcType: 2,music:[{...}]});//ap.init();&amp;lt;/script&amp;gt;&amp;lt;/body&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/hugo/20210130c%E6%B7%BB%E5%8A%A0%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8/</link>
+      <pubDate>Sat, 30 Jan 2021 13:47:47 +0800</pubDate>
+      
+      <guid>/hugo/20210130c%E6%B7%BB%E5%8A%A0%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8/</guid>
+      <description>hugo添加音频播放器  方法来源于网络
+ Aplayer中文文档 https://aplayer.js.org/#/zh-Hans/ 方法来源 https://corpython.github.io/post/hugo添加音乐最终章之悬浮音乐播放器/    实现方法
+ 主题文件夹下新建 layouts/partials/ting.html  &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;!-- require APlayer --&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&amp;quot;&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- require MetingJS --&amp;gt; &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;demo&amp;quot;&amp;gt; &amp;lt;div id=&amp;quot;player1&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; var ap = new APlayer ({ element: document.getElementById(&#39;player1&#39;), narrow: false, fixed: true, autoplay: false, showlrc: true, mini: true, theme: &#39;#FADFA3&#39;, loop: &#39;all&#39;, order: &#39;random&#39;, preload: &#39;auto&#39;, volume: 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/note/20210130b%E6%84%9F%E8%B0%A2%E4%BD%A0%E7%9A%84hugo%E4%B8%BB%E9%A2%98/</link>
+      <pubDate>Sat, 30 Jan 2021 12:52:12 +0800</pubDate>
+      
+      <guid>/note/20210130b%E6%84%9F%E8%B0%A2%E4%BD%A0%E7%9A%84hugo%E4%B8%BB%E9%A2%98/</guid>
+      <description>感谢你的hugo主题感谢你的主题，我还给自己添加了一个相册
+1. 本人小白，用网页翻译弄博客。在手机上看到termux可以做github page，于是从hexo开始，不断的搜索，发现好多人都从hexo转到hugo了，我又开始搜索hugo。
+2. hugo的主题好难找，我搜索看到你的主题（2021.01.26左右），很喜欢，就拷贝了下来。直接就可以用，其他的很多主题都用不了，我也不知道什么原因，代码知识基本没有。
+3. 感谢你的主题！ 感谢你的主题！ 感谢你的主题！
+4. 前2天看你更新了，从新拷贝了，就报错，用不了，我就沿用之前的。
+昨天2021.01.29，我无意发现一个添加相册的办法，按照网上的步骤，相册也搞定了。但是 在 .github.io 无法显示照片，本来想问一下你，有没有什么办法的。结果刚才2021-01-30 11:47 无意中搞定了。主题文件夹下 layouts\_default\photos.html
+代码 &amp;lt;img src=&amp;quot;{{ . | absURL }}{{ .Name }}&amp;quot; alt=&amp;quot;{{ .Name }}&amp;quot; style=&amp;quot;width:100%&amp;quot;/&amp;gt; 解决了相册图片不显示的问题
+5. 再次感谢你的主题。</description>
+    </item>
+    
     <item>
       <title></title>
       <link>/via/20210130b/</link>

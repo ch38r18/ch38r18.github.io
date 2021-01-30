@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>🎧 音频播放 on </title>
+    <link>/ting/</link>
+    <description>Recent content in 🎧 音频播放 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 30 Jan 2021 15:22:23 +0800</lastBuildDate><atom:link href="/ting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/ting/20210130d%E5%B7%A6%E4%B8%8B%E8%A7%92%E8%BF%B7%E4%BD%A0%E6%92%AD%E6%94%BE/</link>
+      <pubDate>Sat, 30 Jan 2021 15:22:23 +0800</pubDate>
+      
+      <guid>/ting/20210130d%E5%B7%A6%E4%B8%8B%E8%A7%92%E8%BF%B7%E4%BD%A0%E6%92%AD%E6%94%BE/</guid>
+      <description> 迷你播放器， 左下角， 可以代码到所有的博客文章页面  &amp;lt;body&amp;gt;&amp;lt;div class=&amp;quot;demo&amp;quot;&amp;gt;&amp;lt;div id=&amp;quot;player1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var ap = new APlayer({element: document.getElementById(&#39;player1&#39;),narrow: false,fixed: true,autoplay: false,showlrc: true,mini: true,theme: &#39;#FADFA3&#39;,loop: &#39;all&#39;,order: &#39;random&#39;,preload: &#39;auto&#39;,volume: 0.7,mutex: false,listFolded: false,listMaxHeight: 90,lrcType: 2,music:[{...}]});//ap.init();&amp;lt;/script&amp;gt;&amp;lt;/body&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/ting/20210130f%E5%88%AB%E4%BA%BA%E7%9A%84%E6%AD%8C%E5%8D%95/</link>
+      <pubDate>Sat, 30 Jan 2021 15:05:51 +0800</pubDate>
+      
+      <guid>/ting/20210130f%E5%88%AB%E4%BA%BA%E7%9A%84%E6%AD%8C%E5%8D%95/</guid>
+      <description>自己用别人的音频js 方便省事，不需要挑选歌曲。  	&amp;lt;body&amp;gt;&amp;lt;meting-js server=&amp;quot;netease&amp;quot; type=&amp;quot;playlist&amp;quot; id=&amp;quot;60198&amp;quot;&amp;gt;&amp;lt;/meting-js&amp;gt;&amp;lt;/body&amp;gt; 解析：server=&amp;ldquo;netease&amp;rdquo; type=&amp;ldquo;playlist&amp;rdquo; id=&amp;ldquo;60198&amp;rdquo; server指音乐平台，netease指网易云音乐， type类型， playlist列表，id指歌曲的i或者专辑或列表外链id 因此重点在于指定平台，指定外链id  中文版选项
+   选项 默认 描述     id(编号) require 歌曲ID /播放列表ID /专辑ID /搜索关键字   server(平台) require 音乐平台：netease，tencent，kugou，xiami，baidu   type（类型） require song，playlist，album，search，artist   auto（支持类种 类） options 音乐链接，支持：netease，tencent，xiami   fixed（固定模式） false 启用固定模式，默认false   mini（迷你模式） false 启用迷你模式,默认false   autoplay（自动播放） false 音频自动播放，默认false   theme(主题颜色) #2980b9 默认#2980b9   loop（循环） all 播放器循环播放，值：“all”，one”，“none”   order(顺序) list 播放器播放顺序，值：“list”，“random”   preload(加载) auto 值：“none”，“metadata”，“&amp;lsquo;auto”   volume（声量） 0.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/ting/20210130e%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B/</link>
+      <pubDate>Sat, 30 Jan 2021 14:45:51 +0800</pubDate>
+      
+      <guid>/ting/20210130e%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B/</guid>
+      <description>  自己选择音频 为什么不自动播放呢？  &amp;lt;body&amp;gt;&amp;lt;div class=&amp;quot;demo&amp;quot;&amp;gt;&amp;lt;div id=&amp;quot;player1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var ap = new APlayer({container: document.getElementById(&#39;player1&#39;),autoplay: true,showlrc: true,theme: &#39;#b7daff&#39;,loop: &#39;all&#39;,order: &#39;list&#39;,preload: &#39;auto&#39;,volume: 0.7,mutex: true,listFolded: false,listMaxHeight: 300,lrcType: 2,music:[{...}]});//ap.init();&amp;lt;/script&amp;gt;&amp;lt;/body&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

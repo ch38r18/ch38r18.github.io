@@ -1,7 +1,6 @@
 <html>
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,7 +8,7 @@
         content='chr的博客' />
     <title>
         
-chr63写点人生note
+20210130e自己动手
 
         
     </title>
@@ -313,83 +312,8 @@ chr63写点人生note
     </style>
 
     
-<style>
-     h1 {
-          margin-bottom: 20px;
-     }
 
-     section {
-          margin-bottom: 15px;
-     }
-
-     section p {
-          font-size: 14px;
-          margin-top: 8px;
-     }
-
-     section a {
-          color: var(--primary);
-          text-decoration: none;
-     }
-
-     main {
-          border-top: 1px solid var(--light-gray);
-          padding-top: 15px;
-          display: grid;
-          grid-template-columns: 50% 50%;
-          grid-row-gap: 2px;
-          grid-column-gap: 20px;
-     }
-
-     @media (max-width: 600px) {
-          main {
-               grid-template-columns: 100%;
-          }
-     }
-
-     main strong {
-          display: block;
-          padding: 2px 0;
-          break-inside: avoid;
-          margin-left: -4px;
-          margin-right: -4px;
-     }
-
-     main strong a {
-          display: block;
-          padding: 4px;
-          color: var(--black);
-          text-decoration: none;
-          display: flex;
-          align-items: baseline;
-          width: 100%;
-     }
-
-     main strong a:hover {
-          background-color: var(--light-gray);
-     }
-
-     main strong a h2 {
-          flex: 1;
-          text-decoration: underline;
-          text-underline-offset: 2px;
-          text-decoration-color: var(--light-gray);
-          font-size: 15px;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          position: relative;
-     }
-
-     main strong a span {
-          display: block;
-          color: var(--dark-gray);
-          font-weight: normal;
-          font-size: 12px;
-          margin-left: 10px;
-     }
-</style>
-
+    
 
     
 
@@ -403,6 +327,10 @@ chr63写点人生note
             <nav>
   <ol>
     
+
+
+
+
 
 <li>
   <a href="/">
@@ -503,6 +431,58 @@ about me
   
 </li>
 
+
+<li>
+  <a href="/ting/">
+    <span>
+      
+🎧 音频播放
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/ting/20210130e%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B/">
+          <span>
+20210130e自己动手
+</span>
+        </a>
+        
+        <a href="/ting/20210130f%E5%88%AB%E4%BA%BA%E7%9A%84%E6%AD%8C%E5%8D%95/">
+          <span>
+20210130f别人的歌单
+</span>
+        </a>
+        
+        <a href="/ting/20210130d%E5%B7%A6%E4%B8%8B%E8%A7%92%E8%BF%B7%E4%BD%A0%E6%92%AD%E6%94%BE/">
+          <span>
+20210130d左下角迷你播放
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/ting/20210130e%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B/">
+    <span>
+      
+20210130e自己动手
+
+    </span>
+  </a>
+  
+</li>
+
   </ol>
 </nav>
 
@@ -513,147 +493,150 @@ about me
     </header>
 
     
-
 <h1>
      
-chr63写点人生note
+20210130e自己动手
+
+     <!DOCTYPE html>
+<html>
+  
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+</head>
+  
+<body>
+    <div class="demo">
+        <div id="player1">
+        </div>
+    </div>
+    <script>
+        var ap = new APlayer
+            ({
+                container: document.getElementById("player1"),
+                autoplay: true,
+                showlrc: true,
+                theme: "#b7daff",
+                loop: "all",
+                order: "list",
+                preload: "auto",
+                volume: 0.7,
+                mutex: true,
+                listFolded: false,
+                listMaxHeight: 300,
+                lrcType: 2,
+                music:
+                    [
+                        {
+				name: "1吃面条",
+				artist: "陈佩斯朱时茂小品集",
+				url: "http://ys-k.ys168.com/607857151/318064457/Vf5Wj6t55147L53INJG88/%E9%99%88%E4%BD%A9%E6%96%AF%E6%9C%B1%E6%97%B6%E8%8C%82.%E7%BB%8F%E5%85%B8%E5%B0%8F%E5%93%81%E5%90%88%E9%9B%861%E5%90%83%E9%9D%A2%E6%9D%A1.mp3",
+				},
+				{
+				name:"崇拜",
+				artist:"liangjingru",
+				url:"http://ys-e.ys168.com/607857126/318195566/p326L525J5IMOWSi6VfH9b/%E6%A2%81%E9%9D%99%E8%8C%B9%20-%20%E5%B4%87%E6%8B%9C.m4a",
+				},
+				{
+				name:"偏偏喜欢你(女声版)",
+				artist:"aliyue",
+				url:"http://ys-c.ys168.com/607857122/318303954/l32773455K3ML6Si6VfHb6/2020.11-%E5%81%8F%E5%81%8F%E5%96%9C%E6%AC%A2%E4%BD%A0(%E5%A5%B3%E5%A3%B0%E7%89%88).mp3",
+				},
+			{
+			name:"梅花三弄",
+			artist:"jiangyuhen",
+			url:"http://ys-c.ys168.com/607857154/318303958/l32773455K3ML7Vf5WjIc5/2020.11-%E6%A2%85%E8%8A%B1%E4%B8%89%E5%BC%84.mp3",
+			},
+			{
+			name: "恼人的秋风",
+			artist:"那英&肖战",
+			url:"http://ys-k.ys168.com/607857120/318097736/n32684K5383MKWSi6VfH34/2020.03-%E9%82%A3%E8%8B%B1%E3%80%81%E8%82%96%E6%88%98%20-%20%E6%81%BC%E4%BA%BA%E7%9A%84%E7%A7%8B%E9%A3%8E%20(Live)%20(1).mp3",
+			},
+			{
+			name: "世界这么大还是遇见你(国语)",
+			artist:"钟钊桦",
+			url:"http://ys-k.ys168.com/607857122/318097740/n32684K5383ML8Si6VfHa9/2020.03-%E9%92%9F%E9%92%8A%E6%A1%A6%20-%20%E4%B8%96%E7%95%8C%E8%BF%99%E4%B9%88%E5%A4%A7%E8%BF%98%E6%98%AF%E9%81%87%E8%A7%81%E4%BD%A0(%E5%9B%BD%E8%AF%AD)%20(1).mp3",
+			},
+			{
+			name:"人间烟火",
+			artist:"sunzihan",
+			url:"http://ys-o.ys168.com/607857146/318100050/v3268525453MLLTj4SkKd9/2019.12-%E9%82%B1%E6%8C%AF%E5%93%B2%20-%20%E5%A4%AA%E9%98%B3%20(1).mp3",
+			},
+			{
+			name:"这一生关于你的风景",
+			artist:"kumufengchun",
+			url:"http://ys-k.ys168.com/607857120/318097738/n32684K5383ML6Si6VfHc3/2020.03-%E6%9E%AF%E6%9C%A8%E9%80%A2%E6%98%A5%20-%20%E8%BF%99%E4%B8%80%E7%94%9F%E5%85%B3%E4%BA%8E%E4%BD%A0%E7%9A%84%E9%A3%8E%E6%99%AF%20(1).mp3",
+			},
+			{
+			name:"世界那么大还是遇见你",
+			artist:"汤倩",
+			url:"http://ys-k.ys168.com/607857121/318097739/Si6VfHo32684K5383ML7c8/2020.03-%E6%B1%A4%E5%80%A9%20-%20%E4%B8%96%E7%95%8C%E8%BF%99%E4%B9%88%E5%A4%A7%E8%BF%98%E6%98%AF%E9%81%87%E8%A7%81%E4%BD%A0%20(1).mp3",
+			},
+
+
+
+                    ]
+
+        });
+        
+    </script>
+
+</body>
 
 </h1>
 
-<section><p><strong>博客系统：hugo，开源主题：simple-blog ，免费主页：github</strong></p>
-<p> </p>
-<p><strong>世界无限，你是唯一，我也是唯一，真的好巧啊！</strong></p>
-<p> </p>
-<p><a href="http://ch38r18.ys168.com/">到ys168给我留言</a></p>
-<p> </p>
-<p>我们始终是凡人，总会淡出哗众取宠的舞台，总会消失在喧嚣的世界里，归于质朴，从于恬淡，从于平凡。</p>
-<p> </p>
-</section>
-
-
 <main>
-     
-     
-     <strong>
-          <a href="/photos/">
-               <h2>
-🏞 我的相册
-</h2>
-               <span>0001.01.01</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/regex/">
-               <h2>
-💾 正则表达式
-</h2>
-               <span>0001.01.01</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/weasel/">
-               <h2>
-⌨ 小狼毫输入法
-</h2>
-               <span>2020.06.11</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/termux/">
-               <h2>
-📱 安卓终端termux
-</h2>
-               <span>2021.01.20</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/hexo/">
-               <h2>
-💾 hexo
-</h2>
-               <span>2021.01.25</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/about-me/">
-               <h2>
-about me
-</h2>
-               <span>2021.01.28</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/git/">
-               <h2>
-💾 git
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/links/">
-               <h2>
-🔗 网址链接
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/list/">
-               <h2>
-🖐 清单
-</h2>
-               <span>2021.01.29</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/via/">
-               <h2>
-📚 摘录
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/note/">
-               <h2>
-✍️ 笔记
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/hugo/">
-               <h2>
-💾 hugo
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     <strong>
-          <a href="/ting/">
-               <h2>
-🎧 音频播放
-</h2>
-               <span>2021.01.30</span>
-          </a>
-     </strong>
-     
-     
-     
+     <article class="markdown">
+          <p> 
+ 
+ </p>
+<ul>
+<li>自己选择音频</li>
+<li>为什么不自动播放呢？</li>
+</ul>
+<pre><code>&lt;body&gt;
+    &lt;div class=&quot;demo&quot;&gt;
+        &lt;div id=&quot;player1&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        var ap = new APlayer
+            ({
+                container: document.getElementById('player1'),
+                autoplay: true,
+                showlrc: true,
+                theme: '#b7daff',
+                loop: 'all',
+                order: 'list',
+                preload: 'auto',
+                volume: 0.7,
+                mutex: true,
+                listFolded: false,
+                listMaxHeight: 300,
+                lrcType: 2,
+                music:
+                    [
+                        {
+                        ...
+                            }
+                    ]
+                    
+        });
+        //ap.init();
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+     </article>
+
+     <aside>
+          <nav id="TableOfContents"></nav>
+     </aside>
 </main>
+
+
 
 
     <div id="searchBox">

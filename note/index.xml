@@ -5,7 +5,23 @@
     <link>/note/</link>
     <description>Recent content in ✍️ 笔记 on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 11 Jun 2020 01:29:18 +0800</lastBuildDate><atom:link href="/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jan 2021 12:52:12 +0800</lastBuildDate><atom:link href="/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/note/20210130b%E6%84%9F%E8%B0%A2%E4%BD%A0%E7%9A%84hugo%E4%B8%BB%E9%A2%98/</link>
+      <pubDate>Sat, 30 Jan 2021 12:52:12 +0800</pubDate>
+      
+      <guid>/note/20210130b%E6%84%9F%E8%B0%A2%E4%BD%A0%E7%9A%84hugo%E4%B8%BB%E9%A2%98/</guid>
+      <description>感谢你的hugo主题感谢你的主题，我还给自己添加了一个相册
+1. 本人小白，用网页翻译弄博客。在手机上看到termux可以做github page，于是从hexo开始，不断的搜索，发现好多人都从hexo转到hugo了，我又开始搜索hugo。
+2. hugo的主题好难找，我搜索看到你的主题（2021.01.26左右），很喜欢，就拷贝了下来。直接就可以用，其他的很多主题都用不了，我也不知道什么原因，代码知识基本没有。
+3. 感谢你的主题！ 感谢你的主题！ 感谢你的主题！
+4. 前2天看你更新了，从新拷贝了，就报错，用不了，我就沿用之前的。
+昨天2021.01.29，我无意发现一个添加相册的办法，按照网上的步骤，相册也搞定了。但是 在 .github.io 无法显示照片，本来想问一下你，有没有什么办法的。结果刚才2021-01-30 11:47 无意中搞定了。主题文件夹下 layouts\_default\photos.html
+代码 &amp;lt;img src=&amp;quot;{{ . | absURL }}{{ .Name }}&amp;quot; alt=&amp;quot;{{ .Name }}&amp;quot; style=&amp;quot;width:100%&amp;quot;/&amp;gt; 解决了相册图片不显示的问题
+5. 再次感谢你的主题。</description>
+    </item>
+    
     <item>
       <title>github pages 开始</title>
       <link>/note/20200611githubpages%E5%BC%80%E5%A7%8B/</link>
