@@ -1,0 +1,841 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content='chr的博客' />
+    <title>
+        
+安卓修复锂电池
+
+        
+    </title>
+    <link rel="stylesheet" href='/css/markdown.css'>
+    <script src='/js/fuse.js' defer></script>
+    <script src='/js/search.js' defer></script>
+
+    <script>
+        function addLoadEvent(callback) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    callback();
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript" async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                    processEscapes: true,
+                    processEnvironments: true,
+                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    TeX: {
+                        equationNumbers: { autoNumber: "AMS" },
+                        extensions: ["AMSmath.js", "AMSsymbols.js"]
+                    }
+                }
+            });
+        </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3J4FRK59"></script>
+    
+    <style>
+        :root {
+            --black: #121314;
+            --primary: #1a73e8;
+            --red: #ea4335;
+            --light-gray: #eeeeee;
+            --dark-gray: #828282;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+        }
+
+         
+        ::-webkit-scrollbar-track {
+            background-color: var(--light-gray);
+        }
+
+         
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+        }
+
+         
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        body {
+            max-width: 800px;
+            margin: calc(5vw + 40px) auto;
+            padding: 0 20px;
+            color: var(--black);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+            position: relative;
+            width: calc(100% - 100px);
+        }
+
+        .left:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .left nav ol {
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .left nav ol li {
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .left nav ol li .dropdown-container {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 2;
+            font-size: 90%;
+            display: none;
+            min-width: 100%;
+            background-color: white;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .left nav ol li:hover .dropdown-container {
+                display: block;
+            }
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner {
+            border: 1px solid var(--black);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: -3px;
+            width: 0px;
+            height: 0px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--black);
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 9px;
+            top: -0.5px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner .dropdown a {
+            display: block;
+        }
+
+        .left nav ol li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 60%;
+            transform: translateY(-50%) rotate(20deg);
+            width: 2px;
+            height: 80%;
+            background-color: var(--light-gray);
+        }
+
+        .left nav ol li a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1px 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .left nav ol li:not(:last-child) a {
+                display: block;
+                width: 36px;
+                text-overflow: clip;
+            }
+        }
+
+        .left nav ol li a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            width: 100px;
+            justify-content: flex-end;
+        }
+
+        .right #searchIcon,
+        .right #github img {
+            margin: 0 8px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        #searchBox {
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            top: calc(5vw + 40px);
+            transform: translateX(-50%);
+            display: inline-block;
+            width: 600px;
+            background-color: white;
+            border: 2px solid var(--black);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        @media (max-width: 600px) {
+            #searchBox {
+                width: calc(100vw - 50px);
+            }
+        }
+
+        #searchBox input {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        #searchBox ul {
+            visibility: hidden;
+        }
+
+        #searchBox ul[style*="visibility: visible;"] {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        #searchBox ul li {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        #searchBox ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            display: block;
+            font-size: 15px;
+        }
+
+        #searchBox ul li a .title {
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        #searchBox ul li a:hover,
+        #searchBox ul li a:focus {
+            outline: 0;
+            background-color: var(--light-gray);
+        }
+
+        #searchBox ul li a .highlight-container {
+            color: var(--dark-gray);
+            font-size: 75%;
+            line-height: 1.5;
+        }
+
+        #searchBox ul li a .highlight-container .highlight {
+            color: var(--red);
+        }
+    </style>
+
+    
+<style>
+     h1 {
+          margin-bottom: 10px;
+     }
+
+     section {
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
+     }
+
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
+     }
+
+     section a {
+          color: var(--primary);
+          text-decoration: none;
+          margin-left: 10px;
+     }
+
+     main {
+          position: relative;
+     }
+
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
+          font-weight: normal;
+          font-size: 90%;
+     }
+</style>
+
+
+    
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
+
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <nav>
+  <ol>
+    
+
+
+
+
+
+<li>
+  <a href="/">
+    <span>
+      
+chr63写点人生note
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/photos/">
+          <span>
+🏞 我的相册
+</span>
+        </a>
+        
+        <a href="/regex/">
+          <span>
+💾 正则表达式
+</span>
+        </a>
+        
+        <a href="/weasel/">
+          <span>
+⌨ 小狼毫输入法
+</span>
+        </a>
+        
+        <a href="/note/">
+          <span>
+✍️ 笔记
+</span>
+        </a>
+        
+        <a href="/termux/">
+          <span>
+📱 安卓终端termux
+</span>
+        </a>
+        
+        <a href="/hexo/">
+          <span>
+💾 hexo
+</span>
+        </a>
+        
+        <a href="/about-me/">
+          <span>
+about me
+</span>
+        </a>
+        
+        <a href="/git/">
+          <span>
+💾 git
+</span>
+        </a>
+        
+        <a href="/links/">
+          <span>
+🔗 网址链接
+</span>
+        </a>
+        
+        <a href="/hugo/">
+          <span>
+💾 hugo
+</span>
+        </a>
+        
+        <a href="/list/">
+          <span>
+🖐 清单
+</span>
+        </a>
+        
+        <a href="/via/">
+          <span>
+📚 摘录
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/via/">
+    <span>
+      
+📚 摘录
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/via/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/">
+          <span>
+安卓修复锂电池
+</span>
+        </a>
+        
+        <a href="/via/20210119a%E6%91%98%E5%BD%95via/">
+          <span>
+摘录
+</span>
+        </a>
+        
+        <a href="/via/20210122a%E5%85%B3%E4%BA%8Eobsidian/">
+          <span>
+关于Obsidian知识循环利器
+</span>
+        </a>
+        
+        <a href="/via/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/">
+          <span>
+文摘
+</span>
+        </a>
+        
+        <a href="/via/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/">
+          <span>
+2019年互联网信息大灭绝事件
+</span>
+        </a>
+        
+        <a href="/via/20210124b%E6%96%87%E6%91%98/">
+          <span>
+1.14阅读文摘
+</span>
+        </a>
+        
+        <a href="/via/20210130b/">
+          <span>
+20210130b
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/via/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/">
+    <span>
+      
+安卓修复锂电池
+
+    </span>
+  </a>
+  
+</li>
+
+  </ol>
+</nav>
+
+        </div>
+
+        
+        </div>
+    </header>
+
+    
+<h1>
+     
+安卓修复锂电池
+
+</h1>
+
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.19 01:29
+     </div>
+     
+</section>
+
+<main>
+     <article class="markdown">
+          
+<h3 id="20140924"><a href="#20140924">2014.09.24</a></h3><p>当手机锂电池开始老化时，</p>
+<ul>
+<li>一般表现为手机空载时显示电压基本正常，满格，</li>
+<li>待机时间短，</li>
+<li>充电时很快就显示已充满。</li>
+</ul>
+<p>此类电池可尝试以下方式修复。
+冷冻法(1)</p>
+<ul>
+<li>多层吸水纸和多层塑料膜密封</li>
+<li>放进冰箱冷冻室里（零下18度）</li>
+<li>冻了整整二天二夜，48h</li>
+<li>取出后连包装放室内常温二天，36h。恢复室温</li>
+</ul>
+<p>放电法(2)</p>
+<ul>
+<li>可采取开机放电或者接电阻的方法。</li>
+<li>开机放电应放到手机开机即停的程度；接电阻放电可采取连接相应电压的小电珠长时间放电，直到小电珠接上瞬间即灭的程度即可。</li>
+<li>放电电流以大电流为佳。</li>
+</ul>
+<p>激活法(3)</p>
+<ul>
+<li>串接12V交流电，在电池之间还要串联一小电珠或者电阻，用于限流。</li>
+<li>首先采用小电流激活，使控制回路交流电为数十毫安，维持30到60分钟，</li>
+<li>然后加大电流到电池的标称值的1~2倍。</li>
+<li>例如，1000毫安时的电池加至1000~2000毫安，激活30~60分钟。</li>
+<li>在上述过程中应注意观察电池的温度和外观：应无发烫、冒烟、鼓包等异常现象，如温度过高（40℃以上）应适当减低电流。</li>
+<li>经过上述激活处理的锂电池一般均可以正常使用，但不能与新电池相比！</li>
+</ul>
+
+<h3 id="20180528"><a href="#20180528">2018.05.28</a></h3><ul>
+<li>电池看起来是“死”了，但也有很大概率能救活。我总结出来的方法是：用等于电池设计电压的直流电对电池充电。</li>
+<li>这种“死”去的电池，用原装充电器是充不进电的（根本没电流通过），但是用等于电池设计电压的直流电对电池充电就会发现有比较大的电流，而且这个充电电流会慢慢减少，数分钟后接近0，这是一个好消息：电池电压正在恢复到设计水平。</li>
+<li>这时候停止充电，再用万用表测量电池两极，是不是有正常电压了</li>
+<li>然后，就可以使用原装充电器对其充电。</li>
+<li>用这种方法，我修复了不少电池，而且，很多都能恢复到设计容量一半左右的水平。</li>
+<li>为了彻底激活电池，还需要彻底充、放电几次。放电电路用电阻和发光二极管组成，能通过发光二极管估测放电的状态。</li>
+</ul>
+<p><em>就我的经验来讲，这种方法对于第一种电池，很有效。而后面两种情况的电池，则很难修复，在网上找的资料，也很少有明显效果的。尤其是第三种“能充电，而且容量也比较充足，但是大电流放电电压下降明显（具体表现比如：用相机的拍摄模式只能坚持几分钟，而用回看模式则能坚持很久）”这种电池，丢弃的话实在可惜。</em></p>
+<p><strong>锂电池修复的三种方法：</strong>
+1.使用干净的橡皮擦或者其他材质的清洁工具轻轻擦拭锂电池上的金属触点及手机上的金属触点，有助于充电状况及电力的持久。
+2.将用到自动关机的旧手机锂电池用保鲜膜将其牢牢裹住，包裹时尽量服帖，里外共三层，确保电池处于真空状态。然后，再在保鲜膜外面包三层报纸，使锂电池完全密封。放入冰箱的冷冻层，48小时后，取出电池，一一去掉包裹在外的六层纸膜，锂电池没有因冷冻而导致表面膨胀或变形。冷却一段时间后，然后充电。
+3.让接近报废的锂电池彻底放电，然后重新充电激活电池。具体方法为：对手机进行深度放电，就是通过耗尽内部电能，来达到更深程度的再充电，这需要采用一些非常规的方法。用特定的装置连接手机与一个低电压小灯泡，电池内部的电量会传输到小灯泡上，直到全部都放光。“手机需要通过较低的电压慢慢耗尽电能。正常情况下，手机接通后若低于3.6伏的额定电压，就会自动关机。”放完电后，再次充电的手机电池可以使用更长时间。</p>
+<p><strong>三种锂电池修复方法原理：</strong></p>
+<blockquote>
+<p>锂电池修复方法一的原理：长时间使用的锂电池的金属表面会有一定程度的氧化，导致手机电池跟手机接触不好，锂电池使用时间变短，而用橡皮檫或其他清洁工具可擦除表面的生锈物质，让电池与手机接触变好。</p>
+</blockquote>
+<blockquote>
+<p>锂电池修复方法二的原理：浙江大学物理学系的叶高翔教授关于此锂电池“冰冻疗法”的专业解释：“低温能使锂电池内部的电解液发生变化，促进刚刚经过冷冻的电池发生化学反应。锂电池的使用过程其实是一个充放电过程。在这期间，电池内的阴电荷和阳电荷相互交撞。电池之所以会越来越不经用，是因为在正常的室温下，电子内部的动能比较大，因而电池处于活跃状态，漏电情况相对频繁。而将锂电池放入低温环境里，锂电池表面的锂膜与电解液的微观结构，以及它们的交界面都会发生明显变化，导致电池内部暂不活跃，漏电流减少。所以再次充电后，手机的待电时间会增加。<br>
+锂电池的循环使用寿命约600多次。如果充电次数多了，分子的热运动会使其内部分子排列微观结构逐渐被破坏，存储电荷效率会渐渐降低。而“冷冻的过程容易破坏电池原来的内部结构，短时间内或许可以增加充载电荷的能力，但长期使用未必有效。”叶教授说，锂电池内的微观结构一旦被破坏，再要完全恢复过来是不可能的，长期使用这种方法会加速手机电池的损耗。</p>
+</blockquote>
+<blockquote>
+<p>锂电池修复方法三的原理：对手机进行深度放电，就是通过耗尽内部电能，来达到更深程度的再充电，这需要采用一些非常规的方法。想办法将手机与一个1.5V小灯泡相连，锂电池内部的电量会传输到小灯泡上，直到全部都放光。“手机需要通过较低的电压慢慢耗尽电能。正常情况下，手机接通后若低于3.6伏的额定电压，就会自动关机。”放完电后，再次充电的手机电池可以使用更长时间。</p>
+</blockquote>
+<p><strong>手机锂电池修复&ndash;”冰冻疗法”全过程解析:</strong>
+2009年4月份买的诺基亚BL-5C原装锂电池作为实验对象。该锂电池已经使用了近两年，正常使用的情况下，这部手机的待机时间维持一天左右。如果通话次数比较多，电量持续的时间会更短。如果平均每个电话的通话时间为3分钟，接听或拨打10次，电量就岌岌可危。</p>
+<p>　　测试前，将手机关机，在电量充满后再开机。此后，不用这部手机接听和拨打任何电话，也不收发短信。在没有任何干扰的状态下，手机安静地待机，将近3天后完全没电。</p>
+<p>　　进入实验阶段：把全身装备好的手机锂电池放入冰箱的冷冻格（为防止锂电池受潮，需要先用保鲜膜将手机牢牢裹住，包裹时尽量服帖，里外共需三层，确保锂电池处于真空状态。然后，再在保鲜膜外面包三层报纸，使手机电池完全密封）。48小时后，取出锂电池，一一去掉包裹在外的六层纸膜，电池没有因冷冻而导致表面膨胀或变形。冷却一段时间后，把锂电池装入手机充满并开机。同样情况下，第三天时原本会自动关机的手机，屏幕上才少了一格电。一个星期后，手机屏幕上还剩余一格电。到了第九天，手机才因电量不足发出提示音。</p>
+<p><strong>“冰冻疗法”测试前后的表现验证了一点：</strong>
+第一次经过冰冻的电池可以延长手机的待电时间。但冰冻并非手机电池的“不死仙丹”，长期使用会损坏锂电池。</p>
+<p>　　专家提醒锂电池的价格并不算太高，与其费力进行锂电池修复，不如购买一块新电池来得方便划算。此外，养成良好的使用习惯，也是延长锂电池寿命的一条捷径。</p>
+<p><strong>？？？</strong></p>
+<p>　　把电池取出来用座充单独充电，充一段时间之后再用一个20到30欧的电阻连接正负极放电。一般连续几次充放电之后可激活电池。如果几次充放电之后仍无法正常充电，那电池就是坏的了。</p>
+<p>　　找一块满电的锂电池和3根细铜丝，用透明胶将两根细铜丝粘在该电池的正负极上。然后找到一个几十欧姆左右的电阻，一端与正极铜丝相连，另一端再接一段铜丝。最后用透明胶将两根铜丝与没电的锂电池的正负极对应相连，充电约半个小时，取下。将取下的电池进行正常充电，如果能充电，说明OK。否则，将电池的充电保护板拆下(在有电极的一端)，找到电池芯的正负极，重复上面的充电过程。如果能充电，说明OK，焊接正负极引线，只能做实验电池。如果不能充电，将电池放入垃圾桶中，注意环保！</p>
+<p>　　首先把电池从手机里取出来用报纸把电池包起来，最少包三层。我们用的报纸要是干燥的，不要潮湿的。</p>
+
+     </article>
+
+     <aside>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#20140924">2014.09.24</a></li>
+        <li><a href="#20180528">2018.05.28</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+     </aside>
+</main>
+
+
+
+
+    <div id="searchBox">
+        <input id="searchInput" tabindex="0" autocomplete="off">
+        <ul id="searchResults">
+        </ul>
+    </div>
+
+</body>
+
+</html>

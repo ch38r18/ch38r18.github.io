@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>💾 git on </title>
+    <link>/git/</link>
+    <description>Recent content in 💾 git on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 29 Jan 2021 00:00:18 +0800</lastBuildDate><atom:link href="/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/git/20210129a%E6%9C%AC%E5%9C%B0%E4%B8%8Egithub%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Fri, 29 Jan 2021 00:00:18 +0800</pubDate>
+      
+      <guid>/git/20210129a%E6%9C%AC%E5%9C%B0%E4%B8%8Egithub%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5/</guid>
+      <description>git同步本地与github  cd 到目录
+  cd public #hugo静态博客生成的目录
+cd publicgit initgit remote add origin https://github.com/ch38r18/ch38r18.github.io.gitgit add -Agit commit -m &amp;quot;first commit&amp;quot;git push -u origin master  git add #添加文件
+  git commit -m &amp;lsquo;first commit&amp;rsquo; 告诉Git，把文件提交到仓库。引号内为提交说明 
+  git remote add origin 你的远程库地址
+  git pull &amp;ndash;rebase origin master 获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）
+  git push -u origin master 把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</description>
+    </item>
+    
+  </channel>
+</rss>

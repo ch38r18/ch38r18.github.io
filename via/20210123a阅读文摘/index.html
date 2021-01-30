@@ -1,0 +1,799 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content='chr的博客' />
+    <title>
+        
+文摘
+
+        
+    </title>
+    <link rel="stylesheet" href='/css/markdown.css'>
+    <script src='/js/fuse.js' defer></script>
+    <script src='/js/search.js' defer></script>
+
+    <script>
+        function addLoadEvent(callback) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = callback;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    callback();
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript" async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                    processEscapes: true,
+                    processEnvironments: true,
+                    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    TeX: {
+                        equationNumbers: { autoNumber: "AMS" },
+                        extensions: ["AMSmath.js", "AMSsymbols.js"]
+                    }
+                }
+            });
+        </script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV3J4FRK59"></script>
+    
+    <style>
+        :root {
+            --black: #121314;
+            --primary: #1a73e8;
+            --red: #ea4335;
+            --light-gray: #eeeeee;
+            --dark-gray: #828282;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+        }
+
+         
+        ::-webkit-scrollbar-track {
+            background-color: var(--light-gray);
+        }
+
+         
+        ::-webkit-scrollbar-thumb {
+            background-color: #babac0;
+        }
+
+         
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        body {
+            max-width: 800px;
+            margin: calc(5vw + 40px) auto;
+            padding: 0 20px;
+            color: var(--black);
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        header {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            clip-path: polygon(0 -1000%, 100% -1000%, 100% 100vh, 0 100vh);
+            position: relative;
+            width: calc(100% - 100px);
+        }
+
+        .left:after {
+            content: '';
+            width: 20px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        }
+
+        .left nav ol {
+            list-style: none;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .left nav ol li {
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .left nav ol li .dropdown-container {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 2;
+            font-size: 90%;
+            display: none;
+            min-width: 100%;
+            background-color: white;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .left nav ol li:hover .dropdown-container {
+                display: block;
+            }
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner {
+            border: 1px solid var(--black);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: -3px;
+            width: 0px;
+            height: 0px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--black);
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 9px;
+            top: -0.5px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom-color: white;
+        }
+
+        .left nav ol li .dropdown-container .dropdown-inner .dropdown a {
+            display: block;
+        }
+
+        .left nav ol li:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -9px;
+            top: 60%;
+            transform: translateY(-50%) rotate(20deg);
+            width: 2px;
+            height: 80%;
+            background-color: var(--light-gray);
+        }
+
+        .left nav ol li a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 1px 4px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .left nav ol li:not(:last-child) a {
+                display: block;
+                width: 36px;
+                text-overflow: clip;
+            }
+        }
+
+        .left nav ol li a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            width: 100px;
+            justify-content: flex-end;
+        }
+
+        .right #searchIcon,
+        .right #github img {
+            margin: 0 8px;
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+        }
+
+        #searchBox {
+            visibility: hidden;
+            position: fixed;
+            left: 50%;
+            top: calc(5vw + 40px);
+            transform: translateX(-50%);
+            display: inline-block;
+            width: 600px;
+            background-color: white;
+            border: 2px solid var(--black);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        @media (max-width: 600px) {
+            #searchBox {
+                width: calc(100vw - 50px);
+            }
+        }
+
+        #searchBox input {
+            position: sticky;
+            top: 0;
+            padding: 10px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        #searchBox ul {
+            visibility: hidden;
+        }
+
+        #searchBox ul[style*="visibility: visible;"] {
+            border-top: 1px solid var(--light-gray);
+        }
+
+        #searchBox ul li {
+            list-style: none;
+            margin: 0;
+
+        }
+
+        #searchBox ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 8px;
+            display: block;
+            font-size: 15px;
+        }
+
+        #searchBox ul li a .title {
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        #searchBox ul li a:hover,
+        #searchBox ul li a:focus {
+            outline: 0;
+            background-color: var(--light-gray);
+        }
+
+        #searchBox ul li a .highlight-container {
+            color: var(--dark-gray);
+            font-size: 75%;
+            line-height: 1.5;
+        }
+
+        #searchBox ul li a .highlight-container .highlight {
+            color: var(--red);
+        }
+    </style>
+
+    
+<style>
+     h1 {
+          margin-bottom: 10px;
+     }
+
+     section {
+          padding-bottom: 30px;
+          font-size: 14px;
+          display: flex;
+          align-items: baseline;
+     }
+
+     section #datetime {
+          color: var(--dark-gray);
+          font-weight: normal;
+     }
+
+     section a {
+          color: var(--primary);
+          text-decoration: none;
+          margin-left: 10px;
+     }
+
+     main {
+          position: relative;
+     }
+
+     main article .highlight {
+          position: relative;
+     }
+
+     main article .highlight:hover .copyCode {
+          visibility: visible;
+     }
+
+     main article .highlight .copyCode {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--light-gray);
+          cursor: pointer;
+          font-size: 70%;
+          visibility: hidden;
+          background-color: rgba(0, 0, 0, .5);
+          padding: 0 2px;
+     }
+
+     main article .highlight table tr {
+          border: none;
+     }
+
+     main article h1:target,
+     main article h2:target,
+     main article h3:target,
+     main article h4:target,
+     main article h5:target,
+     main article h6:target {
+          padding-top: 40px !important;
+          margin-top: -32px !important;
+          position: relative;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after,
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          content: '';
+          width: calc(100% + 3px);
+          position: absolute;
+          z-index: -1;
+          left: -3px;
+          padding: 2px;
+     }
+
+     main article h1:target::after,
+     main article h2:target::after {
+          height: calc(100% - 40px - .3em);
+          bottom: .18em;
+     }
+
+     main article h3:target::after,
+     main article h4:target::after,
+     main article h5:target::after,
+     main article h6:target::after {
+          height: calc(100% - 40px);
+          bottom: -2px;
+     }
+
+     :target::after {
+          animation: flashing 4s ease;
+          animation-delay: 1s;
+     }
+
+     @keyframes flashing {
+          0% {
+               opacity: 0;
+          }
+
+          25% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          50% {
+               opacity: 0;
+          }
+
+          75% {
+               opacity: .3;
+               background-color: var(--red);
+          }
+
+          100% {
+               opacity: 0;
+          }
+     }
+
+     main article h1 a,
+     main article h2 a,
+     main article h3 a,
+     main article h4 a,
+     main article h5 a,
+     main article h6 a {
+          text-decoration: none !important;
+          color: var(--black) !important;
+     }
+
+     main aside {
+          position: absolute;
+          top: 0;
+          right: -240px;
+          width: 240px;
+          height: 100%;
+          font-size: 14px;
+          padding: 0 20px;
+     }
+
+     @media (max-width: 600px) {
+          aside {
+               display: none;
+          }
+     }
+
+     main aside nav {
+          position: sticky;
+          top: 40px;
+          line-height: 2;
+     }
+
+     main aside nav ul {
+          list-style: none;
+          border-left: 2px solid var(--dark-gray);
+     }
+
+     main aside nav ul li ul {
+          border: none;
+          padding: 0;
+     }
+
+     main aside nav ul li a,
+     main aside nav ul li ul li a {
+          color: var(--black);
+          text-decoration: none;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+     }
+
+     main aside nav ul li a:hover,
+     main aside nav ul li ul li a:hover,
+     main aside nav ul li a:target,
+     main aside nav ul li ul li a:target {
+          background-color: var(--light-gray);
+     }
+
+     main aside nav ul li a {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+     }
+
+     main aside nav ul li ul li a {
+          padding-left: 30px;
+          padding-right: 10px;
+          font-weight: normal;
+          font-size: 90%;
+     }
+</style>
+
+
+    
+<script>
+     let copyBtnCallback = function () {
+          let highlights = document.querySelectorAll(".highlight")
+
+          Array.from(highlights).forEach((highlight) => {
+               var copyBtn = document.createElement('div');
+               copyBtn.innerHTML = '复制';
+               copyBtn.setAttribute("class", "copyCode")
+
+               copyBtn.onclick = () => {
+                    let textarea = document.createElement('textarea');
+                    document.body.appendChild(textarea);
+                    textarea.innerHTML = highlight.querySelector("code[data-lang]").textContent;
+                    textarea.select();
+                    if (document.execCommand('copy')) {
+                         document.execCommand('copy');
+                    }
+                    document.body.removeChild(textarea);
+                    copyBtn.innerHTML = "已复制"
+                    setTimeout(() => {
+                         copyBtn.innerHTML = "复制"
+                    }, 2000);
+               }
+
+               highlight.appendChild(copyBtn)
+          });
+     }
+     addLoadEvent(copyBtnCallback)
+</script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <nav>
+  <ol>
+    
+
+
+
+
+
+<li>
+  <a href="/">
+    <span>
+      
+chr63写点人生note
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/photos/">
+          <span>
+🏞 我的相册
+</span>
+        </a>
+        
+        <a href="/regex/">
+          <span>
+💾 正则表达式
+</span>
+        </a>
+        
+        <a href="/weasel/">
+          <span>
+⌨ 小狼毫输入法
+</span>
+        </a>
+        
+        <a href="/note/">
+          <span>
+✍️ 笔记
+</span>
+        </a>
+        
+        <a href="/termux/">
+          <span>
+📱 安卓终端termux
+</span>
+        </a>
+        
+        <a href="/hexo/">
+          <span>
+💾 hexo
+</span>
+        </a>
+        
+        <a href="/about-me/">
+          <span>
+about me
+</span>
+        </a>
+        
+        <a href="/git/">
+          <span>
+💾 git
+</span>
+        </a>
+        
+        <a href="/links/">
+          <span>
+🔗 网址链接
+</span>
+        </a>
+        
+        <a href="/hugo/">
+          <span>
+💾 hugo
+</span>
+        </a>
+        
+        <a href="/list/">
+          <span>
+🖐 清单
+</span>
+        </a>
+        
+        <a href="/via/">
+          <span>
+📚 摘录
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/via/">
+    <span>
+      
+📚 摘录
+
+    </span>
+  </a>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-inner">
+      <div class="dropdown">
+        
+        
+        <a href="/via/20210119b%E5%AE%89%E5%8D%93%E4%BF%AE%E5%A4%8D%E9%94%82%E7%94%B5%E6%B1%A0/">
+          <span>
+安卓修复锂电池
+</span>
+        </a>
+        
+        <a href="/via/20210119a%E6%91%98%E5%BD%95via/">
+          <span>
+摘录
+</span>
+        </a>
+        
+        <a href="/via/20210122a%E5%85%B3%E4%BA%8Eobsidian/">
+          <span>
+关于Obsidian知识循环利器
+</span>
+        </a>
+        
+        <a href="/via/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/">
+          <span>
+文摘
+</span>
+        </a>
+        
+        <a href="/via/20210124a2019%E4%BF%A1%E6%81%AF%E7%81%AD%E7%BB%9D/">
+          <span>
+2019年互联网信息大灭绝事件
+</span>
+        </a>
+        
+        <a href="/via/20210124b%E6%96%87%E6%91%98/">
+          <span>
+1.14阅读文摘
+</span>
+        </a>
+        
+        <a href="/via/20210130b/">
+          <span>
+20210130b
+</span>
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+</li>
+
+
+<li>
+  <a href="/via/20210123a%E9%98%85%E8%AF%BB%E6%96%87%E6%91%98/">
+    <span>
+      
+文摘
+
+    </span>
+  </a>
+  
+</li>
+
+  </ol>
+</nav>
+
+        </div>
+
+        
+        </div>
+    </header>
+
+    
+<h1>
+     
+文摘
+
+</h1>
+
+<section>
+     <div id="datetime">
+          ⏰ 2021.01.23 10:29
+     </div>
+     
+</section>
+
+<main>
+     <article class="markdown">
+          
+<h3 id="md聚合阅读"><a href="#md%e8%81%9a%e5%90%88%e9%98%85%e8%af%bb">md聚合阅读</a></h3><p><strong>激流网</strong></p>
+<ul>
+<li>“我们学新闻也好，学法律也好，都救不了自己。”庹继光的遗言</li>
+<li>尸骸若不被埋在活人心中，那便真成了尸骸。对于庹继光教授的死，怎能不让人联想到上一个溺水自杀的成都大学的党委书记毛洪涛呢！怎能不让人联想到，为讨回自己的血汗钱，不惜用汽油浇身，点燃自己的蜂鸟配送员呢！又怎能不让人回想起无数个只能失落地结束自己生命，以控诉自己无处可走的遭遇，想要唤醒麻木他人的自杀者呢！有人说，“选择自杀是懦夫，不是明智的行为。”我们终究很难体会到或理解庹继光为何会选择这条绝路，但我们可以猜测，庹继光作为一名高级知识分子，四川师范大学文学院教授，他看清了如铁壁般的事实，选择了以死相拼，从高高的楼上一跃而下。</li>
+<li>从旧社会过来的老工人，都有一部血泪斑斑的家史。回想旧社会，工人“吃的猪狗食，干的牛马活”，“做工做到老，不及一根草”，政治上受压迫，生活上无保障，日子越过越苦。</li>
+<li>舆论工具从不掌握在发出批判意见的人群手中。</li>
+<li>定义，不仅需要申明自己是什么，还需要声明自己不是什么，这才构成一个完整的定义。</li>
+<li>“没有任何绝对的价值，因为对货币来说，价值本身是相对的。没有任何东西是不可让渡的，因为一切东西都可以为换取货币而让渡。没有任何东西是高尚的、神圣的等等，因为一切东西都可以通过货币而占有。正如在上帝面前人人平等一样，在货币面前也不存在‘不能估价、不能抵押或转让的’，‘处于人类商业之外的’，‘谁也不能占有的’，‘神圣的’和‘宗教的东西’。”（马克思恩格斯全集：第46卷下[M].北京：人民出版社，1980：368）</li>
+<li>雄关漫道真如铁，而今迈步从头越。</li>
+<li>初听不识曲中意，再闻已是乐中人。</li>
+<li>“无产阶级要按照自己的世界观改造世界，资产阶级也要按照自己的世界观改造世界。”（《关于正确处理人民内部矛盾的问题》人民出版社27页，引自《毛主席语录》，1967年版，16页。）</li>
+<li>996顾名思义，指的是早上9点上班，晚上9点下班，一周工作6天；什么是11-11-6呢？显而易见，这就是指，早上11点上班，晚上11点下班，一周工作6天。</li>
+<li>拜物教本来是指人们迷信某种物具有神秘的力量，而加以崇拜的一种宗教。在社会生产力水平很低时，由于人们控制自然的能力很薄弱，在自然力面前软弱无能，因此把自然力神秘化起来，以为象雷、电、水、火这样的自然界力量，有什么神灵在那里主宰着，因而拜倒在它们脚下。在以私有制为基础的商品经济中，也存在着类似的情况。商品本来是人们自己双手创造出来的东西，但它却被看成为凌驾于人们之上的，具有支配人们命运的力量。这种现象，马克思把它叫做商品拜物教。</li>
+<li>商品货币关系并不是永恒的东西，而是一种历史现象。从而，以商品作为细胞的资本主义经济制度，也决不是永恒的。在一定历史条件下产生的东西，必将随着历史条件的变化而消灭，这是不以人们的意志为转移的客观规律。同理可证</li>
+<li>维系或者摧毁一段婚姻，金钱都扮演着重要的角色。除了爱和浪漫，婚姻里还充满了各种经济考量。</li>
+<li>英国有一位左派作家乔治·奥威尔。他有一本名著《动物农场》，在国内算是人尽皆知。书中象征着马克思的白猪死后，动物们继承他的遗志，在墙上写上这样一句标语：“每一只动物都是平等的。” 可是后来，篡改经典的黑猪掌权。它既要承认平等的价值观，又想标明自己高人一等，于是把这句标语改成了：“每一只动物都是平等的，但是有些动物更平等。”</li>
+</ul>
+<p><strong>ve2x</strong></p>
+<ul>
+<li>win10+深蓝词库 极度舒适</li>
+<li>请拒绝一切大厂国产软件，能不用就不用，他们有的是办法恶心你</li>
+<li>…</li>
+</ul>
+<p>**</p>
+
+     </article>
+
+     <aside>
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#md聚合阅读">md聚合阅读</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+     </aside>
+</main>
+
+
+
+
+    <div id="searchBox">
+        <input id="searchInput" tabindex="0" autocomplete="off">
+        <ul id="searchResults">
+        </ul>
+    </div>
+
+</body>
+
+</html>
